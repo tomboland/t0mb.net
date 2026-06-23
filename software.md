@@ -30,6 +30,7 @@ A small index of software I like.
 ## local AI
 
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) - local LLM inference
+- [Open WebUI](https://github.com/open-webui/open-webui) - LLM UI
 
 ## games
 
