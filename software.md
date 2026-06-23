@@ -27,6 +27,12 @@ A small index of software I like.
 - [Bitwarden](https://bitwarden.com/) - password manager
 - [Thunderbird](https://www.thunderbird.net/en-GB/) - mail
 
+## programming languages
+- [Python](https://www.python.org/)
+- [Rust](https://rust-lang.org/)
+- [Haskell](https://www.haskell.org/)
+- [F#](https://fsharp.org/)
+
 ## local AI
 
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) - local LLM inference
