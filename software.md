@@ -8,7 +8,7 @@ A small index of software I like.
 
 ## system
 
-- [Arch Linux](https://archlinux.org/) - Linux distribution
+- [Arch Linux, BTW edition](https://archlinux.org/) - Linux distribution
 - [Sway](https://swaywm.org/) - Wayland compositor
 - [i3status-rs](https://github.com/greshake/i3status-rust) - status bar
 - [OpenSSH](https://www.openssh.com/) - remote login and secure transport
