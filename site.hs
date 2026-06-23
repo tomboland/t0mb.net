@@ -86,6 +86,7 @@ siteCtx :: Context String
 siteCtx =
     constField "siteTitle" "t0mb.net"
     <> constField "siteDescription" "Brain spill"
+    <> constField "builtWith" "Site built with <a href=https://jaspervdj.be/hakyll/>Hakyll</a>"
     <> defaultContext
 
 postCtx :: Context String

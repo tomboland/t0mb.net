@@ -134,3 +134,12 @@ time {
     margin-right: 1rem;
   }
 }
+
+.site-footer {
+  grid-column: 1 / -1; /* Forces the footer to span across both columns */
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
