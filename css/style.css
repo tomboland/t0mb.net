@@ -114,6 +114,24 @@ time {
   color: var(--accent);
 }
 
+.sidebar nav .rss-link {
+  margin: 0.35rem 0;
+  color: var(--muted);
+}
+
+.sidebar nav .rss-link::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+.sidebar nav .rss-link a {
+  display: inline;
+}
+
+.sidebar nav .rss-link a::before {
+  content: none;
+}
+
 .smallprint {
   margin-top: 2rem;
 }
