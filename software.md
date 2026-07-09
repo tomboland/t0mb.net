@@ -41,3 +41,7 @@ A small index of software I like.
 ## games
 
 - [Steam](https://store.steampowered.com/about/) - games
+
+## autres
+
+- [Ansible](https://docs.ansible.com/#)
