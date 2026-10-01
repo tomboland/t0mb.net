@@ -106,6 +106,8 @@ def load_content(root=ROOT):
             raise ValueError(f'Review viewing does not belong to its film: {path}')
         if not isinstance(meta.get('draft', True), bool):
             raise ValueError(f'draft must be true or false: {path}')
+        if not isinstance(meta.get('featured', False), bool):
+            raise ValueError(f'featured must be true or false: {path}')
         datetime.date.fromisoformat(meta['date'])
         if meta.get('watched_date'):
             datetime.date.fromisoformat(meta['watched_date'])
@@ -193,10 +195,13 @@ def build(root=ROOT):
             return re.sub(r'<td([^>]*)>(.*?)</td>', lambda m: '<td role="cell" data-label="' + esc(next(labels)) + '"' + m[1] + '>' + m[2].strip() + '</td>', row)
         return '<div class="table-scroll"><table role="table"><thead role="rowgroup"><tr role="row">' + ''.join('<th scope="col" role="columnheader">' + c + '</th>' for c in columns) + '</tr></thead><tbody role="rowgroup">' + ''.join(label_cells(r).replace('<tr', '<tr role="row"', 1) for r in rows) + '</tbody></table></div>'
     latest = sorted(reviews, key=lambda r: (r['date'], r['id']), reverse=True)
+    featured = [r for r in latest if r.get('featured', False)]
+    home_reviews = (featured + [r for r in latest if not r.get('featured', False)])[:3]
+    home_heading = ('Featured reviews' if len(featured) >= 3 else 'Featured and recent reviews') if featured else 'Recent film writing'
     intro = f'<h1>Films</h1><p>My viewing history, reviews and longer thoughts on films.</p><p class="muted">{len(films)} titles · {len(viewings)} logged viewings · {len(reviews)} reviews</p>'
     filters = '<div class="film-filters" hidden><label>Find a film <input type="search" id="film-search" placeholder="Title, year or director"></label><label><input type="checkbox" id="reviewed-only"> With a review</label><p id="filter-count" role="status" aria-live="polite"></p></div>'
     page('/films/', 'Films', intro + filters + '<p>' + anchor('#catalogue', 'Browse catalogue ↓') + '</p><section id="recent-writing"><h2>Recent writing</h2>' + review_list(latest[:3]) + '<p>' + anchor('/films/reviews/', 'All reviews') + '</p></section><h2 id="catalogue">Watched catalogue</h2>' + '<div id="film-catalogue">' + table([film_row(f) for f in sorted(films, key=lambda f: (f['title'].casefold(), f['year']))], ['Film', 'Year', 'Director', 'Writing']) + '</div>\n<script src="/js/films.js" defer></script>')
-    pages['generated/home.html'] = '<section class="cinema"><h1>Brain spill</h1><p>I’m Tom. This is my collection of film reviews, viewing notes and other writing.</p><p>' + anchor('/films/', 'Explore the film collection →') + ' · ' + anchor('/films/diary/', 'Viewing diary') + '</p><h2>Recent film writing</h2>' + review_list(latest[:3]) + '<p>' + anchor('/films/reviews/', 'All film reviews') + ' · ' + anchor('/rss.xml', 'Follow via RSS') + '</p></section>'
+    pages['generated/home.html'] = '<section class="cinema"><h1>Brain spill</h1><p>I’m Tom. This is my collection of film reviews, viewing notes and other writing.</p><p>' + anchor('/films/', 'Explore the film collection →') + ' · ' + anchor('/films/diary/', 'Viewing diary') + '</p><h2>' + home_heading + '</h2>' + review_list(home_reviews) + '<p>' + anchor('/films/reviews/', 'All film reviews') + ' · ' + anchor('/rss.xml', 'Follow via RSS') + '</p></section>'
     page('/films/reviews/', 'Film reviews', '<h1>Reviews and analysis</h1>' + review_list(latest))
 
     def diary_rows(items):

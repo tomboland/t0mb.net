@@ -21,6 +21,15 @@ Review filenames use film titles and release years, with dates (and a numeric
 suffix if needed) to distinguish repeat reviews. Renaming a file does not change
 its permanent URL; the front-matter `id` controls that.
 
+## Feature reviews on the homepage
+
+Add `featured: true` to a review's front matter to feature it on the homepage.
+The homepage shows up to three featured published reviews, newest first, and
+fills spare places with recent reviews without duplicates. Drafts never appear,
+even if featured. Recent writing, the writing archive and RSS remain chronological.
+Remove the field or set `featured: false` to unfeature a review. The flag belongs
+to the individual review, so repeat reviews of one film can be selected separately.
+
 ## Build and preview
 
 From the repository root (Python 3 and the existing Haskell toolchain required):

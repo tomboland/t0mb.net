@@ -27,9 +27,9 @@ class CinemaTests(unittest.TestCase):
     def write(self, name, data):
         (self.data / (name + '.json')).write_text(json.dumps(data))
 
-    def review(self, name, draft=False):
+    def review(self, name, draft=False, featured=False, date="2026-01-02"):
         (self.data / 'reviews' / (name + '.md')).write_text('---\n' + '\n'.join(f'{k}: {json.dumps(v)}' for k, v in
-            {'id': name, 'film': 'local-film', 'title': name, 'date': '2026-01-02', 'draft': draft, 'viewing': 'v2'}.items()) + '\n---\n\nActual writing.\n')
+            {'id': name, 'film': 'local-film', 'title': name, 'date': date, 'draft': draft, 'featured': featured, 'viewing': 'v2'}.items()) + '\n---\n\nActual writing.\n')
 
     def test_manual_films_and_optional_ratings(self):
         pages = builder.build(self.root)
@@ -62,6 +62,38 @@ class CinemaTests(unittest.TestCase):
             builder.build(self.root)
         with self.assertRaises(ValueError):
             builder.rating('0')
+
+    def test_featured_selection_fallback_and_drafts(self):
+        self.review('older-pick', featured=True, date='2025-01-01')
+        self.review('newest', date='2026-01-03')
+        self.review('recent', date='2026-01-02')
+        self.review('left-out', date='2026-01-01')
+        self.review('private-pick', draft=True, featured=True, date='2026-01-04')
+        pages = builder.build(self.root)
+        home = pages['generated/home.html']
+        self.assertLess(home.index('older-pick'), home.index('newest'))
+        self.assertLess(home.index('newest'), home.index('recent</span>'))
+        self.assertEqual(home.count('class="review-entry"'), 3)
+        self.assertEqual(home.count('>older-pick</span>'), 1)
+        self.assertNotIn('private-pick', home)
+        self.assertNotIn('left-out', home)
+        writing = pages['generated/films/reviews/index.md']
+        self.assertLess(writing.index('newest'), writing.index('older-pick'))
+        self.review('older-pick', featured=False, date='2025-01-01')
+        home = builder.build(self.root)['generated/home.html']
+        self.assertNotIn('older-pick', home)
+        self.assertIn('left-out', home)
+
+    def test_featured_limit_order_and_validation(self):
+        for day in range(1, 5):
+            self.review('pick-' + str(day), featured=True, date='2026-01-0' + str(day))
+        home = builder.build(self.root)['generated/home.html']
+        self.assertNotIn('pick-1', home)
+        self.assertLess(home.index('pick-4'), home.index('pick-3'))
+        self.assertLess(home.index('pick-3'), home.index('pick-2'))
+        self.review('bad', featured='true')
+        with self.assertRaisesRegex(ValueError, 'featured must be true or false'):
+            builder.build(self.root)
 
     def test_home_navigation_and_review_dates(self):
         self.review('published')
