@@ -1,12 +1,9 @@
-<h1>archive</h1>
-
-<section class="posts">
-  $for(posts)$
-    <article class="post">
-      <time datetime="$date$">$date$</time>
-      <div class="post-body">
-        $body$
-      </div>
-    </article>
-  $endfor$
+<section class="cinema">
+<h1>Writing archive</h1>
+<p>Film reviews and other posts, newest first.</p>
+<ul class="archive-list">
+$for(posts)$
+  <li><time datetime="$date$">$date$</time> <a href="$url$">$title$</a></li>
+$endfor$
+</ul>
 </section>

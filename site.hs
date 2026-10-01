@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Data.List (isPrefixOf)
 import Data.Monoid ((<>))
 import Hakyll
 import System.FilePath (replaceExtension)
@@ -22,9 +23,12 @@ main = do
             replaceExtension (drop (length ("generated/" :: String)) (toFilePath identifier)) "html"
         compile $
             pandocCompiler
+                >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate "templates/film-section.html" siteCtx
                 >>= loadAndApplyTemplate "templates/default.html" siteCtx
                 >>= relativizeUrls
+
+    match "generated/home.html" $ compile getResourceBody
 
     match imagePattern $ do
         route idRoute
@@ -42,22 +46,25 @@ main = do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- fmap (take 20) . recentFirst =<< loadAllSnapshots "posts/*/index.md" "content"
+            posts <- fmap (take 3) . recentFirst =<< loadAllSnapshots "posts/*/index.md" "content"
+            home <- loadBody "generated/home.html"
 
             let indexCtx =
                     listField "posts" postCtx (return posts)
-                    <> constField "title" "t0mb.net"
+                    <> constField "homeContent" home
+                    <> boolField "hasPosts" (const $ not $ null posts)
+                    <> constField "title" "Home"
                     <> siteCtx
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
+                >>= loadAndApplyTemplate "templates/home.html" indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
     create ["archive.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAllSnapshots "posts/*/index.md" "content"
+            posts <- recentFirst =<< loadAllSnapshots writingPattern "content"
 
             let archiveCtx =
                     listField "posts" postCtx (return posts)
@@ -72,8 +79,9 @@ main = do
     create ["rss.xml"] $ do
         route idRoute
         compile $ do
-            posts <- fmap (take 20) . recentFirst =<< loadAllSnapshots "posts/*/index.md" "content"
-            renderRss feedConfig feedCtx posts
+            posts <- fmap (take 20) . recentFirst =<< loadAllSnapshots writingPattern "content"
+            let absolute url = if "/" `isPrefixOf` url && not ("//" `isPrefixOf` url) then "https://t0mb.net" ++ url else url
+            renderRss feedConfig feedCtx (map (fmap $ withUrls absolute) posts)
 
     match "templates/*" $ compile templateBodyCompiler
 
@@ -83,6 +91,9 @@ main = do
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/default.html" siteCtx
                 >>= relativizeUrls
+
+writingPattern :: Pattern
+writingPattern = "posts/*/index.md" .||. "generated/films/*/reviews/*/index.md"
 
 imagePattern :: Pattern
 imagePattern =

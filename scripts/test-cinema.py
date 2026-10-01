@@ -63,6 +63,21 @@ class CinemaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             builder.rating('0')
 
+    def test_home_navigation_and_review_dates(self):
+        self.review('published')
+        self.review('private', True)
+        pages = builder.build(self.root)
+        self.assertIn('published', pages['generated/home.html'])
+        self.assertNotIn('private', pages['generated/home.html'])
+        review = pages['generated/films/local-film-2000/reviews/published/index.md']
+        self.assertIn('date: "2026-01-02"', review)
+        self.assertIn('nav_writing: true', review)
+        self.assertIn('← Film details:', review)
+        self.assertIn('nav_diary: true', pages['generated/films/diary/index.md'])
+        catalogue = pages['generated/films/index.md']
+        self.assertLess(catalogue.index('id="film-search"'), catalogue.index('Recent writing'))
+        self.assertIn('data-label="Film"', catalogue)
+
     def test_artwork_lists_overrides_and_review_separation(self):
         images = self.root / 'images'
         images.mkdir()

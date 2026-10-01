@@ -214,3 +214,36 @@ time {
   .cinema .film-thumbnail { width: 36px; height: 54px; flex-basis: 36px; }
   .film-label > span { min-width: 6rem; }
 }
+
+/* Navigation and reading */
+.skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 10; padding: 0.7rem 1rem; background: var(--accent); color: var(--bg); }
+.skip-link:focus { top: 1rem; }
+a:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#content:focus { outline: none; }
+.film-nav a[aria-current="page"] { font-weight: bold; text-decoration-thickness: 3px; text-underline-offset: 0.4rem; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.film-title, .review-title { display: flex; align-items: center; gap: 0.8rem; min-width: 0; text-decoration: none; }
+.film-title > span, .review-title .link-label { text-decoration: underline; }
+.film-title.unreviewed > span { text-decoration-style: dotted; }
+.film-label { flex-wrap: wrap; }
+.review-title time { text-decoration: none; }
+.archive-list { list-style: none; padding: 0; }
+.archive-list li { margin: 0.8rem 0; }
+.archive-list time { display: inline-block; margin-right: 0.8rem; }
+.film-filters select { padding: 0.4rem; background: var(--bg); color: var(--text); border: 1px solid #777; font: inherit; }
+#catalogue, .director-list li[id] { scroll-margin-top: 1rem; }
+@media (max-width: 720px) {
+  .film-title, .review-title { gap: 0.6rem; }
+  .cinema .table-scroll { overflow: visible; }
+  .cinema table, .cinema tbody { display: block; }
+  .cinema thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .cinema tbody tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 1rem; border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+  .cinema tbody td { display: block; border: 0; padding: 0; white-space: normal; font-size: 0.85rem; }
+  .cinema tbody td[data-label="Film"] { order: -1; width: 100%; font-size: 1rem; }
+  .cinema tbody td[data-label="Watched"] { order: -2; width: 100%; }
+  .cinema tbody td:empty { display: none; }
+  .cinema tbody td[data-label="Year"]::before { content: "Year: "; color: var(--muted); }
+  .film-label > span { min-width: 0; }
+  .cinema .film-thumbnail { width: 48px; height: 72px; flex-basis: 48px; }
+  .archive-list time { display: block; }
+}

@@ -143,7 +143,7 @@ def build(root=ROOT):
         return f'<img class="film-thumbnail" src="{esc(path)}" alt="" width="48" height="72" loading="lazy" decoding="async">'
 
     def film_label(film, css='', suffix=''):
-        return '<span class="film-label">' + thumbnail(film) + '<span>' + anchor(film_url(film), film['title'], css) + suffix + '</span></span>'
+        return '<span class="film-label"><a class="film-title ' + esc(css) + '" href="' + esc(film_url(film)) + '">' + thumbnail(film) + '<span>' + esc(film['title']) + '</span></a>' + suffix + '</span>'
 
     def film_image(film):
         chosen = art(film, 'backdrop')
@@ -171,21 +171,32 @@ def build(root=ROOT):
         for person in film.get('directors', []):
             known_people.setdefault(str(person['id']), dict(person, filmography=[]))
     pages = {}
-    def page(url, title, body):
+    def page(url, title, body, date=None):
         path = 'generated' + url + 'index.md'
-        pages[path] = '---\ntitle: ' + json.dumps(title, ensure_ascii=False) + '\n---\n\n' + body + '\n'
+        section = 'directors' if url.startswith('/directors/') else 'diary' if url == '/films/diary/' else 'writing' if '/reviews/' in url else 'films'
+        meta = {'title': title, 'nav_' + section: True}
+        if date:
+            meta['date'] = date
+        pages[path] = '---\n' + '\n'.join(k + ': ' + json.dumps(v, ensure_ascii=False) for k, v in meta.items()) + '\n---\n\n' + body + '\n'
     def review_list(items):
-        return '<ul class="review-list">' + ''.join('<li class="review-entry">' + thumbnail(by_id[r['film']]) + '<span><time datetime="' + r['date'] + '">' + r['date'] + '</time> ' + anchor(r['url'], r['title']) + ' ' + rating(r.get('rating')) + '</span></li>' for r in items) + '</ul>'
+        return '<ul class="review-list">' + ''.join(
+            '<li class="review-entry"><a class="review-title" href="' + esc(r['url']) + '">' + thumbnail(by_id[r['film']]) +
+            '<span><time datetime="' + r['date'] + '">' + r['date'] + '</time> <span class="link-label">' + esc(r['title']) +
+            '</span></span></a> ' + rating(r.get('rating')) + '</li>' for r in items) + '</ul>'
     def film_row(film):
         count = len(by_film[film['id']])
         status = f'{count} review' + ('s' if count != 1 else '') if count else 'no review'
         return f'<tr data-reviewed="{str(bool(count)).lower()}"><td>{film_label(film, "reviewed" if count else "unreviewed")}</td><td>{esc(film["year"])}</td><td>{directors(film)}</td><td class="muted">{status}</td></tr>'
     def table(rows, columns):
-        return '<div class="table-scroll"><table><thead><tr>' + ''.join('<th scope="col">' + c + '</th>' for c in columns) + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>'
+        def label_cells(row):
+            labels = iter(columns)
+            return re.sub(r'<td([^>]*)>(.*?)</td>', lambda m: '<td role="cell" data-label="' + esc(next(labels)) + '"' + m[1] + '>' + m[2].strip() + '</td>', row)
+        return '<div class="table-scroll"><table role="table"><thead role="rowgroup"><tr role="row">' + ''.join('<th scope="col" role="columnheader">' + c + '</th>' for c in columns) + '</tr></thead><tbody role="rowgroup">' + ''.join(label_cells(r).replace('<tr', '<tr role="row"', 1) for r in rows) + '</tbody></table></div>'
     latest = sorted(reviews, key=lambda r: (r['date'], r['id']), reverse=True)
     intro = f'<h1>Films</h1><p>My viewing history, reviews and longer thoughts on films.</p><p class="muted">{len(films)} titles · {len(viewings)} logged viewings · {len(reviews)} reviews</p>'
     filters = '<div class="film-filters" hidden><label>Find a film <input type="search" id="film-search" placeholder="Title, year or director"></label><label><input type="checkbox" id="reviewed-only"> With a review</label><p id="filter-count" role="status" aria-live="polite"></p></div>'
-    page('/films/', 'Films', intro + '<h2>Recent writing</h2>' + review_list(latest[:8]) + '<p>' + anchor('/films/reviews/', 'All reviews') + '</p><h2 id="catalogue">Watched catalogue</h2>' + filters + '<div id="film-catalogue">' + table([film_row(f) for f in sorted(films, key=lambda f: (f['title'].casefold(), f['year']))], ['Film', 'Year', 'Director', 'Writing']) + '</div>\n<script src="/js/films.js" defer></script>')
+    page('/films/', 'Films', intro + filters + '<p>' + anchor('#catalogue', 'Browse catalogue ↓') + '</p><section id="recent-writing"><h2>Recent writing</h2>' + review_list(latest[:3]) + '<p>' + anchor('/films/reviews/', 'All reviews') + '</p></section><h2 id="catalogue">Watched catalogue</h2>' + '<div id="film-catalogue">' + table([film_row(f) for f in sorted(films, key=lambda f: (f['title'].casefold(), f['year']))], ['Film', 'Year', 'Director', 'Writing']) + '</div>\n<script src="/js/films.js" defer></script>')
+    pages['generated/home.html'] = '<section class="cinema"><h1>Brain spill</h1><p>I’m Tom. This is my collection of film reviews, viewing notes and other writing.</p><p>' + anchor('/films/', 'Explore the film collection →') + ' · ' + anchor('/films/diary/', 'Viewing diary') + '</p><h2>Recent film writing</h2>' + review_list(latest[:3]) + '<p>' + anchor('/films/reviews/', 'All film reviews') + ' · ' + anchor('/rss.xml', 'Follow via RSS') + '</p></section>'
     page('/films/reviews/', 'Film reviews', '<h1>Reviews and analysis</h1>' + review_list(latest))
 
     def diary_rows(items):
@@ -220,7 +231,7 @@ def build(root=ROOT):
             body += '<p>' + anchor(f'https://www.themoviedb.org/{tmdb["type"]}/{tmdb["id"]}', 'Film details on TMDB') + '</p>'
         page(film_url(film), film['title'] + ' (' + film['year'] + ')', body)
         for review in own_reviews:
-            head = '<p>' + anchor(film_url(film), film['title'] + ' (' + film['year'] + ')') + '</p>'
+            head = '<p>' + anchor(film_url(film), '← Film details: ' + film['title'] + ' (' + film['year'] + ')') + '</p>'
             head += image_markup(review, root) + '<h1>' + esc(review['title']) + '</h1><p class="film-meta">Published <time datetime="' + review['date'] + '">' + review['date'] + '</time>'
             if review.get('watched_date'):
                 head += ' · Watched ' + esc(review['watched_date'])
@@ -233,14 +244,19 @@ def build(root=ROOT):
                 footer += '<h2>More of my writing on this film</h2>' + review_list(others)
             if review.get('letterboxd_url'):
                 footer += '<p>' + anchor(review['letterboxd_url'], 'Also on Letterboxd') + '</p>'
-            page(review['url'], review['title'], head + '\n\n' + review['body'] + '\n\n' + footer)
+            page(review['url'], review['title'], head + '\n\n' + review['body'] + '\n\n' + footer, date=review['date'])
 
-    listing = '<h1>Directors</h1><ul class="director-list">'
+    initials = sorted({slug(p['name'])[:1].upper() for p in known_people.values() if any(str(d['id']) == str(p['id']) for f in films for d in f.get('directors', []))})
+    listing = '<h1>Directors</h1><div class="film-filters" id="director-controls" hidden><label>Find a director <input type="search" id="director-search" placeholder="Director’s name"></label><p id="director-count" role="status" aria-live="polite"></p></div><nav class="year-nav" aria-label="Directors by first name">' + ' · '.join(anchor('#letter-' + c, c) for c in initials) + '</nav><ul class="director-list">'
+    seen_initials = set()
     for person in sorted(known_people.values(), key=lambda p: p['name'].casefold()):
         own = [f for f in films if any(str(d['id']) == str(person['id']) for d in f.get('directors', []))]
         if not own:
             continue
-        listing += '<li>' + anchor(director_url(person), person['name']) + f' <span class="muted">{len(own)} watched</span></li>'
+        initial = slug(person['name'])[:1].upper()
+        marker = ' id="letter-' + initial + '"' if initial not in seen_initials else ''
+        seen_initials.add(initial)
+        listing += '<li' + marker + '>' + anchor(director_url(person), person['name']) + f' <span class="muted">{len(own)} watched</span></li>'
         entries = []
         included = set()
         for credit in person.get('filmography', []):
@@ -253,15 +269,16 @@ def build(root=ROOT):
             else:
                 label = '<span class="muted">' + esc(credit['title']) + '</span>'
                 status, year = 'not watched', credit['year']
-            entries.append((year, credit['title'], f'<tr><td>{esc(year)}</td><td>{label}</td><td class="muted">{status}</td></tr>'))
+            entries.append((year, credit['title'], f'<tr data-status="{"reviewed" if status == "reviewed" else "watched" if film else "unwatched"}"><td>{esc(year)}</td><td>{label}</td><td class="muted">{status}</td></tr>'))
         for film in own:
             if film['id'] not in included:
                 status = 'reviewed' if by_film[film['id']] else 'watched · no review'
-                entries.append((film['year'], film['title'], f'<tr><td>{esc(film["year"])}</td><td>{film_label(film, "reviewed" if by_film[film["id"]] else "unreviewed")}</td><td class="muted">{status}</td></tr>'))
+                entries.append((film['year'], film['title'], f'<tr data-status="{"reviewed" if status == "reviewed" else "watched"}"><td>{esc(film["year"])}</td><td>{film_label(film, "reviewed" if by_film[film["id"]] else "unreviewed")}</td><td class="muted">{status}</td></tr>'))
         body = '<h1>' + esc(person['name']) + f'</h1><p>{len(own)} watched · ' + str(sum(bool(by_film[f['id']]) for f in own)) + ' reviewed</p><h2>Directing filmography</h2><p class="muted">Reviewed films are highlighted. Unreviewed watched films still link to their viewing history.</p>'
-        body += table([e[2] for e in sorted(entries, key=lambda e: (e[0] or '9999', e[1]))], ['Year', 'Film', 'Status'])
+        body += '<div class="film-filters" id="filmography-controls" hidden><label>Show <select id="filmography-filter"><option value="all">All films</option><option value="watched">Watched</option><option value="reviewed">Reviewed</option></select></label><p id="filmography-count" role="status" aria-live="polite"></p></div>'
+        body += '<div id="filmography">' + table([e[2] for e in sorted(entries, key=lambda e: (e[0] or '9999', e[1]))], ['Year', 'Film', 'Status']) + '</div><script src="/js/films.js" defer></script>'
         page(director_url(person), person['name'], body)
-    page('/directors/', 'Directors', listing + '</ul>')
+    page('/directors/', 'Directors', listing + '</ul><script src="/js/films.js" defer></script>')
     page('/films/about/', 'About the film collection', '<h1>About this collection</h1><p>My viewing history and writing, originally imported from Letterboxd. A viewing does not need a rating or a review. Some older watched films have no recorded viewing date.</p><h2>Credits</h2><p>Film metadata, posters, backdrops and directing filmographies are supplied by <a href="https://www.themoviedb.org">TMDB</a> and saved locally. Titles and years may reflect my original records.</p><a href="https://www.themoviedb.org"><img class="tmdb-logo" src="/images/tmdb.svg" alt="TMDB"></a><p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>')
     output = root / 'generated'
     output.mkdir(exist_ok=True)
