@@ -113,8 +113,16 @@ class CinemaTests(unittest.TestCase):
     def test_featured_limit_order_and_validation(self):
         for day in range(1, 5):
             self.review('pick-' + str(day), featured=True, date='2026-01-0' + str(day))
+        self.review('private-pick', featured=True, draft=True)
+        self.review('not-featured')
         home = self.build()['index.html']
-        self.assertNotIn('pick-1', home)
+        self.assertNotIn('private-pick', home)
+        self.assertNotIn('not-featured', home)
+        fallback, pool = home.split('<template id="featured-review-pool">', 1)
+        self.assertNotIn('pick-1', fallback)
+        self.assertEqual(fallback.count('class="review-entry"'), 3)
+        self.assertIn('pick-1', pool)
+        self.assertEqual(pool.count('class="review-entry"'), 4)
         self.assertLess(home.index('pick-4'), home.index('pick-3'))
         self.assertLess(home.index('pick-3'), home.index('pick-2'))
         self.review('bad', featured='true')

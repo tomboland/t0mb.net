@@ -3,7 +3,11 @@
   $intro$
   <p><a href="/films/">Explore the film collection →</a> · <a href="/films/diary/">Viewing diary</a></p>
   <h2>$heading$</h2>
-  $partial("templates/cinema/review-list.html")$
+  <div id="home-reviews">$partial("templates/cinema/review-list.html")$</div>
+  $if(featuredPool)$
+  <template id="featured-review-pool"><ul class="review-list">$for(featuredPool)$$partial("templates/cinema/review-entry.html")$$endfor$</ul></template>
+  <script src="/js/featured-reviews.js" defer></script>
+  $endif$
   <p><a href="/films/reviews/">All film reviews</a> · <a href="/rss.xml">Follow via RSS</a></p>
 </section>
 $if(hasPosts)$

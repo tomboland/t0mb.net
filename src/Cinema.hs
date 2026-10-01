@@ -281,7 +281,8 @@ pageViews c = fixed ++ filmPages ++ directorPages ++ tagPages
         tagPages=[page (tagUrl label) "tag" ("Films tagged "++label) $ obj [("name",val label),("count",number $ length $ tagged key),("plural",Bool $ length (tagged key)/=1),("films",values $ map (filmSummary c) $ sortedFilms $ tagged key)]|(key,label)<-M.toList labels]
 
 homeView :: Cinema -> Value
-homeView c = obj [("reviews",values $ map (reviewSummary c) chosen),("heading",val heading)]
+homeView c = obj [("reviews",values $ map (reviewSummary c) chosen),("heading",val heading),
+                  ("featuredPool",values $ map (reviewSummary c) $ if length featured > 3 then featured else [])]
   where latest=latestReviews c; featured=filter (truth.get "featured") latest
         chosen=take 3 (featured++filter (not.truth.get "featured") latest)
         heading=if null featured then "Recent film writing" else if length featured>=3 then "Featured reviews" else "Featured and recent reviews"

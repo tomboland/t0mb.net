@@ -7,6 +7,7 @@ watched_date: "2026-05-18"
 rating: null
 letterboxd_url: "https://boxd.it/eqx1T9"
 draft: false
+featured: true
 ---
 
 I've given this a couple of flippant reviews, but as ever with good films, this one has left me thinking about it the whole day after.  

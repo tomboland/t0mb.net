@@ -7,6 +7,7 @@ watched_date: "2026-05-19"
 rating: "5"
 letterboxd_url: "https://boxd.it/eqOBV5"
 draft: false
+featured: true
 ---
 
 I can't decide if Seagal's absolutely appalling acting and the entirely ridiculous premise of his whole character is the magic sauce that makes this film so great?!  

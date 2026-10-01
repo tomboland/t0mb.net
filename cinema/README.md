@@ -24,8 +24,10 @@ its permanent URL; the front-matter `id` controls that.
 ## Feature reviews on the homepage
 
 Add `featured: true` to a review's front matter to feature it on the homepage.
-The homepage shows up to three featured published reviews, newest first, and
-fills spare places with recent reviews without duplicates. Drafts never appear,
+The homepage randomly selects three featured published reviews on each page load.
+Without JavaScript, it shows the three newest featured reviews. If fewer than
+three are featured, it shows all of them and fills spare places with recent
+reviews without duplicates. Drafts never appear,
 even if featured. Recent writing, the writing archive and RSS remain chronological.
 Remove the field or set `featured: false` to unfeature a review. The flag belongs
 to the individual review, so repeat reviews of one film can be selected separately.

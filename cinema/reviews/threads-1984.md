@@ -7,6 +7,7 @@ watched_date: "2026-02-02"
 rating: null
 letterboxd_url: "https://boxd.it/cXIGnr"
 draft: false
+featured: true
 ---
 
 It hasn't aged like wine, nor milk; it just hasn't aged at all.  

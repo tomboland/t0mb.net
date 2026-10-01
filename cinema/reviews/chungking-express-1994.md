@@ -7,6 +7,7 @@ watched_date: "2026-05-31"
 rating: "5"
 letterboxd_url: "https://boxd.it/eAY4i5"
 draft: false
+featured: true
 ---
 
 This film looks and feels incredible. I love it.  This is definitely getting a rewatch. I might have to get the 4k too (watched it on the Criterion blu ray, which is still a great looking disc!)

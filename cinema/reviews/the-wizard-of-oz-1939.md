@@ -9,4 +9,4 @@ letterboxd_url: "https://boxd.it/bYcSYh"
 draft: false
 ---
 
-After 84 years this film still has the power to be completely magical!  I do cringe a bit at the asbestos snow in the poppy field, but that's the only bit that hasn't ages well!
+After 84 years this film still has the power to be completely magical!  I do cringe a bit at the asbestos snow in the poppy field, but that's the only bit that hasn't aged well!

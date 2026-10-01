@@ -7,6 +7,7 @@ watched_date: "2026-08-24"
 rating: "5"
 letterboxd_url: "https://boxd.it/g0sVJ7"
 draft: false
+featured: true
 ---
 
 It's a Wonderful Life without Hollywood's overt sentimentality.  
