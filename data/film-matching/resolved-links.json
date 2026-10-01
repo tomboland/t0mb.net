@@ -1,0 +1,407 @@
+[
+  {
+    "title": "2010: The Year We Make Contact",
+    "year": "1984",
+    "letterboxd_uri": "https://boxd.it/24lK",
+    "source_url": "https://letterboxd.com/film/2010-1984/",
+    "tmdb_type": "movie",
+    "tmdb_id": 4437,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "300",
+    "year": "2006",
+    "letterboxd_uri": "https://boxd.it/28XI",
+    "source_url": "https://letterboxd.com/film/300/",
+    "tmdb_type": "movie",
+    "tmdb_id": 1271,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "A Cop",
+    "year": "1972",
+    "letterboxd_uri": "https://boxd.it/W8G",
+    "source_url": "https://letterboxd.com/film/a-cop-1972/",
+    "tmdb_type": "movie",
+    "tmdb_id": 42741,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Alice in Wonderland",
+    "year": "2010",
+    "letterboxd_uri": "https://boxd.it/1Spq",
+    "source_url": "https://letterboxd.com/film/alice-in-wonderland-2010/",
+    "tmdb_type": "movie",
+    "tmdb_id": 12155,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Arrival",
+    "year": "2016",
+    "letterboxd_uri": "https://boxd.it/aNGk",
+    "source_url": "https://letterboxd.com/film/arrival-2016/",
+    "tmdb_type": "movie",
+    "tmdb_id": 329865,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Ballerina",
+    "year": "2025",
+    "letterboxd_uri": "https://boxd.it/jKqG",
+    "source_url": "https://letterboxd.com/film/ballerina-2025/",
+    "tmdb_type": "movie",
+    "tmdb_id": 541671,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Black Sheep",
+    "year": "2006",
+    "letterboxd_uri": "https://boxd.it/257k",
+    "source_url": "https://letterboxd.com/film/black-sheep-2006/",
+    "tmdb_type": "movie",
+    "tmdb_id": 3603,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Casablanca",
+    "year": "1942",
+    "letterboxd_uri": "https://boxd.it/2aG0",
+    "source_url": "https://letterboxd.com/film/casablanca/",
+    "tmdb_type": "movie",
+    "tmdb_id": 289,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Chernobyl",
+    "year": "2019",
+    "letterboxd_uri": "https://boxd.it/mkbG",
+    "source_url": "https://letterboxd.com/film/chernobyl/",
+    "tmdb_type": "tv",
+    "tmdb_id": 87108,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Color Out of Space",
+    "year": "2019",
+    "letterboxd_uri": "https://boxd.it/k1HY",
+    "source_url": "https://letterboxd.com/film/color-out-of-space/",
+    "tmdb_type": "movie",
+    "tmdb_id": 548473,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Drunken Master II",
+    "year": "1994",
+    "letterboxd_uri": "https://boxd.it/1Si0",
+    "source_url": "https://letterboxd.com/film/drunken-master-ii/",
+    "tmdb_type": "movie",
+    "tmdb_id": 12207,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "El Mariachi",
+    "year": "1992",
+    "letterboxd_uri": "https://boxd.it/1YRq",
+    "source_url": "https://letterboxd.com/film/el-mariachi/",
+    "tmdb_type": "movie",
+    "tmdb_id": 9367,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Elle",
+    "year": "2016",
+    "letterboxd_uri": "https://boxd.it/bdhq",
+    "source_url": "https://letterboxd.com/film/elle/",
+    "tmdb_type": "movie",
+    "tmdb_id": 337674,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Falling Down",
+    "year": "1993",
+    "letterboxd_uri": "https://boxd.it/194M",
+    "source_url": "https://letterboxd.com/film/falling-down/",
+    "tmdb_type": "movie",
+    "tmdb_id": 37094,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Hobo with a Shotgun",
+    "year": "2007",
+    "letterboxd_uri": "https://boxd.it/6pZO",
+    "source_url": "https://letterboxd.com/film/hobo-with-a-shotgun-2007/",
+    "tmdb_type": "movie",
+    "tmdb_id": 215624,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Immoral Tales",
+    "year": "1973",
+    "letterboxd_uri": "https://boxd.it/MQS",
+    "source_url": "https://letterboxd.com/film/immoral-tales/",
+    "tmdb_type": "movie",
+    "tmdb_id": 46581,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "It",
+    "year": "2017",
+    "letterboxd_uri": "https://boxd.it/bC8e",
+    "source_url": "https://letterboxd.com/film/it-2017/",
+    "tmdb_type": "movie",
+    "tmdb_id": 346364,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles",
+    "year": "1975",
+    "letterboxd_uri": "https://boxd.it/T18",
+    "source_url": "https://letterboxd.com/film/jeanne-dielman-23-quai-du-commerce-1080-bruxelles/",
+    "tmdb_type": "movie",
+    "tmdb_id": 44012,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Kes",
+    "year": "1969",
+    "letterboxd_uri": "https://boxd.it/1Qi8",
+    "source_url": "https://letterboxd.com/film/kes/",
+    "tmdb_type": "movie",
+    "tmdb_id": 13384,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Kwaidan",
+    "year": "1964",
+    "letterboxd_uri": "https://boxd.it/1kbY",
+    "source_url": "https://letterboxd.com/film/kwaidan/",
+    "tmdb_type": "movie",
+    "tmdb_id": 30959,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Obsession",
+    "year": "2025",
+    "letterboxd_uri": "https://boxd.it/PNqo",
+    "source_url": "https://letterboxd.com/film/obsession-2025/",
+    "tmdb_type": "movie",
+    "tmdb_id": 1339713,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "On the Silver Globe",
+    "year": "1988",
+    "letterboxd_uri": "https://boxd.it/1sAM",
+    "source_url": "https://letterboxd.com/film/on-the-silver-globe/",
+    "tmdb_type": "movie",
+    "tmdb_id": 27072,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Predator",
+    "year": "1987",
+    "letterboxd_uri": "https://boxd.it/2b84",
+    "source_url": "https://letterboxd.com/film/predator/",
+    "tmdb_type": "movie",
+    "tmdb_id": 106,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Prey",
+    "year": "2022",
+    "letterboxd_uri": "https://boxd.it/sNBU",
+    "source_url": "https://letterboxd.com/film/prey-2022/",
+    "tmdb_type": "movie",
+    "tmdb_id": 766507,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Prometheus",
+    "year": "2012",
+    "letterboxd_uri": "https://boxd.it/2s9e",
+    "source_url": "https://letterboxd.com/film/prometheus/",
+    "tmdb_type": "movie",
+    "tmdb_id": 70981,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Rocky",
+    "year": "1976",
+    "letterboxd_uri": "https://boxd.it/28Uk",
+    "source_url": "https://letterboxd.com/film/rocky/",
+    "tmdb_type": "movie",
+    "tmdb_id": 1366,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "School of Rock",
+    "year": "2003",
+    "letterboxd_uri": "https://boxd.it/28xK",
+    "source_url": "https://letterboxd.com/film/school-of-rock/",
+    "tmdb_type": "movie",
+    "tmdb_id": 1584,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Scream",
+    "year": "1996",
+    "letterboxd_uri": "https://boxd.it/24EC",
+    "source_url": "https://letterboxd.com/film/scream/",
+    "tmdb_type": "movie",
+    "tmdb_id": 4232,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Smile",
+    "year": "2022",
+    "letterboxd_uri": "https://boxd.it/xjfE",
+    "source_url": "https://letterboxd.com/film/smile-2022/",
+    "tmdb_type": "movie",
+    "tmdb_id": 882598,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Society",
+    "year": "1989",
+    "letterboxd_uri": "https://boxd.it/1ARc",
+    "source_url": "https://letterboxd.com/film/society/",
+    "tmdb_type": "movie",
+    "tmdb_id": 22244,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Taxi Driver",
+    "year": "1976",
+    "letterboxd_uri": "https://boxd.it/2b8y",
+    "source_url": "https://letterboxd.com/film/taxi-driver/",
+    "tmdb_type": "movie",
+    "tmdb_id": 103,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The African Queen",
+    "year": "1951",
+    "letterboxd_uri": "https://boxd.it/2ai8",
+    "source_url": "https://letterboxd.com/film/the-african-queen/",
+    "tmdb_type": "movie",
+    "tmdb_id": 488,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Evil Dead",
+    "year": "1981",
+    "letterboxd_uri": "https://boxd.it/29Go",
+    "source_url": "https://letterboxd.com/film/the-evil-dead/",
+    "tmdb_type": "movie",
+    "tmdb_id": 764,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Fall",
+    "year": "2006",
+    "letterboxd_uri": "https://boxd.it/1NoM",
+    "source_url": "https://letterboxd.com/film/the-fall-2006/",
+    "tmdb_type": "movie",
+    "tmdb_id": 14784,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Guard",
+    "year": "2011",
+    "letterboxd_uri": "https://boxd.it/2eBS",
+    "source_url": "https://letterboxd.com/film/the-guard/",
+    "tmdb_type": "movie",
+    "tmdb_id": 67913,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Key",
+    "year": "1983",
+    "letterboxd_uri": "https://boxd.it/1pwM",
+    "source_url": "https://letterboxd.com/film/the-key-1983/",
+    "tmdb_type": "movie",
+    "tmdb_id": 28468,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Lighthouse",
+    "year": "2019",
+    "letterboxd_uri": "https://boxd.it/icFU",
+    "source_url": "https://letterboxd.com/film/the-lighthouse-2019/",
+    "tmdb_type": "movie",
+    "tmdb_id": 503919,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Odyssey",
+    "year": "2026",
+    "letterboxd_uri": "https://boxd.it/QFQU",
+    "source_url": "https://letterboxd.com/film/the-odyssey-2026/",
+    "tmdb_type": "movie",
+    "tmdb_id": 1368337,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Running Man",
+    "year": "1987",
+    "letterboxd_uri": "https://boxd.it/29q6",
+    "source_url": "https://letterboxd.com/film/the-running-man/",
+    "tmdb_type": "movie",
+    "tmdb_id": 865,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Testament of Dr. Mabuse",
+    "year": "1933",
+    "letterboxd_uri": "https://boxd.it/1Sia",
+    "source_url": "https://letterboxd.com/film/the-testament-of-dr-mabuse/",
+    "tmdb_type": "movie",
+    "tmdb_id": 12206,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Trial of Joan of Arc",
+    "year": "1962",
+    "letterboxd_uri": "https://boxd.it/HGe",
+    "source_url": "https://letterboxd.com/film/the-trial-of-joan-of-arc/",
+    "tmdb_type": "movie",
+    "tmdb_id": 48764,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "Three Colours: Blue",
+    "year": "1993",
+    "letterboxd_uri": "https://boxd.it/2b7K",
+    "source_url": "https://letterboxd.com/film/three-colours-blue/",
+    "tmdb_type": "movie",
+    "tmdb_id": 108,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "V for Vendetta",
+    "year": "2005",
+    "letterboxd_uri": "https://boxd.it/29Ik",
+    "source_url": "https://letterboxd.com/film/v-for-vendetta/",
+    "tmdb_type": "movie",
+    "tmdb_id": 752,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Raid",
+    "year": "2011",
+    "letterboxd_uri": "https://boxd.it/3hBy",
+    "source_url": "https://letterboxd.com/film/the-raid-2011/",
+    "tmdb_type": "movie",
+    "tmdb_id": 94329,
+    "checked_on": "2026-10-01"
+  },
+  {
+    "title": "The Sorrow and the Pity",
+    "year": "1969",
+    "letterboxd_uri": "https://boxd.it/NFgQ",
+    "source_url": "https://letterboxd.com/film/the-sorrow-and-the-pity-1969/",
+    "tmdb_type": "tv",
+    "tmdb_id": 128062,
+    "checked_on": "2026-10-01"
+  }
+]

@@ -164,3 +164,42 @@ time {
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+.cinema { overflow-wrap: anywhere; }
+.film-nav { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; margin: 0 0 2rem; }
+.film-nav a, .cinema .reviewed { color: var(--accent); }
+.cinema h2 { font-size: 1.1rem; margin-top: 2rem; }
+.cinema .muted, .cinema .unreviewed, .film-meta { color: #aaa; }
+.cinema .unreviewed { text-decoration-style: dotted; }
+.cinema a:hover { color: var(--accent); }
+.cinema a:focus-visible, .cinema input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.table-scroll { overflow-x: auto; }
+.cinema table { width: 100%; border-collapse: collapse; font-size: 0.88rem; overflow-wrap: normal; }
+.cinema th { text-align: left; font-weight: normal; color: var(--accent); white-space: nowrap; }
+.cinema td:last-child { white-space: nowrap; }
+#film-catalogue td:nth-child(2) { white-space: nowrap; }
+.cinema th, .cinema td { padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.cinema th:first-child, .cinema td:first-child { padding-left: 0; }
+.cinema time, .rating { white-space: nowrap; }
+.rating { color: var(--accent); font-size: 0.9em; }
+.review-list { list-style: none; padding: 0; }
+.review-list li { margin: 0.8rem 0; }
+.review-list time { display: inline-block; margin-right: 0.6rem; }
+.director-list { padding-left: 1.3rem; }
+.director-list li { margin: 0.35rem 0; }
+.film-footer { border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1rem; font-size: 0.8rem; color: var(--muted); }
+.film-filters { background: var(--panel); padding: 1rem; margin: 1rem 0; }
+.film-filters label { display: block; margin-bottom: 0.8rem; }
+.film-filters input[type=search] { display: block; width: 100%; padding: 0.6rem; margin-top: 0.4rem; background: var(--bg); color: var(--text); border: 1px solid #777; font: inherit; }
+#filter-count { font-size: 0.85rem; margin-bottom: 0; }
+.cinema [hidden] { display: none; }
+.cinema img { max-width: 100%; height: auto; }
+.cinema figure { margin: 1.5rem 0; }
+.cinema figcaption { color: #aaa; font-size: 0.85rem; }
+.cinema .tmdb-logo { width: 100px; margin-top: 1rem; }
+.spoiler-notice { border-left: 3px solid var(--accent); padding: 0.5rem 1rem; }
+.year-nav { line-height: 2; }
+@media (max-width: 720px) {
+  .cinema table { font-size: 0.8rem; }
+  .cinema th, .cinema td { padding: 0.65rem 0.3rem; }
+}

@@ -1,0 +1,20 @@
+{
+  "export_file": "letterboxd-tombardier-2026-10-01-19-02-utc.zip",
+  "export_sha256": "0480b3e2faa4ad9c1b839f46545992cc1e57f747c3c5a28d4f5f31543b979eba",
+  "scope": "Full watched catalogue excluding two user-specified entries. Unique exact normalized title/year matches via TMDB search; ambiguous entries resolved using Letterboxd TMDB hyperlinks. All live IDs checked via the TMDB details API. Original export titles and years retained.",
+  "excluded_entries": 2,
+  "watched_entries": 714,
+  "film_status_counts": {
+    "letterboxd_link_api_checked": 52,
+    "unique_exact_title_year": 661,
+    "tmdb_unavailable": 1
+  },
+  "review_entries": 263,
+  "review_film_join_counts": {
+    "unique_title_year": 263
+  },
+  "reviews_with_tmdb_mapping": 262,
+  "reviews_needing_subject_review": 0,
+  "diary_entries": 408,
+  "diary_entries_with_tmdb_mapping": 407
+}

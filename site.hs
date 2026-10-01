@@ -3,12 +3,28 @@
 import Data.Monoid ((<>))
 import Hakyll
 import System.FilePath (replaceExtension)
+import System.Process (callProcess)
 
 main :: IO ()
-main = hakyll $ do
+main = do
+  callProcess "python3" ["scripts/build-films.py"]
+  hakyll $ do
     match "css/*" $ do
         route idRoute
         compile compressCssCompiler
+
+    match ("images/**" .||. "js/*") $ do
+        route idRoute
+        compile copyFileCompiler
+
+    match "generated/**.md" $ do
+        route $ customRoute $ \identifier ->
+            replaceExtension (drop (length ("generated/" :: String)) (toFilePath identifier)) "html"
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/film-section.html" siteCtx
+                >>= loadAndApplyTemplate "templates/default.html" siteCtx
+                >>= relativizeUrls
 
     match imagePattern $ do
         route idRoute

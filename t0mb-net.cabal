@@ -9,5 +9,6 @@ executable site
       base >= 4.14 && < 5
     , hakyll
     , filepath
+    , process
   default-language: Haskell2010
   ghc-options: -Wall -threaded
