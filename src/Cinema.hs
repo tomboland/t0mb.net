@@ -123,6 +123,7 @@ validate c = do
       watches = M.fromList [(str "id" v,str "film" v) | v <- viewings c]
   mapM_ (\f -> do
     unless (safeSlug $ str "slug" f) $ fail "Invalid film slug"
+    unless (get "liked" f `elem` [Null,Bool True,Bool False]) $ fail "liked must be true or false"
     validRating f) (films c)
   mapM_ (\v -> do
     unless (S.member (str "film" v) ids) $ fail "Viewing refers to missing film"
@@ -202,7 +203,7 @@ filmFor c key = fromMaybe (error "Unknown film") $ M.lookup key $ M.fromList [(s
 reviewUrl :: Cinema -> Value -> String
 reviewUrl c r = filmUrl (filmFor c $ str "film" r) ++ "reviews/" ++ str "id" r ++ "/"
 reviewSummary :: Cinema -> Value -> Value
-reviewSummary c r = set [("url",val $ reviewUrl c r),("thumbnail",thumbnail c $ filmFor c $ str "film" r)] r
+reviewSummary c r = set [("liked",get "liked" $ filmFor c $ str "film" r),("url",val $ reviewUrl c r),("thumbnail",thumbnail c $ filmFor c $ str "film" r)] r
 ownReviews :: Cinema -> Value -> [Value]
 ownReviews c f = filter ((==str "id" f) . str "film") $ latestReviews c
 filmSummary :: Cinema -> Value -> Value

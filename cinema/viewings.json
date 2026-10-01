@@ -3262,5 +3262,19 @@
     "rating": null,
     "rewatch": false,
     "letterboxd_url": "https://boxd.it/gxCzr3"
+  },
+  {
+    "id": "local-7130cd390dfb",
+    "film": "lb-27Gw",
+    "date": "2025-06-06",
+    "rating": null,
+    "rewatch": false
+  },
+  {
+    "id": "local-41fce70d06dd",
+    "film": "local-63437efd7de7",
+    "date": "2025-06-06",
+    "rating": null,
+    "rewatch": false
   }
 ]

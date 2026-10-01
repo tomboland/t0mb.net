@@ -1,5 +1,5 @@
 $partial("templates/cinema/image.html")$
-<h1>$filmTitle$ <span class="muted">($year$)</span></h1><p class="film-meta">$partial("templates/cinema/director-links.html")$$if(runtime)$ · $runtime$ minutes$endif$</p>
+<h1>$filmTitle$ <span class="muted">($year$)</span> $partial("templates/cinema/like.html")$</h1><p class="film-meta">$partial("templates/cinema/director-links.html")$$if(runtime)$ · $runtime$ minutes$endif$</p>
 $partial("templates/cinema/film-tags.html")$$if(originalTitle)$<p class="muted">$originalTitle$</p>$endif$
 <h2>Writing</h2>$if(reviews)$$partial("templates/cinema/review-list.html")$$else$<p class="muted">Watched; no review yet.</p>$endif$
 <h2>Viewing history</h2>$if(viewings)$$partial("templates/cinema/viewings.html")$$else$<p class="muted">Watched, date not recorded.</p>$endif$

@@ -206,6 +206,53 @@ class CinemaTests(unittest.TestCase):
         self.assertIn('Updated <strong>writing</strong>', pages['films/local-film-2000/reviews/review/index.html'])
         self.assertIn('Updated <strong>writing</strong>', ET.parse(self.root / '_site/rss.xml').findtext('./channel/item/description'))
 
+    def test_likes_across_pages_and_incremental_updates(self):
+        self.review('liked-review')
+        self.films[0]['liked'] = True
+        self.films[0]['tags'] = ['favourite']
+        self.write('films', self.films)
+        pages = self.build()
+        routes = ['index.html', 'films/index.html', 'films/diary/index.html',
+                  'films/reviews/index.html', 'films/local-film-2000/index.html',
+                  'films/local-film-2000/reviews/liked-review/index.html',
+                  'directors/someone-local-person/index.html',
+                  tag_url('favourite').lstrip('/') + 'index.html']
+        for route in routes:
+            self.assertIn('title="Liked film">♥</span>', pages[route], route)
+        self.films[0]['liked'] = False
+        self.write('films', self.films)
+        pages = self.build()
+        for route in routes:
+            self.assertIn('title="Film not marked as liked">♡</span>', pages[route], route)
+            self.assertNotIn('title="Liked film">♥</span>', pages[route], route)
+        self.assertIn('favourite', pages['films/local-film-2000/index.html'])
+        self.films[0]['liked'] = 'false'
+        self.write('films', self.films)
+        with self.assertRaisesRegex(ValueError, 'liked must be true or false'):
+            self.build()
+
+    def test_like_import_preserves_existing_data(self):
+        import zipfile
+        spec = importlib.util.spec_from_file_location('importer', ROOT / 'scripts/import-letterboxd.py')
+        importer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(importer)
+        export = self.root / 'export.zip'
+        with zipfile.ZipFile(export, 'w') as archive:
+            archive.writestr('likes/films.csv', 'Name,Letterboxd URI\nFilm,https://boxd.it/liked\nOutside,https://boxd.it/outside\n')
+            archive.writestr('likes/reviews.csv', 'Content\nhttps://boxd.it/unliked\n')
+        records = [dict(self.films[0], id='liked', letterboxd_url='https://boxd.it/liked'),
+                   dict(self.films[0], id='unliked', letterboxd_url='https://boxd.it/unliked'),
+                   dict(self.films[0], id='edited', letterboxd_url='https://boxd.it/liked', liked=False),
+                   dict(self.films[0], id='manual')]
+        self.write('films', records)
+        likes = importer.read_likes(export)
+        path = self.data / 'films.json'
+        importer.import_likes(path, likes)
+        result = json.loads(path.read_text())
+        self.assertEqual(result, [dict(records[0], liked=True), dict(records[1], liked=False), records[2], records[3]])
+        importer.import_likes(path, likes)
+        self.assertEqual(json.loads(path.read_text()), result)
+
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
         spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))

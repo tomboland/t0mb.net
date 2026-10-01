@@ -22,11 +22,37 @@ def write_review(path, metadata, body):
     path.write_text('---\n' + header + '\n---\n\n' + body + '\n')
 
 
+def read_likes(export):
+    with zipfile.ZipFile(export) as archive:
+        rows = csv.DictReader(io.StringIO(archive.read('likes/films.csv').decode('utf-8-sig')))
+        return {row['Letterboxd URI'] for row in rows}
+
+
+def import_likes(path, liked):
+    """Backfill only missing flags; subsequent local edits remain authoritative."""
+    films = json.loads(path.read_text())
+    added = 0
+    for film in films:
+        if 'liked' not in film and film.get('letterboxd_url'):
+            film['liked'] = film['letterboxd_url'] in liked
+            added += 1
+    path.write_text(json.dumps(films, ensure_ascii=False, indent=2) + '\n')
+    known = {film.get('letterboxd_url') for film in films}
+    print(f'Added like flags to {added} films; {len(liked & known)} exported likes match the catalogue.')
+    for uri in sorted(liked - known):
+        print(f'Liked film outside the catalogue (not added): {uri}')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('export', type=Path)
+    parser.add_argument('--likes-only', action='store_true', help='Backfill missing film like flags, preserving all existing data')
     args = parser.parse_args()
+    liked = read_likes(args.export)
     root = Path('cinema')
+    if args.likes_only:
+        import_likes(root / 'films.json', liked)
+        return
     if (root / 'films.json').exists() or (root / 'reviews').exists():
         raise SystemExit('Cinema content already exists; refusing to overwrite local edits.')
     root.mkdir(exist_ok=True)
@@ -53,7 +79,7 @@ def main():
             route += '-' + film_id
         used_slugs.add(route)
         film = {'id': film_id, 'slug': route, 'title': row['Name'], 'year': row['Year'],
-                'watched': True, 'letterboxd_url': uri, 'directors': match.get('directors', []),
+                'watched': True, 'liked': uri in liked, 'letterboxd_url': uri, 'directors': match.get('directors', []),
                 'rating': ratings.get(uri) or None}
         if match:
             film['tmdb'] = {'type': match['tmdb_type'], 'id': match['tmdb_id']}

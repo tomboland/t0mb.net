@@ -30,6 +30,23 @@ even if featured. Recent writing, the writing archive and RSS remain chronologic
 Remove the field or set `featured: false` to unfeature a review. The flag belongs
 to the individual review, so repeat reviews of one film can be selected separately.
 
+## Like films
+
+Set `"liked": true` or `"liked": false` on a film in `films.json`. Film pages
+and listings show ♥ for liked films and ♡ for films not marked as liked.
+The flag belongs to the film, independently of ratings, reviews and tags;
+`favourite` remains a separate, more selective collection. Missing flags show ♡.
+
+The original Letterboxd export stores film likes in `likes/films.csv`.
+To backfill older imported records without overwriting any existing flags:
+
+```sh
+python3 scripts/import-letterboxd.py /path/to/letterboxd-export.zip --likes-only
+```
+
+This matches exact Letterboxd film URLs and reports likes outside the catalogue
+without adding those films. Subsequent local changes remain authoritative.
+
 ## Tag films
 
 Tags belong to films, independently of ratings and featured reviews. Use any

@@ -252,3 +252,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 .film-tags a { display: inline-block; padding: 0.15rem 0.5rem; border: 1px solid var(--border); border-radius: 3px; color: var(--accent); font-size: 0.8rem; overflow-wrap: anywhere; }
 .tag-index { list-style: none; padding: 0; }
 .tag-index li { margin: 0.8rem 0; }
+
+/* Film likes are independent of ratings and favourite tags. */
+.cinema .film-like { min-width: 0; flex: 0 0 auto; color: var(--muted); font-size: 1rem; font-weight: normal; line-height: 1; }
+.cinema .film-like.is-liked { color: var(--accent); }
