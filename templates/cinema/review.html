@@ -1,0 +1,7 @@
+<p>$for(film)$<a href="$url$">← Film details: $title$ ($year$)</a>$endfor$</p>
+$partial("templates/cinema/image.html")$<h1>$title$</h1><p class="film-meta">Published <time datetime="$date$">$date$</time>$if(watched_date)$ · Watched $watched_date$$endif$ $partial("templates/cinema/rating.html")$</p>
+$if(spoilers)$<p class="spoiler-notice">Contains spoilers.</p>$endif$
+$body$
+<hr><p>$for(film)$<a href="$url$">Film details and viewing history</a>$endfor$</p>
+$if(otherReviews)$<h2>More of my writing on this film</h2><ul class="review-list">$for(otherReviews)$$partial("templates/cinema/review-entry.html")$$endfor$</ul>$endif$
+$if(letterboxd_url)$<p><a href="$letterboxd_url$">Also on Letterboxd</a></p>$endif$

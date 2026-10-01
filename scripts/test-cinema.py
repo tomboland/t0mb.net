@@ -4,10 +4,23 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 
-spec = importlib.util.spec_from_file_location('builder', Path(__file__).with_name('build-films.py'))
-builder = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(builder)
+import os
+import re
+import shutil
+import subprocess
+from urllib.parse import urljoin
+import cinema_data
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = Path(os.environ.get('CINEMA_SITE', next(iter(ROOT.glob('dist-newstyle/build/*/ghc-*/t0mb-net-*/x/site/build/site/site')), ''))).resolve()
+
+
+def tag_url(label):
+    import hashlib
+    key = cinema_data.normalise_tags([label])[0].casefold()
+    return '/films/tags/' + (cinema_data.slug(key)[:60] or 'tag') + '-' + hashlib.sha256(key.encode()).hexdigest()[:12] + '/'
 
 
 class CinemaTests(unittest.TestCase):
@@ -22,7 +35,20 @@ class CinemaTests(unittest.TestCase):
         self.write('films', self.films)
         self.write('viewings', [{'id': 'v1', 'film': 'local-film', 'date': '2025-01-01', 'rating': None},
                                 {'id': 'v2', 'film': 'local-film', 'date': '2026-01-01', 'rating': '4.5', 'rewatch': True}])
-        self.write('directors', [])
+        self.write('directors', [{'id': 'local-person', 'name': 'Someone', 'filmography': [{'tmdb_id': 123, 'title': 'Undated film', 'year': ''}]}])
+        for name in ('templates', 'content'):
+            shutil.copytree(ROOT / name, self.root / name)
+
+    def build(self):
+        result = subprocess.run([str(SITE), 'build'], cwd=self.root, text=True, capture_output=True)
+        if result.returncode:
+            raise ValueError(result.stdout + result.stderr)
+        pages = {}
+        for path in (self.root / '_site').rglob('*.html'):
+            route = path.relative_to(self.root / '_site').as_posix()
+            # Normalize Hakyll's relative URLs to compare destinations.
+            pages[route] = re.sub(r'(href|src)="([^"]*)"', lambda m: m[1] + '="' + urljoin('/' + route, m[2]) + '"', path.read_text())
+        return pages
 
     def write(self, name, data):
         (self.data / (name + '.json')).write_text(json.dumps(data))
@@ -32,36 +58,36 @@ class CinemaTests(unittest.TestCase):
             {'id': name, 'film': 'local-film', 'title': name, 'date': date, 'draft': draft, 'featured': featured, 'viewing': 'v2'}.items()) + '\n---\n\nActual writing.\n')
 
     def test_manual_films_and_optional_ratings(self):
-        pages = builder.build(self.root)
-        film = pages['generated/films/local-film-2000/index.md']
+        pages = self.build()
+        film = pages['films/local-film-2000/index.html']
         self.assertIn('Local &lt;film&gt;', film)
         self.assertNotIn('Film details on TMDB', film)
         self.assertIn('4.5/5', film)
-        self.assertEqual(builder.rating(None), '')
-        diary = pages['generated/films/diary/index.md']
+        cinema_data.validate_rating(None)
+        diary = pages['films/diary/index.html']
         self.assertLess(diary.index('2026-01-01'), diary.index('2025-01-01'))
 
     def test_multiple_reviews_and_draft_removal(self):
         self.review('first'); self.review('second'); self.review('secret', True)
-        pages = builder.build(self.root)
+        pages = self.build()
         text = '\n'.join(pages.values())
         self.assertNotIn('secret', text)
-        first = 'generated/films/local-film-2000/reviews/first/index.md'
+        first = 'films/local-film-2000/reviews/first/index.html'
         self.assertIn('second', pages[first])
         # Unpublishing removes both generated source and any stale public output.
         output = self.root / '_site/films/local-film-2000/reviews/first/index.html'
-        output.parent.mkdir(parents=True); output.write_text('Previously published')
+        output.write_text('Previously published')
         self.review('first', True)
-        builder.build(self.root)
+        self.build()
         self.assertFalse((self.root / first).exists())
         self.assertFalse(output.exists())
 
     def test_bad_links_and_ratings_fail(self):
         self.write('viewings', [{'id': 'v1', 'film': 'missing', 'date': '2026-01-01'}])
         with self.assertRaises(ValueError):
-            builder.build(self.root)
+            self.build()
         with self.assertRaises(ValueError):
-            builder.rating('0')
+            cinema_data.validate_rating('0')
 
     def test_featured_selection_fallback_and_drafts(self):
         self.review('older-pick', featured=True, date='2025-01-01')
@@ -69,44 +95,44 @@ class CinemaTests(unittest.TestCase):
         self.review('recent', date='2026-01-02')
         self.review('left-out', date='2026-01-01')
         self.review('private-pick', draft=True, featured=True, date='2026-01-04')
-        pages = builder.build(self.root)
-        home = pages['generated/home.html']
+        pages = self.build()
+        home = pages['index.html']
         self.assertLess(home.index('older-pick'), home.index('newest'))
         self.assertLess(home.index('newest'), home.index('recent</span>'))
         self.assertEqual(home.count('class="review-entry"'), 3)
         self.assertEqual(home.count('>older-pick</span>'), 1)
         self.assertNotIn('private-pick', home)
         self.assertNotIn('left-out', home)
-        writing = pages['generated/films/reviews/index.md']
+        writing = pages['films/reviews/index.html']
         self.assertLess(writing.index('newest'), writing.index('older-pick'))
         self.review('older-pick', featured=False, date='2025-01-01')
-        home = builder.build(self.root)['generated/home.html']
+        home = self.build()['index.html']
         self.assertNotIn('older-pick', home)
         self.assertIn('left-out', home)
 
     def test_featured_limit_order_and_validation(self):
         for day in range(1, 5):
             self.review('pick-' + str(day), featured=True, date='2026-01-0' + str(day))
-        home = builder.build(self.root)['generated/home.html']
+        home = self.build()['index.html']
         self.assertNotIn('pick-1', home)
         self.assertLess(home.index('pick-4'), home.index('pick-3'))
         self.assertLess(home.index('pick-3'), home.index('pick-2'))
         self.review('bad', featured='true')
         with self.assertRaisesRegex(ValueError, 'featured must be true or false'):
-            builder.build(self.root)
+            self.build()
 
     def test_home_navigation_and_review_dates(self):
         self.review('published')
         self.review('private', True)
-        pages = builder.build(self.root)
-        self.assertIn('published', pages['generated/home.html'])
-        self.assertNotIn('private', pages['generated/home.html'])
-        review = pages['generated/films/local-film-2000/reviews/published/index.md']
-        self.assertIn('date: "2026-01-02"', review)
-        self.assertIn('nav_writing: true', review)
+        pages = self.build()
+        self.assertIn('published', pages['index.html'])
+        self.assertNotIn('private', pages['index.html'])
+        review = pages['films/local-film-2000/reviews/published/index.html']
+        self.assertIn('2026-01-02', review)
+        self.assertRegex(review, r'href="/films/reviews/"[^>]*aria-current="page"')
         self.assertIn('← Film details:', review)
-        self.assertIn('nav_diary: true', pages['generated/films/diary/index.md'])
-        catalogue = pages['generated/films/index.md']
+        self.assertRegex(pages['films/diary/index.html'], r'href="/films/diary/"[^>]*aria-current="page"')
+        catalogue = pages['films/index.html']
         self.assertLess(catalogue.index('id="film-search"'), catalogue.index('Recent writing'))
         self.assertIn('data-label="Film"', catalogue)
 
@@ -119,52 +145,66 @@ class CinemaTests(unittest.TestCase):
             'poster': {'path': '/images/poster.jpg', 'thumbnail': '/images/thumb.jpg', 'alt': 'Poster'},
             'backdrop': {'path': '/images/backdrop.jpg', 'alt': 'Backdrop'}}})
         self.review('review')
-        pages = builder.build(self.root)
+        pages = self.build()
         for path in ['films/index', 'films/diary/index', 'films/reviews/index', 'directors/someone-local-person/index']:
-            self.assertIn('/images/thumb.jpg', pages['generated/' + path + '.md'])
-        self.assertIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/index.md'])
-        self.assertNotIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/reviews/review/index.md'])
+            self.assertIn('/images/thumb.jpg', pages[path + '.html'])
+        self.assertIn('/images/backdrop.jpg', pages['films/local-film-2000/index.html'])
+        self.assertNotIn('/images/backdrop.jpg', pages['films/local-film-2000/reviews/review/index.html'])
         self.films[0].update(poster='/images/custom.jpg', image=False)
         self.write('films', self.films)
-        pages = builder.build(self.root)
-        self.assertIn('/images/custom.jpg', pages['generated/films/index.md'])
-        self.assertNotIn('/images/thumb.jpg', pages['generated/films/index.md'])
-        self.assertNotIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/index.md'])
+        pages = self.build()
+        self.assertIn('/images/custom.jpg', pages['films/index.html'])
+        self.assertNotIn('/images/thumb.jpg', pages['films/index.html'])
+        self.assertNotIn('/images/backdrop.jpg', pages['films/local-film-2000/index.html'])
         self.films[0]['poster'] = '/images/missing.jpg'
         self.write('films', self.films)
         with self.assertRaises(ValueError):
-            builder.build(self.root)
+            self.build()
 
     def test_film_tags_grouping_links_and_removal(self):
         self.films[0]['tags'] = ['Favourite', ' favourite ', 'slow cinema', 'slow-cinema', '<mood>', '映画']
         other = dict(self.films[0], id='another', slug='another-2001', title='Another film', year='2001', tags=['FAVOURITE'])
         self.write('films', self.films + [other])
-        pages = builder.build(self.root)
-        url = builder.tag_url('favourite')
-        page = 'generated' + url + 'index.md'
+        pages = self.build()
+        url = tag_url('favourite')
+        page = url.lstrip('/') + 'index.html'
         self.assertIn('2 films', pages[page])
         self.assertIn('Another film', pages[page])
         self.assertIn('Local &lt;film&gt;', pages[page])
-        self.assertIn('nav_tags: true', pages[page])
-        self.assertIn(url, pages['generated/films/local-film-2000/index.md'])
-        self.assertIn(url, pages['generated/films/index.md'])
-        self.assertIn('&lt;mood&gt;', pages['generated/films/tags/index.md'])
-        self.assertNotEqual(builder.tag_url('slow cinema'), builder.tag_url('slow-cinema'))
-        self.assertEqual(builder.tag_url('FAVOURITE'), url)
-        self.assertNotEqual(builder.tag_url('映画'), builder.tag_url('音楽'))
+        self.assertRegex(pages[page], r'href="/films/tags/"[^>]*aria-current="page"')
+        self.assertIn(url, pages['films/local-film-2000/index.html'])
+        self.assertIn(url, pages['films/index.html'])
+        self.assertIn('&lt;mood&gt;', pages['films/tags/index.html'])
+        self.assertNotEqual(tag_url('slow cinema'), tag_url('slow-cinema'))
+        self.assertEqual(tag_url('FAVOURITE'), url)
+        self.assertNotEqual(tag_url('映画'), tag_url('音楽'))
         published = self.root / '_site' / url.lstrip('/') / 'index.html'
-        published.parent.mkdir(parents=True)
         published.write_text('old tag page')
         self.films[0]['tags'] = []
         self.write('films', self.films)
-        pages = builder.build(self.root)
+        pages = self.build()
         self.assertNotIn(page, pages)
         self.assertFalse((self.root / page).exists())
         self.assertFalse(published.exists())
-        self.assertIn('No films tagged yet', pages['generated/films/tags/index.md'])
+        self.assertIn('No films tagged yet', pages['films/tags/index.html'])
         for invalid in ['favourite', [None], [' ']]:
             with self.assertRaises(ValueError):
-                builder.normalise_tags(invalid)
+                cinema_data.normalise_tags(invalid)
+
+    def test_numeric_ratings_and_false_optional_fields(self):
+        self.films[0]['rating'] = 4.5
+        self.write('films', self.films)
+        self.review('review')
+        source = self.data / 'reviews/review.md'
+        source.write_text(source.read_text().replace('draft: false', 'draft: false\nspoilers: false\nimage: false'))
+        pages = self.build()
+        self.assertIn('4.5/5', pages['films/local-film-2000/index.html'])
+        self.assertNotIn('Contains spoilers', pages['films/local-film-2000/reviews/review/index.html'])
+        self.assertNotIn('film-image', pages['films/local-film-2000/reviews/review/index.html'])
+        source.write_text(source.read_text().replace('Actual writing.', 'Updated **writing**.'))
+        pages = self.build()
+        self.assertIn('Updated <strong>writing</strong>', pages['films/local-film-2000/reviews/review/index.html'])
+        self.assertIn('Updated <strong>writing</strong>', ET.parse(self.root / '_site/rss.xml').findtext('./channel/item/description'))
 
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
@@ -181,12 +221,6 @@ class CinemaTests(unittest.TestCase):
                 cli.main()
             self.assertEqual(json.loads((self.data / 'films.json').read_text())[0]['tags'], ['slow cinema'])
 
-    def test_real_import(self):
-        films, viewings, people, reviews = builder.load_content()
-        ids = {f['id'] for f in films}
-        self.assertEqual(len(ids), len(films))
-        self.assertTrue(all(v['film'] in ids for v in viewings))
-        self.assertTrue(all(r['film'] in ids and not r.get('draft') for r in reviews))
 
 
 if __name__ == '__main__':

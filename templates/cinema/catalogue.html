@@ -1,0 +1,5 @@
+<h1>Films</h1><p>My viewing history, reviews and longer thoughts on films.</p><p class="muted">$filmCount$ titles · $viewingCount$ logged viewings · $reviewCount$ reviews</p>
+<div class="film-filters" hidden><label>Find a film <input type="search" id="film-search" placeholder="Title, year, director or tag"></label><label><input type="checkbox" id="reviewed-only"> With a review</label><p id="filter-count" role="status" aria-live="polite"></p></div>
+<p><a href="#catalogue">Browse catalogue ↓</a></p><section id="recent-writing"><h2>Recent writing</h2>
+$if(recent)$<ul class="review-list">$for(recent)$$partial("templates/cinema/review-entry.html")$$endfor$</ul>$endif$
+<p><a href="/films/reviews/">All reviews</a></p></section><h2 id="catalogue">Watched catalogue</h2><div id="film-catalogue">$partial("templates/cinema/film-table.html")$</div><script src="/js/films.js" defer></script>

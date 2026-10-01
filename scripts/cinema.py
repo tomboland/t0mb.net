@@ -16,8 +16,8 @@ def module(name, filename):
     return result
 
 
-builder = module('builder', 'build-films.py')
-ROOT = builder.ROOT / 'cinema'
+import cinema_data as helpers
+ROOT = helpers.ROOT / 'cinema'
 
 
 def save(name, value):
@@ -73,10 +73,10 @@ def main():
                 people.append(dict(person, filmography=list(movies.values())))
             save('directors', people)
         else:
-            film['directors'] = [{'id': 'local-' + builder.slug(name), 'name': name} for name in args.director]
+            film['directors'] = [{'id': 'local-' + helpers.slug(name), 'name': name} for name in args.director]
         if not film['title'] or not film['year']:
             parser.error('Provide --title and --year, or use a TMDB entry containing them')
-        film['slug'] = builder.slug(film['title'] + '-' + film['year'])
+        film['slug'] = helpers.slug(film['title'] + '-' + film['year'])
         if any(f['slug'] == film['slug'] for f in films):
             parser.error('That title/year slug already exists; edit films.json for a distinct version')
         films.append(film)
@@ -88,21 +88,21 @@ def main():
         parser.error('Film not found; use its ID or slug from cinema/films.json')
     if args.command == 'tag':
         try:
-            current = builder.normalise_tags(film.get('tags', []))
-            requested = builder.normalise_tags(args.tags)
+            current = helpers.normalise_tags(film.get('tags', []))
+            requested = helpers.normalise_tags(args.tags)
         except ValueError as error:
             parser.error(str(error))
         if args.remove:
             removing = {tag.casefold() for tag in requested}
             film['tags'] = [tag for tag in current if tag.casefold() not in removing]
         else:
-            film['tags'] = builder.normalise_tags(current + requested)
+            film['tags'] = helpers.normalise_tags(current + requested)
         save('films', films)
         print(film['title'] + ': ' + (', '.join(film['tags']) or 'no tags'))
         return
     datetime.date.fromisoformat(args.date)
     if args.command == 'watch':
-        builder.rating(args.rating)
+        helpers.validate_rating(args.rating)
         viewing = {'id': 'local-' + uuid.uuid4().hex[:12], 'film': film['id'], 'date': args.date,
                    'rating': args.rating, 'rewatch': args.rewatch}
         viewings.append(viewing)
@@ -119,7 +119,7 @@ def main():
         path = review_path(ROOT / 'reviews', film['slug'], args.date)
         header = '\n'.join(f'{key}: {json.dumps(value, ensure_ascii=False)}' for key, value in metadata.items())
         path.write_text('---\n' + header + '\n---\n\n<!-- Write here; set draft to false when ready. -->\n')
-        print(path.relative_to(builder.ROOT))
+        print(path.relative_to(helpers.ROOT))
 
 
 if __name__ == '__main__':

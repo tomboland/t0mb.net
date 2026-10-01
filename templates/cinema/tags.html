@@ -1,0 +1,1 @@
+<h1>Film tags</h1><p>Browse films by the labels I’ve given them.</p>$if(tags)$<ul class="tag-index">$for(tags)$<li><a href="$url$">$name$</a> <span class="muted">$count$ film$if(plural)$s$endif$</span></li>$endfor$</ul>$else$<p class="muted">No films tagged yet.</p><p><a href="/films/">Browse all films</a></p>$endif$

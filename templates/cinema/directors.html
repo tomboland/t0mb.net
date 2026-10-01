@@ -1,0 +1,3 @@
+<h1>Directors</h1><div class="film-filters" id="director-controls" hidden><label>Find a director <input type="search" id="director-search" placeholder="Director’s name"></label><p id="director-count" role="status" aria-live="polite"></p></div>
+$if(letters)$<nav class="year-nav" aria-label="Directors by first name">$for(letters)$<a href="#letter-$letter$">$letter$</a>$sep$ · $endfor$</nav>$endif$
+<ul class="director-list">$if(directors)$$for(directors)$<li$if(initial)$ id="letter-$initial$"$endif$><a href="$url$">$name$</a> <span class="muted">$watchedCount$ watched</span></li>$endfor$$endif$</ul><script src="/js/films.js" defer></script>

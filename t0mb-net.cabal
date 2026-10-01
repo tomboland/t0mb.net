@@ -5,10 +5,20 @@ build-type: Simple
 
 executable site
   main-is: site.hs
+  hs-source-dirs: ., src
+  other-modules: Cinema
   build-depends:
       base >= 4.14 && < 5
     , hakyll
     , filepath
-    , process
+    , scientific, aeson
+    , bytestring
+    , containers
+    , crypton
+    , directory
+    , text
+    , time
+    , unicode-transforms
+    , yaml
   default-language: Haskell2010
   ghc-options: -Wall -threaded

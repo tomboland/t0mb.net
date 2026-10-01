@@ -1,0 +1,3 @@
+<div class="table-scroll"><table role="table"><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Film</th><th scope="col" role="columnheader">Year</th><th scope="col" role="columnheader">Director</th><th scope="col" role="columnheader">Writing</th></tr></thead><tbody role="rowgroup">
+$if(films)$$for(films)$<tr role="row" data-reviewed="$reviewedText$"><td role="cell" data-label="Film">$partial("templates/cinema/label.html")$$partial("templates/cinema/film-tags.html")$</td><td role="cell" data-label="Year">$year$</td><td role="cell" data-label="Director">$partial("templates/cinema/director-links.html")$</td><td role="cell" data-label="Writing" class="muted">$reviewStatus$</td></tr>$endfor$$endif$
+</tbody></table></div>

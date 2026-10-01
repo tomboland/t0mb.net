@@ -1,0 +1,3 @@
+<h1>Film diary</h1><p>Newest viewings first. Ratings appear only when I gave one.</p>
+$if(years)$<nav aria-label="Diary years" class="year-nav">$for(years)$<a href="#year-$year$">$year$</a>$sep$ · $endfor$</nav>
+$for(years)$<h2 id="year-$year$">$year$</h2>$partial("templates/cinema/viewings.html")$$endfor$$endif$

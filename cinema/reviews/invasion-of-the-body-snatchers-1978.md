@@ -4,7 +4,7 @@ film: "lb-1SWk"
 title: "Invasion of the Body Snatchers"
 date: "2026-09-26"
 watched_date: "2026-09-25"
-rating: null
+rating: "5"
 letterboxd_url: "https://boxd.it/guhDh3"
 draft: false
 featured: true

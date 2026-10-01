@@ -53,7 +53,7 @@ Commit your changes, then run `bash deploy.sh` to build and publish them.
 
 ## Build and preview
 
-From the repository root (Python 3 and the existing Haskell toolchain required):
+From the repository root (using the existing Haskell toolchain):
 
 ```sh
 export PATH="$HOME/.ghcup/bin:$PATH"
@@ -62,11 +62,18 @@ cabal exec site -- build
 python3 -m http.server 8000 --directory _site
 ```
 
-Open `http://localhost:8000/films/`. Every `site build` regenerates the film
-section from these files before Hakyll runs. It requires no API key, Pandoc
-executable or network connection. `generated/` and `_site/` are disposable
-build outputs: never edit them. For Hakyll's watch mode, run
-`python3 scripts/build-films.py` after changing cinema source files.
+Open `http://localhost:8000/films/`. Hakyll reads the cinema JSON and review
+Markdown directly; no API key, separate Pandoc executable or network is needed.
+`_site/` is disposable build output: never edit it.
+
+Presentation lives in `templates/cinema/`, relationships and template contexts
+in `src/Cinema.hs`, and routes in `site.hs`. Edit the homepage introduction in
+`content/home.md` and the cinema information page in `content/films-about.md`.
+Python scripts only manage/import source data and artwork. `cabal exec site --
+watch` also picks up cinema changes, including new film and tag pages.
+
+Run `python3 scripts/test-cinema.py` after compiling to check cinema rendering
+against isolated fixtures, including incremental updates and draft removal.
 
 ## Add a film, viewing or review
 
