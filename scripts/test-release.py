@@ -3,6 +3,7 @@
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -35,12 +36,16 @@ with tempfile.TemporaryDirectory() as tmp:
 
     publish('first')
     run('git', 'clone', str(remote), str(reader))
+    os.setxattr(reader / 'site', 'user.release-test', b'checkout directory attribute')
+    os.setxattr(reader / 'site/index.html', 'user.release-test', b'checkout file attribute')
     (web / 'public').mkdir(parents=True)
     (web / 'public/index.html').write_text('legacy')
     release.deploy(reader, web)
     assert (web / 'previous/index.html').read_text() == 'legacy'
     assert (web / 'public/index.html').read_text() == 'first'
     first = (web / 'public').resolve()
+    assert 'user.release-test' not in os.listxattr(first)
+    assert 'user.release-test' not in os.listxattr(first / 'index.html')
     release.deploy(reader, web)
     publish('second')
     release.deploy(reader, web)

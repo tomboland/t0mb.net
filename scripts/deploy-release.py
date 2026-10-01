@@ -67,7 +67,16 @@ def deploy(repo, root):
     if not destination.exists():
         with tempfile.TemporaryDirectory(prefix='.release-', dir=releases) as tmp:
             staged = Path(tmp) / 'site'
-            shutil.copytree(repo / 'site', staged)
+            # copytree/copystat also copy SELinux xattrs from the home checkout.
+            # Create fresh files here so they inherit the web root's container label.
+            staged.mkdir(mode=0o755)
+            for source in (repo / 'site').rglob('*'):
+                target = staged / source.relative_to(repo / 'site')
+                if source.is_dir():
+                    target.mkdir(parents=True, exist_ok=True)
+                else:
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(source, target)
             for p in staged.rglob('*'):
                 p.chmod(0o755 if p.is_dir() else 0o644)
             staged.chmod(0o755)
