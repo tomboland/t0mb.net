@@ -81,7 +81,10 @@
       "id": 25253
     },
     "runtime": 111,
-    "original_title": "Les Tontons flingueurs"
+    "original_title": "Les Tontons flingueurs",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1Tuw",
@@ -186,7 +189,10 @@
       "id": 679
     },
     "runtime": 137,
-    "original_title": "Aliens"
+    "original_title": "Aliens",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29Xu",
@@ -207,7 +213,10 @@
       "id": 630
     },
     "runtime": 102,
-    "original_title": "The Wizard of Oz"
+    "original_title": "The Wizard of Oz",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-25Te",
@@ -505,7 +514,10 @@
       "id": 149
     },
     "runtime": 124,
-    "original_title": "AKIRA"
+    "original_title": "AKIRA",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2aNK",
@@ -778,7 +790,10 @@
       "id": 78
     },
     "runtime": 118,
-    "original_title": "Blade Runner"
+    "original_title": "Blade Runner",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2axs",
@@ -1034,7 +1049,10 @@
       "id": 103
     },
     "runtime": 114,
-    "original_title": "Taxi Driver"
+    "original_title": "Taxi Driver",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2cCk",
@@ -1076,7 +1094,10 @@
       "id": 280
     },
     "runtime": 137,
-    "original_title": "Terminator 2: Judgment Day"
+    "original_title": "Terminator 2: Judgment Day",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-27Vw",
@@ -1160,7 +1181,10 @@
       "id": 28
     },
     "runtime": 147,
-    "original_title": "Apocalypse Now"
+    "original_title": "Apocalypse Now",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1WwA",
@@ -1244,7 +1268,10 @@
       "id": 9323
     },
     "runtime": 83,
-    "original_title": "GHOST IN THE SHELL / 攻殻機動隊"
+    "original_title": "GHOST IN THE SHELL / 攻殻機動隊",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-18YE",
@@ -1307,7 +1334,10 @@
       "id": 147
     },
     "runtime": 99,
-    "original_title": "Les Quatre Cents Coups"
+    "original_title": "Les Quatre Cents Coups",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29zM",
@@ -1399,7 +1429,10 @@
       "id": 578
     },
     "runtime": 124,
-    "original_title": "Jaws"
+    "original_title": "Jaws",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29R2",
@@ -1777,7 +1810,10 @@
       "id": 1092
     },
     "runtime": 105,
-    "original_title": "The Third Man"
+    "original_title": "The Third Man",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29Es",
@@ -2008,7 +2044,10 @@
       "id": 37094
     },
     "runtime": 113,
-    "original_title": "Falling Down"
+    "original_title": "Falling Down",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1VGk",
@@ -2218,7 +2257,10 @@
       "id": 780
     },
     "runtime": 81,
-    "original_title": "La Passion de Jeanne d'Arc"
+    "original_title": "La Passion de Jeanne d'Arc",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-28U0",
@@ -2281,7 +2323,10 @@
       "id": 5548
     },
     "runtime": 102,
-    "original_title": "RoboCop"
+    "original_title": "RoboCop",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29f8",
@@ -2806,7 +2851,10 @@
       "id": 335984
     },
     "runtime": 164,
-    "original_title": "Blade Runner 2049"
+    "original_title": "Blade Runner 2049",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29XY",
@@ -3133,7 +3181,10 @@
       "id": 503919
     },
     "runtime": 109,
-    "original_title": "The Lighthouse"
+    "original_title": "The Lighthouse",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-fA7G",
@@ -4153,7 +4204,10 @@
       "id": 218
     },
     "runtime": 108,
-    "original_title": "The Terminator"
+    "original_title": "The Terminator",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29JC",
@@ -5836,7 +5890,10 @@
       "id": 861
     },
     "runtime": 113,
-    "original_title": "Total Recall"
+    "original_title": "Total Recall",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1Y7i",
@@ -5878,7 +5935,10 @@
       "id": 8810
     },
     "runtime": 96,
-    "original_title": "Mad Max 2"
+    "original_title": "Mad Max 2",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1YTm",
@@ -6478,7 +6538,10 @@
       "id": 17835
     },
     "runtime": 117,
-    "original_title": "Threads"
+    "original_title": "Threads",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1UDu",
@@ -7234,7 +7297,10 @@
       "id": 63
     },
     "runtime": 129,
-    "original_title": "Twelve Monkeys"
+    "original_title": "Twelve Monkeys",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-26iy",
@@ -7977,7 +8043,10 @@
       "id": 152584
     },
     "runtime": 180,
-    "original_title": "La Vie d'Adèle - Chapitres 1 et 2"
+    "original_title": "La Vie d'Adèle - Chapitres 1 et 2",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-XIg",
@@ -10060,7 +10129,10 @@
       "id": 3112
     },
     "runtime": 93,
-    "original_title": "The Night of the Hunter"
+    "original_title": "The Night of the Hunter",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-29Ve",
@@ -10131,7 +10203,10 @@
       "id": 832
     },
     "runtime": 110,
-    "original_title": "M - Eine Stadt sucht einen Mörder"
+    "original_title": "M - Eine Stadt sucht einen Mörder",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-25jg",
@@ -10236,7 +10311,10 @@
       "id": 985
     },
     "runtime": 89,
-    "original_title": "Eraserhead"
+    "original_title": "Eraserhead",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1BMi",
@@ -10593,7 +10671,10 @@
       "id": 38985
     },
     "runtime": 122,
-    "original_title": "Sorcerer"
+    "original_title": "Sorcerer",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1iGg",
@@ -10761,7 +10842,10 @@
       "id": 32520
     },
     "runtime": 98,
-    "original_title": "五郎八卦棍"
+    "original_title": "五郎八卦棍",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2aKc",
@@ -11227,7 +11311,10 @@
       "id": 1600
     },
     "runtime": 98,
-    "original_title": "La Double Vie de Véronique"
+    "original_title": "La Double Vie de Véronique",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-3xGa",
@@ -11525,7 +11612,10 @@
       "id": 1018
     },
     "runtime": 147,
-    "original_title": "Mulholland Drive"
+    "original_title": "Mulholland Drive",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1F9Y",
@@ -12325,7 +12415,10 @@
       "id": 49010
     },
     "runtime": 86,
-    "original_title": "Hobo with a Shotgun"
+    "original_title": "Hobo with a Shotgun",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-28PO",
@@ -12501,7 +12594,10 @@
       "id": 310135
     },
     "runtime": 95,
-    "original_title": "Turbo Kid"
+    "original_title": "Turbo Kid",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-22Wk",
@@ -13005,7 +13101,10 @@
       "id": 490
     },
     "runtime": 96,
-    "original_title": "Det sjunde inseglet"
+    "original_title": "Det sjunde inseglet",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1MM4",
@@ -13093,7 +13192,10 @@
       "id": 9056
     },
     "runtime": 99,
-    "original_title": "警察故事"
+    "original_title": "警察故事",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1Qi8",
@@ -13198,7 +13300,10 @@
       "id": 184
     },
     "runtime": 154,
-    "original_title": "Jackie Brown"
+    "original_title": "Jackie Brown",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1VtU",
@@ -13240,7 +13345,10 @@
       "id": 1791
     },
     "runtime": 131,
-    "original_title": "La Pianiste"
+    "original_title": "La Pianiste",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-PNqo",
@@ -13660,7 +13768,10 @@
       "id": 11104
     },
     "runtime": 103,
-    "original_title": "重慶森林"
+    "original_title": "重慶森林",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-20Aw",
@@ -13786,7 +13897,10 @@
       "id": 28941
     },
     "runtime": 77,
-    "original_title": "Chopping Mall"
+    "original_title": "Chopping Mall",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2aIU",
@@ -14210,7 +14324,10 @@
       "id": 44012
     },
     "runtime": 202,
-    "original_title": "Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles"
+    "original_title": "Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-DUHM",
@@ -14378,7 +14495,10 @@
       "id": 3777
     },
     "runtime": 108,
-    "original_title": "蜘蛛巣城"
+    "original_title": "蜘蛛巣城",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-28II",
@@ -14441,7 +14561,10 @@
       "id": 12206
     },
     "runtime": 122,
-    "original_title": "Das Testament des Dr. Mabuse"
+    "original_title": "Das Testament des Dr. Mabuse",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-251c",
@@ -14462,7 +14585,10 @@
       "id": 3782
     },
     "runtime": 143,
-    "original_title": "生きる"
+    "original_title": "生きる",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-1vCw",
@@ -14483,7 +14609,10 @@
       "id": 25538
     },
     "runtime": 174,
-    "original_title": "一一"
+    "original_title": "一一",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-20AQ",
@@ -14529,7 +14658,10 @@
       "id": 3989
     },
     "runtime": 98,
-    "original_title": "Team America: World Police"
+    "original_title": "Team America: World Police",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-27A4",
@@ -14806,7 +14938,10 @@
       "id": 20108
     },
     "runtime": 96,
-    "original_title": "Au hasard Balthazar"
+    "original_title": "Au hasard Balthazar",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-HGe",
@@ -15016,7 +15151,10 @@
       "id": 11850
     },
     "runtime": 116,
-    "original_title": "Invasion of the Body Snatchers"
+    "original_title": "Invasion of the Body Snatchers",
+    "tags": [
+      "favourite"
+    ]
   },
   {
     "id": "lb-2QS8",
