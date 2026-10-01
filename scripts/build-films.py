@@ -3,6 +3,7 @@
 import collections
 import datetime
 import html
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -18,6 +19,24 @@ def esc(value):
 def slug(value):
     text = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode().lower()
     return re.sub('[^a-z0-9]+', '-', text).strip('-')
+
+
+def normalise_tags(values):
+    if not isinstance(values, list):
+        raise ValueError('Film tags must be a list of non-empty strings')
+    unique = {}
+    for value in values:
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError('Film tags must be a list of non-empty strings')
+        label = unicodedata.normalize('NFC', ' '.join(value.split()))
+        unique.setdefault(label.casefold(), label)
+    return sorted(unique.values(), key=str.casefold)
+
+
+def tag_url(tag):
+    key = normalise_tags([tag])[0].casefold()
+    # Stable and distinct even for punctuation, non-Latin tags and slug collisions.
+    return '/films/tags/' + (slug(key)[:60] or 'tag') + '-' + hashlib.sha256(key.encode()).hexdigest()[:12] + '/'
 
 
 def read_review(path):
@@ -87,6 +106,7 @@ def load_content(root=ROOT):
             raise ValueError('Film slug must contain lowercase letters, numbers and hyphens')
         ids.add(film['id']); slugs.add(film['slug'])
         rating(film.get('rating'))
+        film['tags'] = normalise_tags(film.get('tags', []))
     viewing_ids = set()
     viewing_films = {}
     for viewing in viewings:
@@ -159,6 +179,19 @@ def build(root=ROOT):
             markup = markup.replace('class="film-image"', 'class="film-image film-poster"')
         return markup
 
+    tag_groups = {}
+    for film in films:
+        for tag in film['tags']:
+            group = tag_groups.setdefault(tag.casefold(), {'label': tag, 'films': []})
+            group['films'].append(film)
+
+    def film_tags(film):
+        if not film['tags']:
+            return ''
+        return '<ul class="film-tags" aria-label="Film tags">' + ''.join(
+            '<li>' + anchor(tag_url(tag), tag_groups[tag.casefold()]['label']) + '</li>'
+            for tag in film['tags']) + '</ul>'
+
     by_id = {f['id']: f for f in films}
     by_tmdb = {(f['tmdb']['type'], f['tmdb']['id']): f for f in films if f.get('tmdb')}
     by_film = collections.defaultdict(list)
@@ -175,7 +208,7 @@ def build(root=ROOT):
     pages = {}
     def page(url, title, body, date=None):
         path = 'generated' + url + 'index.md'
-        section = 'directors' if url.startswith('/directors/') else 'diary' if url == '/films/diary/' else 'writing' if '/reviews/' in url else 'films'
+        section = 'tags' if url.startswith('/films/tags/') else 'directors' if url.startswith('/directors/') else 'diary' if url == '/films/diary/' else 'writing' if '/reviews/' in url else 'films'
         meta = {'title': title, 'nav_' + section: True}
         if date:
             meta['date'] = date
@@ -188,7 +221,7 @@ def build(root=ROOT):
     def film_row(film):
         count = len(by_film[film['id']])
         status = f'{count} review' + ('s' if count != 1 else '') if count else 'no review'
-        return f'<tr data-reviewed="{str(bool(count)).lower()}"><td>{film_label(film, "reviewed" if count else "unreviewed")}</td><td>{esc(film["year"])}</td><td>{directors(film)}</td><td class="muted">{status}</td></tr>'
+        return f'<tr data-reviewed="{str(bool(count)).lower()}"><td>{film_label(film, "reviewed" if count else "unreviewed")}{film_tags(film)}</td><td>{esc(film["year"])}</td><td>{directors(film)}</td><td class="muted">{status}</td></tr>'
     def table(rows, columns):
         def label_cells(row):
             labels = iter(columns)
@@ -199,10 +232,25 @@ def build(root=ROOT):
     home_reviews = (featured + [r for r in latest if not r.get('featured', False)])[:3]
     home_heading = ('Featured reviews' if len(featured) >= 3 else 'Featured and recent reviews') if featured else 'Recent film writing'
     intro = f'<h1>Films</h1><p>My viewing history, reviews and longer thoughts on films.</p><p class="muted">{len(films)} titles · {len(viewings)} logged viewings · {len(reviews)} reviews</p>'
-    filters = '<div class="film-filters" hidden><label>Find a film <input type="search" id="film-search" placeholder="Title, year or director"></label><label><input type="checkbox" id="reviewed-only"> With a review</label><p id="filter-count" role="status" aria-live="polite"></p></div>'
+    filters = '<div class="film-filters" hidden><label>Find a film <input type="search" id="film-search" placeholder="Title, year, director or tag"></label><label><input type="checkbox" id="reviewed-only"> With a review</label><p id="filter-count" role="status" aria-live="polite"></p></div>'
     page('/films/', 'Films', intro + filters + '<p>' + anchor('#catalogue', 'Browse catalogue ↓') + '</p><section id="recent-writing"><h2>Recent writing</h2>' + review_list(latest[:3]) + '<p>' + anchor('/films/reviews/', 'All reviews') + '</p></section><h2 id="catalogue">Watched catalogue</h2>' + '<div id="film-catalogue">' + table([film_row(f) for f in sorted(films, key=lambda f: (f['title'].casefold(), f['year']))], ['Film', 'Year', 'Director', 'Writing']) + '</div>\n<script src="/js/films.js" defer></script>')
     pages['generated/home.html'] = '<section class="cinema"><h1>Brain spill</h1><p>I’m Tom. This is my collection of film reviews, viewing notes and other writing.</p><p>' + anchor('/films/', 'Explore the film collection →') + ' · ' + anchor('/films/diary/', 'Viewing diary') + '</p><h2>' + home_heading + '</h2>' + review_list(home_reviews) + '<p>' + anchor('/films/reviews/', 'All film reviews') + ' · ' + anchor('/rss.xml', 'Follow via RSS') + '</p></section>'
     page('/films/reviews/', 'Film reviews', '<h1>Reviews and analysis</h1>' + review_list(latest))
+
+    tag_index = '<h1>Film tags</h1><p>Browse films by the labels I’ve given them.</p>'
+    if tag_groups:
+        tag_index += '<ul class="tag-index">'
+        for key, group in sorted(tag_groups.items()):
+            label, tagged = group['label'], group['films']
+            tag_index += '<li>' + anchor(tag_url(label), label) + f' <span class="muted">{len(tagged)} film' + ('s' if len(tagged) != 1 else '') + '</span></li>'
+            body = '<p>' + anchor('/films/tags/', '← All tags') + '</p><h1>Films tagged “' + esc(label) + '”</h1>'
+            body += f'<p>{len(tagged)} film' + ('s' if len(tagged) != 1 else '') + '</p>'
+            body += table([film_row(f) for f in sorted(tagged, key=lambda f: (f['title'].casefold(), f['year']))], ['Film', 'Year', 'Director', 'Writing'])
+            page(tag_url(label), 'Films tagged ' + label, body)
+        tag_index += '</ul>'
+    else:
+        tag_index += '<p class="muted">No films tagged yet.</p><p>' + anchor('/films/', 'Browse all films') + '</p>'
+    page('/films/tags/', 'Film tags', tag_index)
 
     def diary_rows(items):
         rows = []
@@ -225,6 +273,7 @@ def build(root=ROOT):
         own_reviews = by_film[film['id']]
         body = film_image(film) + '<h1>' + esc(film['title']) + ' <span class="muted">(' + esc(film['year']) + ')</span></h1>'
         body += '<p class="film-meta">' + directors(film) + (' · ' + str(film['runtime']) + ' minutes' if film.get('runtime') else '') + '</p>'
+        body += film_tags(film)
         if film.get('original_title') and film['original_title'] != film['title']:
             body += '<p class="muted">' + esc(film['original_title']) + '</p>'
         body += '<h2>Writing</h2>' + (review_list(own_reviews) if own_reviews else '<p class="muted">Watched; no review yet.</p>')

@@ -135,6 +135,52 @@ class CinemaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             builder.build(self.root)
 
+    def test_film_tags_grouping_links_and_removal(self):
+        self.films[0]['tags'] = ['Favourite', ' favourite ', 'slow cinema', 'slow-cinema', '<mood>', '映画']
+        other = dict(self.films[0], id='another', slug='another-2001', title='Another film', year='2001', tags=['FAVOURITE'])
+        self.write('films', self.films + [other])
+        pages = builder.build(self.root)
+        url = builder.tag_url('favourite')
+        page = 'generated' + url + 'index.md'
+        self.assertIn('2 films', pages[page])
+        self.assertIn('Another film', pages[page])
+        self.assertIn('Local &lt;film&gt;', pages[page])
+        self.assertIn('nav_tags: true', pages[page])
+        self.assertIn(url, pages['generated/films/local-film-2000/index.md'])
+        self.assertIn(url, pages['generated/films/index.md'])
+        self.assertIn('&lt;mood&gt;', pages['generated/films/tags/index.md'])
+        self.assertNotEqual(builder.tag_url('slow cinema'), builder.tag_url('slow-cinema'))
+        self.assertEqual(builder.tag_url('FAVOURITE'), url)
+        self.assertNotEqual(builder.tag_url('映画'), builder.tag_url('音楽'))
+        published = self.root / '_site' / url.lstrip('/') / 'index.html'
+        published.parent.mkdir(parents=True)
+        published.write_text('old tag page')
+        self.films[0]['tags'] = []
+        self.write('films', self.films)
+        pages = builder.build(self.root)
+        self.assertNotIn(page, pages)
+        self.assertFalse((self.root / page).exists())
+        self.assertFalse(published.exists())
+        self.assertIn('No films tagged yet', pages['generated/films/tags/index.md'])
+        for invalid in ['favourite', [None], [' ']]:
+            with self.assertRaises(ValueError):
+                builder.normalise_tags(invalid)
+
+    def test_tag_command_add_remove_and_deduplicate(self):
+        from unittest.mock import patch
+        spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))
+        cli = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cli)
+        with patch.object(cli, 'ROOT', self.data):
+            with patch('sys.argv', ['cinema.py', 'tag', 'local-film-2000', 'favourite', 'slow cinema']):
+                cli.main()
+            with patch('sys.argv', ['cinema.py', 'tag', 'local-film', 'FAVOURITE']):
+                cli.main()
+            self.assertEqual(json.loads((self.data / 'films.json').read_text())[0]['tags'], ['favourite', 'slow cinema'])
+            with patch('sys.argv', ['cinema.py', 'tag', 'local-film', 'Favourite', '--remove']):
+                cli.main()
+            self.assertEqual(json.loads((self.data / 'films.json').read_text())[0]['tags'], ['slow cinema'])
+
     def test_real_import(self):
         films, viewings, people, reviews = builder.load_content()
         ids = {f['id'] for f in films}

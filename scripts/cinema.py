@@ -43,6 +43,10 @@ def main():
     review.add_argument('--title')
     review.add_argument('--date', default=str(datetime.date.today()))
     review.add_argument('--viewing', help='Optional local viewing ID')
+    tag = commands.add_parser('tag', help='Add or remove film tags')
+    tag.add_argument('film', help='Local film ID or slug')
+    tag.add_argument('tags', nargs='+', help='Quote tags containing spaces')
+    tag.add_argument('--remove', action='store_true', help='Remove these tags')
     args = parser.parse_args()
     films = json.loads((ROOT / 'films.json').read_text())
     viewings = json.loads((ROOT / 'viewings.json').read_text())
@@ -82,6 +86,20 @@ def main():
     film = next((f for f in films if args.film in (f['id'], f['slug'])), None)
     if not film:
         parser.error('Film not found; use its ID or slug from cinema/films.json')
+    if args.command == 'tag':
+        try:
+            current = builder.normalise_tags(film.get('tags', []))
+            requested = builder.normalise_tags(args.tags)
+        except ValueError as error:
+            parser.error(str(error))
+        if args.remove:
+            removing = {tag.casefold() for tag in requested}
+            film['tags'] = [tag for tag in current if tag.casefold() not in removing]
+        else:
+            film['tags'] = builder.normalise_tags(current + requested)
+        save('films', films)
+        print(film['title'] + ': ' + (', '.join(film['tags']) or 'no tags'))
+        return
     datetime.date.fromisoformat(args.date)
     if args.command == 'watch':
         builder.rating(args.rating)

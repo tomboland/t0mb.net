@@ -30,6 +30,27 @@ even if featured. Recent writing, the writing archive and RSS remain chronologic
 Remove the field or set `featured: false` to unfeature a review. The flag belongs
 to the individual review, so repeat reviews of one film can be selected separately.
 
+## Tag films
+
+Tags belong to films, independently of ratings and featured reviews. Use any
+labels you like; for example, `favourite` creates a collection of favourite films.
+From the source checkout:
+
+```sh
+python3 scripts/cinema.py tag the-400-blows-1959 favourite "coming of age"
+python3 scripts/cinema.py tag the-400-blows-1959 favourite --remove
+```
+
+These are examples, not preselected tags. You can also add a `tags` array to a
+film record in `cinema/films.json`, such as `"tags": ["favourite", "coming of age"]`.
+Spelling is case-insensitive and repeated whitespace is normalised; duplicate
+tags count only once per film. Labels retain their display spelling. Tags appear
+on film pages and catalogue listings. Each links to its film collection, also
+reachable from **Tags** in the film navigation. Tag pages include poster thumbnails.
+Removing a tag from its last film removes that tag's generated page.
+
+Commit your changes, then run `bash deploy.sh` to build and publish them.
+
 ## Build and preview
 
 From the repository root (Python 3 and the existing Haskell toolchain required):
