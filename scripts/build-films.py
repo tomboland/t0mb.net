@@ -62,11 +62,11 @@ def directors(film):
     return ', '.join(anchor(director_url(p), p['name']) for p in film.get('directors', []))
 
 
-def image_markup(record):
+def image_markup(record, root=ROOT):
     if not record.get('image'):
         return ''
     path = record['image']
-    if not path.startswith('/images/') or '..' in Path(path).parts or not (ROOT / path.lstrip('/')).is_file():
+    if not path.startswith('/images/') or '..' in Path(path).parts or not (root / path.lstrip('/')).is_file():
         raise ValueError(f'Image must be an existing local /images/ file: {path}')
     if not record.get('image_alt'):
         raise ValueError('Images require image_alt text')
@@ -119,6 +119,44 @@ def load_content(root=ROOT):
 
 def build(root=ROOT):
     films, viewings, people, reviews = load_content(root)
+    artwork_path = root / 'cinema/artwork.json'
+    artwork = json.loads(artwork_path.read_text()) if artwork_path.exists() else {}
+
+    def art(film, kind):
+        imported = artwork.get(film['id'], {}).get(kind, {})
+        field = 'poster' if kind == 'poster' else 'image'
+        if field in film:
+            if not film[field]:
+                return {}
+            return {'path': film[field], 'thumbnail': film.get('thumbnail') or film[field],
+                    'alt': film.get(field + '_alt') or ('Poster for ' + film['title'] if kind == 'poster' else ''),
+                    'caption': film.get(field + '_caption')}
+        return imported
+
+    def thumbnail(film):
+        poster = art(film, 'poster')
+        path = film.get('thumbnail', poster.get('thumbnail') or poster.get('path'))
+        if not path:
+            return ''
+        # Validate local files in the same way as full-size artwork.
+        image_markup({'image': path, 'image_alt': 'Thumbnail'}, root)
+        return f'<img class="film-thumbnail" src="{esc(path)}" alt="" width="48" height="72" loading="lazy" decoding="async">'
+
+    def film_label(film, css='', suffix=''):
+        return '<span class="film-label">' + thumbnail(film) + '<span>' + anchor(film_url(film), film['title'], css) + suffix + '</span></span>'
+
+    def film_image(film):
+        chosen = art(film, 'backdrop')
+        if not chosen and 'image' not in film:
+            chosen = art(film, 'poster')
+        if not chosen:
+            return ''
+        markup = image_markup({'image': chosen['path'], 'image_alt': chosen.get('alt'),
+                               'image_caption': chosen.get('caption')}, root)
+        if chosen == art(film, 'poster'):
+            markup = markup.replace('class="film-image"', 'class="film-image film-poster"')
+        return markup
+
     by_id = {f['id']: f for f in films}
     by_tmdb = {(f['tmdb']['type'], f['tmdb']['id']): f for f in films if f.get('tmdb')}
     by_film = collections.defaultdict(list)
@@ -137,11 +175,11 @@ def build(root=ROOT):
         path = 'generated' + url + 'index.md'
         pages[path] = '---\ntitle: ' + json.dumps(title, ensure_ascii=False) + '\n---\n\n' + body + '\n'
     def review_list(items):
-        return '<ul class="review-list">' + ''.join('<li><time datetime="' + r['date'] + '">' + r['date'] + '</time> ' + anchor(r['url'], r['title']) + ' ' + rating(r.get('rating')) + '</li>' for r in items) + '</ul>'
+        return '<ul class="review-list">' + ''.join('<li class="review-entry">' + thumbnail(by_id[r['film']]) + '<span><time datetime="' + r['date'] + '">' + r['date'] + '</time> ' + anchor(r['url'], r['title']) + ' ' + rating(r.get('rating')) + '</span></li>' for r in items) + '</ul>'
     def film_row(film):
         count = len(by_film[film['id']])
         status = f'{count} review' + ('s' if count != 1 else '') if count else 'no review'
-        return f'<tr data-reviewed="{str(bool(count)).lower()}"><td>{anchor(film_url(film), film["title"], "reviewed" if count else "unreviewed")}</td><td>{esc(film["year"])}</td><td>{directors(film)}</td><td class="muted">{status}</td></tr>'
+        return f'<tr data-reviewed="{str(bool(count)).lower()}"><td>{film_label(film, "reviewed" if count else "unreviewed")}</td><td>{esc(film["year"])}</td><td>{directors(film)}</td><td class="muted">{status}</td></tr>'
     def table(rows, columns):
         return '<div class="table-scroll"><table><thead><tr>' + ''.join('<th scope="col">' + c + '</th>' for c in columns) + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>'
     latest = sorted(reviews, key=lambda r: (r['date'], r['id']), reverse=True)
@@ -159,7 +197,7 @@ def build(root=ROOT):
                        or r.get('viewing') == v['id']]
             links = ' · '.join(anchor(r['url'], 'Review') for r in related)
             rewatch = '<span class="muted">rewatch</span>' if v.get('rewatch') else ''
-            rows.append(f'<tr><td><time datetime="{v["date"]}">{v["date"]}</time></td><td>{anchor(film_url(film), film["title"])} <span class="muted">({esc(film["year"])})</span></td><td>{rating(v.get("rating"))}</td><td>{rewatch} {links}</td></tr>')
+            rows.append(f'<tr><td><time datetime="{v["date"]}">{v["date"]}</time></td><td>{film_label(film, suffix=" <span class=muted>(" + esc(film["year"]) + ")</span>")}</td><td>{rating(v.get("rating"))}</td><td>{rewatch} {links}</td></tr>')
         return table(rows, ['Watched', 'Film', 'Rating', 'Notes'])
     years = sorted({v['date'][:4] for v in viewings}, reverse=True)
     diary = '<h1>Film diary</h1><p>Newest viewings first. Ratings appear only when I gave one.</p><nav aria-label="Diary years" class="year-nav">' + ' · '.join(anchor('#year-' + y, y) for y in years) + '</nav>'
@@ -169,7 +207,7 @@ def build(root=ROOT):
 
     for film in films:
         own_reviews = by_film[film['id']]
-        body = image_markup(film) + '<h1>' + esc(film['title']) + ' <span class="muted">(' + esc(film['year']) + ')</span></h1>'
+        body = film_image(film) + '<h1>' + esc(film['title']) + ' <span class="muted">(' + esc(film['year']) + ')</span></h1>'
         body += '<p class="film-meta">' + directors(film) + (' · ' + str(film['runtime']) + ' minutes' if film.get('runtime') else '') + '</p>'
         if film.get('original_title') and film['original_title'] != film['title']:
             body += '<p class="muted">' + esc(film['original_title']) + '</p>'
@@ -183,7 +221,7 @@ def build(root=ROOT):
         page(film_url(film), film['title'] + ' (' + film['year'] + ')', body)
         for review in own_reviews:
             head = '<p>' + anchor(film_url(film), film['title'] + ' (' + film['year'] + ')') + '</p>'
-            head += image_markup(review) + '<h1>' + esc(review['title']) + '</h1><p class="film-meta">Published <time datetime="' + review['date'] + '">' + review['date'] + '</time>'
+            head += image_markup(review, root) + '<h1>' + esc(review['title']) + '</h1><p class="film-meta">Published <time datetime="' + review['date'] + '">' + review['date'] + '</time>'
             if review.get('watched_date'):
                 head += ' · Watched ' + esc(review['watched_date'])
             head += ' ' + rating(review.get('rating')) + '</p>'
@@ -209,7 +247,7 @@ def build(root=ROOT):
             film = by_tmdb.get(('movie', credit['tmdb_id']))
             if film:
                 included.add(film['id'])
-                label = anchor(film_url(film), film['title'], 'reviewed' if by_film[film['id']] else 'unreviewed')
+                label = film_label(film, 'reviewed' if by_film[film['id']] else 'unreviewed')
                 status = 'reviewed' if by_film[film['id']] else 'watched · no review'
                 year = film['year']
             else:
@@ -219,12 +257,12 @@ def build(root=ROOT):
         for film in own:
             if film['id'] not in included:
                 status = 'reviewed' if by_film[film['id']] else 'watched · no review'
-                entries.append((film['year'], film['title'], f'<tr><td>{esc(film["year"])}</td><td>{anchor(film_url(film), film["title"], "reviewed" if by_film[film["id"]] else "unreviewed")}</td><td class="muted">{status}</td></tr>'))
+                entries.append((film['year'], film['title'], f'<tr><td>{esc(film["year"])}</td><td>{film_label(film, "reviewed" if by_film[film["id"]] else "unreviewed")}</td><td class="muted">{status}</td></tr>'))
         body = '<h1>' + esc(person['name']) + f'</h1><p>{len(own)} watched · ' + str(sum(bool(by_film[f['id']]) for f in own)) + ' reviewed</p><h2>Directing filmography</h2><p class="muted">Reviewed films are highlighted. Unreviewed watched films still link to their viewing history.</p>'
         body += table([e[2] for e in sorted(entries, key=lambda e: (e[0] or '9999', e[1]))], ['Year', 'Film', 'Status'])
         page(director_url(person), person['name'], body)
     page('/directors/', 'Directors', listing + '</ul>')
-    page('/films/about/', 'About the film collection', '<h1>About this collection</h1><p>My viewing history and writing, originally imported from Letterboxd. A viewing does not need a rating or a review. Some older watched films have no recorded viewing date.</p><h2>Credits</h2><p>Film metadata and directing filmographies are supplied by <a href="https://www.themoviedb.org">TMDB</a> and saved locally. Titles and years may reflect my original records.</p><a href="https://www.themoviedb.org"><img class="tmdb-logo" src="/images/tmdb.svg" alt="TMDB"></a><p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>')
+    page('/films/about/', 'About the film collection', '<h1>About this collection</h1><p>My viewing history and writing, originally imported from Letterboxd. A viewing does not need a rating or a review. Some older watched films have no recorded viewing date.</p><h2>Credits</h2><p>Film metadata, posters, backdrops and directing filmographies are supplied by <a href="https://www.themoviedb.org">TMDB</a> and saved locally. Titles and years may reflect my original records.</p><a href="https://www.themoviedb.org"><img class="tmdb-logo" src="/images/tmdb.svg" alt="TMDB"></a><p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>')
     output = root / 'generated'
     output.mkdir(exist_ok=True)
     for name, content in pages.items():

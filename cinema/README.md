@@ -77,7 +77,36 @@ Put your photographs in `images/films/`. Add inline Markdown such as:
 For an optional banner, add `image: "/images/films/the-400-blows/example.jpg"`
 and `image_alt: "Description"` to a review's front matter (or equivalent JSON
 fields on a film). `image_caption` is optional. Images retain their proportions.
-No film artwork is fetched from TMDB. Its attribution logo is served locally.
+TMDB artwork is imported explicitly and served locally. Normal builds stay offline:
+
+```sh
+python3 scripts/import-film-images.py --token-file /private/tmdb-token
+```
+
+Existing API metadata in `/tmp/t0mb-tmdb-cache` can be reused without a token.
+Use `--film the-400-blows-1959` to import just one film. Downloads already present
+are reused. Imported choices are saved separately in `cinema/artwork.json`;
+image files are in `images/films/tmdb/`. Commit both after importing.
+
+Film pages use a backdrop, falling back to a poster. Small poster thumbnails
+appear in the catalogue, diary, review listings and watched director filmographies.
+Films without artwork stay text-only. Review bodies keep your own inline photographs.
+
+To override artwork, edit the film record in `cinema/films.json`:
+
+```json
+"poster": "/images/films/my-poster.jpg",
+"poster_alt": "Description of my poster",
+"thumbnail": "/images/films/my-small-poster.jpg",
+"image": "/images/films/my-banner.jpg",
+"image_alt": "Description of my banner"
+```
+
+All paths must refer to existing local files. `thumbnail` is optional and otherwise
+uses your overridden poster. `image_caption` is optional. Set `poster` or `image`
+to `false` to suppress that artwork; `thumbnail: false` hides listing thumbnails.
+Imports never overwrite these fields. An overridden `image` affects only the film
+page; review images are managed in their own Markdown.
 
 ## Letterboxd and metadata
 

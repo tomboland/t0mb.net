@@ -63,6 +63,31 @@ class CinemaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             builder.rating('0')
 
+    def test_artwork_lists_overrides_and_review_separation(self):
+        images = self.root / 'images'
+        images.mkdir()
+        for name in ('poster.jpg', 'thumb.jpg', 'backdrop.jpg', 'custom.jpg'):
+            (images / name).write_bytes(b'fixture')
+        self.write('artwork', {'local-film': {
+            'poster': {'path': '/images/poster.jpg', 'thumbnail': '/images/thumb.jpg', 'alt': 'Poster'},
+            'backdrop': {'path': '/images/backdrop.jpg', 'alt': 'Backdrop'}}})
+        self.review('review')
+        pages = builder.build(self.root)
+        for path in ['films/index', 'films/diary/index', 'films/reviews/index', 'directors/someone-local-person/index']:
+            self.assertIn('/images/thumb.jpg', pages['generated/' + path + '.md'])
+        self.assertIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/index.md'])
+        self.assertNotIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/reviews/review/index.md'])
+        self.films[0].update(poster='/images/custom.jpg', image=False)
+        self.write('films', self.films)
+        pages = builder.build(self.root)
+        self.assertIn('/images/custom.jpg', pages['generated/films/index.md'])
+        self.assertNotIn('/images/thumb.jpg', pages['generated/films/index.md'])
+        self.assertNotIn('/images/backdrop.jpg', pages['generated/films/local-film-2000/index.md'])
+        self.films[0]['poster'] = '/images/missing.jpg'
+        self.write('films', self.films)
+        with self.assertRaises(ValueError):
+            builder.build(self.root)
+
     def test_real_import(self):
         films, viewings, people, reviews = builder.load_content()
         ids = {f['id'] for f in films}
