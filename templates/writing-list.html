@@ -1,0 +1,5 @@
+<ul class="archive-list">
+$for(posts)$
+  <li><time datetime="$date$">$date$</time> <a href="$url$">$title$</a>$partial("templates/post-tags.html")$</li>
+$endfor$
+</ul>

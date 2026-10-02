@@ -86,7 +86,8 @@ Markdown directly; no API key, separate Pandoc executable or network is needed.
 `_site/` is disposable build output: never edit it.
 
 Presentation lives in `templates/cinema/`, relationships and template contexts
-in `src/Cinema.hs`, and routes in `site.hs`. Edit the homepage introduction in
+in `src/Cinema.hs`, full-review embedding in `src/CinemaRendering.hs`, and routes
+in `site.hs`. Shared publishing pages live in `src/Publishing.hs`. Edit the homepage introduction in
 `content/home.md` and the cinema information page in `content/films-about.md`.
 Python scripts only manage/import source data and artwork. `cabal exec site --
 watch` also picks up cinema changes, including new film and tag pages.
@@ -216,3 +217,11 @@ and spoiler notices. Each retains a permanent standalone page. Reviews longer
 than 220 words get a 100-word preview and a “more…” / “less…” control in browsers
 with JavaScript; without JavaScript, every review is shown in full. Drafts are
 excluded. The thresholds live in `js/film-reviews.js`.
+
+## Tag your writing
+
+Add `tags: [cinema, photography]` to review front matter to describe the review
+itself. These optional post tags link to `/tags/` pages containing matching notes
+and published reviews. They also appear on full reviews embedded in film pages.
+Draft reviews never contribute to public tag pages. Film collection tags remain
+on film records and link to `/films/tags/`; they are not inherited by reviews.

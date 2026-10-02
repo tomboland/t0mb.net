@@ -330,6 +330,63 @@ class CinemaTests(unittest.TestCase):
         self.assertIn('Updated entry.', pages['index.html'])
         self.assertIn('Updated entry.', pages['notes/index.html'])
 
+    def test_post_tags_across_notes_reviews_and_incremental_removal(self):
+        note = self.root / 'posts/2026-03-01-photo/index.md'
+        note.parent.mkdir(parents=True)
+        note.write_text('---\ntitle: A photo\ndate: 2026-03-01\ntags: [Photography, " photography ", "<sky>", "映画", "slow cinema", "slow-cinema"]\n---\n\nPhoto body.\n')
+        self.review('tagged')
+        review = self.data / 'reviews/tagged.md'
+        review.write_text(review.read_text().replace('draft: false', 'draft: false\ntags: [PHOTOGRAPHY]'))
+        self.review('secret', draft=True)
+        secret = self.data / 'reviews/secret.md'
+        secret.write_text(secret.read_text().replace('draft: true', 'draft: true\ntags: [private-topic, photography]'))
+        self.films[0]['tags'] = ['film-only']
+        self.write('films', self.films)
+        url = tag_url('photography').replace('/films/tags/', '/tags/')
+        route = url.lstrip('/') + 'index.html'
+        pages = self.build()
+        for location in ['index.html', 'notes/index.html', 'archive.html',
+                         'posts/2026-03-01-photo/index.html',
+                         'films/local-film-2000/reviews/tagged/index.html',
+                         'films/local-film-2000/index.html']:
+            self.assertIn(url, pages[location], location)
+        self.assertLess(pages[route].index('>A photo</a>'), pages[route].index('>tagged</a>'))
+        self.assertEqual(pages[route].count('>A photo</a>'), 1)
+        self.assertNotIn('secret', pages[route])
+        self.assertNotIn('private-topic', pages['tags/index.html'])
+        self.assertNotIn('film-only', pages['tags/index.html'])
+        self.assertIn('&lt;sky&gt;', pages['tags/index.html'])
+        for tag in ['映画', 'slow cinema', 'slow-cinema']:
+            path = tag_url(tag).replace('/films/tags/', '/tags/').lstrip('/') + 'index.html'
+            self.assertIn('>A photo</a>', pages[path])
+        feed = ET.parse(self.root / '_site/rss.xml')
+        review_body = next(item.findtext('description') for item in feed.findall('./channel/item') if item.findtext('title') == 'tagged')
+        self.assertIn('Actual writing.', review_body)
+        self.assertNotIn('← Film details', review_body)
+        self.assertNotIn('More of my writing', review_body)
+        self.assertIn('https://t0mb.net' + url, review_body)
+        note.write_text(note.read_text().replace('tags: [Photography, " photography ", "<sky>", "映画", "slow cinema", "slow-cinema"]', 'tags: [new-topic]'))
+        pages = self.build()
+        self.assertNotIn('>A photo</a>', pages[route])
+        new_route = tag_url('new-topic').replace('/films/tags/', '/tags/').lstrip('/') + 'index.html'
+        self.assertIn('>A photo</a>', pages[new_route])
+        self.review('tagged', draft=True)
+        pages = self.build()
+        self.assertNotIn(route, pages)
+        self.assertNotIn(url, pages['tags/index.html'])
+        note.unlink()
+        pages = self.build()
+        self.assertNotIn(new_route, pages)
+        self.assertNotIn('posts/2026-03-01-photo/index.html', pages)
+
+    def test_invalid_post_tags_fail_with_source(self):
+        note = self.root / 'posts/2026-03-01-note/index.md'
+        note.parent.mkdir(parents=True)
+        for tags in ['photography', '[null]', '[" "]']:
+            note.write_text('---\ntitle: Invalid\ndate: 2026-03-01\ntags: ' + tags + '\n---\nText.\n')
+            with self.assertRaisesRegex(ValueError, 'posts/2026-03-01-note/index.md: Tags must'):
+                self.build()
+
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
         spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))

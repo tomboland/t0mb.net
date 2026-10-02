@@ -1,9 +1,5 @@
-<section class="cinema">
+<section>
 <h1>Writing archive</h1>
-<p>Film reviews and other posts, newest first.</p>
-<ul class="archive-list">
-$for(posts)$
-  <li><time datetime="$date$">$date$</time> <a href="$url$">$title$</a></li>
-$endfor$
-</ul>
+<p>Film reviews and other posts, newest first. <a href="/tags/">Browse by tag</a>.</p>
+$partial("templates/writing-list.html")$
 </section>

@@ -2,7 +2,8 @@
   <p><a href="/notes/">← All notes</a></p>
   <h1>$title$</h1>
   <time datetime="$date$">$date$</time>
-  <div class="post-body">
+  $partial("templates/post-tags.html")$
+  <div class="post-body content-body">
     $body$
   </div>
 </article>

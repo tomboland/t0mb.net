@@ -3,7 +3,8 @@
     <article class="post">
       <h3 class="post-title"><a href="$url$">$title$</a></h3>
       <a class="post-date" href="$url$" title="Permalink"><time datetime="$date$">$date$</time></a>
-      <div class="post-body">
+      $partial("templates/post-tags.html")$
+      <div class="post-body content-body">
         $body$
       </div>
     </article>

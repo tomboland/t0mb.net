@@ -1,0 +1,3 @@
+<h1>Post tags</h1>
+<p>Topics in my posts and reviews.</p>
+$if(postTags)$<ul class="tag-index">$for(postTags)$<li><a href="$url$">$name$</a> ($count$)</li>$endfor$</ul>$else$<p>No posts tagged yet.</p>$endif$

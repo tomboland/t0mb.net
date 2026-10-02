@@ -1,7 +1,7 @@
 // Enhance content photos; catalogue posters retain their navigation links.
 (() => {
   if (typeof HTMLDialogElement === 'undefined' || !HTMLDialogElement.prototype.showModal) return;
-  const photos = document.querySelectorAll('.post-body img, .cinema img:not(.film-thumbnail):not(.tmdb-logo)');
+  const photos = document.querySelectorAll('.content-body img, img[data-photo]');
   if (!photos.length) return;
 
   const viewer = document.createElement('dialog');
