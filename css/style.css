@@ -195,15 +195,23 @@ time {
   .cinema th, .cinema td { padding: 0.65rem 0.3rem; }
 }
 
-.film-label, .review-list .review-entry { display: flex; align-items: center; gap: 0.8rem; }
+.film-label, .review-list .review-entry { display: grid; align-items: center; gap: 0.8rem; min-width: 0; }
+.film-label { grid-template-columns: minmax(0, 1fr) 1.25rem; width: 100%; }
+.review-list .review-entry { grid-template-columns: minmax(0, 1fr) auto 1.25rem; }
+.film-label > .film-like, .review-entry > .film-like { justify-self: center; }
+.review-rating { grid-column: 2; }
+.review-entry > .film-like { grid-column: 3; }
+.film-name, .film-title > .link-label, .review-title > span { min-width: 0; overflow-wrap: anywhere; }
+.film-year { display: block; font-size: 0.85em; margin-top: 0.15rem; }
+.review-list .review-title time { display: block; }
 .cinema .film-thumbnail { width: 48px; height: 72px; max-width: none; flex: 0 0 48px; object-fit: contain; background: var(--panel); border-radius: 2px; }
-.film-label > span { min-width: 8rem; }
+
 .cinema .film-image img { display: block; width: 100%; }
 .cinema .film-poster img { width: auto; max-height: 480px; margin-inline: auto; }
 @media (max-width: 720px) {
   .film-label, .review-list .review-entry { gap: 0.5rem; }
   .cinema .film-thumbnail { width: 36px; height: 54px; flex-basis: 36px; }
-  .film-label > span { min-width: 6rem; }
+
 }
 
 /* Navigation and reading */
@@ -214,9 +222,9 @@ a:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outlin
 .film-nav a[aria-current="page"] { font-weight: bold; text-decoration-thickness: 3px; text-underline-offset: 0.4rem; }
 hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 .film-title, .review-title { display: flex; align-items: center; gap: 0.8rem; min-width: 0; text-decoration: none; }
-.film-title > span, .review-title .link-label { text-decoration: underline; }
-.film-title.unreviewed > span { text-decoration-style: dotted; }
-.film-label { flex-wrap: wrap; }
+.film-title .link-label, .review-title .link-label { text-decoration: underline; }
+.film-title.unreviewed .link-label { text-decoration-style: dotted; }
+
 .review-title time { text-decoration: none; }
 .archive-list { list-style: none; padding: 0; }
 .archive-list li { margin: 0.8rem 0; }
@@ -234,7 +242,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
   .cinema tbody td[data-label="Watched"] { order: -2; width: 100%; }
   .cinema tbody td:empty { display: none; }
   .cinema tbody td[data-label="Year"]::before { content: "Year: "; color: var(--muted); }
-  .film-label > span { min-width: 0; }
+
   .cinema .film-thumbnail { width: 48px; height: 72px; flex-basis: 48px; }
   .archive-list time { display: block; }
 }
@@ -288,3 +296,5 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
     background: var(--row-hover);
   }
 }
+
+.rewatch-icon { display: inline-block; width: 1.25em; text-align: center; line-height: 1; }
