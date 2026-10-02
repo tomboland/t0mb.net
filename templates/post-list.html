@@ -1,7 +1,8 @@
 <section class="posts">
   $for(posts)$
     <article class="post">
-      <time datetime="$date$">$date$</time>
+      <h3 class="post-title"><a href="$url$">$title$</a></h3>
+      <a class="post-date" href="$url$" title="Permalink"><time datetime="$date$">$date$</time></a>
       <div class="post-body">
         $body$
       </div>

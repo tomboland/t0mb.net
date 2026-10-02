@@ -309,3 +309,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 .review-expansion summary { cursor: pointer; color: var(--accent); width: fit-content; }
 .review-expansion summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .review-permalink { font-size: 0.85rem; color: var(--secondary); }
+
+.post-title { font-size: 1rem; margin-bottom: 0.25rem; }
+.post-date { text-decoration: none; }
+.posts { margin-top: 1.5rem; }

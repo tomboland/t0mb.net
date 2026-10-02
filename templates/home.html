@@ -2,6 +2,15 @@
   <h1>$introTitle$</h1>
   $intro$
   <p><a href="/films/">Explore the film collection →</a> · <a href="/films/diary/">Viewing diary</a></p>
+</section>
+$if(hasPosts)$
+<section aria-labelledby="recent-notes-heading">
+  <h2 id="recent-notes-heading">Recent notes</h2>
+  $partial("templates/post-list.html")$
+  <p><a href="/notes/">All notes</a> · <a href="/rss.xml">Follow via RSS</a></p>
+</section>
+$endif$
+<section class="cinema">
   <h2>$heading$</h2>
   <div id="home-reviews">$partial("templates/cinema/review-list.html")$</div>
   $if(featuredPool)$
@@ -10,7 +19,3 @@
   $endif$
   <p><a href="/films/reviews/">All film reviews</a> · <a href="/rss.xml">Follow via RSS</a></p>
 </section>
-$if(hasPosts)$
-<h2>Other recent writing</h2>
-$partial("templates/post-list.html")$
-$endif$

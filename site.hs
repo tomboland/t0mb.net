@@ -87,6 +87,13 @@ main = do
       compile $ pandocCompiler >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/post.html" postCtx
         >>= loadAndApplyTemplate "templates/default.html" siteCtx >>= relativizeUrls
+    create ["notes/index.html"] $ do
+      route idRoute
+      compile $ do
+        posts <- recentFirst =<< loadAllSnapshots "posts/*/index.md" "content"
+        let context = listField "posts" postCtx (pure posts) <> constField "title" "Notes" <> siteCtx
+        makeItem "" >>= loadAndApplyTemplate "templates/notes.html" context
+          >>= loadAndApplyTemplate "templates/default.html" context >>= relativizeUrls
     match "software.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" siteCtx >>= relativizeUrls

@@ -306,6 +306,30 @@ class CinemaTests(unittest.TestCase):
         film = self.build()['films/local-film-2000/index.html']
         self.assertNotIn('review-second-heading', film)
 
+    def test_notes_pages_home_archive_and_feed(self):
+        for day in range(1, 5):
+            path = self.root / 'posts' / ('2026-02-0' + str(day) + '-note') / 'index.md'
+            path.parent.mkdir(parents=True)
+            path.write_text(f'---\ntitle: Note {day}\ndate: 2026-02-0{day}\n---\n\nEntry **{day}**.\n')
+        pages = self.build()
+        home = pages['index.html']
+        self.assertIn('Recent notes', home)
+        self.assertNotIn('Note 1', home)
+        self.assertLess(home.index('Note 4'), home.index('Note 3'))
+        self.assertLess(home.index('Note 3'), home.index('Note 2'))
+        for day in range(1, 5):
+            self.assertIn(f'Note {day}', pages['notes/index.html'])
+            self.assertIn(f'Note {day}', pages['archive.html'])
+            self.assertIn(f'<h1>Note {day}</h1>', pages[f'posts/2026-02-0{day}-note/index.html'])
+        items = ET.parse(self.root / '_site/rss.xml').findall('./channel/item')
+        self.assertEqual([i.findtext('title') for i in items], ['Note 4', 'Note 3', 'Note 2', 'Note 1'])
+        self.assertIn('<strong>4</strong>', items[0].findtext('description'))
+        path = self.root / 'posts/2026-02-04-note/index.md'
+        path.write_text(path.read_text().replace('Entry **4**.', 'Updated entry.'))
+        pages = self.build()
+        self.assertIn('Updated entry.', pages['index.html'])
+        self.assertIn('Updated entry.', pages['notes/index.html'])
+
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
         spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))
