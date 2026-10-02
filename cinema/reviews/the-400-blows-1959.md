@@ -7,4 +7,4 @@ draft: true
 spoilers: false
 ---
 
-<!-- Write your review here. Set the publication date and change draft to false when ready. -->
+I am often emotionally detached from films.  I view them in a technical way.  Not this one, I really felt for Antoine.  

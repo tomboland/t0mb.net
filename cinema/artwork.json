@@ -12105,5 +12105,22 @@
       "id": 933260,
       "type": "movie"
     }
+  },
+  "local-aaf3568c4970": {
+    "tmdb": {
+      "type": "movie",
+      "id": 31217
+    },
+    "poster": {
+      "path": "/images/films/tmdb/w500-7ac9f9c8edab3c3e8adb.jpg",
+      "thumbnail": "/images/films/tmdb/w185-8b45723561650a905887.jpg",
+      "alt": "Poster for The Human Condition I: No Greater Love",
+      "source_path": "/q7godavx5XEbeVxEeqi4pmiOKdI.jpg"
+    },
+    "backdrop": {
+      "path": "/images/films/tmdb/w780-48125819246bfff46d6c.jpg",
+      "alt": "Backdrop for The Human Condition I: No Greater Love",
+      "source_path": "/d9IXxTrra12erdjVXoWUhuTVzTH.jpg"
+    }
   }
 }

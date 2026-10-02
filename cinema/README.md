@@ -95,7 +95,71 @@ watch` also picks up cinema changes, including new film and tag pages.
 Run `python3 scripts/test-cinema.py` after compiling to check cinema rendering
 against isolated fixtures, including incremental updates and draft removal.
 
-## Add a film, viewing or review
+## Log a film in one step
+
+The local catalogue, diary and Markdown reviews are the source of truth. No
+Letterboxd account or export is needed. From the repository root:
+
+```sh
+# Diary only; viewing date defaults to today:
+python3 scripts/cinema.py log "The Human Condition I: No Greater Love"
+
+# Diary plus a linked Markdown draft (the command prints the file to edit):
+python3 scripts/cinema.py log "The Human Condition I: No Greater Love" --review
+
+# Or supply the review now; it will be published on the next build:
+python3 scripts/cinema.py log "The Human Condition I: No Greater Love" --review "Your review here."
+```
+
+These are alternative commands. Each successful `log` invocation creates one
+new viewing, so run just the one that matches what you want to record.
+
+The command reuses an existing film by ID, slug or exact title. Otherwise it
+searches TMDB and adds the film implicitly, including director metadata, poster,
+thumbnail and backdrop where available. Ambiguous or inexact search results ask
+you to choose; noninteractive runs stop and print IDs instead of guessing.
+Use `--year 1959` to narrow a title search, or skip search with `--tmdb-id 31217`.
+
+Configure your existing TMDB **API read access token** once in your shell:
+
+```sh
+export TMDB_TOKEN_FILE=/path/to/your/existing-tmdb-token
+```
+
+Alternatively, store the token at `~/.config/t0mb.net/tmdb-token`, or pass
+`--token-file PATH` to a command. Keep credentials outside this repository.
+Cached requests can work without a token; uncached TMDB requests need one.
+
+Optional logging flags:
+
+```sh
+python3 scripts/cinema.py log --tmdb-id 31217 --date 2026-10-02 --rating 4.5 --review
+```
+
+`--date` is the watched date; omit it for today. Ratings are optional, from 0.5
+to 5 in half steps. Add `--rewatch` for a repeat viewing. Review publication dates
+default to today independently of the watched date and can be edited in Markdown.
+
+With bare `--review`, write in the generated file and set `draft: false` when
+ready. With `--review "text"`, the file contains that text and `draft: false`.
+Both forms link the review to the new viewing and copy its date and rating.
+You can add post tags, spoiler notices and other front matter afterwards.
+
+Existing local metadata, artwork overrides and reviews are preserved. Available
+artwork is reused; missing imported files are downloaded. Network work completes
+before saving the diary entry, so an artwork download failure can be retried
+without creating another viewing. A film with no TMDB artwork remains text-only.
+Manually created films without a TMDB reference can still be logged, but cannot
+automatically fetch artwork; the command tells you when this applies.
+
+Nothing is committed or deployed automatically. Preview, review the source and
+image changes, commit them, then run `bash deploy.sh` as usual. Ordinary Hakyll
+builds remain offline.
+
+## Lower-level film, viewing and review commands
+
+These remain available for manual metadata, logging an already-known film, or
+creating a review of an existing viewing without adding another diary entry.
 
 ```sh
 # Without TMDB (repeat --director for co-directors):
@@ -134,7 +198,8 @@ Put your photographs in `images/films/`. Add inline Markdown such as:
 For an optional banner, add `image: "/images/films/the-400-blows/example.jpg"`
 and `image_alt: "Description"` to a review's front matter (or equivalent JSON
 fields on a film). `image_caption` is optional. Images retain their proportions.
-TMDB artwork is imported explicitly and served locally. Normal builds stay offline:
+New TMDB films added with `log` or `film` import artwork automatically and serve it
+locally. To refresh or backfill artwork separately (normal builds stay offline):
 
 ```sh
 python3 scripts/import-film-images.py --token-file /private/tmdb-token
@@ -185,6 +250,7 @@ rating or review. Original records remain in the Letterboxd ZIP and matching aud
 
 ```sh
 python3 scripts/test-film-matching.py
+python3 scripts/test-cinema-cli.py
 python3 scripts/test-cinema.py
 ```
 
