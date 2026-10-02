@@ -186,3 +186,25 @@ rating or review. Original records remain in the Letterboxd ZIP and matching aud
 python3 scripts/test-film-matching.py
 python3 scripts/test-cinema.py
 ```
+
+## Colours and film palettes
+
+All colour controls live in `css/palette.css`. In browser DevTools, select the
+`html` element and edit the `:root` variables to experiment. `--accent` changes
+links, ratings and highlights; `--bg`, `--panel`, `--text`, `--secondary`,
+`--muted`, `--border` and `--input-border` control the other colours.
+`--row-odd`, `--row-even` and `--row-hover` control listing backgrounds; their
+defaults follow the base palette. Visible rows alternate even after filtering.
+The file includes suggested amber colours to try. DevTools edits are temporary;
+copy them into the CSS file and rebuild to keep them.
+
+For a curated film palette, add `"theme": "your-theme"` to that film in
+`cinema/films.json`, then define `html[data-film-theme="your-theme"]` in
+`css/palette.css` with your colour overrides (a commented example is provided).
+Use lowercase letters, digits and hyphens for theme names. Its film page and
+all its reviews inherit that palette, including page chrome; catalogue, diary,
+director, tag and homepage listings retain the site's default palette.
+Omitted colours inherit the default. Removing the film's `theme` field restores
+the default, and an undefined theme name also falls back to it. No film palettes
+are assigned by default. Check text, muted labels and links against both row
+backgrounds when curating a palette.

@@ -261,6 +261,25 @@ class CinemaTests(unittest.TestCase):
         importer.import_likes(path, likes)
         self.assertEqual(json.loads(path.read_text()), result)
 
+    def test_film_themes_inherit_to_reviews_only(self):
+        self.review('first')
+        self.review('second')
+        self.films[0]['theme'] = 'curated-amber'
+        self.write('films', self.films)
+        pages = self.build()
+        themed = ['films/local-film-2000/index.html',
+                  'films/local-film-2000/reviews/first/index.html',
+                  'films/local-film-2000/reviews/second/index.html']
+        for route, body in pages.items():
+            self.assertEqual('data-film-theme="curated-amber"' in body, route in themed, route)
+        del self.films[0]['theme']
+        self.write('films', self.films)
+        self.assertNotIn('data-film-theme=', self.build()[themed[0]])
+        self.films[0]['theme'] = 'invalid theme'
+        self.write('films', self.films)
+        with self.assertRaisesRegex(ValueError, 'Film theme must'):
+            self.build()
+
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
         spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))

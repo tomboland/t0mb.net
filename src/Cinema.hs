@@ -124,6 +124,10 @@ validate c = do
   mapM_ (\f -> do
     unless (safeSlug $ str "slug" f) $ fail "Invalid film slug"
     unless (get "liked" f `elem` [Null,Bool True,Bool False]) $ fail "liked must be true or false"
+    case get "theme" f of
+      Null -> pure ()
+      String theme | safeSlug (T.unpack theme) -> pure ()
+      _ -> fail "Film theme must be a non-empty lowercase name using letters, digits or hyphens"
     validRating f) (films c)
   mapM_ (\v -> do
     unless (S.member (str "film" v) ids) $ fail "Viewing refers to missing film"
@@ -222,12 +226,12 @@ viewingSummary c v = set [("film",filmSummary c f),("reviews",values $ map (revi
 watchesFor :: Cinema -> Value -> [Value]
 watchesFor c f = map (viewingSummary c) $ sortOn (Down . (\v -> (str "date" v,str "id" v))) $ filter ((==str "id" f) . str "film") $ viewings c
 filmView :: Cinema -> Value -> Value
-filmView c f = set [("image",hero c f),("reviews",values $ map (reviewSummary c) $ ownReviews c f),
+filmView c f = set [("filmTheme",get "theme" f),("image",hero c f),("reviews",values $ map (reviewSummary c) $ ownReviews c f),
   ("viewings",values $ watchesFor c f),("originalTitle",if get "original_title" f/=get "title" f then get "original_title" f else Null),
   ("tmdbUrl",if truth t then val ("https://www.themoviedb.org/"++str "type" t++"/"++str "id" t) else Null)] (filmSummary c f)
   where t=get "tmdb" f
 reviewView :: Cinema -> Value -> Value
-reviewView c r = set [("film",filmSummary c $ filmFor c $ str "film" r),("image",reviewImage r),
+reviewView c r = set [("filmTheme",get "theme" $ filmFor c $ str "film" r),("film",filmSummary c $ filmFor c $ str "film" r),("image",reviewImage r),
   ("otherReviews",values $ map (reviewSummary c) $ filter ((/=str "id" r) . str "id") $ ownReviews c $ filmFor c $ str "film" r)] r
 
 knownPeople :: Cinema -> [Value]
