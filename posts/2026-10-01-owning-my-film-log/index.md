@@ -1,6 +1,7 @@
 ---
 title: My own film log
 date: 2026-10-01
+tags: [film]
 ---
 
 I have a thing for digital sovereignty. I like films too. Letterboxd is the site where I log and review films. I like it because the interface is very usable, and it’s not a horribly obnoxious place where you have adverts and other things literally screaming for your attention all the time (Facebook: fuck you!).
