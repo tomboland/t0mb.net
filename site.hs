@@ -2,12 +2,13 @@
 
 import qualified Cinema as C
 import Data.Aeson (Value)
-import Control.Monad (forM_, when)
+import Control.Monad (forM, forM_, when)
 import Data.List (isPrefixOf)
 import qualified Data.Map.Strict as M
 import qualified Data.Set as S
-import Hakyll
+import Hakyll hiding (renderTags)
 import Hakyll.Core.Dependencies (DependencyKind(..))
+import Text.HTML.TagSoup (Tag(..), parseTags, renderTags)
 import System.Directory (doesDirectoryExist, listDirectory, removeFile)
 import System.Environment (getArgs)
 import System.FilePath ((</>), replaceExtension, takeExtension)
@@ -38,7 +39,9 @@ main = do
     rulesExtraDependencies [dependency] $ do
       forM_ pages $ \(url,tpl,view) -> create [fromFilePath $ C.routePath url] $ do
         route idRoute
-        compile $ makeItem "" >>= renderCinema tpl view
+        compile $ do
+          pageView <- if tpl == "film" then embedReviews view else pure view
+          makeItem "" >>= renderCinema tpl pageView
       match reviewPattern $ do
         route $ customRoute $ \identifier ->
           C.routePath $ C.reviewUrl cinema $ reviewFor identifier
@@ -47,6 +50,7 @@ main = do
           let review=reviewFor identifier
               view=C.set [("nav_writing",C.val "true")] $ C.reviewView cinema review
           pandocCompiler
+            >>= saveSnapshot "review-body"
             >>= loadAndApplyTemplate "templates/cinema/review.html" (C.viewContext view <> siteFields)
             >>= saveSnapshot "content"
             >>= wrapCinema view
@@ -86,6 +90,27 @@ main = do
     match "software.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" siteCtx >>= relativizeUrls
+
+-- Load only the rendered Markdown, without a standalone review's navigation.
+embedReviews :: Value -> Compiler Value
+embedReviews view = do
+  embedded <- forM (C.ls "reviews" view) $ \review -> do
+    body <- loadSnapshotBody (fromFilePath $ C.str "source" review) "review-body"
+    let prefix = "review-" ++ C.str "id" review ++ "-body-"
+        url = C.str "url" review
+        resolve link
+          | null link || "/" `isPrefixOf` link = link
+          | "#" `isPrefixOf` link = "#" ++ prefix ++ drop 1 link
+          | ':' `elem` takeWhile (/='/') link = link
+          | otherwise = url ++ link
+        namespace (TagOpen name attrs) = TagOpen name
+          [(key, if key `elem` ["id", "for"] then prefix ++ value
+                 else if key `elem` ["aria-describedby", "aria-labelledby"] then unwords (map (prefix ++) $ words value)
+                 else value) | (key,value) <- attrs]
+        namespace tag = tag
+        html = withUrls resolve $ renderTags $ map namespace $ parseTags body
+    pure $ C.set [("htmlBody",C.val html),("image",C.reviewImage review)] review
+  pure $ C.set [("embeddedReviews",C.values embedded)] view
 
 renderCinema :: String -> Value -> Item String -> Compiler (Item String)
 renderCinema template view item =

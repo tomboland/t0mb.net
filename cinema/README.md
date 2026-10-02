@@ -208,3 +208,11 @@ Omitted colours inherit the default. Removing the film's `theme` field restores
 the default, and an undefined theme name also falls back to it. No film palettes
 are assigned by default. Check text, muted labels and links against both row
 backgrounds when curating a palette.
+
+## Reviews on film pages
+
+Film pages display all published reviews, newest first, with their dates, ratings
+and spoiler notices. Each retains a permanent standalone page. Reviews longer
+than 220 words get a 100-word preview and a “more…” / “less…” control in browsers
+with JavaScript; without JavaScript, every review is shown in full. Drafts are
+excluded. The thresholds live in `js/film-reviews.js`.

@@ -20,5 +20,6 @@ executable site
     , time
     , unicode-transforms
     , yaml
+    , tagsoup
   default-language: Haskell2010
   ghc-options: -Wall -threaded

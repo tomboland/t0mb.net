@@ -196,7 +196,7 @@ valueContext = Context $ \key _ item -> case get key (itemBody item) of
   Object o | KM.null o -> noResult $ "Empty field "++key
   v@(Object _) -> pure $ ListField valueContext [Item (fromFilePath key) v]
   Bool True -> pure EmptyField
-  v -> pure $ StringField $ if key=="intro" then text v else escapeHtml (text v)
+  v -> pure $ StringField $ if key `elem` ["intro", "htmlBody"] then text v else escapeHtml (text v)
 viewContext :: Value -> Context String
 viewContext v = bodyField "body" <> Context (\k args i -> unContext valueContext k args (Item (itemIdentifier i) v))
 

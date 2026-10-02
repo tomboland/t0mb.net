@@ -298,3 +298,14 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 }
 
 .rewatch-icon { display: inline-block; width: 1.25em; text-align: center; line-height: 1; }
+
+.film-reviews { margin-block: 1rem 2rem; }
+.embedded-review { padding-block: 1.25rem; border-bottom: 1px solid var(--border); }
+.embedded-review:first-child { padding-top: 0; }
+.embedded-review h3 { margin: 0; font-size: 1rem; }
+.embedded-review-body { overflow-wrap: anywhere; }
+.embedded-review-body > :first-child { margin-top: 0.75rem; }
+.embedded-review-body pre { overflow-x: auto; }
+.review-expansion summary { cursor: pointer; color: var(--accent); width: fit-content; }
+.review-expansion summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.review-permalink { font-size: 0.85rem; color: var(--secondary); }

@@ -280,6 +280,32 @@ class CinemaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Film theme must'):
             self.build()
 
+    def test_embedded_review_bodies_and_links(self):
+        self.review('first', date='2026-01-01')
+        self.review('second', date='2026-01-02')
+        self.review('secret', draft=True)
+        for name in ['first', 'second']:
+            path = self.data / 'reviews' / (name + '.md')
+            path.write_text(path.read_text().replace('Actual writing.',
+                '**Readable writing** with a [relative link](notes.html) and a footnote.[^1]\n\n[^1]: A note.'))
+        pages = self.build()
+        film = pages['films/local-film-2000/index.html']
+        self.assertEqual(film.count('class="embedded-review"'), 2)
+        self.assertEqual(film.count('<strong>Readable writing</strong>'), 2)
+        self.assertNotIn('secret', film)
+        self.assertLess(film.index('review-second-heading'), film.index('review-first-heading'))
+        for name in ['first', 'second']:
+            self.assertIn('/films/local-film-2000/reviews/' + name + '/notes.html', film)
+            self.assertIn('id="review-' + name + '-body-fn1"', film)
+            self.assertIn('#review-' + name + '-body-fn1', film)
+        path = self.data / 'reviews/second.md'
+        path.write_text(path.read_text().replace('Readable writing', 'Revised writing'))
+        film = self.build()['films/local-film-2000/index.html']
+        self.assertIn('<strong>Revised writing</strong>', film)
+        self.review('second', draft=True)
+        film = self.build()['films/local-film-2000/index.html']
+        self.assertNotIn('review-second-heading', film)
+
     def test_tag_command_add_remove_and_deduplicate(self):
         from unittest.mock import patch
         spec = importlib.util.spec_from_file_location('cinema_cli', Path(__file__).with_name('cinema.py'))
