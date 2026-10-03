@@ -23,3 +23,9 @@ Very noirish.
 You get _so_ much from the camera movement, the soundscape, symbolism, the tension building with disjointedness, crazy angles, grating violin and unsettling synths, and great editing, all working in pure cinematic unison. The performances are really great, but this film's story is told through the language of cinema! 
 
 A new favourite for me!
+
+![Brooke Adams doing "the thing with her eyes"; it needs to be seen in motion!](/images/films/invasion-of-the-body-snatchers-1978-brooke-eyes.jpg)
+
+![A mind-bending mirror shot.](/images/films/invasion-of-the-body-snatchers-1978-donald-jeff-mirror.jpg)
+
+![Possibly the most iconic shot in the whole film.  IYKYK!](/images/films/invasion-of-the-body-snatchers-1978-donald-scream.jpg)

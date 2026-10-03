@@ -10,3 +10,7 @@ draft: false
 ---
 
 This is great to see and all, but the second half of the film which reconstructs/depicts the actual push for the South Pole was quite tedious and didn't have much to offer compared with the incredible shots of the scenery and denizens in the first part.
+
+![Epic ice cliff dwarfing the man.  I suspect the man with the sled is composited onto the image, but not sure.](/images/films/the-great-white-silence-1924-ice-cliff.jpg)
+
+![Sled poser.](/images/films/the-great-white-silence-1924-sled-poser.jpg)
