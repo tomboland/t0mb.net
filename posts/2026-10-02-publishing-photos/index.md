@@ -4,15 +4,13 @@ date: 2026-10-02
 tags: [photography]
 ---
 
-I'm going to start publishing my photos here, including the astrophotography ones. When I post them on Facebook, they hardly look anything like the originals anyway.  I used to post them on Twitter, but then it became even more of a cess-pit than it was when it was Twitter.  
+I'm going to start publishing my photos here, including the astrophotography ones. When I post them on Facebook, they hardly look anything like the originals anyway.  I used to post them on Twitter, but then it became even worse than it was when it was Twitter.  
 
 I'm also going to try and develop the language to describe my photos well, and I understand that an image's "alt" text is very valuable to more than just people with sight-impairement.
 
-All words are my own.  My site is heavily vibe-coded, but the content is me (although the film section has all sorts of technical detail from [TMDB's](https://tmdb.org) API).  As an exercise I took my alt-text and created an image from it using the Flux.2 Dev model on my own PC, and it actually came pretty close, so I figure the alt-text must be half-decent at least!  There are the usual deviations.  I don't intend to post these routinely, but it's a fun experiment.  In addition to that, I had used an LLM to help me find the term I was grasping for where the layers of hills and trees are lit more diffusely with distance.  [This](https://en.wikipedia.org/wiki/Aerial_perspective) was what I was looking for! 
+All words are my own.  As an exercise I took my alt-text and created an image from it using the Flux.2 Dev model on my own PC, and it actually came pretty close, so I figure the alt-text must be half-decent at least!  There are the usual deviations.  I don't intend to post these routinely, but it's a fun experiment.  In addition to that, I had used an LLM to help me find the term I was grasping for where the layers of hills and trees are lit more diffusely with distance.  [This](https://en.wikipedia.org/wiki/Aerial_perspective) was what I was looking for! 
 
-On the subject of AI use, I plan to write on that in length.  Spoiler: I'm not on either side of what is yet another polarising debate and I'm not exactly neutral either.
-
-Back on topic, the writing goes well with me trying to be more observant in general recently.  Yesterday I was stood for half an hour watching birds of prey with my binoculars.  There were four or five of them hanging around.  I was attempting to concretely describe their features to myself in detail, and that helped when I went back in and was trying to figure out what they were.  I have spent a lot of time looking at birds of prey, but never actually taken the time to truly identify them.  They were red kites btw.  I thought they were probably buzzards at first!  I saw a jay fly past as well, which is very rare!
+The writing goes well with me trying to be more observant in general recently.  Yesterday I was stood for half an hour watching birds of prey with my binoculars.  There were four or five of them hanging around.  I was attempting to concretely describe their features to myself in detail, and that helped when I went back in and was trying to figure out what they were.  I have spent a lot of time looking at birds of prey, but never actually taken the time to truly identify them.  They were red kites btw.  I thought they were probably buzzards at first!  I saw a jay fly past as well, which is very rare!
 
 Anyway, this is my image of a sunset over The Skirrid, near Abergavenny.  Captured from my back garden.
 
