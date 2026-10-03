@@ -2,7 +2,7 @@
 title: About this collection
 ---
 
-My viewing history and writing, originally imported from Letterboxd. A viewing does not need a rating or a review. Some older watched films have no recorded viewing date.
+My viewing history and writing, originally imported from Letterboxd. 
 
 ## Credits
 
@@ -10,4 +10,4 @@ Film metadata, posters, backdrops and directing filmographies are supplied by [T
 
 <a href="https://www.themoviedb.org"><img class="tmdb-logo" src="/images/tmdb.svg" alt="TMDB"></a>
 
-This product uses the TMDB API but is not endorsed or certified by TMDB.
+This product uses the TMDB API but is not endorsed or certified by TMDB.  Furthermore, I'm grateful to TMDB for operating a web site that doesn't suck: It doesn't treat users with contempt and it's not attention-grabbing like other sites; it's just worth calling out these days!
