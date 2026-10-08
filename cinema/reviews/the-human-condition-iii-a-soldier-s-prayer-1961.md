@@ -3,7 +3,7 @@ id: "the-human-condition-iii-a-soldier-s-prayer-1961-2026-10-08-6af7bb"
 film: "local-ec8ced6ed2c6"
 title: "The Human Condition III: A Soldier's Prayer"
 date: "2026-10-08"
-draft: true
+draft: false
 spoilers: false
 viewing: "local-11840b03fb4c"
 watched_date: "2026-10-08"
