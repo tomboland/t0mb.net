@@ -16053,7 +16053,8 @@
     },
     "runtime": 178,
     "original_title": "人間の條件　第３部望郷篇／第４部戦雲篇",
-    "slug": "the-human-condition-ii-road-to-eternity-1959"
+    "slug": "the-human-condition-ii-road-to-eternity-1959",
+    "liked": true
   },
   {
     "id": "local-ec8ced6ed2c6",
@@ -16073,7 +16074,8 @@
     },
     "runtime": 190,
     "original_title": "人間の條件　完結篇",
-    "slug": "the-human-condition-iii-a-soldier-s-prayer-1961"
+    "slug": "the-human-condition-iii-a-soldier-s-prayer-1961",
+    "liked": true
   },
   {
     "id": "local-bae224caa3fa",
@@ -16093,6 +16095,7 @@
     },
     "runtime": 101,
     "original_title": "Tenebre",
-    "slug": "tenebre-1982"
+    "slug": "tenebre-1982",
+    "liked": true
   }
 ]
