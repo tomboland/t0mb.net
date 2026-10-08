@@ -16034,5 +16034,65 @@
     "runtime": 204,
     "original_title": "人間の條件　第１部純愛篇／第２部激怒篇",
     "slug": "the-human-condition-i-no-greater-love-1959"
+  },
+  {
+    "id": "local-2d88f119c774",
+    "title": "The Human Condition II: Road to Eternity",
+    "year": "1959",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 76978,
+        "name": "Masaki Kobayashi"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 34528
+    },
+    "runtime": 178,
+    "original_title": "人間の條件　第３部望郷篇／第４部戦雲篇",
+    "slug": "the-human-condition-ii-road-to-eternity-1959"
+  },
+  {
+    "id": "local-ec8ced6ed2c6",
+    "title": "The Human Condition III: A Soldier's Prayer",
+    "year": "1961",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 76978,
+        "name": "Masaki Kobayashi"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 34530
+    },
+    "runtime": 190,
+    "original_title": "人間の條件　完結篇",
+    "slug": "the-human-condition-iii-a-soldier-s-prayer-1961"
+  },
+  {
+    "id": "local-bae224caa3fa",
+    "title": "Tenebre",
+    "year": "1982",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 4955,
+        "name": "Dario Argento"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 29702
+    },
+    "runtime": 101,
+    "original_title": "Tenebre",
+    "slug": "tenebre-1982"
   }
 ]

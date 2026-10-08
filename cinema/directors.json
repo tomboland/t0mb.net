@@ -53341,5 +53341,151 @@
         "year": "1972"
       }
     ]
+  },
+  {
+    "id": 4955,
+    "name": "Dario Argento",
+    "filmography": [
+      {
+        "tmdb_id": 10593,
+        "title": "The Phantom of the Opera",
+        "year": "1998"
+      },
+      {
+        "tmdb_id": 20126,
+        "title": "Deep Red",
+        "year": "1975"
+      },
+      {
+        "tmdb_id": 20345,
+        "title": "The Bird with the Crystal Plumage",
+        "year": "1970"
+      },
+      {
+        "tmdb_id": 30689,
+        "title": "Four Flies on Grey Velvet",
+        "year": "1971"
+      },
+      {
+        "tmdb_id": 11906,
+        "title": "Suspiria",
+        "year": "1977"
+      },
+      {
+        "tmdb_id": 27431,
+        "title": "The Cat o' Nine Tails",
+        "year": "1971"
+      },
+      {
+        "tmdb_id": 29161,
+        "title": "Phenomena",
+        "year": "1985"
+      },
+      {
+        "tmdb_id": 29159,
+        "title": "Giallo",
+        "year": "2010"
+      },
+      {
+        "tmdb_id": 14229,
+        "title": "Do You Like Hitchcock?",
+        "year": "2005"
+      },
+      {
+        "tmdb_id": 29514,
+        "title": "Two Evil Eyes",
+        "year": "1990"
+      },
+      {
+        "tmdb_id": 44435,
+        "title": "Trauma",
+        "year": "1993"
+      },
+      {
+        "tmdb_id": 15206,
+        "title": "The Mother of Tears",
+        "year": "2007"
+      },
+      {
+        "tmdb_id": 15483,
+        "title": "The Card Player",
+        "year": "2004"
+      },
+      {
+        "tmdb_id": 16395,
+        "title": "Inferno",
+        "year": "1980"
+      },
+      {
+        "tmdb_id": 39434,
+        "title": "The Stendhal Syndrome",
+        "year": "1996"
+      },
+      {
+        "tmdb_id": 39436,
+        "title": "Sleepless",
+        "year": "2001"
+      },
+      {
+        "tmdb_id": 48853,
+        "title": "The Five Days",
+        "year": "1973"
+      },
+      {
+        "tmdb_id": 135812,
+        "title": "Dracula 3D",
+        "year": "2012"
+      },
+      {
+        "tmdb_id": 1189988,
+        "title": "CVLT",
+        "year": "2023"
+      },
+      {
+        "tmdb_id": 289600,
+        "title": "The Sandman",
+        "year": ""
+      },
+      {
+        "tmdb_id": 288743,
+        "title": "Pelts",
+        "year": "2006"
+      },
+      {
+        "tmdb_id": 299438,
+        "title": "Jenifer",
+        "year": "2005"
+      },
+      {
+        "tmdb_id": 1034423,
+        "title": "Untitled Dario Argento / Isabelle Huppert Project",
+        "year": ""
+      },
+      {
+        "tmdb_id": 522822,
+        "title": "The King of Ads",
+        "year": "1991"
+      },
+      {
+        "tmdb_id": 630720,
+        "title": "Dark Glasses",
+        "year": "2022"
+      },
+      {
+        "tmdb_id": 20115,
+        "title": "Opera",
+        "year": "1987"
+      },
+      {
+        "tmdb_id": 29702,
+        "title": "Tenebre",
+        "year": "1982"
+      },
+      {
+        "tmdb_id": 1767729,
+        "title": "Between the Living and the Dead",
+        "year": ""
+      }
+    ]
   }
 ]
