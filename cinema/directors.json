@@ -53487,5 +53487,102 @@
         "year": ""
       }
     ]
+  },
+  {
+    "id": 14566,
+    "name": "Alexander Mackendrick",
+    "filmography": [
+      {
+        "tmdb_id": 976,
+        "title": "Sweet Smell of Success",
+        "year": "1957"
+      },
+      {
+        "tmdb_id": 3052,
+        "title": "Don't Make Waves",
+        "year": "1967"
+      },
+      {
+        "tmdb_id": 5506,
+        "title": "The Ladykillers",
+        "year": "1955"
+      },
+      {
+        "tmdb_id": 32568,
+        "title": "The Man in the White Suit",
+        "year": "1951"
+      },
+      {
+        "tmdb_id": 41250,
+        "title": "Sammy Going South",
+        "year": "1963"
+      },
+      {
+        "tmdb_id": 16665,
+        "title": "Whisky Galore!",
+        "year": "1949"
+      },
+      {
+        "tmdb_id": 38340,
+        "title": "A High Wind in Jamaica",
+        "year": "1965"
+      },
+      {
+        "tmdb_id": 47026,
+        "title": "Mandy",
+        "year": "1952"
+      },
+      {
+        "tmdb_id": 48954,
+        "title": "The 'Maggie'",
+        "year": "1954"
+      },
+      {
+        "tmdb_id": 1219013,
+        "title": "Contraries",
+        "year": "1943"
+      }
+    ]
+  },
+  {
+    "id": 40333,
+    "name": "Satoshi Kon",
+    "filmography": [
+      {
+        "tmdb_id": 10494,
+        "title": "Perfect Blue",
+        "year": "1998"
+      },
+      {
+        "tmdb_id": 4977,
+        "title": "Paprika",
+        "year": "2006"
+      },
+      {
+        "tmdb_id": 33320,
+        "title": "Millennium Actress",
+        "year": "2002"
+      },
+      {
+        "tmdb_id": 13398,
+        "title": "Tokyo Godfathers",
+        "year": "2003"
+      },
+      {
+        "tmdb_id": 262833,
+        "title": "Ani*Kuri15",
+        "year": "2008"
+      },
+      {
+        "tmdb_id": 1410558,
+        "title": "The Dream Machine",
+        "year": ""
+      },
+      {
+        "tmdb_id": 1677172,
+        "title": "Paranoia Agent: Part 1",
+        "year": "2004"
+      }
+    ]
   }
 ]

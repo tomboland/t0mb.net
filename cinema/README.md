@@ -246,6 +246,22 @@ misplaced Hobo with a Shotgun review is omitted because its corrected feature
 review already exists. The short's watched entry remains, without the feature's
 rating or review. Original records remain in the Letterboxd ZIP and matching audit.
 
+## Export viewing history for an LLM
+
+Run `python3 scripts/export-cinema.py` to create
+`generated/cinema-export/film-context.txt` and `film-context.json`. Attach the
+text file to another LLM for a self-contained account of your watched films,
+likes, favourites, ratings, dated viewings and full review text. The JSON file
+contains the same evidence in structured form; you only need to send one.
+Both include interpretation guidance and collection counts.
+
+The export uses current local sources and runs offline. It preserves separate
+film, viewing and review ratings, repeated viewings and original review metadata.
+Unfinished drafts are excluded unless you pass `--include-drafts`. Image links
+remain in review text, but image files are not bundled. Generated exports are
+ignored by Git; regenerate them after updating the collection. Use
+`--output-dir PATH` to save elsewhere.
+
 ## Checks
 
 ```sh
