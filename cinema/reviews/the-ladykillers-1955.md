@@ -3,7 +3,7 @@ id: "the-ladykillers-1955-2026-10-10-c8d992"
 film: "local-d6a09316b198"
 title: "The Ladykillers"
 date: "2026-10-10"
-draft: true
+draft: false
 spoilers: false
 viewing: "local-f7e06c55b3ab"
 watched_date: "2026-10-09"
