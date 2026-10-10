@@ -16116,7 +16116,8 @@
     },
     "runtime": 91,
     "original_title": "The Ladykillers",
-    "slug": "the-ladykillers-1955"
+    "slug": "the-ladykillers-1955",
+    "liked": true
   },
   {
     "id": "local-f5fb06951e58",
@@ -16136,6 +16137,7 @@
     },
     "runtime": 81,
     "original_title": "PERFECT BLUE",
-    "slug": "perfect-blue-1998"
+    "slug": "perfect-blue-1998",
+    "liked": true
   }
 ]
