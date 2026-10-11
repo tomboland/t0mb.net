@@ -3,7 +3,7 @@ id: "the-dreamers-2003-2026-10-11-45adb3"
 film: "local-96537cbf2281"
 title: "The Dreamers"
 date: "2026-10-11"
-draft: true
+draft: false
 spoilers: false
 viewing: "local-176c4bead6ee"
 watched_date: "2026-10-11"
