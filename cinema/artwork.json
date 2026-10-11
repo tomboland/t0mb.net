@@ -12207,5 +12207,22 @@
       "alt": "Backdrop for Perfect Blue",
       "source_path": "/mHG7dpLb0ZScSY3LpP443IHRmjy.jpg"
     }
+  },
+  "local-96537cbf2281": {
+    "tmdb": {
+      "type": "movie",
+      "id": 1278
+    },
+    "poster": {
+      "path": "/images/films/tmdb/w500-79e83a4e8b2dc6e19b17.jpg",
+      "thumbnail": "/images/films/tmdb/w185-02af73aa927ca9a798a3.jpg",
+      "alt": "Poster for The Dreamers",
+      "source_path": "/gBb7GGaFYPu7nEUYvC8G4LaJJN1.jpg"
+    },
+    "backdrop": {
+      "path": "/images/films/tmdb/w780-4649fad7d0938281a1dd.jpg",
+      "alt": "Backdrop for The Dreamers",
+      "source_path": "/vaRCS4CCFXcWz1j9GKd6rGLsQQ2.jpg"
+    }
   }
 }

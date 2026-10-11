@@ -16139,5 +16139,26 @@
     "original_title": "PERFECT BLUE",
     "slug": "perfect-blue-1998",
     "liked": true
+  },
+  {
+    "id": "local-96537cbf2281",
+    "title": "The Dreamers",
+    "year": "2003",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 4956,
+        "name": "Bernardo Bertolucci"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 1278
+    },
+    "liked": true,
+    "runtime": 115,
+    "original_title": "The Dreamers",
+    "slug": "the-dreamers-2003"
   }
 ]

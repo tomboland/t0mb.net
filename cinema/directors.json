@@ -53584,5 +53584,161 @@
         "year": "2004"
       }
     ]
+  },
+  {
+    "id": 4956,
+    "name": "Bernardo Bertolucci",
+    "filmography": [
+      {
+        "tmdb_id": 1278,
+        "title": "The Dreamers",
+        "year": "2003"
+      },
+      {
+        "tmdb_id": 1643,
+        "title": "Last Tango in Paris",
+        "year": "1972"
+      },
+      {
+        "tmdb_id": 1689,
+        "title": "Little Buddha",
+        "year": "1993"
+      },
+      {
+        "tmdb_id": 746,
+        "title": "The Last Emperor",
+        "year": "1987"
+      },
+      {
+        "tmdb_id": 3870,
+        "title": "1900",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 30636,
+        "title": "Luna",
+        "year": "1979"
+      },
+      {
+        "tmdb_id": 24016,
+        "title": "The Sheltering Sky",
+        "year": "1990"
+      },
+      {
+        "tmdb_id": 8416,
+        "title": "The Conformist",
+        "year": "1971"
+      },
+      {
+        "tmdb_id": 42144,
+        "title": "Tragedy of a Ridiculous Man",
+        "year": "1981"
+      },
+      {
+        "tmdb_id": 14553,
+        "title": "Stealing Beauty",
+        "year": "1996"
+      },
+      {
+        "tmdb_id": 42999,
+        "title": "La Commare Secca",
+        "year": "1962"
+      },
+      {
+        "tmdb_id": 42595,
+        "title": "The Spider's Stratagem",
+        "year": "1970"
+      },
+      {
+        "tmdb_id": 42631,
+        "title": "Partner",
+        "year": "1968"
+      },
+      {
+        "tmdb_id": 42788,
+        "title": "Before the Revolution",
+        "year": "1964"
+      },
+      {
+        "tmdb_id": 44297,
+        "title": "Besieged",
+        "year": "1998"
+      },
+      {
+        "tmdb_id": 953413,
+        "title": "The Death of a Pig",
+        "year": "1956"
+      },
+      {
+        "tmdb_id": 49456,
+        "title": "Love and Anger",
+        "year": "1969"
+      },
+      {
+        "tmdb_id": 79591,
+        "title": "Ten Minutes Older: The Cello",
+        "year": "2002"
+      },
+      {
+        "tmdb_id": 119360,
+        "title": "Me & You",
+        "year": "2012"
+      },
+      {
+        "tmdb_id": 292361,
+        "title": "The Path of Oil",
+        "year": "1967"
+      },
+      {
+        "tmdb_id": 220709,
+        "title": "Venice 70: Future Reloaded",
+        "year": "2013"
+      },
+      {
+        "tmdb_id": 108534,
+        "title": "12 Directors for 12 Cities",
+        "year": "1989"
+      },
+      {
+        "tmdb_id": 1049812,
+        "title": "Bologna",
+        "year": "1989"
+      },
+      {
+        "tmdb_id": 1077756,
+        "title": "La teleferica",
+        "year": "1956"
+      },
+      {
+        "tmdb_id": 1281481,
+        "title": "Histoire d'eaux",
+        "year": "2002"
+      },
+      {
+        "tmdb_id": 539421,
+        "title": "Health Is Ill",
+        "year": "1971"
+      },
+      {
+        "tmdb_id": 336878,
+        "title": "Farewell to Enrico Berlinguer",
+        "year": "1984"
+      },
+      {
+        "tmdb_id": 695352,
+        "title": "Henri Langlois vu par...",
+        "year": "2014"
+      },
+      {
+        "tmdb_id": 339378,
+        "title": "Il canale",
+        "year": "1966"
+      },
+      {
+        "tmdb_id": 1358744,
+        "title": "Postcards from China",
+        "year": "1985"
+      }
+    ]
   }
 ]
