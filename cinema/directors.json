@@ -53740,5 +53740,106 @@
         "year": "1985"
       }
     ]
+  },
+  {
+    "id": 9168,
+    "name": "Alan Parker",
+    "filmography": [
+      {
+        "tmdb_id": 1632,
+        "title": "Mississippi Burning",
+        "year": "1988"
+      },
+      {
+        "tmdb_id": 635,
+        "title": "Angel Heart",
+        "year": "1987"
+      },
+      {
+        "tmdb_id": 10397,
+        "title": "Angela's Ashes",
+        "year": "1999"
+      },
+      {
+        "tmdb_id": 10467,
+        "title": "The Road to Wellville",
+        "year": "1994"
+      },
+      {
+        "tmdb_id": 3537,
+        "title": "Fame",
+        "year": "1980"
+      },
+      {
+        "tmdb_id": 11296,
+        "title": "Birdy",
+        "year": "1984"
+      },
+      {
+        "tmdb_id": 11327,
+        "title": "Midnight Express",
+        "year": "1978"
+      },
+      {
+        "tmdb_id": 11615,
+        "title": "The Life of David Gale",
+        "year": "2003"
+      },
+      {
+        "tmdb_id": 11663,
+        "title": "The Commitments",
+        "year": "1991"
+      },
+      {
+        "tmdb_id": 8446,
+        "title": "Bugsy Malone",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 12104,
+        "title": "Pink Floyd: The Wall",
+        "year": "1982"
+      },
+      {
+        "tmdb_id": 8818,
+        "title": "Evita",
+        "year": "1996"
+      },
+      {
+        "tmdb_id": 950693,
+        "title": "Our Cissy",
+        "year": "1974"
+      },
+      {
+        "tmdb_id": 52772,
+        "title": "Shoot the Moon",
+        "year": "1982"
+      },
+      {
+        "tmdb_id": 59820,
+        "title": "Come See the Paradise",
+        "year": "1990"
+      },
+      {
+        "tmdb_id": 269394,
+        "title": "The Evacuees",
+        "year": "1975"
+      },
+      {
+        "tmdb_id": 1190154,
+        "title": "Footsteps",
+        "year": "1974"
+      },
+      {
+        "tmdb_id": 1067371,
+        "title": "A Turnip Head's Guide To The British Cinema",
+        "year": "1986"
+      },
+      {
+        "tmdb_id": 621703,
+        "title": "No Hard Feelings",
+        "year": "1976"
+      }
+    ]
   }
 ]

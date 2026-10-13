@@ -16160,5 +16160,25 @@
     "runtime": 115,
     "original_title": "The Dreamers",
     "slug": "the-dreamers-2003"
+  },
+  {
+    "id": "local-7e95b7773d85",
+    "title": "Angel Heart",
+    "year": "1987",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 9168,
+        "name": "Alan Parker"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 635
+    },
+    "runtime": 113,
+    "original_title": "Angel Heart",
+    "slug": "angel-heart-1987"
   }
 ]
