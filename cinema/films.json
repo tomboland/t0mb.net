@@ -16180,5 +16180,26 @@
     "original_title": "Angel Heart",
     "slug": "angel-heart-1987",
     "liked": true
+  },
+  {
+    "id": "local-b7a3f31c5130",
+    "title": "Blow Out",
+    "year": "1981",
+    "watched": true,
+    "rating": null,
+    "directors": [
+      {
+        "id": 1150,
+        "name": "Brian De Palma"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 11644
+    },
+    "runtime": 108,
+    "original_title": "Blow Out",
+    "slug": "blow-out-1981",
+    "liked": true
   }
 ]
