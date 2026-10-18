@@ -10,9 +10,9 @@ watched_date: "2026-10-18"
 rating: null
 ---
 
-Some time ago I watched Body Double and was a little nonplussed by just how ludicrous it was.  I did still enjoy it, but found the whole thing utterly preposterous.  Since watching it I've started to appreciate cinema and movie making tradition in its own right, and I really appreciate films in a different way now.  Like, I don't actually care if it's plausible, or whether so and so should have done such and such.  I just take films as they come, and enjoy them much more because of it. Blow Out is not nearly as ridiculous as Body Double anyway.
+Some time ago I watched another Brian De Palma film, Body Double, and was a little nonplussed by just how ludicrous it was.  I did still enjoy it, but found the whole thing utterly preposterous (I do really stand by that!).  Since watching it I've started to appreciate cinema and movie making tradition in its own right, and I appreciate films in a different way now.  Like, I don't actually care if it's plausible, or whether so and so should have done such and such.  I just take films as they come, and enjoy them much more because of it. Blow Out is not nearly as ridiculous as Body Double anyway.
 
-So I watched this tonight, a) because I bought the Criterion 4K and haven't watched it yet, and b) because I watched Carrie last night and just absolutely loved the visual style as much as anything and the visual story-telling; well, audio-visual story-telling!  Anyway, Blow Out was everything I wanted it to be and more; it's just a great thriller!   This is some real Hitchcockian shit, right here, and I absolutely love it!
+Anyway, I watched this tonight, a) because I bought the Criterion 4K and haven't watched it yet, and b) because I watched Carrie last night and just absolutely loved the visual style, as much as anything, and the visual story-telling; well, audio-visual story-telling!  So anyway, I felt like I wanted more of the De Palma thing, and Blow Out was everything I wanted it to be and more; it's just a great thriller!   This is some real Hitchcockian shit, right here, and I absolutely love it!
 
 And the ending; oof!... 🤌😘👌
 
