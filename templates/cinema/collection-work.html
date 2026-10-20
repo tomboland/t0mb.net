@@ -1,0 +1,5 @@
+<p><a href="/films/collection/">← Physical collection</a></p>
+<h1>$workTitle$$if(year)$ <span class="muted">($year$)</span>$endif$</h1>
+$if(canonicalUrl)$<p><a href="$canonicalUrl$">View film details, reviews and viewing history →</a></p>$else$
+<p class="muted">This title is on my shelf. Its catalogue details and links to viewing history are still being checked.</p>$endif$
+<h2>My editions</h2>$partial("templates/cinema/edition-list.html")$

@@ -7,6 +7,7 @@ watched_date: "2026-04-30"
 rating: null
 letterboxd_url: "https://boxd.it/eb3plF"
 draft: false
+viewing: "lb-eb3plF"
 ---
 
 This film is nuts!  It's got crazy action and stunts, then slapstick humour, surreality and aliens...  What more could you want!?

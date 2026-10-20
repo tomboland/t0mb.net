@@ -6,3 +6,6 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# Local collection writer lock
+cinema/.collection.lock

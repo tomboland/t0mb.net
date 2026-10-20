@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/guhDh3"
 draft: false
 featured: true
+viewing: "lb-guhDh3"
 ---
 
 It's the next day and I'm still thinking about this film. When people watch films, they see different things.  Below are some notes reflecting what I saw watching this film yesterday, and why I'm still thinking about it today, and why I _love_ it!

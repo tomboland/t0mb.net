@@ -7,6 +7,7 @@ watched_date: "2026-08-09"
 rating: "5"
 letterboxd_url: "https://boxd.it/fK29BD"
 draft: false
+viewing: "lb-fK29BD"
 ---
 
 I am familiar with Macbeth.  I had to study it at school more than once, and I was dragged to see it at the theatre a few times throughout my childhood, and I've seen it once in adulthood when a friend was in an am-dram production.  I've never really appreciated it.  I'm sure there are people that delight in the language Shakespeare uses, and I'm sure with time and effort maybe I could but for me it was a chore; something I was being subjected to; not something I wanted to appreciate.  

@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/g0sVJ7"
 draft: false
 featured: true
+viewing: "lb-g0sVJ7"
 ---
 
 It's a Wonderful Life without Hollywood's overt sentimentality.  

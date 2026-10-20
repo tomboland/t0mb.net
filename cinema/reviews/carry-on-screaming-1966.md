@@ -7,6 +7,7 @@ watched_date: "2026-09-27"
 rating: null
 letterboxd_url: "https://boxd.it/gw7afF"
 draft: false
+viewing: "lb-gw7afF"
 ---
 
 We have to wait for nearly an hour for Joan Sims' hen-pecking performance after her husband, Sidney, comes back transformed by the Jekyll and Hyde potion. I absolutely love her!  

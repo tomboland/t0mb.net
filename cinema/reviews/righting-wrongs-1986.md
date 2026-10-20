@@ -7,6 +7,7 @@ watched_date: "2026-04-18"
 rating: "5"
 letterboxd_url: "https://boxd.it/e1GOS3"
 draft: false
+viewing: "lb-e1GOS3"
 ---
 
 This movie kicks so much ass!  The choreography and stunts kick ass; the music kicks ass; Cynthia Rothrock - well, I think I'm in love, and she kicks ass!

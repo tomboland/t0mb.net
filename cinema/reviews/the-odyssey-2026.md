@@ -7,6 +7,7 @@ watched_date: "2026-09-05"
 rating: null
 letterboxd_url: "https://boxd.it/gc6Grh"
 draft: false
+viewing: "lb-gc6Grh"
 ---
 
 I'm someone who generally finds something to enjoy in most films. I'm not contrarian or anything. Christopher Nolan's films just don't work for me and this is no exception. I left the cinema after an hour and a half of not enjoying a single moment! That's quite impressive!

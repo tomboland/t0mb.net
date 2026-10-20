@@ -7,6 +7,7 @@ watched_date: "2025-12-10"
 rating: "4"
 letterboxd_url: "https://boxd.it/c0cFuh"
 draft: false
+viewing: "lb-c0cFuh"
 ---
 
 Great film. It's up there with Commando for the mindless action and entertainment.  It's really well produced.  The ending scenes feature some top notch kung faux/bullshido too!

@@ -112,6 +112,9 @@ def main():
         meta = {'id': review_id, 'film': film['id'], 'title': row['Name'], 'date': row['Date'],
                 'watched_date': row['Watched Date'] or None, 'rating': row['Rating'] or None,
                 'letterboxd_url': row['Letterboxd URI'], 'draft': False}
+        matching_viewings = [v for v in viewings if v['film'] == film['id'] and v.get('letterboxd_url') == row['Letterboxd URI'] and (not row['Watched Date'] or v['date'] == row['Watched Date'])]
+        if len(matching_viewings) == 1:
+            meta['viewing'] = matching_viewings[0]['id']
         write_review(review_path(root / 'reviews', film['slug'], row['Date']), meta, html.escape(row['Review'].replace('\r\n', '\n'), quote=False))
         count += 1
     first = next(f for f in films if f.get('tmdb', {}).get('id') == 147)

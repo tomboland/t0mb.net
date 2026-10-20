@@ -7,6 +7,7 @@ watched_date: "2026-01-05"
 rating: null
 letterboxd_url: "https://boxd.it/ctn7Qh"
 draft: false
+viewing: "lb-ctn7Qh"
 ---
 
 This film is stupid in every possible way, but I like it.

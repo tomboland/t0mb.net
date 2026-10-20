@@ -17,6 +17,8 @@
     document.querySelector('.film-filters').hidden = false;
     const search = document.querySelector('#film-search');
     const reviewed = document.querySelector('#reviewed-only');
+    const owned = document.querySelector('#owned-only');
+    const watched = document.querySelector('#watched-only');
     const count = document.querySelector('#filter-count');
     const rows = [...catalogue.querySelectorAll('tbody tr')];
     const index = rows.map(row => fold(row.textContent));
@@ -24,16 +26,18 @@
       const query = fold(search.value.trim());
       let visible = 0;
       rows.forEach((row, i) => {
-        row.hidden = !index[i].includes(query) || (reviewed.checked && row.dataset.reviewed !== 'true');
+        row.hidden = !index[i].includes(query) || (reviewed.checked && row.dataset.reviewed !== 'true') || (owned.checked && row.dataset.owned !== 'true') || (watched.checked && row.dataset.watched !== 'true');
         if (!row.hidden) visible++;
       });
-      document.querySelector('#recent-writing').hidden = !!query || reviewed.checked;
+      document.querySelector('#recent-writing').hidden = !!query || reviewed.checked || owned.checked || watched.checked;
       count.textContent = `${visible} of ${rows.length} films`;
     }
-    const update = () => { save({q: search.value, reviewed: reviewed.checked ? '1' : ''}); filter(); };
+    const update = () => { save({q: search.value, reviewed: reviewed.checked ? '1' : '', owned: owned.checked ? '1' : '', watched: watched.checked ? '1' : ''}); filter(); };
     search.addEventListener('input', update);
     reviewed.addEventListener('change', update);
-    restoreOnReturn(() => { search.value = params().get('q') || ''; reviewed.checked = params().get('reviewed') === '1'; filter(); });
+    owned.addEventListener('change', update);
+    watched.addEventListener('change', update);
+    restoreOnReturn(() => { search.value = params().get('q') || ''; reviewed.checked = params().get('reviewed') === '1'; owned.checked = params().get('owned') === '1'; watched.checked = params().get('watched') === '1'; filter(); });
   }
   const directorSearch = document.querySelector('#director-search');
   if (directorSearch) {

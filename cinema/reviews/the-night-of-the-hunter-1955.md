@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/gjPh8x"
 draft: false
 featured: true
+viewing: "lb-gjPh8x"
 ---
 
 Miss Cooper is one badass beotch!

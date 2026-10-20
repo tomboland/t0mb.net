@@ -7,6 +7,7 @@ watched_date: "2026-02-28"
 rating: null
 letterboxd_url: "https://boxd.it/dljzyD"
 draft: false
+viewing: "lb-dljzyD"
 ---
 
 I watched the 4k disc tonight. I don't think there's much to write home about regarding that specifically but it certainly beats Ghost in the Shell 2.0 that I watched the other day! 

@@ -7,6 +7,7 @@ watched_date: "2026-03-17"
 rating: null
 letterboxd_url: "https://boxd.it/dzalKt"
 draft: false
+viewing: "lb-dzalKt"
 ---
 
 Second disc of the 4K UHD if the extended edition. It's a great film but the CGI is hugely overused.

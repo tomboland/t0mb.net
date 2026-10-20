@@ -7,6 +7,7 @@ watched_date: "2026-05-19"
 rating: null
 letterboxd_url: "https://boxd.it/eqItTt"
 draft: false
+viewing: "lb-eqItTt"
 ---
 
 Oozing with great 70s vibes, funky music and absolutely tonnes of charm; and what a great cast!

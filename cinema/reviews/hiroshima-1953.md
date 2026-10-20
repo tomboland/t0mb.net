@@ -7,6 +7,7 @@ watched_date: "2026-01-28"
 rating: null
 letterboxd_url: "https://boxd.it/cSys2J"
 draft: false
+viewing: "lb-cSys2J"
 ---
 
 It feels disrespectful given the devastating subject matter, but this just didn't grab me tonight.

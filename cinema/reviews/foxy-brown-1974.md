@@ -7,6 +7,7 @@ watched_date: "2025-12-17"
 rating: "3.5"
 letterboxd_url: "https://boxd.it/c5S5it"
 draft: false
+viewing: "lb-c5S5it"
 ---
 
 I wonder if Tarantino ever saw this?

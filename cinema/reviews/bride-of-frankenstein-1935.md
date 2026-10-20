@@ -7,6 +7,7 @@ watched_date: "2026-05-29"
 rating: null
 letterboxd_url: "https://boxd.it/eyMLjN"
 draft: false
+viewing: "lb-eyMLjN"
 ---
 
 This has everything that made the first one great; the set design, lighting, eccentric characters and whatnot. It's also got great continuity from the first one, and develops it. It's just a great film!

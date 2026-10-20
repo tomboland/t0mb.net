@@ -39,6 +39,23 @@ class CinemaTests(unittest.TestCase):
         for name in ('templates', 'content'):
             shutil.copytree(ROOT / name, self.root / name)
 
+    def test_owned_editions_unlinked_work_and_private_fields(self):
+        self.films.append(dict(id='new-film',slug='new-film-2020',title='Not watched',year='2020',watched=False,directors=[{'id':'local-person','name':'Someone'}]))
+        self.write('films',self.films)
+        self.write('collection',dict(labels=[dict(id='label-arrow',name='Arrow')],
+            works=[dict(id='work-a',title='Observed title',catalogue_film_id='local-film'),dict(id='work-b',title='Pending identity',year=None,kind='film'),dict(id='work-c',title='Not watched',catalogue_film_id='new-film')],
+            editions=[dict(id='edition-a',title='Box set',label_id='label-arrow',formats=['4K UHD'],contents=[dict(work_id='work-a'),dict(work_id='work-b'),dict(work_id='work-c')])],
+            copies=[dict(id='copy-a',edition_id='edition-a',ownership='owned',location='SECRET LOCATION',notes='SECRET NOTE')]))
+        pages=self.build()
+        self.assertIn('My editions',pages['films/local-film-2000/index.html'])
+        box=pages['films/collection/editions/edition-a/index.html']
+        self.assertIn('/films/local-film-2000/',box)
+        self.assertIn('/films/collection/works/work-b/',box)
+        self.assertNotIn('SECRET',box)
+        self.assertIn('No viewing recorded',pages['films/new-film-2020/index.html'])
+        self.assertIn('Pending identity',pages['films/collection/index.html'])
+        self.assertIn('data-owned="true"',pages['films/index.html'])
+
     def build(self):
         result = subprocess.run([str(SITE), 'build'], cwd=self.root, text=True, capture_output=True)
         if result.returncode:

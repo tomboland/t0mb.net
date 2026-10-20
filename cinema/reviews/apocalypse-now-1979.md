@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/fxcjxp"
 draft: false
 featured: true
+viewing: "lb-fxcjxp"
 ---
 
 Half war film, half fever-dream; 100% cinematic spectacle! 

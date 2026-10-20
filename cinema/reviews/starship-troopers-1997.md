@@ -8,6 +8,7 @@ rating: "4"
 letterboxd_url: "https://boxd.it/bYYEf9"
 draft: false
 featured: true
+viewing: "lb-bYYEf9"
 ---
 
 I loved this. On a superficial level, it's just a great action movie, with great characters. On an equally superficial level, it's a whole load of propaganda satire.  The CGI holds up pretty well if you take it as seriously as the rest of the film. Overall I thoroughly recommend watching!

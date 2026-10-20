@@ -43,6 +43,11 @@ class FakeAPI:
 
 
 class AuthoringTests(unittest.TestCase):
+    def test_unwatched_film_creation_does_not_assert_viewing(self):
+        from types import SimpleNamespace
+        args=SimpleNamespace(title='Owned not watched',year='2000',tmdb_id=None,director=[],unwatched=True)
+        self.assertFalse(cli.new_film(args,[],[],None)['watched'])
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

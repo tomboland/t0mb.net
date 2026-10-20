@@ -7,6 +7,7 @@ watched_date: "2025-12-22"
 rating: "4.5"
 letterboxd_url: "https://boxd.it/cbagEL"
 draft: false
+viewing: "lb-cbagEL"
 ---
 
 What's the first thing you'll do when you're free? Dance.  Well, at the end of the film this made me cry. I thought of it later on, and it made me cry again!

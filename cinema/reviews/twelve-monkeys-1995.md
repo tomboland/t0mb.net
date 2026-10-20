@@ -7,6 +7,7 @@ watched_date: "2026-01-06"
 rating: null
 letterboxd_url: "https://boxd.it/cuBhxr"
 draft: false
+viewing: "lb-cuBhxr"
 ---
 
 I haven't seen this for 15 years or so. I liked it before, but I thought it was brilliant tonight.  It's aging very well.

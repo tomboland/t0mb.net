@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/eAY4i5"
 draft: false
 featured: true
+viewing: "lb-eAY4i5"
 ---
 
 This film looks and feels incredible. I love it.  This is definitely getting a rewatch. I might have to get the 4k too (watched it on the Criterion blu ray, which is still a great looking disc!)

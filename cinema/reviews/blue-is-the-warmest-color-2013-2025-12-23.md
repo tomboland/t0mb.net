@@ -7,6 +7,7 @@ watched_date: "2025-12-22"
 rating: "5"
 letterboxd_url: "https://boxd.it/caH0bF"
 draft: false
+viewing: "lb-caH0bF"
 ---
 
 I loved Adèle in this film.  She was beautiful but not in the way a statue or a portrait can be; the spaghetti chomping, sleeping mouth agape, dribbling, hair like a birds nest, snot coming out of her nose; all of it made me love her more.  It was just so natural.

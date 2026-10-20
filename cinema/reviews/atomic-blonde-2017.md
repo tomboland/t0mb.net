@@ -7,6 +7,7 @@ watched_date: "2026-05-06"
 rating: null
 letterboxd_url: "https://boxd.it/egfD9H"
 draft: false
+viewing: "lb-egfD9H"
 ---
 
 It seemed a bit derivative of John Wick, but it won me over bit by bit. I liked it.

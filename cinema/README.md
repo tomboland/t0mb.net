@@ -6,6 +6,27 @@ holds your writing. `directors.json` is a saved TMDB filmography snapshot.
 The original matching audit in `data/film-matching/` is historical evidence,
 not the live catalogue. Keep this directory backed up with the repository.
 
+## Physical shelf inventory
+
+See [the cross-catalogue audit and recommended relational model](RELATIONSHIPS.md)
+before expanding public ownership pages. The collection work identities are still
+provisional where unresolved; 1,104 work records are linked to canonical identities.
+See [applied reconciliation](../data/cinema-reconciliation/README.md) for the
+Letterboxd cleanup, integration export and remaining queue.
+
+`collection.json` is the source of truth for works, releases/editions, labels and
+owned copies. Use `python3 scripts/collection.py search "Title"` and
+`python3 scripts/collection.py add "New title" --label Arrow --format "4K UHD"`.
+This does not change viewing history. See [the model and workflow](COLLECTION.md).
+
+`shelf.csv` and `shelf.json` are generated exports, **not editable sources**.
+Regenerate with `python3 scripts/collection.py export`. The [photo evidence guide](../data/film-shelf/README.md)
+and [review queue](../data/film-shelf/review.md) retain provenance and missing metadata.
+Public collection routes now render at `/films/collection/`, with edition pages,
+provisional work pages and links to existing film pages. Film pages show My editions;
+linked ownership can be filtered in the catalogue. This is implemented locally,
+not a statement that it has been deployed.
+
 ## Write the first review
 
 Edit `reviews/the-400-blows-1959.md`. Write below the second `---`, set `date` to

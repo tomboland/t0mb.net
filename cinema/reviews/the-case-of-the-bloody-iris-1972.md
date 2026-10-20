@@ -7,6 +7,7 @@ watched_date: "2025-12-02"
 rating: "2.5"
 letterboxd_url: "https://boxd.it/c0EmHd"
 draft: false
+viewing: "lb-c0EmHd"
 ---
 
 The curse of being bloody tedious!  It's only rescued by some nice cinematography.

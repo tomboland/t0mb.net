@@ -1,0 +1,7 @@
+<h1>Physical collection</h1>
+<p>My films and television on disc: $packageCount$ packages, including box sets and different editions of the same film.</p>
+<p><a href="/films/?owned=1">Films with linked reviews and viewing history</a></p>
+<div id="collection-controls" class="film-filters" hidden><label>Find a release <input id="collection-search" type="search" placeholder="Title, box-set contents, label or format"></label><label>Format <select id="collection-format"><option value="">All formats</option><option>4K UHD</option><option>Blu-ray</option><option>DVD</option></select></label><label>Label <select id="collection-label"><option value="">All labels</option></select></label><p id="collection-count" role="status" aria-live="polite"></p></div>
+<div class="table-scroll"><table id="collection-table"><thead><tr><th>Release</th><th>Label</th><th>Format</th><th>Contents</th></tr></thead><tbody>
+ $if(editions)$$for(editions)$<tr data-label="$if(label)$$label$$endif$" data-format="$if(formats)$$formats$$endif$"><td data-label="Film"><a href="$url$">$editionTitle$</a></td><td data-label="Label">$if(label)$$label$$else$<span class="muted">Not recorded</span>$endif$</td><td data-label="Format">$if(formats)$$formats$$else$<span class="muted">Not recorded</span>$endif$</td><td data-label="Contents">$if(contents)$<ul>$for(contents)$<li><a href="$url$">$title$</a>$if(year)$ ($year$)$endif$</li>$endfor$</ul>$else$Contents not yet listed$endif$</td></tr>$endfor$$endif$
+</tbody></table></div><script src="/js/collection.js" defer></script>

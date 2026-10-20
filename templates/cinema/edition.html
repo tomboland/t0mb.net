@@ -1,0 +1,16 @@
+<p><a href="/films/collection/">← Physical collection</a></p>
+<h1>$editionTitle$</h1>
+<dl>
+$if(label)$<dt>Label</dt><dd>$label$</dd>$endif$
+$if(imprint)$<dt>Imprint</dt><dd>$imprint$</dd>$endif$
+$if(formats)$<dt>Format</dt><dd>$formats$</dd>$endif$
+$if(catalogueNumber)$<dt>Catalogue number</dt><dd>$catalogueNumber$</dd>$endif$
+$if(barcode)$<dt>Barcode</dt><dd>$barcode$</dd>$endif$
+$if(country)$<dt>Country</dt><dd>$country$</dd>$endif$
+$if(releaseDate)$<dt>Release date</dt><dd>$releaseDate$</dd>$endif$
+$if(packaging)$<dt>Packaging</dt><dd>$packaging$</dd>$endif$
+<dt>Copies owned</dt><dd>$copyCount$</dd>
+</dl>
+<h2>Contents</h2>
+$if(contents)$<ul>$for(contents)$<li><a href="$url$">$title$</a>$if(year)$ ($year$)$endif$$if(cut)$ · $cut$$endif$$if(coverage)$ · $coverage$$endif$</li>$endfor$</ul>$else$<p>Contents have not yet been catalogued individually.</p>$endif$
+<p class="muted">Edition details are being added gradually; omitted fields are not yet recorded.</p>

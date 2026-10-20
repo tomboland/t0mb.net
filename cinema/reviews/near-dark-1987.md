@@ -7,6 +7,7 @@ watched_date: "2026-04-17"
 rating: null
 letterboxd_url: "https://boxd.it/e0UaoB"
 draft: false
+viewing: "lb-e0UaoB"
 ---
 
 This film is highly incoherent but I still enjoyed it.  I think I would enjoy it more if the blu ray transfer didn't suck so much though!

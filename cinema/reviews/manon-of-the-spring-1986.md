@@ -7,6 +7,7 @@ watched_date: "2025-12-23"
 rating: "5"
 letterboxd_url: "https://boxd.it/ccidqL"
 draft: false
+viewing: "lb-ccidqL"
 ---
 
 This isn't a sequel, it's a continuation of Jean De Florette.   The ending is devastating!  It could've been more like Kill Bill though.

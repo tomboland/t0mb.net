@@ -7,6 +7,7 @@ watched_date: "2026-01-01"
 rating: null
 letterboxd_url: "https://boxd.it/cmqajD"
 draft: false
+viewing: "lb-cmqajD"
 ---
 
 Super stylish; great performances; cool soundtrack.  Kinda prescient too!

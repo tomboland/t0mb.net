@@ -7,6 +7,7 @@ watched_date: "2026-02-22"
 rating: null
 letterboxd_url: "https://boxd.it/dfZrAL"
 draft: false
+viewing: "lb-dfZrAL"
 ---
 
 I'm only 20 minutes into the 4k disc so far and I feel ready to review the restoration itself. What the fuck were you thinking?  I thought Alien, Aliens and The Abyss looked incredible. I understood the controversy with the sharpness and colour grading but still thought they looked incredible. By contrast, True Lies looks _horrible_.  The waxy, overly noise reduced and sharpened look is pervasive.  Not every scene is like it; if the camera captured enough detail then it can look nice, but if the camera didn't capture enough detail, then seriously, don't try and fix it. It can't be fixed. This attempt to "improve" the image has had completely the opposite effect.  I wish there was a better way to see this film.  I think DVD might be better, honestly!

@@ -7,6 +7,7 @@ watched_date: "2026-08-08"
 rating: null
 letterboxd_url: "https://boxd.it/fINnax"
 draft: false
+viewing: "lb-fINnax"
 ---
 
 Je vais très bien, merci. Je vous en prie. 

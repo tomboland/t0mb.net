@@ -8,7 +8,7 @@ import Control.Monad (forM, unless, when)
 import Data.Aeson (Value(..), eitherDecodeStrict')
 import qualified Data.ByteString as BS
 import Data.Char (isAscii, isAlphaNum)
-import Data.List (sortOn, groupBy, isPrefixOf)
+import Data.List (sortOn, groupBy, isPrefixOf, intercalate)
 import qualified Data.Map.Strict as M
 import Data.Maybe (fromMaybe)
 import Data.Ord (Down(..))
@@ -26,7 +26,7 @@ tagUrl :: String -> String
 tagUrl = tagUrlIn "/films/tags/"
 
 -- Retain every review's path, including drafts, so validation runs before routing.
-data Cinema = Cinema { films :: [Value], viewings :: [Value], people :: [Value], reviews :: [Value], artwork :: Value }
+data Cinema = Cinema { films :: [Value], viewings :: [Value], people :: [Value], reviews :: [Value], artwork :: Value, collection :: Value, diaryNotes :: [Value], ownedReleaseRows :: [Value], releaseLinks :: M.Map String [Value] }
 
 readJson :: FilePath -> IO Value
 readJson path = BS.readFile path >>= either (fail . ((path ++ ": ") ++)) pure . eitherDecodeStrict'
@@ -34,13 +34,21 @@ loadCinema :: IO Cinema
 loadCinema = do
   fs <- arr <$> readJson "cinema/films.json"
   vs <- arr <$> readJson "cinema/viewings.json"
+  collectionExists <- doesFileExist "cinema/collection.json"
+  cs <- if collectionExists then readJson "cinema/collection.json" else pure Null
+  noteExists <- doesFileExist "cinema/entries.json"
+  ns <- if noteExists then arr <$> readJson "cinema/entries.json" else pure []
   ps <- arr <$> readJson "cinema/directors.json"
   names <- sortOn id <$> listDirectory "cinema/reviews"
   rs <- mapM (readDocument . ("cinema/reviews" </>)) $ filter ((==".md") . takeExtension) names
   exists <- doesFileExist "cinema/artwork.json"
   artworkData <- if exists then readJson "cinema/artwork.json" else pure Null
   tagged <- forM fs $ \f -> either fail (\ts -> pure $ set [("tags",values $ map val ts)] f) (normalTags $ get "tags" f)
-  let c = Cinema tagged vs ps rs artworkData
+  let ownedIds=S.fromList [str "edition_id" x|x<-ls "copies" cs,str "ownership" x `elem` ["owned","loaned"]]
+      releases=[e|e<-ls "editions" cs,S.member (str "id" e) ownedIds]
+      workFilms=M.fromList [(str "id" w,str "catalogue_film_id" w)|w<-ls "works" cs]
+      links=M.fromListWith (++) [(fid,[e])|e<-releases,fid<-S.toList $ S.fromList [M.findWithDefault "" (str "work_id" entry) workFilms|entry<-ls "contents" e],not $ null fid]
+      c = Cinema tagged vs ps rs artworkData cs ns releases links
   validate c
   pure c
 
@@ -49,9 +57,23 @@ validate c = do
   unique "film IDs" (map (str "id") $ films c)
   unique "film slugs" (map (str "slug") $ films c)
   unique "viewing IDs" (map (str "id") $ viewings c)
+  unique "diary note IDs" (map (str "id") $ diaryNotes c)
   unique "review IDs" (map (str "id") $ reviews c)
   let ids = S.fromList $ map (str "id") $ films c
+      notes = M.fromList [(str "id" v,str "film" v) | v <- diaryNotes c]
       watches = M.fromList [(str "id" v,str "film" v) | v <- viewings c]
+  let coll=collection c
+      ws=ls "works" coll
+      es=ls "editions" coll
+      cs=ls "copies" coll
+      workIds=S.fromList $ map (str "id") ws
+      editionIds=S.fromList $ map (str "id") es
+  mapM_ (\(label,rows) -> do
+    unique label (map (str "id") rows)
+    unless (all (safeSlug . str "id") rows) $ fail ("Unsafe "++label)) [("work IDs",ws),("edition IDs",es),("copy IDs",cs)]
+  mapM_ (\w -> when (truth $ get "catalogue_film_id" w) $ unless (S.member (str "catalogue_film_id" w) ids) $ fail "Collection work refers to missing film") ws
+  mapM_ (\e -> unless (all ((`S.member` workIds).str "work_id") $ ls "contents" e) $ fail "Edition refers to missing work") es
+  mapM_ (\x -> unless (S.member (str "edition_id" x) editionIds) $ fail "Copy refers to missing edition") cs
   mapM_ (\f -> do
     unless (safeSlug $ str "slug" f) $ fail "Invalid film slug"
     unless (get "liked" f `elem` [Null,Bool True,Bool False]) $ fail "liked must be true or false"
@@ -63,11 +85,16 @@ validate c = do
   mapM_ (\v -> do
     unless (S.member (str "film" v) ids) $ fail "Viewing refers to missing film"
     validDate "date" v; validRating v) (viewings c)
+  mapM_ (\n -> do
+    unless (S.member (str "film" n) ids) $ fail "Diary note refers to missing film"
+    validDate "date" n) (diaryNotes c)
   mapM_ (\r -> do
     unless (S.member (str "film" r) ids) $ fail "Review refers to missing film"
     unless (all (\x -> isAscii x && (isAlphaNum x || x=='-')) (str "id" r) && not (null $ str "id" r)) $ fail "Unsafe review ID"
     mapM_ (\key -> unless (get key r `elem` [Null,Bool True,Bool False]) $ fail (key ++ " must be true or false")) ["draft","featured"]
     when (truth $ get "viewing" r) $ unless (M.lookup (str "viewing" r) watches == Just (str "film" r)) $ fail "Review viewing belongs to another film"
+    when (truth (get "diary_entry" r) && truth (get "viewing" r)) $ fail "Review cannot link both a viewing and a note"
+    when (truth $ get "diary_entry" r) $ unless (M.lookup (str "diary_entry" r) notes == Just (str "film" r)) $ fail "Review diary note belongs to another film"
     validDate "date" r
     when (truth $ get "watched_date" r) $ validDate "watched_date" r
     validRating r
@@ -126,7 +153,7 @@ reviewSummary c r = set [("liked",get "liked" $ filmFor c $ str "film" r),("url"
 ownReviews :: Cinema -> Value -> [Value]
 ownReviews c f = filter ((==str "id" f) . str "film") $ latestReviews c
 filmSummary :: Cinema -> Value -> Value
-filmSummary c f = set [("url",val $ filmUrl f),("thumbnail",thumbnail c f),("reviewed",Bool (count>0)),
+filmSummary c f = set [("owned",Bool $ not $ null $ editionsFor c f),("ownedText",val $ if null (editionsFor c f) then "unknown" else "true"),("watched",Bool $ isWatched c f),("watchedText",val $ if isWatched c f then "true" else "false"),("url",val $ filmUrl f),("thumbnail",thumbnail c f),("reviewed",Bool (count>0)),
   ("reviewedText",val $ if count>0 then "true" else "false"),("reviewClass",val $ if count>0 then "reviewed" else "unreviewed"),
   ("reviewStatus",val $ if count==0 then "no review" else show count++if count==1 then " review" else " reviews"),
   ("directors",values [set [("url",val $ directorUrl p)] p | p <- ls "directors" f]),
@@ -142,7 +169,7 @@ watchesFor :: Cinema -> Value -> [Value]
 watchesFor c f = map (viewingSummary c) $ sortOn (Down . (\v -> (str "date" v,str "id" v))) $ filter ((==str "id" f) . str "film") $ viewings c
 filmView :: Cinema -> Value -> Value
 filmView c f = set [("filmTheme",get "theme" f),("image",hero c f),("reviews",values $ map (reviewSummary c) $ ownReviews c f),
-  ("viewings",values $ watchesFor c f),("originalTitle",if get "original_title" f/=get "title" f then get "original_title" f else Null),
+  ("physicalMedia",values $ map (editionView c) $ editionsFor c f),("viewings",values $ watchesFor c f),("originalTitle",if get "original_title" f/=get "title" f then get "original_title" f else Null),
   ("tmdbUrl",if truth t then val ("https://www.themoviedb.org/"++str "type" t++"/"++str "id" t) else Null)] (filmSummary c f)
   where t=get "tmdb" f
 reviewView :: Cinema -> Value -> Value
@@ -155,22 +182,51 @@ knownPeople c = filter (not.null.owned) $ M.elems $ M.union stored extra
         extra=M.fromList [(str "id" p,p) | f<-films c,p<-ls "directors" f]
         owned p=[f|f<-films c,any ((==str "id" p).str "id") $ ls "directors" f]
 directorView :: Cinema -> Value -> Value
-directorView c p = set [("url",val $ directorUrl p),("watchedCount",number $ length owned),
+directorView c p = set [("url",val $ directorUrl p),("watchedCount",number $ length $ filter (isWatched c) owned),
   ("reviewedCount",number $ length $ filter (not.null.ownReviews c) owned),("filmography",values sortedEntries)] p
   where owned=[f|f<-films c,any ((==str "id" p).str "id") $ ls "directors" f]
         byTmdb=M.fromList [(str "id" (get "tmdb" f),f)|f<-films c,str "type" (get "tmdb" f)=="movie"]
         credits=ls "filmography" p
         included=S.fromList [str "tmdb_id" x|x<-credits]
         watched f=obj [("title",get "title" f),("year",get "year" f),("film",filmSummary c f),
-                       ("status",val $ if null (ownReviews c f) then "watched · no review" else "reviewed"),
-                       ("filterStatus",val $ if null (ownReviews c f) then "watched" else "reviewed")]
+                       ("status",val $ if not (null $ ownReviews c f) then "reviewed" else if isWatched c f then "watched · no review" else "No viewing recorded"),
+                       ("filterStatus",val $ if not (null $ ownReviews c f) then "reviewed" else if isWatched c f then "watched" else "unwatched")]
         credit x=maybe (set [("status",val "not watched"),("filterStatus",val "unwatched")] x) watched (M.lookup (str "tmdb_id" x) byTmdb)
         entries=map credit credits ++ [watched f|f<-owned,not $ S.member (str "id" $ get "tmdb" f) included]
         sortedEntries=sortOn (\x->(if null (str "year" x) then "9999" else str "year" x,str "title" x)) entries
 
+
+-- Public collection views are allowlisted; never expose copy notes or locations.
+isWatched :: Cinema -> Value -> Bool
+isWatched c f = get "watched" f == Bool True || any ((==str "id" f).str "film") (viewings c)
+ownedCopies :: Cinema -> [Value]
+ownedCopies c = filter ((`elem` ["owned","loaned"]).str "ownership") $ ls "copies" $ collection c
+ownedEditions :: Cinema -> [Value]
+ownedEditions = ownedReleaseRows
+editionUrl :: Value -> String
+editionUrl e = "/films/collection/editions/" ++ str "id" e ++ "/"
+workUrl :: Value -> String
+workUrl w = "/films/collection/works/" ++ str "id" w ++ "/"
+editionsFor :: Cinema -> Value -> [Value]
+editionsFor c f = M.findWithDefault [] (str "id" f) $ releaseLinks c
+editionView :: Cinema -> Value -> Value
+editionView c e = obj [("editionTitle",get "title" e),("url",val $ editionUrl e),("kind",get "kind" e),
+  ("label",maybe Null (get "name") $ M.lookup (str "label_id" e) labels),("formats",val $ intercalate ", " $ map text $ ls "formats" e),
+  ("imprint",get "imprint" e),("catalogueNumber",get "catalogue_number" e),("barcode",get "barcode" e),
+  ("country",get "country" e),("releaseDate",get "release_date" e),("packaging",get "packaging" e),
+  ("copyCount",number $ length [x|x<-ownedCopies c,str "edition_id" x==str "id" e]),
+  ("contents",values $ map content $ ls "contents" e)]
+  where works=M.fromList [(str "id" w,w)|w<-ls "works" $ collection c]
+        labels=M.fromList [(str "id" l,l)|l<-ls "labels" $ collection c]
+        content entry = let w=works M.! str "work_id" entry
+                            linked=truth $ get "catalogue_film_id" w
+                            f=if linked then filmFor c (str "catalogue_film_id" w) else w
+                        in obj [("title",get "title" f),("year",get "year" f),("url",val $ if linked then filmUrl f else workUrl w),
+                                ("linked",Bool linked),("kind",get "kind" w),("cut",get "cut" entry),("coverage",get "description" $ get "coverage" entry)]
+
 -- Route declarations and their template data, all derived from source records.
 pageViews :: Cinema -> [(String,FilePath,Value)]
-pageViews c = fixed ++ filmPages ++ directorPages ++ tagPages
+pageViews c = fixed ++ filmPages ++ directorPages ++ tagPages ++ editionPages ++ collectionWorkPages
   where latest=latestReviews c
         summary=map (reviewSummary c)
         sortedFilms=sortOn (\f->(foldCase $ str "title" f,str "year" f))
@@ -189,13 +245,16 @@ pageViews c = fixed ++ filmPages ++ directorPages ++ tagPages
         tagged key=[f|f<-films c,any ((==key).foldCase.text) $ ls "tags" f]
         tags=[obj [("name",val label),("url",val $ tagUrl label),("count",number $ length $ tagged key),("plural",Bool $ length (tagged key)/=1)]|(key,label)<-M.toList labels]
         page url tpl title v=(url,tpl,set [("title",val title),("nav_"++section url,Bool True)] v)
-        section url | "/films/tags/" `isPrefixOf` url="tags" | "/directors/" `isPrefixOf` url="directors" | url=="/films/diary/"="diary" | url=="/films/reviews/"="writing" | otherwise="films"
-        fixed=[page "/films/" "catalogue" "Films" catalogue,
+        section url | "/films/collection/" `isPrefixOf` url="collection" | "/films/tags/" `isPrefixOf` url="tags" | "/directors/" `isPrefixOf` url="directors" | url=="/films/diary/"="diary" | url=="/films/reviews/"="writing" | otherwise="films"
+        fixed=[page "/films/collection/" "collection" "Physical collection" $ obj [("editions",values $ map (editionView c) $ sortOn (foldCase . str "title") $ ownedEditions c),("packageCount",number $ length $ ownedCopies c)],
+               page "/films/" "catalogue" "Films" catalogue,
                page "/films/diary/" "diary" "Film diary" diary,
                page "/films/reviews/" "writing" "Film reviews" $ obj [("reviews",values $ summary latest)],
                page "/directors/" "directors" "Directors" directorIndex,
                page "/films/tags/" "tags" "Film tags" $ obj [("tags",values tags)]]
         filmPages=[page (filmUrl f) "film" (str "title" f++" ("++str "year" f++")") $ set [("filmTitle",get "title" f)] $ filmView c f|f<-films c]
+        editionPages=[page (editionUrl e) "edition" (str "title" e) (editionView c e)|e<-ownedEditions c]
+        collectionWorkPages=[page (workUrl w) "collection-work" (str "title" w) $ obj [("workTitle",get "title" w),("year",get "year" w),("kind",get "kind" w),("canonicalUrl",if truth (get "catalogue_film_id" w) then val $ filmUrl $ filmFor c $ str "catalogue_film_id" w else Null),("physicalMedia",values $ map (editionView c) [e|e<-ownedEditions c,any ((==str "id" w).str "work_id") $ ls "contents" e])]|w<-ls "works" $ collection c]
         directorPages=[page (directorUrl p) "director" (str "name" p) (directorView c p)|p<-ps]
         tagPages=[page (tagUrl label) "tag" ("Films tagged "++label) $ obj [("name",val label),("count",number $ length $ tagged key),("plural",Bool $ length (tagged key)/=1),("films",values $ map (filmSummary c) $ sortedFilms $ tagged key)]|(key,label)<-M.toList labels]
 

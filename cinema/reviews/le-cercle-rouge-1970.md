@@ -7,6 +7,7 @@ watched_date: "2026-05-10"
 rating: null
 letterboxd_url: "https://boxd.it/ek6D9v"
 draft: false
+viewing: "lb-ek6D9v"
 ---
 
 Love this film.  The whole grim vibe, the suspenseful music, noir jazz, and the heist à la Rififi is just great.  

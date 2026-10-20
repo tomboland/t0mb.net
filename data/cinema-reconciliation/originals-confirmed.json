@@ -1,0 +1,152 @@
+[
+  {
+    "before": {
+      "id": "work-0159",
+      "title": "The Ladykillers",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0159",
+      "title": "The Ladykillers",
+      "kind": "film",
+      "year": 1955,
+      "catalogue_film_id": "local-d6a09316b198",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  },
+  {
+    "before": {
+      "id": "work-0195",
+      "title": "Ben-Hur",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0195",
+      "title": "Ben-Hur",
+      "kind": "film",
+      "year": 1959,
+      "catalogue_film_id": "lb-29RQ",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  },
+  {
+    "before": {
+      "id": "work-0514",
+      "title": "12 Angry Men",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0514",
+      "title": "12 Angry Men",
+      "kind": "film",
+      "year": 1957,
+      "catalogue_film_id": "lb-2auI",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  },
+  {
+    "before": {
+      "id": "work-0774",
+      "title": "Night of the Living Dead",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0774",
+      "title": "Night of the Living Dead",
+      "kind": "film",
+      "year": 1968,
+      "catalogue_film_id": "lb-1WwA",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  },
+  {
+    "before": {
+      "id": "work-0785",
+      "title": "Carrie",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0785",
+      "title": "Carrie",
+      "kind": "film",
+      "year": 1976,
+      "catalogue_film_id": "lb-20ZQ",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  },
+  {
+    "before": {
+      "id": "work-0787",
+      "title": "A Nightmare on Elm Street",
+      "kind": "film",
+      "year": null,
+      "catalogue_film_id": null,
+      "identity_status": "provisional",
+      "external_ids": {}
+    },
+    "after": {
+      "id": "work-0787",
+      "title": "A Nightmare on Elm Street",
+      "kind": "film",
+      "year": 1984,
+      "catalogue_film_id": "lb-2aw0",
+      "identity_status": "confirmed",
+      "external_ids": {},
+      "identity_evidence": {
+        "type": "owner_confirmation",
+        "evidence": "Owner confirmed all six queried films are the originals, not remakes.",
+        "confirmed_on": "2026-10-19"
+      }
+    }
+  }
+]

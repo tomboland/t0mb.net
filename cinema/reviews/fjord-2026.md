@@ -7,6 +7,7 @@ watched_date: "2026-09-04"
 rating: null
 letterboxd_url: "https://boxd.it/gb1Mi7"
 draft: false
+viewing: "lb-gb1Mi7"
 ---
 
 I left the cinema with a sense of dissatisfaction. I think the subject matter itself could be interesting, but to spend the entire film exploring it only at a very superficial level is frustrating. It seems I'm going to need to make my own food for thought here because the film doesn't give you much to chew on.  I didn't feel any sort of genuine quandary.  It's all "poor little parents; sad face; nasty authorities; angry face".  

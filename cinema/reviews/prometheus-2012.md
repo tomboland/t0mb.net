@@ -7,6 +7,7 @@ watched_date: "2025-01-01"
 rating: "2"
 letterboxd_url: "https://boxd.it/dJDrE5"
 draft: false
+viewing: "lb-dJDrE5"
 ---
 
 I liked everything about this, apart from the script, the characters, the acting and the plot...

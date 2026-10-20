@@ -27,6 +27,7 @@ Data interpretation:
 - Films without diary entries are still watched. The diary is incomplete;
   its counts are recorded viewings, not lifetime viewing totals. rewatch=false
   does not prove a first-ever viewing. Dates are retained exactly as recorded.
+- diary_notes are preserved non-viewing entries, not watches or rewatches.
 - Review date is publication date; watched_date is the viewing date. Reviews
   are not additional viewings. Only an explicit viewing field links a review
   to a diary entry; do not invent links from matching dates or IDs.
@@ -75,11 +76,16 @@ def build_export(include_drafts=False):
     for record in viewings + [r['metadata'] for r in reviews]:
         if record['film'] not in by_id:
             raise ValueError(f'Unknown film reference: {record}')
+    entries = json.loads((source/'entries.json').read_text()) if (source/'entries.json').exists() else []
+    entry_ids = {e['id']:e for e in entries}
     viewing_ids = {v['id']: v for v in viewings}
     if len(viewing_ids) != len(viewings):
         raise ValueError('Duplicate viewing IDs')
     for review in reviews:
         meta = review['metadata']
+        if meta.get('diary_entry'):
+            linked=entry_ids.get(meta['diary_entry'])
+            if linked is None or linked['film']!=meta['film']:raise ValueError('Invalid diary note link')
         if meta.get('viewing'):
             linked = viewing_ids.get(meta['viewing'])
             if linked is None or linked['film'] != meta['film']:
@@ -94,6 +100,7 @@ def build_export(include_drafts=False):
         if film['id'] not in watched_ids:
             continue
         records.append({'film': film,
+                        'diary_notes': [e for e in entries if e['film']==film['id']],
                         'diary': sorted([v for v in viewings if v['film'] == film['id']],
                                         key=lambda v: (v['date'], v['id'])),
                         'reviews': sorted([r for r in reviews if r['metadata']['film'] == film['id']],
@@ -128,6 +135,9 @@ def render_text(data):
         lines.extend(json.dumps(v, ensure_ascii=False) for v in record['diary'])
         if not record['diary']:
             lines.append('No dated viewings recorded.')
+        if record.get('diary_notes'):
+            lines.append('Non-viewing diary notes (not watches):')
+            lines.extend(json.dumps(n,ensure_ascii=False) for n in record['diary_notes'])
         for review in record['reviews']:
             lines.extend(['', 'Review metadata: ' + json.dumps(review['metadata'], ensure_ascii=False),
                           'Source: ' + review['source_file'], 'BEGIN REVIEW TEXT',

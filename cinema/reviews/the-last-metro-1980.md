@@ -7,6 +7,7 @@ watched_date: "2026-01-11"
 rating: null
 letterboxd_url: "https://boxd.it/cAAZel"
 draft: false
+viewing: "lb-cAAZel"
 ---
 
 I enjoyed it, but the connection between Deneuve and Depardieu's characters came out of nowhere very late in the film, I felt.  Great ending though!

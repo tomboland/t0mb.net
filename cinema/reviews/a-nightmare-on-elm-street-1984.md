@@ -7,6 +7,7 @@ watched_date: "2026-09-19"
 rating: null
 letterboxd_url: "https://boxd.it/goP5U5"
 draft: false
+viewing: "lb-goP5U5"
 ---
 
 Definitely a cut above other horror movies of the time. Honestly a great watch!

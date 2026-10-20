@@ -8,6 +8,7 @@ rating: "5"
 letterboxd_url: "https://boxd.it/ew6idf"
 draft: false
 featured: true
+viewing: "lb-ew6idf"
 ---
 
 The vibe of this film is beautiful. The soundtrack is perfect. It really takes you there!  

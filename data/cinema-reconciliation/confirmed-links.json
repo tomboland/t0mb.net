@@ -1,0 +1,691 @@
+{
+  "reviewed_on": "2026-10-19",
+  "policy": "Explicit, evidence-reviewed batch. Remaining title-only candidates are not auto-linked. No claims about disc-specific region or edition release dates.",
+  "links": [
+    {
+      "work_id": "work-0181",
+      "film_id": "lb-24nQ",
+      "year": 1958,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0310",
+      "film_id": "lb-2awY",
+      "year": 1979,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0387",
+      "film_id": "lb-1Ofw",
+      "year": 1991,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0393",
+      "film_id": "lb-2958",
+      "year": 1991,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0414",
+      "film_id": "lb-2b2g",
+      "year": 1930,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0418",
+      "film_id": "lb-4g46",
+      "year": 1938,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0493",
+      "film_id": "lb-2aIU",
+      "year": 1989,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0629",
+      "film_id": "lb-2wRu",
+      "year": 1978,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0656",
+      "film_id": "lb-1TcW",
+      "year": 2009,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0872",
+      "film_id": "lb-1ow2",
+      "year": 1986,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0893",
+      "film_id": "lb-28va",
+      "year": 1991,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0896",
+      "film_id": "lb-jgw",
+      "year": 1976,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0941",
+      "film_id": "lb-1SWk",
+      "year": 1978,
+      "evidence": "Previously researched/owner-confirmed identity and year; unique matching catalogue identity. See data/film-shelf/identifications.json (or the additional shelf import).",
+      "sources": []
+    },
+    {
+      "work_id": "work-0856",
+      "film_id": "lb-2a7k",
+      "year": 1997,
+      "evidence": "Manual identification of additional-shelf packaging: Starship Troopers.  Evidence: photo-52.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0857",
+      "film_id": "lb-H5s",
+      "year": 2011,
+      "evidence": "Manual identification of additional-shelf packaging: Hobo with a Shotgun.  Evidence: photo-52. Momentum feature release: 2011 film, not the 2007 short.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0858",
+      "film_id": "lb-9X0c",
+      "year": 2015,
+      "evidence": "Manual identification of additional-shelf packaging: Turbo Kid.  Evidence: photo-52.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0859",
+      "film_id": "lb-22Wk",
+      "year": 1990,
+      "evidence": "Manual identification of additional-shelf packaging: RoboCop 2. 2-disc set; MGM also credited. Evidence: photo-52.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0860",
+      "film_id": "lb-2b8S",
+      "year": 1994,
+      "evidence": "Manual identification of additional-shelf packaging: Léon: The Professional.  Evidence: photo-52.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0863",
+      "film_id": "lb-mkbG",
+      "year": 2019,
+      "evidence": "Manual identification of additional-shelf packaging: Chernobyl. Complete five-part miniseries. Evidence: photo-52. HBO five-part miniseries; canonical TMDB reference has type tv.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0864",
+      "film_id": "lb-1I0g",
+      "year": 1984,
+      "evidence": "Manual identification of additional-shelf packaging: Threads. Remastered; BBC logo. Evidence: photo-52.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0866",
+      "film_id": "lb-257a",
+      "year": 1980,
+      "evidence": "Manual identification of additional-shelf packaging: Flash Gordon. Optimum-era StudioCanal logo. Evidence: photo-53.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0867",
+      "film_id": "lb-2b1M",
+      "year": 2000,
+      "evidence": "Manual identification of additional-shelf packaging: Crouching Tiger, Hidden Dragon.  Evidence: photo-53.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0868",
+      "film_id": "lb-1YOm",
+      "year": 1982,
+      "evidence": "Manual identification of additional-shelf packaging: Conan the Barbarian.  Evidence: photo-53.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0869",
+      "film_id": "lb-1SGw",
+      "year": 1985,
+      "evidence": "Manual identification of additional-shelf packaging: Lifeforce. Tobe Hooper; MGM also credited. Evidence: photo-53.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0871",
+      "film_id": "lb-1NXi",
+      "year": 1986,
+      "evidence": "Manual identification of additional-shelf packaging: From Beyond. MGM also credited. Evidence: photo-53.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0873",
+      "film_id": "lb-24QS",
+      "year": 2004,
+      "evidence": "Manual identification of additional-shelf packaging: Team America: World Police.  Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0874",
+      "film_id": "lb-72s",
+      "year": 1977,
+      "evidence": "Manual identification of additional-shelf packaging: Star Wars. Despecialized Edition; edition text preserved, not treated as an official Fox release. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0875",
+      "film_id": "lb-27Vw",
+      "year": 1980,
+      "evidence": "Manual identification of additional-shelf packaging: The Empire Strikes Back. Despecialized Edition; edition text preserved, not treated as an official Fox release. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0876",
+      "film_id": "lb-27Vw",
+      "year": 1980,
+      "evidence": "Manual identification of additional-shelf packaging: The Empire Strikes Back.  Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0877",
+      "film_id": "lb-1KnQ",
+      "year": 1973,
+      "evidence": "Manual identification of additional-shelf packaging: Fantastic Planet. La Planète sauvage; spine 6. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0878",
+      "film_id": "lb-2b1i",
+      "year": 1988,
+      "evidence": "Manual identification of additional-shelf packaging: Akira. Red spine. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0879",
+      "film_id": "lb-1YYc",
+      "year": 1995,
+      "evidence": "Manual identification of additional-shelf packaging: Ghost in the Shell. Animated film; Production I.G and Kodansha logos. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0880",
+      "film_id": "lb-lATC",
+      "year": 2023,
+      "evidence": "Manual identification of additional-shelf packaging: Mars Express.  Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0882",
+      "film_id": "lb-1RUM",
+      "year": 1988,
+      "evidence": "Manual identification of additional-shelf packaging: Grave of the Fireflies.  Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0883",
+      "film_id": "lb-2b4m",
+      "year": 2001,
+      "evidence": "Manual identification of additional-shelf packaging: Spirited Away. Miyazaki's Spirited Away. Evidence: photo-54.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0884",
+      "film_id": "lb-194M",
+      "year": 1993,
+      "evidence": "Manual identification of additional-shelf packaging: Falling Down. Warner also credited; format not legible. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0885",
+      "film_id": "lb-2bg8",
+      "year": 1995,
+      "evidence": "Manual identification of additional-shelf packaging: Heat.  Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0886",
+      "film_id": "lb-299u",
+      "year": 1977,
+      "evidence": "Manual identification of additional-shelf packaging: Eraserhead.  Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0887",
+      "film_id": "lb-gH0O",
+      "year": 2019,
+      "evidence": "Manual identification of additional-shelf packaging: Once Upon a Time in Hollywood. Steelbook; format not legible. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0888",
+      "film_id": "lb-1JzG",
+      "year": 2009,
+      "evidence": "Manual identification of additional-shelf packaging: Inglourious Basterds. Universal also credited. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0889",
+      "film_id": "lb-1Bao",
+      "year": 1973,
+      "evidence": "Manual identification of additional-shelf packaging: Coffy. MGM also credited. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0890",
+      "film_id": "lb-1B8i",
+      "year": 1974,
+      "evidence": "Manual identification of additional-shelf packaging: Foxy Brown.  Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0891",
+      "film_id": "lb-2aVO",
+      "year": 1997,
+      "evidence": "Manual identification of additional-shelf packaging: Jackie Brown. Orange collector box; series number 008. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0892",
+      "film_id": "lb-2ape",
+      "year": 1966,
+      "evidence": "Manual identification of additional-shelf packaging: The Good, the Bad and the Ugly. MGM also credited. Evidence: photo-55.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0894",
+      "film_id": "lb-fEoc",
+      "year": 2018,
+      "evidence": "Manual identification of additional-shelf packaging: Cold War.  Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0895",
+      "film_id": "lb-1WrU",
+      "year": 1960,
+      "evidence": "Manual identification of additional-shelf packaging: Plein Soleil.  Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0897",
+      "film_id": "lb-1Mxo",
+      "year": 1956,
+      "evidence": "Manual identification of additional-shelf packaging: The Red Balloon.  Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0898",
+      "film_id": "lb-26H4",
+      "year": 1945,
+      "evidence": "Manual identification of additional-shelf packaging: Les Enfants du paradis.  Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0899",
+      "film_id": "lb-1EVs",
+      "year": 1973,
+      "evidence": "Manual identification of additional-shelf packaging: Le Magnifique. StudioCanal also credited. Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0900",
+      "film_id": "lb-27DC",
+      "year": 2007,
+      "evidence": "Manual identification of additional-shelf packaging: Persepolis.  Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0901",
+      "film_id": "lb-1SBw",
+      "year": 1986,
+      "evidence": "Manual identification of additional-shelf packaging: Betty Blue. 37.2 in the Morning subtitle. Evidence: photo-56.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0903",
+      "film_id": "lb-2beQ",
+      "year": 1995,
+      "evidence": "Manual identification of additional-shelf packaging: 12 Monkeys. Terry Gilliam film, not the TV series. Evidence: photo-57. Terry Gilliam film, not the separately owned TV series.",
+      "sources": [
+        "https://www.arrowvideo.com/p/12-monkeys-blu-ray/12946700/"
+      ]
+    },
+    {
+      "work_id": "work-0904",
+      "film_id": "lb-1O6Y",
+      "year": 1964,
+      "evidence": "Manual identification of additional-shelf packaging: Zulu.  Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0905",
+      "film_id": "lb-2av2",
+      "year": 1981,
+      "evidence": "Manual identification of additional-shelf packaging: Das Boot.  Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0906",
+      "film_id": "lb-icFU",
+      "year": 2019,
+      "evidence": "Manual identification of additional-shelf packaging: The Lighthouse.  Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0907",
+      "film_id": "lb-6ZS",
+      "year": 1979,
+      "evidence": "Manual identification of additional-shelf packaging: Apocalypse Now. Final Cut; other cuts not inventoried. Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0908",
+      "film_id": "lb-28U0",
+      "year": 1982,
+      "evidence": "Manual identification of additional-shelf packaging: First Blood. Rambo: First Blood on spine. Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0909",
+      "film_id": "lb-2a7u",
+      "year": 1988,
+      "evidence": "Manual identification of additional-shelf packaging: Die Hard.  Evidence: photo-57.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0911",
+      "film_id": "lb-14J6",
+      "year": 1977,
+      "evidence": "Manual identification of additional-shelf packaging: Sorcerer.  Evidence: photo-57.",
+      "sources": [
+        "https://www.criterion.com/films/34370-sorcerer"
+      ]
+    },
+    {
+      "work_id": "work-0912",
+      "film_id": "lb-1MzY",
+      "year": 1956,
+      "evidence": "Manual identification of additional-shelf packaging: A Man Escaped.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0913",
+      "film_id": "lb-1CVg",
+      "year": 1962,
+      "evidence": "Manual identification of additional-shelf packaging: Le Doulos. StudioCanal also credited. Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0915",
+      "film_id": "lb-1Tjy",
+      "year": 1970,
+      "evidence": "Manual identification of additional-shelf packaging: Le Cercle rouge.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0916",
+      "film_id": "lb-22ZI",
+      "year": 1967,
+      "evidence": "Manual identification of additional-shelf packaging: Le Samouraï.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0917",
+      "film_id": "lb-29f8",
+      "year": 1955,
+      "evidence": "Manual identification of additional-shelf packaging: Rififi.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0918",
+      "film_id": "lb-2as8",
+      "year": 1995,
+      "evidence": "Manual identification of additional-shelf packaging: La Haine.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0919",
+      "film_id": "lb-1w7E",
+      "year": 1963,
+      "evidence": "Manual identification of additional-shelf packaging: Les Tontons flingueurs.  Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0920",
+      "film_id": "lb-2b1C",
+      "year": 1959,
+      "evidence": "Manual identification of additional-shelf packaging: The 400 Blows. François Truffaut. Evidence: photo-58.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0921",
+      "film_id": "lb-2ab2",
+      "year": 1960,
+      "evidence": "Manual identification of additional-shelf packaging: Psycho.  Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0922",
+      "film_id": "lb-2bf0",
+      "year": 1968,
+      "evidence": "Manual identification of additional-shelf packaging: 2001: A Space Odyssey. Stanley Kubrick. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0923",
+      "film_id": "lb-29Nu",
+      "year": 1980,
+      "evidence": "Manual identification of additional-shelf packaging: The Shining. Stanley Kubrick. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0924",
+      "film_id": "lb-2a1Q",
+      "year": 1987,
+      "evidence": "Manual identification of additional-shelf packaging: Full Metal Jacket. Stanley Kubrick. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0925",
+      "film_id": "lb-29eY",
+      "year": 1964,
+      "evidence": "Manual identification of additional-shelf packaging: Dr. Strangelove. French Docteur Folamour package. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0926",
+      "film_id": "lb-2aMi",
+      "year": 1956,
+      "evidence": "Manual identification of additional-shelf packaging: The Killing. MGM also credited. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0927",
+      "film_id": "lb-29bq",
+      "year": 1960,
+      "evidence": "Manual identification of additional-shelf packaging: Spartacus.  Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0928",
+      "film_id": "lb-2aVE",
+      "year": 1971,
+      "evidence": "Manual identification of additional-shelf packaging: A Clockwork Orange. White steelbook; format not legible. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0929",
+      "film_id": "lb-29b6",
+      "year": 1957,
+      "evidence": "Manual identification of additional-shelf packaging: Paths of Glory. Spine 155; MGM also credited. Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0930",
+      "film_id": "lb-25A2",
+      "year": 1975,
+      "evidence": "Manual identification of additional-shelf packaging: Barry Lyndon.  Evidence: photo-59.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0931",
+      "film_id": "lb-29Xu",
+      "year": 1939,
+      "evidence": "Manual identification of additional-shelf packaging: The Wizard of Oz. 85th Anniversary collector box; exact format not visible. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0932",
+      "film_id": "lb-2b8y",
+      "year": 1976,
+      "evidence": "Manual identification of additional-shelf packaging: Taxi Driver. Steelbook; format not legible. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0933",
+      "film_id": "lb-294E",
+      "year": 1949,
+      "evidence": "Manual identification of additional-shelf packaging: The Third Man.  Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0934",
+      "film_id": "lb-2wRE",
+      "year": 1962,
+      "evidence": "Manual identification of additional-shelf packaging: Lawrence of Arabia. Steelbook; format not legible. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0935",
+      "film_id": "lb-T18",
+      "year": 1975,
+      "evidence": "Manual identification of additional-shelf packaging: Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles.  Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0936",
+      "film_id": "lb-1UDa",
+      "year": 1994,
+      "evidence": "Manual identification of additional-shelf packaging: Chungking Express.  Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0937",
+      "film_id": "lb-1vCw",
+      "year": 2000,
+      "evidence": "Manual identification of additional-shelf packaging: Yi Yi.  Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0938",
+      "film_id": "lb-71a",
+      "year": 1927,
+      "evidence": "Manual identification of additional-shelf packaging: Metropolis. Spine 16; Fritz Lang. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0939",
+      "film_id": "lb-1Sia",
+      "year": 1933,
+      "evidence": "Manual identification of additional-shelf packaging: The Testament of Dr. Mabuse. Spine 43; Das Testament des Dr. Mabuse. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0940",
+      "film_id": "lb-29vq",
+      "year": 1931,
+      "evidence": "Manual identification of additional-shelf packaging: M. Spine 9; Fritz Lang. Evidence: photo-60.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0942",
+      "film_id": "lb-2awY",
+      "year": 1979,
+      "evidence": "Manual identification of additional-shelf packaging: Alien. 40th Anniversary. Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0943",
+      "film_id": "lb-29PA",
+      "year": 1986,
+      "evidence": "Manual identification of additional-shelf packaging: Aliens.  Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0944",
+      "film_id": "lb-2bcA",
+      "year": 1982,
+      "evidence": "Manual identification of additional-shelf packaging: Blade Runner. Black steelbook with turquoise title; format not legible. Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0945",
+      "film_id": "lb-b8wK",
+      "year": 2017,
+      "evidence": "Manual identification of additional-shelf packaging: Blade Runner 2049.  Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0946",
+      "film_id": "lb-2aQY",
+      "year": 1984,
+      "evidence": "Manual identification of additional-shelf packaging: The Terminator. MGM also credited. Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0947",
+      "film_id": "lb-2aGY",
+      "year": 1991,
+      "evidence": "Manual identification of additional-shelf packaging: Terminator 2: Judgment Day.  Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0948",
+      "film_id": "lb-2b84",
+      "year": 1987,
+      "evidence": "Manual identification of additional-shelf packaging: Predator.  Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0949",
+      "film_id": "lb-29qK",
+      "year": 1990,
+      "evidence": "Manual identification of additional-shelf packaging: Total Recall. Arnold Schwarzenegger film. Evidence: photo-61.",
+      "sources": []
+    },
+    {
+      "work_id": "work-0950",
+      "film_id": "lb-22Wu",
+      "year": 1987,
+      "evidence": "Manual identification of additional-shelf packaging: RoboCop. MGM also credited. Evidence: photo-61. Arrow release is the 1987 Verhoeven film, not the 2014 remake.",
+      "sources": [
+        "https://www.arrowfilms.com/p/robocop-4k-uhd/13864290/"
+      ]
+    },
+    {
+      "work_id": "work-0951",
+      "film_id": "lb-25HW",
+      "year": 1955,
+      "evidence": "Manual identification of additional-shelf packaging: The Night of the Hunter. French Le Nuit du chasseur / La Nuit du chasseur; MGM also credited. Evidence: photo-61.",
+      "sources": []
+    }
+  ]
+}

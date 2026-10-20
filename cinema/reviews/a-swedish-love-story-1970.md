@@ -7,6 +7,7 @@ watched_date: "2026-09-06"
 rating: null
 letterboxd_url: "https://boxd.it/gddl9T"
 draft: false
+viewing: "lb-gddl9T"
 ---
 
 This film really took me to the place with the lazy summer vibes; really well observed and charming. Filmed really nicely and the performances felt very natural. 

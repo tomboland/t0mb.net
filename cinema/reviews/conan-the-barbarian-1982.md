@@ -7,6 +7,7 @@ watched_date: "2025-12-07"
 rating: "4"
 letterboxd_url: "https://boxd.it/bXIwwZ"
 draft: false
+viewing: "lb-bXIwwZ"
 ---
 
 I loved this. It's got a certain charm. Don't take it too seriously and just enjoy. The soundtrack is absolutely epic!

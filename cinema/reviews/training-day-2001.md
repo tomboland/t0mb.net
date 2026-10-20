@@ -7,6 +7,7 @@ watched_date: "2026-08-30"
 rating: null
 letterboxd_url: "https://boxd.it/g6mKtz"
 draft: false
+viewing: "lb-g6mKtz"
 ---
 
 This is a great film*.  

@@ -7,6 +7,7 @@ watched_date: "2026-09-08"
 rating: "5"
 letterboxd_url: "https://boxd.it/gfrsS3"
 draft: false
+viewing: "lb-gfrsS3"
 ---
 
 Watched in a 4DX cinema, in 3D, with a French audio track!  Not normally what I'd choose, but it's what was available!

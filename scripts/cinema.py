@@ -40,7 +40,7 @@ def api_for(args):
 
 def new_film(args, films, people, api):
     film = {'id': 'local-' + uuid.uuid4().hex[:12], 'title': args.title, 'year': args.year,
-            'watched': True, 'rating': None, 'directors': []}
+            'watched': not getattr(args, 'unwatched', False), 'rating': None, 'directors': []}
     if args.tmdb_id:
         data = api.get(f'movie/{args.tmdb_id}', append_to_response='credits')
         film.update(title=args.title or data['title'], year=args.year or data.get('release_date', '')[:4],
@@ -170,6 +170,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
     add = commands.add_parser('film', help='Add a film manually or using a TMDB movie ID')
+    add.add_argument('--unwatched', action='store_true', help='Add catalogue metadata without asserting a viewing, e.g. for an owned disc')
     add.add_argument('--title')
     add.add_argument('--year')
     add.add_argument('--director', action='append', default=[])

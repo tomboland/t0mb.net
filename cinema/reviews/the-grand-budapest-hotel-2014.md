@@ -7,6 +7,7 @@ watched_date: "2025-12-31"
 rating: null
 letterboxd_url: "https://boxd.it/clG491"
 draft: false
+viewing: "lb-clG491"
 ---
 
 A visual feast, and quite charming.

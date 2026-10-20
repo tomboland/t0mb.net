@@ -7,6 +7,7 @@ watched_date: "2026-05-26"
 rating: null
 letterboxd_url: "https://boxd.it/ewseKt"
 draft: false
+viewing: "lb-ewseKt"
 ---
 
 I really enjoyed this.  I didn't find it as bleak as I was led to believe it might be from the reviews I'd seen.  It's not exactly uplifting of course.  

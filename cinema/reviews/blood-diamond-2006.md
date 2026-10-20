@@ -7,6 +7,7 @@ watched_date: "2025-12-06"
 rating: "4"
 letterboxd_url: "https://boxd.it/bXHjH9"
 draft: false
+viewing: "lb-bXHjH9"
 ---
 
 Enjoyed this a lot although it does seem to suffer with image quality problems some of which look to be about the transfer to blu ray, but I think some of it is down to camerawork.

@@ -1,0 +1,5531 @@
+{
+  "policy": "Pending records are not confirmations that a film is absent or unwatched.",
+  "owner_questions": [
+    "work-0159",
+    "work-0195",
+    "work-0514",
+    "work-0774",
+    "work-0785",
+    "work-0787"
+  ],
+  "works": [
+    {
+      "work_id": "work-0001",
+      "title": "In the Line of Duty III",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0007",
+      "title": "The Drunken Master II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0008",
+      "title": "Peking Opera Blues",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0009",
+      "title": "Fist of Legend",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0010",
+      "title": "Flowers of Shanghai",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0011",
+      "title": "Wheels on Meals",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0012",
+      "title": "The Fatal Flying Guillotine",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0013",
+      "title": "The Warlords",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0014",
+      "title": "In the Line of Duty IV",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0015",
+      "title": "Riki-Oh: The Story of Ricky",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0018",
+      "title": "Millionaires' Express",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0019",
+      "title": "Human Lanterns",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0020",
+      "title": "The Fearless Hyena",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0028-2",
+      "title": "A Touch of Zen",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0032",
+      "title": "Enter the Dragon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0033-2",
+      "title": "The Magnificent Butcher",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0033-3",
+      "title": "Eastern Condors",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0034",
+      "title": "The Tai-Chi Master",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-1",
+      "title": "As Tears Go By",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-2",
+      "title": "Days of Being Wild",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-4",
+      "title": "Fallen Angels",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-5",
+      "title": "Happy Together",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-7",
+      "title": "2046",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0037-8",
+      "title": "The Hand (short)",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0038-1",
+      "title": "Once Upon a Time in China",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0038-2",
+      "title": "Once Upon a Time in China II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0038-3",
+      "title": "Once Upon a Time in China III",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0039-1",
+      "title": "A Better Tomorrow",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0039-2",
+      "title": "A Better Tomorrow II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0039-3",
+      "title": "A Better Tomorrow III: Love & Death in Saigon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0040-1",
+      "title": "Nymphomaniac: Volume I",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0040-2",
+      "title": "Nymphomaniac: Volume II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0041",
+      "title": "Love",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0042",
+      "title": "Leaving Las Vegas",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0043",
+      "title": "Raising Arizona",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0046",
+      "title": "Berry Gordy's The Last Dragon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0048",
+      "title": "The Kentucky Fried Movie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0050",
+      "title": "Last Tango in Paris",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0051",
+      "title": "Bell, Book and Candle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0052",
+      "title": "The Love Witch",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0053",
+      "title": "La Maman et la Putain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0054",
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0055",
+      "title": "Tokyo Decadence",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0056",
+      "title": "Le Souffle au cœur",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0063",
+      "title": "L'Eclisse",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0065",
+      "title": "Histoire d'O",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0066",
+      "title": "Far from the Madding Crowd",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0067",
+      "title": "The Night Porter",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0070",
+      "title": "Potiche",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0071",
+      "title": "Mon Roi",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0072",
+      "title": "Dogville",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0073",
+      "title": "Mektoub, My Love: Canto Uno",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0074",
+      "title": "Yesterday, Today and Tomorrow",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0078",
+      "title": "Chéri",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0079",
+      "title": "Brief Encounter",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29sm",
+          "title": "Brief Encounter",
+          "year": "1945"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0080",
+      "title": "Untouchable",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0083",
+      "title": "Watchmen",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0084",
+      "title": "Afro Samurai",
+      "year": 2007,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0086",
+      "title": "Nausicaä of the Valley of the Wind",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0087",
+      "title": "Belladonna of Sadness",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0088",
+      "title": "Hakkenden: Eight Dogs of the East",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0089",
+      "title": "Senna",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0090",
+      "title": "Touching the Void",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0091",
+      "title": "Dallas Buyers Club",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0093",
+      "title": "Black Sabbath: Live… Gathered in Their Masses",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0094",
+      "title": "Black Sabbath: The Last Supper",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0095",
+      "title": "AC/DC: Live at Donington",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0096",
+      "title": "Judas Priest: Battle Cry",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0097",
+      "title": "The Big 4: Live from Sofia, Bulgaria",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0099",
+      "title": "Black Sabbath: The End",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0100",
+      "title": "Led Zeppelin: The Song Remains the Same",
+      "year": null,
+      "kind": "concert",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0101",
+      "title": "Wayne's World 2",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0102",
+      "title": "Bohemian Rhapsody",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0103",
+      "title": "Penda's Fen",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0105",
+      "title": "The Hourglass Sanatorium",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0109",
+      "title": "Walkabout",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0110",
+      "title": "The Road",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0118",
+      "title": "The Boys from Brazil",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0119",
+      "title": "Network",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0121",
+      "title": "Battle Royale",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0122",
+      "title": "News Movie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0123",
+      "title": "The Millionairess",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0124",
+      "title": "Airport",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0125",
+      "title": "Captain Phillips",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0126",
+      "title": "The Fast and the Furious",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0127",
+      "title": "Le Mans '66",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0128",
+      "title": "Gummo",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0130",
+      "title": "Midnight Cowboy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0132",
+      "title": "Bag Boy Lover Boy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0134",
+      "title": "The Holy Mountain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0135",
+      "title": "The Tree of Life",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0136",
+      "title": "Salò, or the 120 Days of Sodom",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0137",
+      "title": "Baby Driver",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0138",
+      "title": "Streets of Fire",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0139",
+      "title": "Only God Forgives",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0140",
+      "title": "Z",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0141",
+      "title": "The Jerk",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0142",
+      "title": "Withnail and I",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0143",
+      "title": "Norbit",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0145-1",
+      "title": "Monkey Business",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0145-2",
+      "title": "Horse Feathers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0148",
+      "title": "National Lampoon's Christmas Vacation",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0150",
+      "title": "Monty Python's Life of Brian",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0153",
+      "title": "The Return of the Pink Panther",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0155",
+      "title": "Los visitantes no nacieron ayer",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0157",
+      "title": "Office Space",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0158-1",
+      "title": "Police Academy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0158-2",
+      "title": "Police Academy 2: Their First Assignment",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0159",
+      "title": "The Ladykillers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "local-d6a09316b198",
+          "title": "The Ladykillers",
+          "year": "1955"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0160",
+      "title": "Carnage",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0161",
+      "title": "Carry On Cleo",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0162",
+      "title": "Carry On Jack",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0167",
+      "title": "Police Squad!",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0168",
+      "title": "The Naked Gun",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0171",
+      "title": "Giant",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0172",
+      "title": "Black Venus",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0173",
+      "title": "Les Misérables",
+      "year": 1982,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-24nQ",
+          "title": "Les Misérables",
+          "year": "1958"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0177",
+      "title": "Arabian Nights",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0178",
+      "title": "Braveheart",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0184",
+      "title": "The Count of Monte Cristo",
+      "year": 2024,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0185",
+      "title": "Gone with the Wind",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0186",
+      "title": "Titanic",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2a2k",
+          "title": "Titanic",
+          "year": "1997"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0188",
+      "title": "Doctor Zhivago",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29jk",
+          "title": "Doctor Zhivago",
+          "year": "1965"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0189",
+      "title": "Gandhi",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0190",
+      "title": "The Way Back",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-H5C",
+          "title": "The Way Back",
+          "year": "2010"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0193",
+      "title": "The Ten Commandments",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-21mg",
+          "title": "The Ten Commandments",
+          "year": "1956"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0195",
+      "title": "Ben-Hur",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29RQ",
+          "title": "Ben-Hur",
+          "year": "1959"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0197",
+      "title": "Gladiator",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2b9m",
+          "title": "Gladiator",
+          "year": "2000"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0199",
+      "title": "Naked Sex",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-lfGi",
+          "title": "Naked Sex",
+          "year": "1973"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0200",
+      "title": "The Nymphomaniac",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0201",
+      "title": "Malizia",
+      "year": 1973,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0202",
+      "title": "The Colour of Pomegranates",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0203",
+      "title": "Petroleum Girls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0204",
+      "title": "Debbie Does Dallas",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0205-1",
+      "title": "Bonnie's Kids",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0205-2",
+      "title": "The Centerfold Girls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0207",
+      "title": "Young & Beautiful",
+      "year": 2013,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0208",
+      "title": "La Bimba di Satana",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0209",
+      "title": "Cooking Price-Wise",
+      "year": 1971,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0214",
+      "title": "The Beast",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0215",
+      "title": "Blanche",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0216",
+      "title": "Goto, Isle of Love",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0219",
+      "title": "Emmanuelle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1xJa",
+          "title": "Emmanuelle",
+          "year": "1974"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0222",
+      "title": "The Key",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1pwM",
+          "title": "The Key",
+          "year": "1983"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0225",
+      "title": "The Nude Vampire",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0227",
+      "title": "The Revenge of the Living Dead Girls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0228",
+      "title": "Dracula's Fiancée",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0229",
+      "title": "The Iron Rose",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0230",
+      "title": "The Rape of the Vampire",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0231",
+      "title": "The Shiver of the Vampires",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0235",
+      "title": "Tintin: Les Bijoux de la Castafiore / Vol 714 pour Sydney / Tintin et les Picaros",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0236",
+      "title": "Tintin: Tintin en Amérique / Les Cigares du pharaon / Le Lotus bleu",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0237",
+      "title": "Tintin: L'Étoile mystérieuse / Les 7 Boules de cristal / Le Temple du soleil",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0238",
+      "title": "Tintin: Tintin au pays de l'or noir / Objectif Lune / On a marché sur la Lune",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0239",
+      "title": "Tintin: L'Affaire Tournesol / Coke en stock / Tintin au Tibet",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0240",
+      "title": "Tintin: Le Crabe aux pinces d'or / Le Secret de la Licorne / Le Trésor de Rackham le Rouge",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0241",
+      "title": "Tintin: L'Oreille cassée / L'Île noire / Le Sceptre d'Ottokar",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0242",
+      "title": "Serenity",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0243",
+      "title": "Firefly",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0245",
+      "title": "Un village français",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0246",
+      "title": "Spears & Munsil HD Benchmark, 2nd Edition",
+      "year": null,
+      "kind": "calibration",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0247",
+      "title": "2019 DTS Demo Disc Volume 23",
+      "year": null,
+      "kind": "calibration",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0248",
+      "title": "Lethal Weapon",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29e0",
+          "title": "Lethal Weapon",
+          "year": "1987"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0249",
+      "title": "Battlestar Galactica",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0250",
+      "title": "Engrenages",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0251",
+      "title": "Knight Rider",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0252",
+      "title": "A Year in Provence",
+      "year": 1993,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0253",
+      "title": "HDTV Calibration Wizard",
+      "year": null,
+      "kind": "calibration",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0254",
+      "title": "15 Storeys High",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0255",
+      "title": "Frank Herbert’s Dune",
+      "year": 2000,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0256",
+      "title": "Breaking Bad",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0257",
+      "title": "Breaking Bad: The Final Season",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0258",
+      "title": "Better Call Saul",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0261",
+      "title": "12 Monkeys",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0262",
+      "title": "Terminator: The Sarah Connor Chronicles — Season 1",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0263",
+      "title": "Terminator: The Sarah Connor Chronicles — Season 2",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0264",
+      "title": "The X-Files",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0265",
+      "title": "Westworld",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0266",
+      "title": "Black Books",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0267",
+      "title": "Earth vs. the Flying Saucers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0268",
+      "title": "Forbidden Planet",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0269",
+      "title": "The Day the Earth Stood Still",
+      "year": 1951,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0270",
+      "title": "It's Such a Beautiful Day",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0271-1",
+      "title": "Tetsuo: The Iron Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0271-2",
+      "title": "Tetsuo II: Body Hammer",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0273",
+      "title": "Stargate",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0274",
+      "title": "Men in Black",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0275",
+      "title": "Lucy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0276",
+      "title": "Innerspace",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0277",
+      "title": "Tenet",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0283",
+      "title": "Star Wars: The Rise of Skywalker",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0287",
+      "title": "Battlestar Galactica: The Plan",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0288",
+      "title": "Battlestar Galactica: Blood & Chrome",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0289-3",
+      "title": "The Lord of the Rings: The Return of the King",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0291",
+      "title": "Tron: Legacy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0292",
+      "title": "A Boy and His Dog",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0293",
+      "title": "Phase IV",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0294",
+      "title": "Beyond the Black Rainbow",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0296",
+      "title": "Riddick",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0298",
+      "title": "The Day the Earth Caught Fire",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0299",
+      "title": "Invasion of the Body Snatchers",
+      "year": 1956,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1SWk",
+          "title": "Invasion of the Body Snatchers",
+          "year": "1978"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0300",
+      "title": "The Fifth Element",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0304",
+      "title": "Predator: Badlands",
+      "year": 2025,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0305",
+      "title": "Prey",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-sNBU",
+          "title": "Prey",
+          "year": "2022"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0307",
+      "title": "Dune: Alternative Edition Redux",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0308-1",
+      "title": "Dune (2021)",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0308-2",
+      "title": "Dune: Part Two (2024)",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0309",
+      "title": "Dune",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [
+        {
+          "id": "lb-fA7G",
+          "title": "Dune",
+          "year": "2021"
+        },
+        {
+          "id": "lb-29tY",
+          "title": "Dune",
+          "year": "1984"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0315-1",
+      "title": "La Jetée",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0315-2",
+      "title": "Sans Soleil",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0326",
+      "title": "The Rock",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0327",
+      "title": "Speed",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0328",
+      "title": "Sin City",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0329",
+      "title": "Sin City 2",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0330",
+      "title": "Machete",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0333",
+      "title": "Blade of the Immortal",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0334",
+      "title": "Enter the Ninja",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0336",
+      "title": "Death Warrant",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0337",
+      "title": "Maximum Risk",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0338",
+      "title": "Kickboxer",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0339",
+      "title": "Dark Angel",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0340",
+      "title": "Street Wars",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0341",
+      "title": "The Fugitive",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0342-2",
+      "title": "China O’Brien II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0343",
+      "title": "La Course à la mort de l'an 2000",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0353",
+      "title": "Soleil rouge",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0354",
+      "title": "3:10 to Yuma",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0355",
+      "title": "The Wild Bunch",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0356",
+      "title": "22 Bullets",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0360",
+      "title": "John Rambo",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0362",
+      "title": "The Running Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29q6",
+          "title": "The Running Man",
+          "year": "1987"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0363",
+      "title": "Maggie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0364",
+      "title": "Double détente",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0369",
+      "title": "Wolfwalkers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0380",
+      "title": "Spectre",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0381",
+      "title": "Red Sparrow",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0382",
+      "title": "Tornado",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0385",
+      "title": "Beverly Hills Cop II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0391",
+      "title": "Mad Max 2: The Road Warrior",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0395",
+      "title": "Dust Devil",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0396",
+      "title": "Red Sonja",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1YcC",
+          "title": "Red Sonja",
+          "year": "1985"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0397",
+      "title": "Eraser",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0398",
+      "title": "Jingle All the Way",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0400",
+      "title": "The Last Stand",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0401",
+      "title": "End of Days",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0405",
+      "title": "Twins",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0408",
+      "title": "The Last of the Mohicans",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0409",
+      "title": "Glory",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0410",
+      "title": "55 Days at Peking",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0411-2",
+      "title": "Drifters",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0413-1",
+      "title": "Westfront 1918",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0413-2",
+      "title": "Kameradschaft",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0415",
+      "title": "All Quiet on the Western Front",
+      "year": 1979,
+      "kind": "tv_film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2b2g",
+          "title": "All Quiet on the Western Front",
+          "year": "1930"
+        },
+        {
+          "id": "lb-H08",
+          "title": "All Quiet on the Western Front",
+          "year": "2022"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0416",
+      "title": "They Shall Not Grow Old",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0420",
+      "title": "City of Life and Death",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0421",
+      "title": "The Flowers of War",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0422",
+      "title": "Red Angel",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0424",
+      "title": "Battle of Britain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0427",
+      "title": "Assembly",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0428",
+      "title": "The Guns of Navarone",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0429",
+      "title": "A Bridge Too Far",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0430",
+      "title": "Two Women",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1yb4",
+          "title": "Two Women",
+          "year": "1960"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0434",
+      "title": "Max Manus: Man of War",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0439",
+      "title": "Fury",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-6JwC",
+          "title": "Fury",
+          "year": "2014"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0440",
+      "title": "The Bridge on the River Kwai",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0445",
+      "title": "Hearts and Minds",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0446",
+      "title": "Che: Part One",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0449",
+      "title": "Hamburger Hill",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0450",
+      "title": "The Thin Red Line",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1ZTM",
+          "title": "The Thin Red Line",
+          "year": "1998"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0455-1",
+      "title": "Culloden",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0455-2",
+      "title": "The War Game",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0458",
+      "title": "The Hunt for Red October",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0459",
+      "title": "Lebanon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0461",
+      "title": "The Hurt Locker",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0465",
+      "title": "Hudson Hawk",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0466",
+      "title": "Convoy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0467",
+      "title": "Romancing the Stone",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0468",
+      "title": "Who Framed Roger Rabbit",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0470",
+      "title": "The Breakfast Club",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0471",
+      "title": "Hugo",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0472",
+      "title": "Hackers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0474-1",
+      "title": "The Karate Kid",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0474-2",
+      "title": "The Karate Kid Part II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0474-3",
+      "title": "The Karate Kid Part III",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0476",
+      "title": "Ghostbusters",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-g2w",
+          "title": "Ghostbusters",
+          "year": "1984"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0479",
+      "title": "It",
+      "year": 1990,
+      "kind": "tv_series",
+      "catalogue_candidates": [
+        {
+          "id": "lb-bC8e",
+          "title": "It",
+          "year": "2017"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0494",
+      "title": "Batman Returns",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0495",
+      "title": "The Batman",
+      "year": 2022,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0496",
+      "title": "The Name of the Rose",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0499",
+      "title": "The Apartment",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0502",
+      "title": "On the Beach",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0503",
+      "title": "Holiday Inn",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0505",
+      "title": "Swing Time",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0506",
+      "title": "The Sound of Music",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0507-1",
+      "title": "Lolita",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0508",
+      "title": "Mädchen in Uniform",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0509-1",
+      "title": "À propos de Nice",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0509-2",
+      "title": "Taris",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0509-3",
+      "title": "Zéro de conduite",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0509-4",
+      "title": "L’Atalante",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0510",
+      "title": "Easy Rider",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0511",
+      "title": "Invention for Destruction",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0512",
+      "title": "The Blood of a Poet",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0513",
+      "title": "Moby Dick",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0514",
+      "title": "12 Angry Men",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2auI",
+          "title": "12 Angry Men",
+          "year": "1957"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0517",
+      "title": "A Matter of Life and Death",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0519",
+      "title": "The Epic of Everest",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0520",
+      "title": "Black Narcissus",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0523",
+      "title": "Tartuffe",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0524",
+      "title": "Spione",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0525-1",
+      "title": "Die Nibelungen: Siegfried",
+      "year": 1924,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0525-2",
+      "title": "Die Nibelungen: Kriemhild’s Revenge",
+      "year": 1924,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0526",
+      "title": "Dr. Mabuse, der Spieler",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0527",
+      "title": "The Phantom of Liberty",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0530",
+      "title": "Paprika",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0533-1",
+      "title": "Cruel Tales of the Bohachi: Code of the Forgotten Eight",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0533-2",
+      "title": "The Villain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0534-5",
+      "title": "Lone Wolf and Cub: Baby Cart in the Land of Demons",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0534-6",
+      "title": "Lone Wolf and Cub: White Heaven in Hell",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0534-7",
+      "title": "Shogun Assassin (re-edit)",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0536-1",
+      "title": "Sex and Fury",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0536-2",
+      "title": "Female Yakuza Tale",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0538",
+      "title": "JSA: Joint Security Area",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0542",
+      "title": "A Brighter Summer Day",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0544",
+      "title": "L'Amant",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0545-2",
+      "title": "Lady Snowblood: Love Song of Vengeance",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0548",
+      "title": "Shin Godzilla",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0550",
+      "title": "Dreams",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0556",
+      "title": "Enter the Void",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0558",
+      "title": "Living",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0562",
+      "title": "Casque d'or",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0564",
+      "title": "Montparnasse 19",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0565",
+      "title": "Les Enfants terribles",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0566",
+      "title": "The Story of Adèle H.",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0568",
+      "title": "Jules et Jim",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0570",
+      "title": "La Dolce Vita",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0573",
+      "title": "L'Argent",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-XIg",
+          "title": "L'Argent",
+          "year": "1983"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0575",
+      "title": "Les Dames du Bois de Boulogne",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0576",
+      "title": "Pickpocket",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0577",
+      "title": "Manon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0579",
+      "title": "L'Inferno",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0587",
+      "title": "Megalopolis",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0590",
+      "title": "Vivre sa vie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0591",
+      "title": "Breathless",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2aIK",
+          "title": "Breathless",
+          "year": "1960"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0596",
+      "title": "Mulholland Dr.",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0597",
+      "title": "Inland Empire",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0598",
+      "title": "Persona",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0602",
+      "title": "Showgirls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0603",
+      "title": "Lifeboat",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0606",
+      "title": "Rebecca",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0609",
+      "title": "The Fallen Idol",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0610",
+      "title": "Limelight",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0612",
+      "title": "City Lights",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0613",
+      "title": "The Great Dictator",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0624",
+      "title": "Minority Report",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0626",
+      "title": "Ready Player One",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0628",
+      "title": "Assault on Precinct 13",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0633",
+      "title": "Christine",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0636",
+      "title": "In the Mouth of Madness",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0637",
+      "title": "The Great Silence",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0638",
+      "title": "Black Dynamite",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0639",
+      "title": "Tokyo Drifter",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0640",
+      "title": "Prisoners",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0641",
+      "title": "Blue Ruin",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0642",
+      "title": "Cape Fear",
+      "year": 1991,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0644",
+      "title": "A Fugitive from the Past",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0645",
+      "title": "Cool Hand Luke",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0646",
+      "title": "L'Homme de Rio",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0647",
+      "title": "L'Emmerdeur",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0648",
+      "title": "The Informer",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0649",
+      "title": "The Conformist",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0650",
+      "title": "L.A. Takedown",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0652-2",
+      "title": "French Connection II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0655",
+      "title": "The King of Comedy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0659",
+      "title": "Bonnie and Clyde",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0663",
+      "title": "King of New York",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0664",
+      "title": "Public Enemies",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0666",
+      "title": "The Departed",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0667",
+      "title": "American Gangster",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0668",
+      "title": "Mean Streets",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0674",
+      "title": "The Godfather Part II",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0678-1",
+      "title": "Mesrine: Part 1 Killer Instinct",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0678-2",
+      "title": "Part 2 Public Enemy No. 1",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0682",
+      "title": "In the Heat of the Night",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0686",
+      "title": "Ashes and Diamonds",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0687",
+      "title": "The Naked City",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0689",
+      "title": "Serpico",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0694",
+      "title": "Drive",
+      "year": 1997,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-IG",
+          "title": "Drive",
+          "year": "2011"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0696",
+      "title": "Bunny Lake Is Missing",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0702",
+      "title": "The Maltese Falcon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29c4",
+          "title": "The Maltese Falcon",
+          "year": "1941"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0703",
+      "title": "Dark Passage",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0704",
+      "title": "The Killers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0707",
+      "title": "Mildred Pierce",
+      "year": 2011,
+      "kind": "tv_series",
+      "catalogue_candidates": [
+        {
+          "id": "lb-25uS",
+          "title": "Mildred Pierce",
+          "year": "1945"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0708",
+      "title": "Rue des Cascades",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0709",
+      "title": "Non coupable",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0710",
+      "title": "Les Clefs de bagnole",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0711",
+      "title": "Bonjour Tristesse",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0712",
+      "title": "L'Horloger de Saint-Paul",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0713",
+      "title": "Secret défense",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0716",
+      "title": "Charade",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0717",
+      "title": "Plenty",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0718",
+      "title": "Shutter Island",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0719",
+      "title": "The Three Faces of Eve",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0722",
+      "title": "Gaslight",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0723",
+      "title": "The Duke of Burgundy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0724",
+      "title": "An Inspector Calls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0726",
+      "title": "Rosemary's Baby",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-29zM",
+          "title": "Rosemary's Baby",
+          "year": "1968"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0727",
+      "title": "Madame de…",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0728",
+      "title": "Céline and Julie Go Boating",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0729",
+      "title": "Anatomy of a Fall",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0730",
+      "title": "Le Règne animal",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0732",
+      "title": "Le Grand Bleu",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0735",
+      "title": "Ship of Fools",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0736",
+      "title": "Panique",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0738",
+      "title": "The White Ribbon",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0739",
+      "title": "Le Combat dans l'île",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0740",
+      "title": "May 15th in Paris",
+      "year": null,
+      "kind": "short",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0744",
+      "title": "French Cancan",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0747",
+      "title": "The Fall",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1NoM",
+          "title": "The Fall",
+          "year": "2006"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0748",
+      "title": "Gainsbourg",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0749",
+      "title": "Raging Bull",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0751",
+      "title": "Creed",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0752",
+      "title": "Aliens Expanded",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0755",
+      "title": "La Ronde",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0756",
+      "title": "The Prestige",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0758",
+      "title": "Bambi",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0759",
+      "title": "Alice, Sweet Alice",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0762",
+      "title": "Nightmares in a Damaged Brain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0763",
+      "title": "Night of the Creeps",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0764-1",
+      "title": "The Vampire Doll",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0764-2",
+      "title": "Lake of Dracula",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0764-3",
+      "title": "Evil of Dracula",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0766",
+      "title": "The Lair of the White Worm",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0767",
+      "title": "Heretic",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0768",
+      "title": "The Gates of Hell",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0769",
+      "title": "The Wicker Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0770",
+      "title": "Young Frankenstein",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0772",
+      "title": "Evil Dead 2",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0774",
+      "title": "Night of the Living Dead",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1WwA",
+          "title": "Night of the Living Dead",
+          "year": "1968"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0775",
+      "title": "Dracula",
+      "year": 1931,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0777",
+      "title": "Nosferatu the Vampyre",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0779",
+      "title": "Poltergeist",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0780",
+      "title": "The Omen",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0783",
+      "title": "The Exorcist III",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0785",
+      "title": "Carrie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-20ZQ",
+          "title": "Carrie",
+          "year": "1976"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0786",
+      "title": "The Gate",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0787",
+      "title": "A Nightmare on Elm Street",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-2aw0",
+          "title": "A Nightmare on Elm Street",
+          "year": "1984"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0789",
+      "title": "Candyman",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0790",
+      "title": "Hellraiser",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0797",
+      "title": "Drive Angry",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0798",
+      "title": "Maniac",
+      "year": 2012,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0799",
+      "title": "Zombie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0800",
+      "title": "Taste of Fear",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0801",
+      "title": "Night of the Eagle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0804",
+      "title": "The Uninvited",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0806",
+      "title": "Tenebrae",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0808",
+      "title": "Color Out of Space",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-k1HY",
+          "title": "Color Out of Space",
+          "year": "2019"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0809",
+      "title": "Blood for Dracula",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0812",
+      "title": "Scream",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-24EC",
+          "title": "Scream",
+          "year": "1996"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0813",
+      "title": "The Keep",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0815",
+      "title": "Misery",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0817",
+      "title": "Black Sheep",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-257k",
+          "title": "Black Sheep",
+          "year": "2006"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0819",
+      "title": "Terror Train",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0823",
+      "title": "Stir of Echoes",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0824",
+      "title": "Dolls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0825",
+      "title": "Burnt Offerings",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0826",
+      "title": "Blood Rage",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0827",
+      "title": "Edge of the Axe",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0828",
+      "title": "The Initiation",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0829",
+      "title": "The Burning",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0830",
+      "title": "The Slayer",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0831",
+      "title": "Deadly Manor",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0832",
+      "title": "Vamp",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0833-2",
+      "title": "Three Colours: White",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0833-3",
+      "title": "Three Colours: Red",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0834-1",
+      "title": "Jour de fête",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0834-3",
+      "title": "Mon oncle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0834-5",
+      "title": "Trafic",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0834-6",
+      "title": "Parade",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0835-7",
+      "title": "In the Mood for Melville (documentary)",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0836-2",
+      "title": "Une semaine de vacances",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0836-5",
+      "title": "La Guerre sans nom",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0836-8",
+      "title": "La Princesse de Montpensier",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0838-5",
+      "title": "Twin Peaks: Fire Walk with Me",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0839",
+      "title": "Twin Peaks: The Entire Mystery",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0840-2",
+      "title": "Psycho III",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0840-3",
+      "title": "Psycho IV: The Beginning",
+      "year": null,
+      "kind": "tv_film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-1",
+      "title": "Saboteur",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-2",
+      "title": "Shadow of a Doubt",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-6",
+      "title": "The Man Who Knew Too Much",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-11",
+      "title": "Marnie",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-12",
+      "title": "Torn Curtain",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-13",
+      "title": "Topaz",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-14",
+      "title": "Frenzy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0841-15",
+      "title": "Family Plot",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0842-1",
+      "title": "Suspicion",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0842-5",
+      "title": "Strangers on a Train",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0842-6",
+      "title": "I Confess",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0842-11",
+      "title": "The Wrong Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-1",
+      "title": "Carry On Sergeant",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-2",
+      "title": "Carry On Nurse",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-3",
+      "title": "Carry On Teacher",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-4",
+      "title": "Carry On Constable",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-5",
+      "title": "Carry On Regardless",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-6",
+      "title": "Carry On Cruising",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-7",
+      "title": "Carry On Cabby",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-9",
+      "title": "Carry On Spying",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-13",
+      "title": "Don’t Lose Your Head",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-14",
+      "title": "Follow That Camel",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-16",
+      "title": "Carry On Up the Khyber",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-17",
+      "title": "Carry On Camping",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-18",
+      "title": "Carry On Again Doctor",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-19",
+      "title": "Carry On Up the Jungle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-20",
+      "title": "Carry On Loving",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-21",
+      "title": "Carry On Henry",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-22",
+      "title": "Carry On at Your Convenience",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-23",
+      "title": "Carry On Matron",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-25",
+      "title": "Carry On Girls",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-26",
+      "title": "Carry On Dick",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-27",
+      "title": "Carry On Behind",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-28",
+      "title": "Carry On England",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0843-29",
+      "title": "That’s Carry On!",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0844",
+      "title": "The Expanse",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0845",
+      "title": "Spiral / Engrenages",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-1",
+      "title": "Dr. No",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-2",
+      "title": "From Russia with Love",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-3",
+      "title": "Goldfinger",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-5",
+      "title": "You Only Live Twice",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-6",
+      "title": "On Her Majesty’s Secret Service",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-7",
+      "title": "Diamonds Are Forever",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-8",
+      "title": "Live and Let Die",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-9",
+      "title": "The Man with the Golden Gun",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-10",
+      "title": "The Spy Who Loved Me",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-11",
+      "title": "Moonraker",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-12",
+      "title": "For Your Eyes Only",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-13",
+      "title": "Octopussy",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-14",
+      "title": "A View to a Kill",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-15",
+      "title": "The Living Daylights",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-16",
+      "title": "Licence to Kill",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-17",
+      "title": "GoldenEye",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-18",
+      "title": "Tomorrow Never Dies",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-19",
+      "title": "The World Is Not Enough",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-20",
+      "title": "Die Another Day",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-21",
+      "title": "Casino Royale",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-22",
+      "title": "Quantum of Solace",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0846-23",
+      "title": "Skyfall",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0849",
+      "title": "Ulysse 31",
+      "year": null,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-1",
+      "title": "Where Eagles Dare",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-2",
+      "title": "Kelly’s Heroes",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-4",
+      "title": "Magnum Force",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-5",
+      "title": "The Outlaw Josey Wales",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-6",
+      "title": "The Gauntlet",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-7",
+      "title": "Pale Rider",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-8",
+      "title": "Heartbreak Ridge",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-10",
+      "title": "A Perfect World",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-11",
+      "title": "Space Cowboys",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-12",
+      "title": "Mystic River",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-13",
+      "title": "Million Dollar Baby",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-14",
+      "title": "Letters from Iwo Jima",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-15",
+      "title": "Flags of Our Fathers",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-16",
+      "title": "Gran Torino",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-17",
+      "title": "Invictus",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-18",
+      "title": "Hereafter",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-19",
+      "title": "J. Edgar",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-20",
+      "title": "Trouble with the Curve",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-21",
+      "title": "The Eastwood Factor",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0850-22",
+      "title": "Eastwood Directs: The Untold Story",
+      "year": null,
+      "kind": "documentary",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0851",
+      "title": "Band of Brothers",
+      "year": 2001,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0852",
+      "title": "The Pacific",
+      "year": 2010,
+      "kind": "tv_series",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0853-2",
+      "title": "Die Hard 2",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0853-3",
+      "title": "Die Hard with a Vengeance",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0853-4",
+      "title": "Die Hard 4.0",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0853-5",
+      "title": "A Good Day to Die Hard",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0854-2",
+      "title": "Hard to Kill",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0854-5",
+      "title": "Executive Decision",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0855-1",
+      "title": "Cobra",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0855-2",
+      "title": "Assassins",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0855-3",
+      "title": "Tango & Cash",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0855-4",
+      "title": "The Specialist",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0861-3",
+      "title": "The Invisible Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0861-4",
+      "title": "The Wolf Man",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0862",
+      "title": "The Bride of Frankenstein",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0865",
+      "title": "Barbarella",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0881-2",
+      "title": "Barefoot Gen 2",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0910",
+      "title": "Midnight Express",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [],
+      "status": "requires_lookup",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    },
+    {
+      "work_id": "work-0914",
+      "title": "Le Deuxième Souffle",
+      "year": null,
+      "kind": "film",
+      "catalogue_candidates": [
+        {
+          "id": "lb-1wvG",
+          "title": "Le Deuxième Souffle",
+          "year": "1966"
+        }
+      ],
+      "status": "requires_identity_review",
+      "note": "Candidates may be a different remake or medium; never apply without checking."
+    }
+  ]
+}

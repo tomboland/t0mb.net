@@ -7,6 +7,7 @@ watched_date: "2026-02-23"
 rating: null
 letterboxd_url: "https://boxd.it/dhhmBz"
 draft: false
+viewing: "lb-dhhmBz"
 ---
 
 This film is pure emotional manipulation.  The cartoonish inhuman nazi sadists in every breath, for instance.  I just feel myself pushing back against a film doing this to me.

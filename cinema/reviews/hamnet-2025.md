@@ -7,6 +7,7 @@ watched_date: "2026-01-24"
 rating: null
 letterboxd_url: "https://boxd.it/cNIaCJ"
 draft: false
+viewing: "lb-cNIaCJ"
 ---
 
 I think the fact that I’m not all that well-versed with Shakespeare, and Hamlet in particular, means there’s an aspect of this film that I’m unable to appreciate fully. I did study Hamlet at school, and I’ve seen it on stage too, but some decades later I feel none of that has stuck with me.

@@ -8,6 +8,7 @@ rating: null
 letterboxd_url: "https://boxd.it/gwDj4F"
 draft: false
 featured: true
+viewing: "lb-gwDj4F"
 ---
 
 It's an absolutely epic production with incredible sets on a very grand stage, and for a very significant amount of the film it can feel like being an audience member in a theatre hall. (Watched on 4k).

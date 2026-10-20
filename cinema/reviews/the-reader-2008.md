@@ -7,6 +7,7 @@ watched_date: "2026-04-08"
 rating: null
 letterboxd_url: "https://boxd.it/dTCU23"
 draft: false
+viewing: "lb-dTCU23"
 ---
 
 About half an hour in I was thinking of switching it off; I didn't find the relationship between the two of them all that convincing. Actually though, the film won me over later on. 

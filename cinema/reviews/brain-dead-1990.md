@@ -7,6 +7,7 @@ watched_date: "2026-01-06"
 rating: null
 letterboxd_url: "https://boxd.it/cuoHyp"
 draft: false
+viewing: "lb-cuoHyp"
 ---
 
 Mind-bending with great performances, particularly from both Bills!

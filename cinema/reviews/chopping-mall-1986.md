@@ -7,6 +7,7 @@ watched_date: "2026-06-04"
 rating: null
 letterboxd_url: "https://boxd.it/eEhcJ9"
 draft: false
+viewing: "lb-eEhcJ9"
 ---
 
 This film is just great 80s vibes. Barbara Crampton's screaming was a highlight, as was the exploding head!  I laughed out loud many times.  Love the music.

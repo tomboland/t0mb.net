@@ -7,6 +7,7 @@ watched_date: "2026-03-20"
 rating: null
 letterboxd_url: "https://boxd.it/dBv8kn"
 draft: false
+viewing: "lb-dBv8kn"
 ---
 
 I enjoyed this film way too much; I mean it's formulaic and predictable, yet it had me laughing all the way through and I just loved everyone in it, even the arseholes.  Maybe someone slipped me an E.

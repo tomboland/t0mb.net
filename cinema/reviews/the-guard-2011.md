@@ -7,6 +7,7 @@ watched_date: "2026-01-07"
 rating: null
 letterboxd_url: "https://boxd.it/cvyMd1"
 draft: false
+viewing: "lb-cvyMd1"
 ---
 
 Formulaic; yes. Standard tropes; yes to that too. Comparisons to Hot Fuzz; of course.  Token American; yes. 

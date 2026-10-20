@@ -7,6 +7,7 @@ watched_date: "2025-12-06"
 rating: "4"
 letterboxd_url: "https://boxd.it/bXHzMz"
 draft: false
+viewing: "lb-bXHzMz"
 ---
 
 I'd recommend this to anyone. Very grainy on blu ray, but I'm not sure it's film grain although I'm sure it's intended that the visual style is in-keeping with the grim portrayal of Randy's existence.

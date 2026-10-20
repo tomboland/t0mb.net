@@ -7,6 +7,7 @@ watched_date: "2025-12-30"
 rating: null
 letterboxd_url: "https://boxd.it/ckDBkB"
 draft: false
+viewing: "lb-ckDBkB"
 ---
 
 A powerful bromance.

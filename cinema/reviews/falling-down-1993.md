@@ -7,6 +7,7 @@ watched_date: "2026-07-20"
 rating: "5"
 letterboxd_url: "https://boxd.it/flsbqf"
 draft: false
+viewing: "lb-flsbqf"
 ---
 
 I think it's been 25 years or more since I've seen this, and my 4k arrived today, replacing the blu ray I bought last year and which I didn't get around to watching yet. 

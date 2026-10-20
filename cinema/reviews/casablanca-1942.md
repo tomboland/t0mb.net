@@ -7,6 +7,7 @@ watched_date: "2026-05-25"
 rating: "5"
 letterboxd_url: "https://boxd.it/evJgW7"
 draft: false
+viewing: "lb-evJgW7"
 ---
 
 Yes, this film has the drama, romance, intrigue, historical context and that ending is brilliant too... but it's also an incredible comedy!

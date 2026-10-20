@@ -7,6 +7,7 @@ watched_date: "2026-02-01"
 rating: null
 letterboxd_url: "https://boxd.it/cWKaFt"
 draft: false
+viewing: "lb-cWKaFt"
 ---
 
 Weird and boring; like any Jean Rollin film should be.

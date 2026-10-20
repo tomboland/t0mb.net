@@ -7,6 +7,7 @@ watched_date: "2026-03-25"
 rating: null
 letterboxd_url: "https://boxd.it/dGeH8R"
 draft: false
+viewing: "lb-dGeH8R"
 ---
 
 I really enjoyed the first film, so I bought the series on 4k.  Throughout the 4 films, it got steadily more CGI heavy, characters more idiosyncratic, action more ludicrous, and all in all none of that made it any better for me.  I'll happily keep the first film in my collection and let the others go I think

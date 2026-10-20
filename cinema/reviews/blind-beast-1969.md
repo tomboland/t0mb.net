@@ -7,6 +7,7 @@ watched_date: "2026-01-27"
 rating: null
 letterboxd_url: "https://boxd.it/cRHyOX"
 draft: false
+viewing: "lb-cRHyOX"
 ---
 
 Filed into the whimsical romance section on my shelf...

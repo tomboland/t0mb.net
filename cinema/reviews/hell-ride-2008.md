@@ -7,6 +7,7 @@ watched_date: "2025-12-12"
 rating: "2.5"
 letterboxd_url: "https://boxd.it/c1zuP9"
 draft: false
+viewing: "lb-c1zuP9"
 ---
 
 It's compete nonsense, with a stupid script and ridiculous posturing; a Tarantino fan-fic, but it's not that bad.

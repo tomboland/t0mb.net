@@ -7,6 +7,7 @@ watched_date: "2026-09-23"
 rating: null
 letterboxd_url: "https://boxd.it/gsor4H"
 draft: false
+viewing: "lb-gsor4H"
 ---
 
 Haven't finished the film yet, just recording some notes on the first act:

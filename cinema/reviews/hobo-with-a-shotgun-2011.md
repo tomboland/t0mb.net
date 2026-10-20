@@ -7,6 +7,7 @@ watched_date: "2026-03-30"
 rating: "5"
 letterboxd_url: "https://boxd.it/dN3m9P"
 draft: false
+viewing: "lb-dN3m9P"
 ---
 
 This film is a full length realisation of a 2 minute trailer from the Tarantino/Rodriguez Grindhouse double feature homage/anthology thing, or however you might describe it.

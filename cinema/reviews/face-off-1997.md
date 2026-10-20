@@ -7,6 +7,7 @@ watched_date: "2025-12-19"
 rating: "3"
 letterboxd_url: "https://boxd.it/c7LGxf"
 draft: false
+viewing: "lb-c7LGxf"
 ---
 
 I feel this film would be better with a completely different soundtrack.  It's just overly melodramatic TV cop drama stuff!  The film is bad enough with all the clichés etc, the music really pulls it down even further! It's alright though.

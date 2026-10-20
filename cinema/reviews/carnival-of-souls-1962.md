@@ -7,6 +7,7 @@ watched_date: "2026-09-09"
 rating: null
 letterboxd_url: "https://boxd.it/ggbQ8l"
 draft: false
+viewing: "lb-ggbQ8l"
 ---
 
 This was pretty great. Great spooky music, close-ups, atmosphere; I just loved it!
