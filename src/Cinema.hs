@@ -5,7 +5,7 @@ module Cinema where
 import View
 
 import Control.Monad (forM, unless, when)
-import Data.Aeson (Value(..), eitherDecodeStrict')
+import Data.Aeson (Value(..), Result(..), fromJSON, eitherDecodeStrict')
 import qualified Data.ByteString as BS
 import Data.Char (isAscii, isAlphaNum)
 import Data.List (sortOn, groupBy, isPrefixOf, intercalate)
@@ -26,7 +26,7 @@ tagUrl :: String -> String
 tagUrl = tagUrlIn "/films/tags/"
 
 -- Retain every review's path, including drafts, so validation runs before routing.
-data Cinema = Cinema { films :: [Value], viewings :: [Value], people :: [Value], reviews :: [Value], artwork :: Value, collection :: Value, diaryNotes :: [Value], ownedReleaseRows :: [Value], releaseLinks :: M.Map String [Value] }
+data Cinema = Cinema { films :: [Value], viewings :: [Value], people :: [Value], reviews :: [Value], artwork :: Value, collection :: Value, diaryNotes :: [Value], ownedReleaseRows :: [Value], legacyWorkLinks :: M.Map String String, releaseLinks :: M.Map String [Value] }
 
 readJson :: FilePath -> IO Value
 readJson path = BS.readFile path >>= either (fail . ((path ++ ": ") ++)) pure . eitherDecodeStrict'
@@ -36,6 +36,13 @@ loadCinema = do
   vs <- arr <$> readJson "cinema/viewings.json"
   collectionExists <- doesFileExist "cinema/collection.json"
   cs <- if collectionExists then readJson "cinema/collection.json" else pure Null
+  aliasesExist <- doesFileExist "cinema/collection-redirects.json"
+  aliases <- if aliasesExist then do
+    raw <- readJson "cinema/collection-redirects.json"
+    case fromJSON raw of
+      Success links -> pure links
+      Error err -> fail err
+    else pure M.empty
   noteExists <- doesFileExist "cinema/entries.json"
   ns <- if noteExists then arr <$> readJson "cinema/entries.json" else pure []
   ps <- arr <$> readJson "cinema/directors.json"
@@ -44,11 +51,10 @@ loadCinema = do
   exists <- doesFileExist "cinema/artwork.json"
   artworkData <- if exists then readJson "cinema/artwork.json" else pure Null
   tagged <- forM fs $ \f -> either fail (\ts -> pure $ set [("tags",values $ map val ts)] f) (normalTags $ get "tags" f)
-  let ownedIds=S.fromList [str "edition_id" x|x<-ls "copies" cs,str "ownership" x `elem` ["owned","loaned"]]
+  let ownedIds=S.fromList [str "edition_id" x|x<-ls "copies" cs,copyIsOwned x]
       releases=[e|e<-ls "editions" cs,S.member (str "id" e) ownedIds]
-      workFilms=M.fromList [(str "id" w,str "catalogue_film_id" w)|w<-ls "works" cs]
-      links=M.fromListWith (++) [(fid,[e])|e<-releases,fid<-S.toList $ S.fromList [M.findWithDefault "" (str "work_id" entry) workFilms|entry<-ls "contents" e],not $ null fid]
-      c = Cinema tagged vs ps rs artworkData cs ns releases links
+      links=M.fromListWith (++) [(fid,[e])|e<-releases,fid<-S.toList $ S.fromList [str "film" entry|entry<-ls "contents" e],not $ null fid]
+      c = Cinema tagged vs ps rs artworkData cs ns releases aliases links
   validate c
   pure c
 
@@ -63,16 +69,15 @@ validate c = do
       notes = M.fromList [(str "id" v,str "film" v) | v <- diaryNotes c]
       watches = M.fromList [(str "id" v,str "film" v) | v <- viewings c]
   let coll=collection c
-      ws=ls "works" coll
       es=ls "editions" coll
       cs=ls "copies" coll
-      workIds=S.fromList $ map (str "id") ws
       editionIds=S.fromList $ map (str "id") es
   mapM_ (\(label,rows) -> do
     unique label (map (str "id") rows)
-    unless (all (safeSlug . str "id") rows) $ fail ("Unsafe "++label)) [("work IDs",ws),("edition IDs",es),("copy IDs",cs)]
-  mapM_ (\w -> when (truth $ get "catalogue_film_id" w) $ unless (S.member (str "catalogue_film_id" w) ids) $ fail "Collection work refers to missing film") ws
-  mapM_ (\e -> unless (all ((`S.member` workIds).str "work_id") $ ls "contents" e) $ fail "Edition refers to missing work") es
+    unless (all (safeSlug . str "id") rows) $ fail ("Unsafe "++label)) [("edition IDs",es),("copy IDs",cs)]
+  unless (null $ ls "works" coll) $ fail "Obsolete collection work identities"
+  mapM_ (\(old,fid) -> unless (safeSlug old && S.member fid ids) $ fail "Invalid collection URL alias") $ M.toList $ legacyWorkLinks c
+  mapM_ (\e -> unless (all ((`S.member` ids).str "film") $ ls "contents" e) $ fail "Edition refers to missing film") es
   mapM_ (\x -> unless (S.member (str "edition_id" x) editionIds) $ fail "Copy refers to missing edition") cs
   mapM_ (\f -> do
     unless (safeSlug $ str "slug" f) $ fail "Invalid film slug"
@@ -200,7 +205,9 @@ directorView c p = set [("url",val $ directorUrl p),("watchedCount",number $ len
 isWatched :: Cinema -> Value -> Bool
 isWatched c f = get "watched" f == Bool True || any ((==str "id" f).str "film") (viewings c)
 ownedCopies :: Cinema -> [Value]
-ownedCopies c = filter ((`elem` ["owned","loaned"]).str "ownership") $ ls "copies" $ collection c
+ownedCopies c = filter copyIsOwned $ ls "copies" $ collection c
+copyIsOwned :: Value -> Bool
+copyIsOwned x = get "ownership" x == Null || str "ownership" x `elem` ["owned","loaned"]
 ownedEditions :: Cinema -> [Value]
 ownedEditions = ownedReleaseRows
 editionUrl :: Value -> String
@@ -210,19 +217,17 @@ workUrl w = "/films/collection/works/" ++ str "id" w ++ "/"
 editionsFor :: Cinema -> Value -> [Value]
 editionsFor c f = M.findWithDefault [] (str "id" f) $ releaseLinks c
 editionView :: Cinema -> Value -> Value
-editionView c e = obj [("editionTitle",get "title" e),("url",val $ editionUrl e),("kind",get "kind" e),
+editionView c e = obj [("editionTitle",get "title" e),("url",val $ editionUrl e),
   ("label",maybe Null (get "name") $ M.lookup (str "label_id" e) labels),("formats",val $ intercalate ", " $ map text $ ls "formats" e),
   ("imprint",get "imprint" e),("catalogueNumber",get "catalogue_number" e),("barcode",get "barcode" e),
   ("country",get "country" e),("releaseDate",get "release_date" e),("packaging",get "packaging" e),
   ("copyCount",number $ length [x|x<-ownedCopies c,str "edition_id" x==str "id" e]),
   ("contents",values $ map content $ ls "contents" e)]
-  where works=M.fromList [(str "id" w,w)|w<-ls "works" $ collection c]
+  where catalogue=M.fromList [(str "id" f,f)|f<-films c]
         labels=M.fromList [(str "id" l,l)|l<-ls "labels" $ collection c]
-        content entry = let w=works M.! str "work_id" entry
-                            linked=truth $ get "catalogue_film_id" w
-                            f=if linked then filmFor c (str "catalogue_film_id" w) else w
-                        in obj [("title",get "title" f),("year",get "year" f),("url",val $ if linked then filmUrl f else workUrl w),
-                                ("linked",Bool linked),("kind",get "kind" w),("cut",get "cut" entry),("coverage",get "description" $ get "coverage" entry)]
+        content entry = let f=catalogue M.! str "film" entry
+                        in obj [("title",get "title" f),("year",get "year" f),("url",val $ filmUrl f),
+                                ("linked",Bool True),("kind",get "kind" f),("cut",get "cut" entry),("coverage",get "coverage" entry)]
 
 -- Route declarations and their template data, all derived from source records.
 pageViews :: Cinema -> [(String,FilePath,Value)]
@@ -252,9 +257,9 @@ pageViews c = fixed ++ filmPages ++ directorPages ++ tagPages ++ editionPages ++
                page "/films/reviews/" "writing" "Film reviews" $ obj [("reviews",values $ summary latest)],
                page "/directors/" "directors" "Directors" directorIndex,
                page "/films/tags/" "tags" "Film tags" $ obj [("tags",values tags)]]
-        filmPages=[page (filmUrl f) "film" (str "title" f++" ("++str "year" f++")") $ set [("filmTitle",get "title" f)] $ filmView c f|f<-films c]
+        filmPages=[page (filmUrl f) "film" (str "title" f++if truth (get "year" f) then " ("++str "year" f++")" else "") $ set [("filmTitle",get "title" f)] $ filmView c f|f<-films c]
         editionPages=[page (editionUrl e) "edition" (str "title" e) (editionView c e)|e<-ownedEditions c]
-        collectionWorkPages=[page (workUrl w) "collection-work" (str "title" w) $ obj [("workTitle",get "title" w),("year",get "year" w),("kind",get "kind" w),("canonicalUrl",if truth (get "catalogue_film_id" w) then val $ filmUrl $ filmFor c $ str "catalogue_film_id" w else Null),("physicalMedia",values $ map (editionView c) [e|e<-ownedEditions c,any ((==str "id" w).str "work_id") $ ls "contents" e])]|w<-ls "works" $ collection c]
+        collectionWorkPages=[page ("/films/collection/works/"++old++"/") "collection-work" (str "title" f) $ obj [("workTitle",get "title" f),("year",get "year" f),("canonicalUrl",val $ filmUrl f),("physicalMedia",values $ map (editionView c) $ editionsFor c f)]|(old,fid)<-M.toList $ legacyWorkLinks c,let f=filmFor c fid]
         directorPages=[page (directorUrl p) "director" (str "name" p) (directorView c p)|p<-ps]
         tagPages=[page (tagUrl label) "tag" ("Films tagged "++label) $ obj [("name",val label),("count",number $ length $ tagged key),("plural",Bool $ length (tagged key)/=1),("films",values $ map (filmSummary c) $ sortedFilms $ tagged key)]|(key,label)<-M.toList labels]
 

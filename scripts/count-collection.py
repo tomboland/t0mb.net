@@ -7,18 +7,12 @@ inferred; remakes stay distinct and cuts of the same film share an identity.
 import collections,json
 import collection_data as db
 
-def counts(data):
-    works=db.index(data['works']);editions=db.index(data['editions'])
-    copies=[c for c in data['copies'] if c['ownership'] in {'owned','loaned'}]
+def counts(data, films):
+    catalogue={f['id']:f for f in films};editions=db.index(data['editions'])
+    copies=[c for c in data['copies'] if c.get('ownership','owned') in {'owned','loaned'}]
     owned={c['edition_id'] for c in copies}
-    ids={c['work_id'] for e in owned for c in editions[e]['contents']}
-    identities={}
-    for ident in sorted(ids):
-        w=works[ident]
-        key=w.get('catalogue_film_id') or ident
-        if key in identities and identities[key]['kind']!=w['kind']:
-            raise ValueError('Conflicting identity classifications: '+key)
-        identities[key]=w
+    ids={c['film'] for e in owned for c in editions[e].get('contents', [])}
+    identities={key:dict(catalogue[key],kind=db.film_kind(catalogue[key])) for key in ids}
     kinds=collections.Counter(w['kind'] for w in identities.values())
     return dict(physical_packages=len(copies),distinct_editions=len(owned),
                 catalogued_identities=len(identities),by_kind=dict(sorted(kinds.items())),
@@ -28,6 +22,6 @@ def counts(data):
 
 if __name__=='__main__':
     data=db.read();db.validate(data)
-    result=counts(data)
+    result=counts(data,json.loads((db.ROOT/'cinema/films.json').read_text()))
     db.atomic_text(db.ROOT/'generated/collection-counts.json',json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='works'},indent=2))

@@ -24,7 +24,7 @@ ROOT = helpers.ROOT / 'cinema'
 
 
 def save(name, value):
-    (ROOT / (name + '.json')).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    (ROOT / (name + '.json')).write_text(json.dumps(helpers.sparse(value), ensure_ascii=False, indent=2) + '\n')
 
 
 def token_path():
@@ -49,9 +49,10 @@ def new_film(args, films, people, api):
                     directors=[{'id': p['id'], 'name': p['name']} for p in data['credits']['crew'] if p['job'] == 'Director'])
     else:
         film['directors'] = [{'id': 'local-' + helpers.slug(name), 'name': name} for name in args.director]
-    if not film['title'] or not film['year']:
-        raise ValueError('Provide --title and --year, or use a TMDB entry containing them')
-    film['slug'] = helpers.slug(film['title'] + '-' + film['year'])
+    if not film['title']:
+        raise ValueError('Provide --title, or use a TMDB entry containing it')
+    if getattr(args, 'kind', 'film') != 'film':film['kind']=args.kind
+    film['slug'] = helpers.slug(film['title'] + ('-' + str(film['year']) if film.get('year') else ''))
     if any(f['slug'] == film['slug'] for f in films):
         raise ValueError('That title/year slug already exists; use its local ID or resolve the film identity in films.json')
     for person in film['directors'] if args.tmdb_id else []:
@@ -116,7 +117,7 @@ def resolve_film(args, films, api):
     direct = next((f for f in films if args.film in (f['id'], f['slug'])), None)
     if direct:
         return direct
-    matches = [f for f in films if (not args.year or str(f['year']) == args.year)
+    matches = [f for f in films if (not args.year or str(f.get('year', '')) == args.year)
                and matcher.normalized(args.film) in {matcher.normalized(f['title']), matcher.normalized(f.get('original_title') or '')}]
     if matches:
         return matches[0] if len(matches) == 1 else choose(matches, 'Matching films in your catalogue:')
@@ -155,7 +156,7 @@ def log_film(args, films, viewings):
         path, content = draft
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content)
-    print(f"Logged {film['title']} ({film['year']}) on {args.date}.")
+    print(f"Logged {film['title']} ({film.get('year', 'unknown year')}) on {args.date}.")
     if added:
         print('Added film: ' + film['slug'])
     if not film.get('tmdb'):
@@ -171,6 +172,7 @@ def main():
     commands = parser.add_subparsers(dest='command', required=True)
     add = commands.add_parser('film', help='Add a film manually or using a TMDB movie ID')
     add.add_argument('--unwatched', action='store_true', help='Add catalogue metadata without asserting a viewing, e.g. for an owned disc')
+    add.add_argument('--kind', choices=['film','tv_series','tv_film','documentary','concert','short','calibration'], default='film')
     add.add_argument('--title')
     add.add_argument('--year')
     add.add_argument('--director', action='append', default=[])
@@ -202,8 +204,16 @@ def main():
     tag.add_argument('film', help='Local film ID or slug')
     tag.add_argument('tags', nargs='+', help='Quote tags containing spaces')
     tag.add_argument('--remove', action='store_true', help='Remove these tags')
+    search = commands.add_parser('search', help='Find canonical film IDs by title, ID or slug (offline)')
+    search.add_argument('query')
     args = parser.parse_args()
     films = json.loads((ROOT / 'films.json').read_text())
+    if args.command == 'search':
+        query = helpers.slug(args.query)
+        for film in films:
+            if query in helpers.slug(' '.join(str(film.get(k, '')) for k in ('title','original_title','id','slug'))):
+                print(f"{film['id']} | {film['title']} | {film.get('year', '?')} | {film['slug']}")
+        return
     viewings = json.loads((ROOT / 'viewings.json').read_text())
     if args.command in ('film', 'log'):
         try:

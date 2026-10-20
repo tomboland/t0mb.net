@@ -1,82 +1,97 @@
 # Physical collection
 
-`collection.json` is the editable source of truth (schema 2). Initial import
-scripts, photographs and research logs are preserved in Git at `3803b1d`;
-they are not required to maintain or build the collection.
+One catalogue, three kinds of record:
 
-## Relationships
+- **`films.json`:** canonical films, series, shorts and other programmes. Reviews,
+  viewings and edition contents all reference the same `id`. TMDB is optional.
+- **`collection.json` → `editions`:** release title, label/format and contents.
+  Each content item has a `film` ID and, if recorded, a cut, coverage or role.
+- **`collection.json` → `copies`:** physical instances of an edition.
 
-- **Film:** `films.json` holds the canonical identity, optional typed TMDB ID,
-  ratings and tags. Viewings and reviews refer to its stable local ID.
-- **Work:** a collection content record links to that film through
-  `catalogue_film_id`. Unlinked works can be curated later.
-- **Edition:** label, imprint, formats, barcode, catalogue number, packaging and
-  release date; its contents reference one or more works, with cut, supplement
-  role and season/episode coverage where relevant.
-- **Copy:** the owned instance of an edition, with condition, location,
-  acquisition date and ownership status. Two copies need not mean two editions.
+Labels have their own small list in `collection.json`. That file uses schema 3;
+there is no second collection-work catalogue and no linking step.
 
-A box set is one edition containing multiple works. Different editions can share
-one film. Ownership never creates a viewing or implies watched/liked/rated.
-Unknown metadata remains null or empty, rather than guessed. Edition notes are
-for useful release facts; copy notes are for the particular physical copy.
+## Minimal records
 
-Local IDs are permanent relational keys; slugs are for film-page URLs, not joins.
-TMDB movie and television IDs have separate namespaces. Keep existing IDs and
-slugs stable when correcting titles or metadata.
+An edition can be as small as:
 
-## Add and maintain
+```json
+{
+  "id": "edition-0952",
+  "title": "Example release",
+  "contents": [{"film": "CANONICAL_FILM_ID"}]
+}
+```
 
-Run from the repository root. These are illustrative examples; use actual IDs
-from search output. Collection commands run offline without a TMDB token.
+An ordinary copy needs only:
+
+```json
+{"id": "shelf-0952", "edition_id": "edition-0952"}
+```
+
+Optional fields are omitted until recorded. Missing copy `ownership` means
+`owned`; missing `condition` means `unknown`, **not good**. Add `condition:
+"faulty"` or `ownership: "sold"` when applicable. Other absent metadata means
+unrecorded. Missing content `role` means unspecified; `main` and `supplement`
+are explicit. Coverage is plain text, such as `"Season 1"`.
+
+Films default to kind `film`, or `tv_series` when their TMDB type is `tv`.
+Other kinds are explicit: documentary, tv_film, short, concert or calibration.
+A missing `watched` field is not a claim of never watched. Viewing records imply
+watched; `watched: true` preserves knowledge of watched films without dated entries.
+Null/missing ratings mean unrated; false likes are not dislikes.
+
+## Daily workflow
+
+Run from the repository root. Examples use illustrative IDs; use actual results
+from search. Collection commands run offline and never change films or viewing history.
 
 ```sh
+# Search the canonical catalogue and physical editions:
+python3 scripts/cinema.py search "RoboCop"
 python3 scripts/collection.py search "RoboCop"
-python3 scripts/collection.py show edition-0123
 
-# New work, edition and owned copy:
-python3 scripts/collection.py add "A new film" --year 2026 \
-  --label Arrow --format "4K UHD" --catalogue-number FCD0000
+# Add a release of an existing film (ID or slug):
+python3 scripts/collection.py add "RoboCop" --film FILM_ID \
+  --label Arrow --format "4K UHD"
 
-# Another release of an existing work:
-python3 scripts/collection.py add "Existing film" --work work-0123 \
-  --new-edition --label Kino --format Blu-ray --packaging steelbook
+# A unique exact catalogue title can be selected without --film:
+python3 scripts/collection.py add "A known title" --year 1990 --format Blu-ray
 
-# Another copy of the same release:
-python3 scripts/collection.py copy edition-0123 --location "Living room"
+# First add a genuinely new title, without logging a viewing:
+python3 scripts/cinema.py film --title "A new film" --year 2026 --unwatched
+# Or use --tmdb-id instead of manual title/year. Then use its printed ID:
+python3 scripts/collection.py add "A new film" --film PRINTED_ID --label Kino
 
-# A box containing existing works:
-python3 scripts/collection.py add "Double feature" \
-  --work work-0123 --work work-0456 --label Criterion
+# A different release, or another copy of the same release:
+python3 scripts/collection.py add "RoboCop" --film FILM_ID \
+  --new-edition --label Criterion --format Blu-ray
+python3 scripts/collection.py copy edition-0123
 
-# A season set:
-python3 scripts/collection.py add "A series" --kind tv_series \
+# Box set: one edition/copy, several canonical titles:
+python3 scripts/collection.py add "Double feature" --film FILM_ID_1 --film FILM_ID_2
+
+# TV coverage belongs to the release, not another series identity:
+python3 scripts/collection.py add "A series: season one" --film SERIES_ID \
   --coverage "Season 1" --format DVD
 
+python3 scripts/collection.py show edition-0123
 python3 scripts/collection.py edit edition-0123 --label "Arrow Academy" \
-  --format Blu-ray --catalogue-number FCD1234
-python3 scripts/collection.py set-copy shelf-0123 --condition faulty \
-  --notes "Disc freezes"
+  --catalogue-number FCD1234
+python3 scripts/collection.py set-copy shelf-0123 --condition faulty --notes "Disc freezes"
+python3 scripts/collection.py set-copy shelf-0123 --condition unknown --notes ""
 ```
 
-Repeat `--format` for multi-format packages. `--contains "Title"` adds a new box
-constituent; prefer `--work` when the identity already exists. Barcodes are strings,
-including leading zeroes, not automatic lookups. Duplicate titles require explicit
-selection of an existing work/copy/edition rather than silent merging.
+Ambiguous title matches stop and show choices; they never silently merge remakes.
+Repeat `--format` for a multi-format package. Barcodes are strings preserving
+leading zeroes, not automatic lookups. Add `--kind tv_series` (or another kind) to
+manual `cinema.py film` additions when needed. Unknown years can be omitted.
 
-For film identity, first check `films.json` for an existing entry. If absent:
+For per-film cuts in boxes, detailed disc metadata or title corrections, edit the
+JSON directly. Keep IDs and slugs stable. Avoid manual edits while a CLI writer
+is running. Collection writes are locked, validated and atomic.
 
-```sh
-python3 scripts/cinema.py film --tmdb-id 123 --unwatched
-python3 scripts/collection.py link work-0123 PRINTED_FILM_ID
-```
-
-`--unwatched` creates no viewing. TMDB credentials stay outside the repository;
-see [cinema workflow](README.md). For work titles/years, individual cuts, detailed
-coverage and disc specifications, edit `collection.json` directly and validate.
-CLI writes are locked and atomic; avoid manual edits while a writer is running.
-
-## Validate and export
+## Validate, export and publish
 
 ```sh
 python3 scripts/validate-cinema.py
@@ -84,16 +99,18 @@ python3 scripts/count-collection.py
 python3 scripts/collection.py export
 ```
 
-`validate-cinema.py` checks the collection and its film/viewing/review relationships.
 Exports go to ignored `generated/collection/collection.csv` and `collection.json`.
-They are local snapshots, not editable sources; CSV edits do not write back.
-The JSON export includes private copy details: do not publish it wholesale.
+They are snapshots, not editable sources. The JSON includes private copy details;
+do not publish it wholesale.
 
-## Website
+The website reads live sources directly. `/films/collection/` provides search and
+filters; edition contents lead straight to canonical film pages with reviews,
+viewing history and **My editions**. Private copy notes, locations and acquisition
+dates are not rendered.
 
-The build reads the live sources directly. `/films/collection/` provides search
-and label/format filters. Stable edition pages list contents; linked works lead
-to canonical film pages with reviews, viewing history and **My editions**.
-Unlinked works retain their own collection pages. Existing work-page URLs remain
-valid after linking. Private copy notes, locations and acquisition data are not
-rendered. Build/preview and review-writing instructions are in [README.md](README.md).
+`collection-redirects.json` is a compatibility map for pre-existing collection-work
+URLs. It is not another catalogue and needs no entry for new films. Existing URLs
+remain usable and link to the canonical film pages. Import history is in Git at
+`3803b1d`; the previous model is at `73dbb9f`. Neither is needed for daily upkeep.
+
+See [README.md](README.md) for reviews, diary logging and website publishing.

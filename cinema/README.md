@@ -13,8 +13,8 @@ owned copies and links to canonical films. The website reads these sources direc
 
 | Tool | Purpose |
 |---|---|
-| `scripts/cinema.py` | Add films, log viewings, write reviews and manage film tags |
-| `scripts/collection.py` | Add/edit editions and copies, link films, export the collection |
+| `scripts/cinema.py` | Search/add films, log viewings, write reviews and manage film tags |
+| `scripts/collection.py` | Add/edit editions and copies referencing canonical films; export the collection |
 | `scripts/validate-cinema.py` | Check identities and relationships across the live data |
 | `scripts/count-collection.py` | Count physical films separately from packages and TV series |
 | `scripts/refresh-artwork.py` | Fetch missing artwork |
@@ -23,6 +23,10 @@ owned copies and links to canonical films. The website reads these sources direc
 
 Initial import/reconciliation tooling and evidence are retained in Git at
 `3803b1d`, not in the working tree. Daily tools need no import files or photographs.
+
+Edition contents, viewings and reviews share the canonical film IDs directly.
+Omit unrecorded optional fields rather than filling them with nulls or empty lists.
+The small `collection-redirects.json` map preserves old URLs only.
 
 ## Write the first review
 

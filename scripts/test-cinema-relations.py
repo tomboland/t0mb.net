@@ -20,7 +20,7 @@ class RelationsTests(unittest.TestCase):
         self.write('films', self.films)
         self.write('viewings', [{'id':'view-1','film':'film-1','date':'2020-01-01'}])
         self.write('entries', [{'id':'note-1','film':'film-1','kind':'note'}])
-        self.write('collection', {'schema_version':2,'labels':[],'works':[], 'editions':[], 'copies':[]})
+        self.write('collection', {'schema_version':3,'labels':[], 'editions':[], 'copies':[]})
         self.review = self.root/'cinema/reviews/example.md'
         self.review.write_text('---\nid: review-1\nfilm: film-1\ntitle: Example\ndiary_entry: note-1\ndraft: false\n---\nOriginal writing.\n')
     def write(self, name, data):

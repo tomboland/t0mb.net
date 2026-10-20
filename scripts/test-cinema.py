@@ -42,15 +42,20 @@ class CinemaTests(unittest.TestCase):
     def test_owned_editions_unlinked_work_and_private_fields(self):
         self.films.append(dict(id='new-film',slug='new-film-2020',title='Not watched',year='2020',watched=False,directors=[{'id':'local-person','name':'Someone'}]))
         self.write('films',self.films)
-        self.write('collection',dict(labels=[dict(id='label-arrow',name='Arrow')],
-            works=[dict(id='work-a',title='Observed title',catalogue_film_id='local-film'),dict(id='work-b',title='Pending identity',year=None,kind='film'),dict(id='work-c',title='Not watched',catalogue_film_id='new-film')],
-            editions=[dict(id='edition-a',title='Box set',label_id='label-arrow',formats=['4K UHD'],contents=[dict(work_id='work-a'),dict(work_id='work-b'),dict(work_id='work-c')])],
-            copies=[dict(id='copy-a',edition_id='edition-a',ownership='owned',location='SECRET LOCATION',notes='SECRET NOTE')]))
+        self.films.append(dict(id='pending-film',slug='pending-film',title='Pending identity',kind='short'))
+        self.write('films',self.films)
+        self.write('collection',dict(schema_version=3,labels=[dict(id='label-arrow',name='Arrow')],
+            editions=[dict(id='edition-a',title='Box set',label_id='label-arrow',formats=['4K UHD'],contents=[dict(film='local-film'),dict(film='pending-film'),dict(film='new-film',coverage='Season 1')])],
+            copies=[dict(id='copy-a',edition_id='edition-a',location='SECRET LOCATION',notes='SECRET NOTE')]))
+        self.write('collection-redirects',{'work-a':'local-film','work-b':'pending-film'})
         pages=self.build()
         self.assertIn('My editions',pages['films/local-film-2000/index.html'])
         box=pages['films/collection/editions/edition-a/index.html']
         self.assertIn('/films/local-film-2000/',box)
-        self.assertIn('/films/collection/works/work-b/',box)
+        self.assertIn('/films/pending-film/',box)
+        self.assertIn('Season 1',box)
+        self.assertIn('/films/pending-film/',pages['films/collection/works/work-b/index.html'])
+        self.assertIn('No viewing recorded',pages['films/pending-film/index.html'])
         self.assertNotIn('SECRET',box)
         self.assertIn('No viewing recorded',pages['films/new-film-2020/index.html'])
         self.assertIn('Pending identity',pages['films/collection/index.html'])

@@ -17,7 +17,7 @@ def main():
     args = parser.parse_args()
     api = matcher.API(args.token_file.read_text().strip(), Path('/tmp/t0mb-tmdb-cache'))
     films = json.loads(Path('cinema/films.json').read_text())
-    people = {p['id']: p for film in films for p in film['directors'] if isinstance(p['id'], int)}
+    people = {p['id']: p for film in films for p in film.get('directors', []) if isinstance(p['id'], int)}
     def fetch(person):
         credits = api.get(f"person/{person['id']}/movie_credits")
         movies = {r['id']: {'tmdb_id': r['id'], 'title': r['title'], 'year': r.get('release_date', '')[:4]} for r in credits['crew'] if r['job'] == 'Director'}

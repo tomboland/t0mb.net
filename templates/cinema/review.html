@@ -1,4 +1,4 @@
-<p>$for(film)$<a href="$url$">← Film details: $title$ ($year$)</a> $partial("templates/cinema/like.html")$$endfor$</p>
+<p>$for(film)$<a href="$url$">← Film details: $title$$if(year)$ ($year$)$endif$</a> $partial("templates/cinema/like.html")$$endfor$</p>
 $partial("templates/cinema/image.html")$<h1>$title$</h1>
 $partial("templates/cinema/review-meta.html")$
 <div class="content-body">

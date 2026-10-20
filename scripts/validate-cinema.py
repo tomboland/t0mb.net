@@ -26,6 +26,10 @@ def audit(root=ROOT):
     fi=indexed(films,'films');vi=indexed(viewings,'viewings');indexed([r['metadata'] for r in reviews],'reviews')
     for key in ('slug',):
         errors.extend(f'films: duplicate/empty {key} {k}' for k,v in Counter(f.get(key) for f in films).items() if not k or v>1)
+    aliases_path=root/'cinema/collection-redirects.json'
+    if aliases_path.exists():
+        for old, fid in json.loads(aliases_path.read_text()).items():
+            if fid not in fi: errors.append(f'{old}: URL alias refers to missing film {fid}')
     ei=indexed(entries,'diary notes')
     for v in viewings+entries:
         if v['film'] not in fi:errors.append(f'{v["id"]}: missing film {v["film"]}')
@@ -41,7 +45,7 @@ def audit(root=ROOT):
         if f.get('tmdb'):ext[(f['tmdb']['type'],str(f['tmdb']['id']))].append(f['id'])
     duplicate_external=[{'tmdb_type':k[0],'tmdb_id':k[1],'film_ids':v} for k,v in ext.items() if len(v)>1]
     for group in duplicate_external:errors.append('Duplicate TMDB identity: '+str(group))
-    counts={'films':len(films),'viewings':len(viewings),'reviews':len(reviews),'collection_works':len(data['works']),'editions':len(data['editions']),'copies':len(data['copies']),'linked_collection_works':sum(bool(w.get('catalogue_film_id')) for w in data['works'])}
+    counts={'films':len(films),'viewings':len(viewings),'reviews':len(reviews),'owned_catalogue_entries':len({x['film'] for e in data['editions'] for x in e.get('contents', [])}),'editions':len(data['editions']),'copies':len(data['copies'])}
     return {'counts':counts,'errors':errors}
 
 if __name__=='__main__':

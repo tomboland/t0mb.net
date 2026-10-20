@@ -48,6 +48,14 @@ class AuthoringTests(unittest.TestCase):
         args=SimpleNamespace(title='Owned not watched',year='2000',tmdb_id=None,director=[],unwatched=True)
         self.assertFalse(cli.new_film(args,[],[],None)['watched'])
 
+    def test_manual_unknown_year_and_kind_need_no_placeholder_fields(self):
+        self.run_cli('film','--title','Calibration disc','--kind','calibration','--unwatched')
+        film, = self.read('films')
+        self.assertEqual(film['kind'],'calibration')
+        for key in ('year','directors','rating','tmdb'):self.assertNotIn(key,film)
+        self.assertIn(film['id'],self.run_cli('search','Calibration'))
+        self.assertEqual(self.read('viewings'),[])
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

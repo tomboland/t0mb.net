@@ -29,3 +29,13 @@ def validate_rating(value):
     number = float(value)
     if not 0.5 <= number <= 5 or number * 2 != int(number * 2):
         raise ValueError(f'Invalid rating: {value}')
+
+
+def sparse(value):
+    """Omit unrecorded optional fields, never meaningful false/zero values."""
+    if isinstance(value, dict):
+        return {key: sparse(item) for key, item in value.items()
+                if item is not None and item != '' and item != [] and item != {}}
+    if isinstance(value, list):
+        return [sparse(item) for item in value]
+    return value
