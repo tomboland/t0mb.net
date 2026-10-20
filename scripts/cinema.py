@@ -32,7 +32,7 @@ def token_path():
 
 
 def api_for(args):
-    matcher = module('matcher', 'match-tmdb.py')
+    matcher = module('matcher', 'tmdb_api.py')
     path = args.token_file.expanduser()
     token = path.read_text().strip() if path.exists() else ''
     return matcher.API(token, Path('/tmp/t0mb-tmdb-cache'))
@@ -74,7 +74,7 @@ def import_artwork(film, api):
                  for record in [existing.get(kind, {})] for key in ('path', 'thumbnail') if record.get(key)]
         if all((ROOT.parent / path.lstrip('/')).is_file() for path in paths):
             return artwork
-    importer = module('film_images', 'import-film-images.py')
+    importer = module('film_images', 'refresh-artwork.py')
     key, record = importer.fetch(film, api, ROOT.parent / 'images/films/tmdb')
     artwork[key] = record
     return artwork
@@ -110,7 +110,7 @@ def choose(rows, label):
 
 
 def resolve_film(args, films, api):
-    matcher = module('matcher', 'match-tmdb.py')
+    matcher = module('matcher', 'tmdb_api.py')
     if args.tmdb_id:
         return next((f for f in films if f.get('tmdb') == {'type': 'movie', 'id': args.tmdb_id}), None)
     direct = next((f for f in films if args.film in (f['id'], f['slug'])), None)

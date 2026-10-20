@@ -256,27 +256,6 @@ class CinemaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'liked must be true or false'):
             self.build()
 
-    def test_like_import_preserves_existing_data(self):
-        import zipfile
-        spec = importlib.util.spec_from_file_location('importer', ROOT / 'scripts/import-letterboxd.py')
-        importer = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(importer)
-        export = self.root / 'export.zip'
-        with zipfile.ZipFile(export, 'w') as archive:
-            archive.writestr('likes/films.csv', 'Name,Letterboxd URI\nFilm,https://boxd.it/liked\nOutside,https://boxd.it/outside\n')
-            archive.writestr('likes/reviews.csv', 'Content\nhttps://boxd.it/unliked\n')
-        records = [dict(self.films[0], id='liked', letterboxd_url='https://boxd.it/liked'),
-                   dict(self.films[0], id='unliked', letterboxd_url='https://boxd.it/unliked'),
-                   dict(self.films[0], id='edited', letterboxd_url='https://boxd.it/liked', liked=False),
-                   dict(self.films[0], id='manual')]
-        self.write('films', records)
-        likes = importer.read_likes(export)
-        path = self.data / 'films.json'
-        importer.import_likes(path, likes)
-        result = json.loads(path.read_text())
-        self.assertEqual(result, [dict(records[0], liked=True), dict(records[1], liked=False), records[2], records[3]])
-        importer.import_likes(path, likes)
-        self.assertEqual(json.loads(path.read_text()), result)
 
     def test_film_themes_inherit_to_reviews_only(self):
         self.review('first')

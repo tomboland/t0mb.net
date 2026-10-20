@@ -3,29 +3,26 @@
 The source of truth is here: `films.json` holds film identities and optional
 TMDB references; `viewings.json` holds separate dated viewings; `reviews/*.md`
 holds your writing. `directors.json` is a saved TMDB filmography snapshot.
-The original matching audit in `data/film-matching/` is historical evidence,
-not the live catalogue. Keep this directory backed up with the repository.
+`entries.json` preserves non-viewing diary notes; reviews can link to these without
+inventing watched events. Keep this directory backed up with the repository.
 
-## Physical shelf inventory
+## Physical collection and everyday tools
 
-See [the cross-catalogue audit and recommended relational model](RELATIONSHIPS.md)
-before expanding public ownership pages. The collection work identities are still
-provisional where unresolved; 1,104 work records are linked to canonical identities.
-See [applied reconciliation](../data/cinema-reconciliation/README.md) for the
-Letterboxd cleanup, integration export and remaining queue.
+See [the collection model and commands](COLLECTION.md) for editions, box sets,
+owned copies and links to canonical films. The website reads these sources directly.
 
-`collection.json` is the source of truth for works, releases/editions, labels and
-owned copies. Use `python3 scripts/collection.py search "Title"` and
-`python3 scripts/collection.py add "New title" --label Arrow --format "4K UHD"`.
-This does not change viewing history. See [the model and workflow](COLLECTION.md).
+| Tool | Purpose |
+|---|---|
+| `scripts/cinema.py` | Add films, log viewings, write reviews and manage film tags |
+| `scripts/collection.py` | Add/edit editions and copies, link films, export the collection |
+| `scripts/validate-cinema.py` | Check identities and relationships across the live data |
+| `scripts/count-collection.py` | Count physical films separately from packages and TV series |
+| `scripts/refresh-artwork.py` | Fetch missing artwork |
+| `scripts/refresh-directors.py` | Refresh saved director filmographies |
+| `scripts/export-cinema.py` | Export viewing history and reviews for personal use |
 
-`shelf.csv` and `shelf.json` are generated exports, **not editable sources**.
-Regenerate with `python3 scripts/collection.py export`. The [photo evidence guide](../data/film-shelf/README.md)
-and [review queue](../data/film-shelf/review.md) retain provenance and missing metadata.
-Public collection routes now render at `/films/collection/`, with edition pages,
-provisional work pages and links to existing film pages. Film pages show My editions;
-linked ownership can be filtered in the catalogue. This is implemented locally,
-not a statement that it has been deployed.
+Initial import/reconciliation tooling and evidence are retained in Git at
+`3803b1d`, not in the working tree. Daily tools need no import files or photographs.
 
 ## Write the first review
 
@@ -59,16 +56,6 @@ Set `"liked": true` or `"liked": false` on a film in `films.json`. Film pages
 and listings show ♥ for liked films and ♡ for films not marked as liked.
 The flag belongs to the film, independently of ratings, reviews and tags;
 `favourite` remains a separate, more selective collection. Missing flags show ♡.
-
-The original Letterboxd export stores film likes in `likes/films.csv`.
-To backfill older imported records without overwriting any existing flags:
-
-```sh
-python3 scripts/import-letterboxd.py /path/to/letterboxd-export.zip --likes-only
-```
-
-This matches exact Letterboxd film URLs and reports likes outside the catalogue
-without adding those films. Subsequent local changes remain authoritative.
 
 ## Tag films
 
@@ -110,7 +97,7 @@ Presentation lives in `templates/cinema/`, relationships and template contexts
 in `src/Cinema.hs`, full-review embedding in `src/CinemaRendering.hs`, and routes
 in `site.hs`. Shared publishing pages live in `src/Publishing.hs`. Edit the homepage introduction in
 `content/home.md` and the cinema information page in `content/films-about.md`.
-Python scripts only manage/import source data and artwork. `cabal exec site --
+Python scripts only manage source data and artwork. `cabal exec site --
 watch` also picks up cinema changes, including new film and tag pages.
 
 Run `python3 scripts/test-cinema.py` after compiling to check cinema rendering
@@ -223,7 +210,7 @@ New TMDB films added with `log` or `film` import artwork automatically and serve
 locally. To refresh or backfill artwork separately (normal builds stay offline):
 
 ```sh
-python3 scripts/import-film-images.py --token-file /private/tmdb-token
+python3 scripts/refresh-artwork.py --token-file /private/tmdb-token
 ```
 
 Existing API metadata in `/tmp/t0mb-tmdb-cache` can be reused without a token.
@@ -262,11 +249,6 @@ explicitly refreshes saved director filmographies; ordinary builds use the
 snapshot. Filmography entries outside your watched catalogue appear as muted
 text. Watched films without reviews remain muted links to their viewing history.
 
-The initial import excludes Twin Peaks and Diario di una Segretaria. The
-misplaced Hobo with a Shotgun review is omitted because its corrected feature
-review already exists. The short's watched entry remains, without the feature's
-rating or review. Original records remain in the Letterboxd ZIP and matching audit.
-
 ## Export viewing history for an LLM
 
 Run `python3 scripts/export-cinema.py` to create
@@ -286,7 +268,11 @@ ignored by Git; regenerate them after updating the collection. Use
 ## Checks
 
 ```sh
-python3 scripts/test-film-matching.py
+python3 scripts/validate-cinema.py
+python3 scripts/test-collection.py
+python3 scripts/test-cinema-relations.py
+python3 scripts/test-collection-counts.py
+node scripts/test-collection-filters.cjs
 python3 scripts/test-cinema-cli.py
 python3 scripts/test-cinema.py
 ```

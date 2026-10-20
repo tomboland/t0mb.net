@@ -8,11 +8,10 @@ SCRIPT=Path(__file__).with_name('collection.py')
 class CollectionTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
-        (self.root/'cinema').mkdir();(self.root/'data/film-shelf').mkdir(parents=True)
+        (self.root/'cinema').mkdir()
         (self.root/'cinema/films.json').write_text('[{"id":"existing-film","title":"Known film","year":1990}]')
         (self.root/'cinema/viewings.json').write_text('[]')
-        (self.root/'data/film-shelf/photos.json').write_text('{"photos":[]}')
-        self.d={'schema_version':1,'labels':[],'works':[],'editions':[],'copies':[]};db.save(self.d,self.root)
+        self.d={'schema_version':2,'labels':[],'works':[],'editions':[],'copies':[]};db.save(self.d,self.root)
     def runcli(self,*args,ok=True):
         p=subprocess.run([sys.executable,str(SCRIPT),'--root',str(self.root),*args],capture_output=True,text=True)
         self.assertEqual(p.returncode==0,ok,p.stdout+p.stderr);return p
@@ -45,16 +44,10 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(d['editions'][0]['kind'],'box_set')
     def test_manual_entries_need_no_photo_and_export_is_regenerable(self):
         self.runcli('add','No photograph','--kind','tv_series')
-        self.runcli('export');p=self.root/'cinema/shelf.json';first=p.read_bytes();self.runcli('export');self.assertEqual(first,p.read_bytes())
-        self.assertFalse(db.read(self.root)['copies'][0]['source_photos'])
+        self.runcli('export');p=self.root/'generated/collection/collection.json';first=p.read_bytes();self.runcli('export');self.assertEqual(first,p.read_bytes())
+        self.assertNotIn('source_photos',db.read(self.root)['copies'][0])
     def test_references_are_validated(self):
         self.runcli('add','Example');d=db.read(self.root);d['copies'][0]['edition_id']='missing'
         with self.assertRaises(ValueError):db.validate(d,self.root)
-    def test_merge_preserves_copies_and_records_original_identity(self):
-        self.runcli('add','English name');self.runcli('add','Original name')
-        self.runcli('merge-works','work-0002','work-0001')
-        d=db.read(self.root);self.assertEqual(len(d['works']),1);self.assertEqual(len(d['copies']),2)
-        self.assertEqual(d['editions'][1]['contents'][0]['work_id'],'work-0001')
-        self.assertEqual(d['work_merge_history'][0]['source']['title'],'Original name')
 
 if __name__=='__main__':unittest.main()

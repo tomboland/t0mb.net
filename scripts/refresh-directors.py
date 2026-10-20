@@ -6,7 +6,7 @@ import importlib.util
 import json
 from pathlib import Path
 
-spec = importlib.util.spec_from_file_location('matcher', Path(__file__).with_name('match-tmdb.py'))
+spec = importlib.util.spec_from_file_location('matcher', Path(__file__).with_name('tmdb_api.py'))
 matcher = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(matcher)
 

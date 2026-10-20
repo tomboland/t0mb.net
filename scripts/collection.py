@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Manage physical releases and copies without adding viewings or changing reviews."""
 import argparse
-import copy
 import fcntl
 import json
 import re
@@ -45,7 +44,6 @@ def parser():
     s=sub.add_parser('copy',help='Add another owned copy of an existing edition');s.add_argument('edition_id');s.add_argument('--location');s.add_argument('--condition',choices=['unknown','good','damaged','faulty','missing_disc'],default='unknown');s.add_argument('--notes',default='')
     s=sub.add_parser('set-copy',help='Change condition/location without changing the edition');s.add_argument('copy_id');s.add_argument('--condition',choices=['unknown','good','damaged','faulty','missing_disc']);s.add_argument('--location');s.add_argument('--notes');s.add_argument('--ownership',choices=['owned','loaned','sold','disposed','lost'])
     s=sub.add_parser('link',help='Explicitly link a work to an existing diary film identity');s.add_argument('work_id');s.add_argument('catalogue_film_id')
-    s=sub.add_parser('merge-works',help='Explicitly merge two confirmed-identical work records; preserves all editions/copies');s.add_argument('source_id');s.add_argument('target_id')
     return p
 
 def edition_args(s):
@@ -64,15 +62,15 @@ def apply(data,args):
         for title in args.contains:
             matching=[w for w in data['works'] if db.normalise(w['title'])==db.normalise(title)]
             if matching:raise ValueError('Constituent already exists: '+', '.join(w['id'] for w in matching)+'. Use --work ID for it.')
-            w=dict(id=new_id(data['works'],'work'),title=title,kind=args.kind,year=None,catalogue_film_id=None,identity_status='provisional',external_ids={})
+            w=dict(id=new_id(data['works'],'work'),title=title,kind=args.kind,year=None,catalogue_film_id=None,identity_status='provisional')
             data['works'].append(w);args.work.append(w['id'])
         if len(args.work)>1 and (args.coverage or args.cut):raise ValueError('Set coverage/cuts per constituent in collection.json for multi-work editions')
         if not args.work:
             matching=[w for w in works.values() if db.normalise(w['title'])==db.normalise(args.title) and (args.year is None or w['year']==args.year)]
             if matching:raise ValueError('Possible existing work: '+', '.join(w['id'] for w in matching)+'. Select explicitly with --work ID (avoids merging remakes).')
-            w=dict(id=new_id(data['works'],'work'),title=args.title,kind=args.kind,year=args.year,catalogue_film_id=None,identity_status='provisional',external_ids={})
+            w=dict(id=new_id(data['works'],'work'),title=args.title,kind=args.kind,year=args.year,catalogue_film_id=None,identity_status='provisional')
             data['works'].append(w);args.work=[w['id']]
-        e=dict(id=new_id(data['editions'],'edition'),title=args.title,kind='box_set' if len(args.work)>1 else works.get(args.work[0],{'kind':args.kind})['kind'],label_id=None,imprint=None,formats=[],catalogue_number=None,barcode=None,packaging=None,country=None,release_date=None,discs=[],contents=[dict(work_id=w,display_title=None,role='main',cut=args.cut,coverage={'description':args.coverage} if args.coverage else {}) for w in args.work],list_contents=len(args.work)>1,notes='',status='curated',review_notes='',evidence={'description':'Manual entry; only supplied fields are confirmed.'})
+        e=dict(id=new_id(data['editions'],'edition'),title=args.title,kind='box_set' if len(args.work)>1 else works.get(args.work[0],{'kind':args.kind})['kind'],label_id=None,imprint=None,formats=[],catalogue_number=None,barcode=None,packaging=None,country=None,release_date=None,discs=[],contents=[dict(work_id=w,display_title=None,role='main',cut=args.cut,coverage={'description':args.coverage} if args.coverage else {}) for w in args.work],list_contents=len(args.work)>1,notes='')
         data['editions'].append(e);args.edition_id=e['id']
     if args.command in {'add','edit'}:
         e=next((e for e in data['editions'] if e['id']==args.edition_id),None)
@@ -84,7 +82,7 @@ def apply(data,args):
         if args.command=='edit':return e['id']
     if args.command in {'add','copy'}:
         if not any(e['id']==args.edition_id for e in data['editions']):raise ValueError('Unknown edition ID')
-        c=dict(id=new_id(data['copies'],'shelf'),edition_id=args.edition_id,condition=args.condition,ownership='owned',location=args.location,acquired_on=None,notes=(args.notes or '') if args.command=='copy' else '',source_photos=[],provenance='Manual addition via collection.py')
+        c=dict(id=new_id(data['copies'],'shelf'),edition_id=args.edition_id,condition=args.condition,ownership='owned',location=args.location,acquired_on=None,notes=(args.notes or '') if args.command=='copy' else '')
         data['copies'].append(c);return c['id']+' / '+args.edition_id
     if args.command=='set-copy':
         c=copies.get(args.copy_id)
@@ -95,22 +93,6 @@ def apply(data,args):
     if args.command=='link':
         if args.work_id not in works:raise ValueError('Unknown work ID')
         works[args.work_id]['catalogue_film_id']=args.catalogue_film_id;works[args.work_id]['identity_status']='confirmed';return args.work_id
-    if args.command=='merge-works':
-        if args.source_id==args.target_id or args.source_id not in works or args.target_id not in works:raise ValueError('Choose two different existing work IDs')
-        source,target=works[args.source_id],works[args.target_id]
-        for key in ('year','catalogue_film_id'):
-            if source.get(key) and target.get(key) and source[key]!=target[key]:raise ValueError('Conflicting '+key+'; resolve before merging')
-            if not target.get(key):target[key]=source.get(key)
-        if source['kind']!=target['kind'] and 'unknown' not in {source['kind'],target['kind']}:raise ValueError('Conflicting work kinds')
-        if target['kind']=='unknown':target['kind']=source['kind']
-        for key,value in source.get('external_ids',{}).items():
-            if key in target['external_ids'] and target['external_ids'][key]!=value:raise ValueError('Conflicting external identity')
-            target['external_ids'][key]=value
-        for e in data['editions']:
-            for item in e['contents']:
-                if item['work_id']==args.source_id:item['work_id']=args.target_id
-        data.setdefault('work_merge_history',[]).append({'source':copy.deepcopy(source),'target_id':args.target_id})
-        data['works']=[w for w in data['works'] if w['id']!=args.source_id];return args.target_id
     raise ValueError('Unknown mutation')
 
 def main(argv=None):

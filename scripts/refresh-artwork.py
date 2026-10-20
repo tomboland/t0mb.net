@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Explicit TMDB artwork import; builds and visitors never contact TMDB."""
+"""Explicit TMDB artwork refresh; builds and visitors never contact TMDB."""
 import argparse
 import concurrent.futures
 import hashlib
@@ -13,7 +13,7 @@ import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parent.parent
-spec = importlib.util.spec_from_file_location('matcher', Path(__file__).with_name('match-tmdb.py'))
+spec = importlib.util.spec_from_file_location('matcher', Path(__file__).with_name('tmdb_api.py'))
 matcher = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(matcher)
 

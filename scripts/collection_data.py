@@ -1,7 +1,6 @@
 """Edition-aware collection storage. Offline, atomic, and independent of viewing history."""
 import csv
 import datetime
-import hashlib
 import json
 import os
 import re
@@ -10,10 +9,8 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-STATUSES = {'transcribed', 'researched', 'curated', 'needs_review', 'unidentified'}
 KINDS = {'film', 'tv_series', 'tv_film', 'documentary', 'concert', 'short', 'unknown', 'calibration'}
 FORMATS = {'DVD', 'Blu-ray', '4K UHD', 'Blu-ray 3D', 'CD', 'VHS', 'LaserDisc'}
-FIELDS = ['id','title','kind','format','year','edition_notes','contents','source_photos','status','review_notes','catalogue_film_id']
 
 def normalise(text):
     return ''.join(c for c in unicodedata.normalize('NFKD', text.casefold()) if c.isalnum())
@@ -30,13 +27,11 @@ def index(items):
         result[ident] = item
     return result
 
-def validate(data, root=ROOT, check_photos=True):
-    if data.get('schema_version') != 1:
+def validate(data, root=ROOT):
+    if data.get('schema_version') != 2:
         raise ValueError('Unsupported collection schema')
     labels, works, editions, copies = [index(data[k]) for k in ('labels','works','editions','copies')]
     films = {f['id']: f for f in json.loads((root/'cinema/films.json').read_text())}
-    manifest = json.loads((root/'data/film-shelf/photos.json').read_text())
-    photos = index(manifest['photos'])
     for label in labels.values():
         if not label.get('name'): raise ValueError('Label needs a name')
     for w in works.values():
@@ -57,7 +52,7 @@ def validate(data, root=ROOT, check_photos=True):
             raise ValueError('Invalid identity status')
     barcodes = set()
     for e in editions.values():
-        if not e.get('title', '').strip() or e.get('status') not in STATUSES: raise ValueError('Invalid edition')
+        if not e.get('title', '').strip(): raise ValueError('Invalid edition')
         if e.get('label_id') and e['label_id'] not in labels: raise ValueError('Unknown label')
         if e.get('kind') not in KINDS | {'box_set','short_collection'}: raise ValueError('Unknown edition kind')
         if e.get('release_date'):
@@ -74,16 +69,10 @@ def validate(data, root=ROOT, check_photos=True):
             if c['work_id'] not in works: raise ValueError('Unknown work in edition')
             if c.get('role') not in {'main','supplement','unspecified'}: raise ValueError('Invalid content role')
             if not isinstance(c.get('coverage'), dict): raise ValueError('Coverage must be an object')
-        if e['status'] in {'needs_review','unidentified'} and not e.get('review_notes'): raise ValueError('Review note required')
     for c in copies.values():
         if c['edition_id'] not in editions: raise ValueError('Unknown edition in copy')
         if c.get('condition') not in {'unknown','good','damaged','faulty','missing_disc'}: raise ValueError('Invalid copy condition')
         if c.get('ownership') not in {'owned','loaned','sold','disposed','lost'}: raise ValueError('Invalid ownership')
-        if not set(c['source_photos']) <= photos.keys(): raise ValueError('Unknown source photo')
-        if not c['source_photos'] and not c.get('provenance'): raise ValueError('Photo or manual provenance required')
-    if check_photos:
-        for p in photos.values():
-            if hashlib.sha256((root/p['path']).read_bytes()).hexdigest() != p['sha256']: raise ValueError(f'Photo changed: {p["id"]}')
     return labels, works, editions, copies
 
 def atomic_text(path, text):
@@ -112,50 +101,23 @@ def resolved_work(work, films):
                 year=work.get('year'),kind=work['kind'],tmdb=None,url=None,linked=False)
 
 def export(data, root=ROOT):
+    """Optional local CSV/JSON exports; never a second editable source."""
     labels, works, editions, copies = validate(data, root)
-    films = json.loads((root/'cinema/films.json').read_text())
-    film_index = {f['id']:f for f in films}
-    candidates = {}
-    for f in films:
-        for title in {f['title'], f.get('original_title') or f['title']}:
-            candidates.setdefault(normalise(title), {})[f['id']] = {k:f.get(k) for k in ('id','title','year')}
-    items, rows = [], []
+    films = {f['id']:f for f in json.loads((root/'cinema/films.json').read_text())}
+    rows=[]
     for c in copies.values():
-        e = editions[c['edition_id']]; entries = e['contents']
-        single = works[entries[0]['work_id']] if len(entries)==1 else None
-        years = {works[x['work_id']].get('year') for x in entries}
-        shared_year = next(iter(years)) if len(years)==1 and None not in years else None
-        notes = e.get('notes','')
-        if c.get('notes'): notes += (' | ' if notes else '') + c['notes']
-        row = dict(id=c['id'],title=e['title'],kind=e['kind'],format='; '.join(e['formats']),
-                   year=str(shared_year) if shared_year else '',edition_notes=notes,
-                   contents='; '.join(x.get('display_title') or works[x['work_id']]['title'] for x in entries) if e.get('list_contents') else '',
-                   source_photos='; '.join(c['source_photos']),status=e['status'],review_notes=e.get('review_notes',''),
-                   catalogue_film_id=(single.get('catalogue_film_id') or '') if single else '')
-        rows.append(row)
-        item = dict(row, year=int(row['year']) if row['year'] else None,format=row['format'] or None,
-                    contents=row['contents'].split('; ') if row['contents'] else [],source_photos=c['source_photos'],
-                    catalogue_film_id=row['catalogue_film_id'] or None,edition_id=e['id'],
-                    label=labels[e['label_id']]['name'] if e.get('label_id') else None,imprint=e.get('imprint'),
-                    formats=e['formats'],barcode=e.get('barcode'),catalogue_number=e.get('catalogue_number'),
-                    packaging=e.get('packaging'),condition=c['condition'],ownership=c['ownership'],location=c.get('location'),
-                    work_ids=[x['work_id'] for x in entries],catalogue_candidates=list(candidates.get(normalise(e['title']),{}).values()))
-        item['resolved_contents'] = [dict(work=resolved_work(works[x['work_id']],film_index), coverage=x['coverage'],cut=x['cut'],role=x['role']) for x in entries]
-        if item['catalogue_film_id']: item['catalogue_candidates'] = []
-        items.append(item)
+        e=editions[c['edition_id']]
+        rows.append(dict(copy_id=c['id'],edition_id=e['id'],title=e['title'],
+            label=labels[e['label_id']]['name'] if e.get('label_id') else '',
+            formats='; '.join(e['formats']),catalogue_number=e.get('catalogue_number') or '',
+            barcode=e.get('barcode') or '',condition=c['condition'],ownership=c['ownership'],
+            location=c.get('location') or '',edition_notes=e.get('notes',''),copy_notes=c.get('notes',''),
+            contents='; '.join(resolved_work(works[x['work_id']],films)['title'] for x in e['contents'])))
     import io
-    stream=io.StringIO(newline=''); writer=csv.DictWriter(stream,fieldnames=FIELDS+['edition_id','label','imprint','barcode','catalogue_number','packaging','condition','ownership','location'])
-    writer.writeheader()
-    for row,item in zip(rows,items):writer.writerow(dict(row,**{k:item[k] or '' for k in writer.fieldnames if k not in FIELDS}))
-    atomic_text(root/'cinema/shelf.csv',stream.getvalue())
-    atomic_text(root/'cinema/shelf.json',json.dumps(dict(schema_version=2,source='cinema/collection.json',scope='Owned packages/copies, not unique works or viewing history.',items=items),ensure_ascii=False,indent=2)+'\n')
-    review=[i for i in items if i['status'] in {'needs_review','unidentified'}]
-    incomplete=[i for i in items if not i['label'] or not i['formats']]
-    lines=['# Collection review queue','','Generated by `python3 scripts/collection.py export`. Edit collection.json or use collection.py, not these exports.','',f'{len(items)} copies; {len(review)} identification questions. {len(incomplete)} copies have an unrecorded label and/or format. Missing metadata is not an unidentified film.','','## Identification questions','','| ID | Title | Question | Photos |','|---|---|---|---|']
-    def esc(s): return str(s).replace('|','/').replace('\n',' ')
-    def links(i): return ', '.join(f'[{p}](photos/{p}.jpg)' for p in i['source_photos']) or 'Manual entry'
-    for i in review:lines.append(f"| {i['id']} | {esc(i['title'])} | {esc(i['review_notes'])} | {links(i)} |")
-    lines+=['','## Edition metadata to enrich','','Unknown labels/formats remain blank rather than guessed. A recorded format does not imply companion discs or region compatibility.','','| ID | Title | Label | Formats | Photos |','|---|---|---|---|---|']
-    for i in incomplete:lines.append(f"| {i['id']} | {esc(i['title'])} | {i['label'] or '—'} | {'; '.join(i['formats']) or '—'} | {links(i)} |")
-    atomic_text(root/'data/film-shelf/review.md','\n'.join(lines)+'\n')
-    return {'copies':len(copies),'editions':len(editions),'work_records':len(works),'identification_questions':len(review),'incomplete_edition_metadata':len(incomplete)}
+    stream=io.StringIO(newline='')
+    fields=['copy_id','edition_id','title','label','formats','catalogue_number','barcode','condition','ownership','location','edition_notes','copy_notes','contents']
+    writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader();writer.writerows(rows)
+    dest=root/'generated/collection'
+    atomic_text(dest/'collection.csv',stream.getvalue())
+    atomic_text(dest/'collection.json',json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    return {'copies':len(copies),'editions':len(editions),'works':len(works),'output':str(dest)}

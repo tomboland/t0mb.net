@@ -19,7 +19,7 @@ def load(name, filename):
 
 
 cli = load('cinema_cli', 'cinema.py')
-art = load('film_images', 'import-film-images.py')
+art = load('film_images', 'refresh-artwork.py')
 
 
 class FakeAPI:
