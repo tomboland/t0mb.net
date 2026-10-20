@@ -36,6 +36,9 @@ class CinemaTests(unittest.TestCase):
         self.write('viewings', [{'id': 'v1', 'film': 'local-film', 'date': '2025-01-01', 'rating': None},
                                 {'id': 'v2', 'film': 'local-film', 'date': '2026-01-01', 'rating': '4.5', 'rewatch': True}])
         self.write('directors', [{'id': 'local-person', 'name': 'Someone', 'filmography': [{'tmdb_id': 123, 'title': 'Undated film', 'year': ''}]}])
+        (self.root/'scripts').mkdir()
+        for name in ('export-cinema.py','cinema_export.py'):
+            shutil.copyfile(ROOT/'scripts'/name, self.root/'scripts'/name)
         for name in ('templates', 'content'):
             shutil.copytree(ROOT / name, self.root / name)
 
@@ -78,6 +81,33 @@ class CinemaTests(unittest.TestCase):
     def review(self, name, draft=False, featured=False, date="2026-01-02"):
         (self.data / 'reviews' / (name + '.md')).write_text('---\n' + '\n'.join(f'{k}: {json.dumps(v)}' for k, v in
             {'id': name, 'film': 'local-film', 'title': name, 'date': date, 'draft': draft, 'featured': featured, 'viewing': 'v2'}.items()) + '\n---\n\nActual writing.\n')
+
+    def test_public_export_refreshes_and_removes_unpublished_review_parts(self):
+        self.review('published');self.review('draft-secret',True)
+        self.build()
+        output=self.root/'_site/films/data'
+        manifest=json.loads((output/'manifest.json').read_text())
+        first=manifest['revision']
+        self.assertEqual(manifest['counts']['reviews'],1)
+        public=''.join(p.read_text() for p in output.glob('*') if p.is_file())
+        self.assertNotIn('draft-secret',public)
+        self.assertIn('Actual writing.',(output/'reviews.txt').read_text())
+        self.assertEqual(json.loads((output/'taste.json').read_text())['revision'],first)
+        old_part=output/'reviews-01.txt'
+        self.assertTrue(old_part.exists())
+        self.review('published',True)
+        self.build()
+        second=json.loads((output/'manifest.json').read_text())
+        self.assertNotEqual(first,second['revision'])
+        self.assertEqual(second['counts']['reviews'],0)
+        self.assertFalse(old_part.exists())
+        self.assertNotIn('Actual writing.',(output/'reviews.txt').read_text())
+        # An edit to the source catalogue regenerates exports on ordinary incremental builds.
+        self.films[0]['liked']=True;self.write('films',self.films)
+        self.build()
+        third=json.loads((output/'manifest.json').read_text())
+        self.assertNotEqual(second['revision'],third['revision'])
+        self.assertIn(' L', (output/'taste.txt').read_text())
 
     def test_manual_films_and_optional_ratings(self):
         pages = self.build()

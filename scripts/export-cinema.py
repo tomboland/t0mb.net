@@ -4,6 +4,8 @@ import argparse
 from collections import Counter
 from datetime import datetime, timezone
 import json
+import sys
+import yaml
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,22 +47,28 @@ def read_review(path):
     if not lines or lines[0].strip() != '---':
         raise ValueError(f'Missing front matter: {path}')
     end = next(i for i in range(1, len(lines)) if lines[i].strip() == '---')
-    metadata = {}
-    # The repository uses one JSON-compatible scalar/list per front-matter line.
-    # Reject unsupported YAML instead of silently losing metadata.
-    for line in lines[1:end]:
-        if not line.strip() or line.lstrip().startswith('#'):
-            continue
-        key, value = line.rstrip('\n').split(':', 1)
-        if key != key.strip() or key in metadata:
-            raise ValueError(f'Unsupported or duplicate front-matter key: {path}: {line}')
-        value = value.strip()
-        try:
-            metadata[key] = json.loads(value)
-        except json.JSONDecodeError:
-            if not value or value[0] in "[{'\"|>&*!":
-                raise ValueError(f'Unsupported front-matter value: {path}: {line}')
-            metadata[key] = value
+    # Use YAML like the website, including unquoted tag lists and dates.
+    # Keep duplicate-key rejection rather than silently overwriting author metadata.
+    class UniqueLoader(yaml.SafeLoader):
+        pass
+    def mapping(loader, node):
+        result = {}
+        for key_node, value_node in node.value:
+            key = loader.construct_object(key_node)
+            if not isinstance(key, str) or key in result:
+                raise ValueError(f'Invalid or duplicate front-matter key in {path}')
+            result[key] = loader.construct_object(value_node)
+        return result
+    UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, mapping)
+    try:
+        metadata = yaml.load(''.join(lines[1:end]), Loader=UniqueLoader)
+    except yaml.YAMLError as exc:
+        raise ValueError(f'Invalid review front matter: {path}') from exc
+    if not isinstance(metadata, dict):
+        raise ValueError(f'Review front matter must be a mapping: {path}')
+    # YAML's bare date scalars become date objects; keep the source's ISO value.
+    for key, value in metadata.items():
+        if hasattr(value, 'isoformat'): metadata[key] = value.isoformat()
     return {'source_file': str(path.relative_to(ROOT)), 'metadata': metadata,
             'body_markdown': ''.join(lines[end + 1:])}
 
@@ -149,7 +157,22 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'generated' / 'cinema-export')
     parser.add_argument('--include-drafts', action='store_true')
+    parser.add_argument('--public', action='store_true', help='Export compact public taste/history, reviews and editions')
+    parser.add_argument('--public-stdout', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.public or args.public_stdout:
+        if args.include_drafts: parser.error('Public exports never include drafts')
+        from cinema_export import build
+        packet = build(ROOT, read_review)
+        if args.public_stdout:
+            print(json.dumps(packet, ensure_ascii=False))
+        else:
+            output = args.output_dir if '--output-dir' in sys.argv else ROOT/'generated/cinema-public'
+            output.mkdir(parents=True, exist_ok=True)
+            for name, text in packet['files'].items():
+                (output/name).write_text(text, encoding='utf-8')
+            print('Public exports written to '+str(output))
+        return
     data = build_export(args.include_drafts)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     for name, content in [('film-context.json', json.dumps(data, ensure_ascii=False, indent=2) + '\n'),

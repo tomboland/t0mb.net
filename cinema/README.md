@@ -19,7 +19,7 @@ owned copies and links to canonical films. The website reads these sources direc
 | `scripts/count-collection.py` | Count physical films separately from packages and TV series |
 | `scripts/refresh-artwork.py` | Fetch missing artwork |
 | `scripts/refresh-directors.py` | Refresh saved director filmographies |
-| `scripts/export-cinema.py` | Export viewing history and reviews for personal use |
+| `scripts/export-cinema.py` | Export personal history or compact public recommendation data |
 
 Initial import/reconciliation tooling and evidence are retained in Git at
 `3803b1d`, not in the working tree. Daily tools need no import files or photographs.
@@ -95,6 +95,8 @@ python3 -m http.server 8000 --directory _site
 
 Open `http://localhost:8000/films/`. Hakyll reads the cinema JSON and review
 Markdown directly; no API key, separate Pandoc executable or network is needed.
+The build also runs the public exporter using Python 3 and PyYAML (`python3-yaml`
+on Debian/Ubuntu). No tokenizer package is required for builds.
 `_site/` is disposable build output: never edit it.
 
 Presentation lives in `templates/cinema/`, relationships and template contexts
@@ -253,6 +255,52 @@ explicitly refreshes saved director filmographies; ordinary builds use the
 snapshot. Filmography entries outside your watched catalogue appear as muted
 text. Watched films without reviews remain muted links to their viewing history.
 
+## Public LLM data — automatic on every build
+
+The normal build/publish workflow creates **`/films/data/`**. Nothing needs to be
+exported or uploaded manually. The film navigation includes a Data link.
+
+| File | Contents |
+|---|---|
+| `taste.txt` | All catalogue titles, directors, ratings, likes, tags, viewing status, ownership and dated viewings |
+| `reviews.txt` | Full published review Markdown, with explicit film/viewing/non-viewing-note associations |
+| `editions.txt` | Optional owned release titles, labels, imprints, formats, cuts and coverage |
+| `manifest.json` | Revision, timestamp, counts, sizes, checksums and fallback-part URLs |
+| `links-index.json` | Small index of reference-to-webpage groups; fetch only the films you need to cite |
+
+Each of the three text sections also has a JSON alternative. Fetch text **or**
+JSON, not both. JSON tables declare their columns once. The short numeric film
+references are export-local; they never replace permanent source IDs. Never mix
+sections from different revisions.
+
+For normal recommendations, load taste/history and full reviews. Ownership flags
+are already included, so edition details are only needed for release-specific
+questions. If a tool truncates a file, use its `fallback_parts` listed in the
+manifest instead. These smaller files preserve all records and full review prose.
+Every text file includes final counts/revision markers to help detect truncation.
+
+Copy the reusable instruction from `/films/data/` into the LLM's system prompt.
+It needs web-fetching capability. Freshness means the latest **deployed snapshot**,
+not unpublished edits or data held in an LLM's previous conversation/cache.
+Check the manifest/revision when starting a new conversation. The exporter cannot
+force a third-party browsing system to refresh its own cache.
+
+Public fields are explicitly selected: no drafts, source paths, internal audit
+metadata, copy notes, storage locations or acquisition details. Non-viewing notes
+contribute dates/references only, not private note prose. Reviews remain exact
+Markdown; ratings are not inferred or summarised. Old fallback parts are removed
+when rebuilding after reviews are unpublished.
+
+To inspect the same output locally without building the site:
+
+```sh
+python3 scripts/export-cinema.py --public
+```
+
+This writes ignored `generated/cinema-public/` files. It does not deploy anything.
+Rendering lives in the shared `scripts/cinema_export.py` module. The Hakyll build
+calls the existing export CLI and publishes its output with the normal pages.
+
 ## Export viewing history for an LLM
 
 Run `python3 scripts/export-cinema.py` to create
@@ -275,6 +323,7 @@ ignored by Git; regenerate them after updating the collection. Use
 python3 scripts/validate-cinema.py
 python3 scripts/test-collection.py
 python3 scripts/test-cinema-relations.py
+python3 scripts/test-cinema-export.py
 python3 scripts/test-collection-counts.py
 node scripts/test-collection-filters.cjs
 python3 scripts/test-cinema-cli.py

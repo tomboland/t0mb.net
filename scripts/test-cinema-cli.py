@@ -221,6 +221,9 @@ class AuthoringTests(unittest.TestCase):
         if binary is None:
             self.skipTest('Compile the Hakyll site executable to check rendering')
         self.run_cli('log', '--tmdb-id', '31217', '--date', '2026-10-02', '--rating', '4.5', '--review', 'A **remarkable** film.')
+        (self.root/'scripts').mkdir()
+        for name in ('export-cinema.py','cinema_export.py'):
+            shutil.copyfile(project/'scripts'/name,self.root/'scripts'/name)
         for directory in ['templates', 'content']:
             shutil.copytree(project / directory, self.root / directory)
         built = subprocess.run([str(binary), 'build'], cwd=self.root, text=True, capture_output=True)

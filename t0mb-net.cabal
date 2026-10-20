@@ -16,6 +16,7 @@ executable site
     , containers
     , crypton
     , directory
+    , process
     , text
     , time
     , unicode-transforms

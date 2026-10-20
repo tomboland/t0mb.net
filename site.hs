@@ -6,6 +6,12 @@ import Publishing
 import qualified View as V
 import Control.Monad (forM_, when)
 import qualified Data.Map.Strict as M
+import Data.Aeson (Value(..), eitherDecodeStrict')
+import qualified Data.Aeson.Key as K
+import qualified Data.Aeson.KeyMap as KM
+import qualified Data.Text as T
+import qualified Data.Text.Encoding as TE
+import System.Process (readProcess)
 import qualified Data.Set as S
 import Hakyll
 import Hakyll.Core.Dependencies (DependencyKind(..))
@@ -18,6 +24,13 @@ main = do
   args <- getArgs
   if "clean" `elem` args then hakyll (pure ()) else hakyll $ do
     cinema <- preprocess C.loadCinema
+    exportPacket <- preprocess $ do
+      output <- readProcess "python3" ["scripts/export-cinema.py", "--public-stdout"] ""
+      either fail pure $ eitherDecodeStrict' $ TE.encodeUtf8 $ T.pack output
+    let exportView = V.set [("title",V.val "Film data for recommendations"),("nav_data",V.val "true")] $ V.get "view" exportPacket
+        exportFiles = case V.get "files" exportPacket of
+          Object rows -> [(K.toString key,V.text value) | (key,value) <- KM.toList rows]
+          _ -> error "Invalid public export packet"
     noteSources <- getMatches notesPattern
     let pages = C.pageViews cinema
         published = C.latestReviews cinema
@@ -29,7 +42,8 @@ main = do
           Just review -> review
           Nothing -> error ("Missing review: " ++ show identifier)
     tags <- preprocess $ loadPostTags $ noteSources ++ reviewSources
-    let expected = S.fromList $ ["films/about/index.html", "tags/index.html"]
+    let expected = S.fromList $ ["films/about/index.html", "films/data/index.html", "tags/index.html"]
+          ++ ["films/data/"++name | (name,_) <- exportFiles]
           ++ [V.routePath url | (url,_,_) <- pages]
           ++ map (V.routePath . C.reviewUrl cinema) published
           ++ [V.routePath $ postTagUrl label | (label,_) <- tagGroups tags]
@@ -42,10 +56,16 @@ main = do
 
     -- Dynamic routes and tag membership are computed before compilation.
     -- Track source edits, additions and removals for incremental builds as well.
-    let sources = "cinema/*.json" .||. "cinema/reviews/*.md" .||. "posts/*/index.md"
+    let sources = "cinema/*.json" .||. "cinema/reviews/*.md" .||. "posts/*/index.md" .||. "scripts/export-cinema.py" .||. "scripts/cinema_export.py"
     match sources $ version "data" $ compile getResourceString
     dependency <- makePatternDependency KindContent $ sources .&&. hasVersion "data"
     rulesExtraDependencies [dependency] $ do
+      create ["films/data/index.html"] $ do
+        route idRoute
+        compile $ makeItem "" >>= renderCinema "data" exportView
+      forM_ exportFiles $ \(name,body) -> create [fromFilePath $ "films/data/"++name] $ do
+        route idRoute
+        compile $ makeItem body
       forM_ pages $ \(url,tpl,view) -> create [fromFilePath $ V.routePath url] $ do
         route idRoute
         compile $ do
@@ -88,4 +108,4 @@ prune expected relative = do
       let child=relative </> name
       directory <- doesDirectoryExist ("_site" </> child)
       if directory then prune expected child else
-        when (takeExtension child==".html" && not (S.member child expected)) $ removeFile ("_site" </> child)
+        when ((takeExtension child==".html" || relative=="films/data") && not (S.member child expected)) $ removeFile ("_site" </> child)
