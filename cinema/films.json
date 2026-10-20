@@ -21114,12 +21114,12 @@
       {
         "id": 13563,
         "name": "Norman Jewison"
-      },
-      "liked": true
+      }
     ],
     "overview": "African-American Philadelphia police detective Virgil Tibbs is arrested on suspicion of murder by Bill Gillespie, the racist police chief of tiny Sparta, Mississippi. After Tibbs proves not only his own innocence but that of another man, he joins forces with Gillespie to track down the real killer. Their investigation takes them through every social level of the town, with Tibbs making enemies as well as unlikely friends as he hunts for the truth.",
     "metadata_source": "https://www.themoviedb.org/movie/10633",
-    "runtime": 109
+    "runtime": 109,
+    "liked": true
   },
   {
     "id": "tmdb-movie-5055",
@@ -24550,6 +24550,7 @@
     "title": "City of the Living Dead",
     "year": "1980",
     "original_title": "Paura nella città dei morti viventi",
+    "liked": true,
     "tmdb": {
       "type": "movie",
       "id": 24920

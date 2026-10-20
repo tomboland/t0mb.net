@@ -3045,5 +3045,11 @@
     "film": "tmdb-movie-10633",
     "date": "2026-10-19",
     "rewatch": false
+  },
+  {
+    "id": "local-4dadbf3231e9",
+    "film": "tmdb-movie-24920",
+    "date": "2026-10-20",
+    "rewatch": false
   }
 ]
