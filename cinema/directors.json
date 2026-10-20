@@ -53841,5 +53841,71 @@
         "year": "1976"
       }
     ]
+  },
+  {
+    "id": 70864,
+    "name": "Robert Hamer",
+    "filmography": [
+      {
+        "tmdb_id": 11898,
+        "title": "Kind Hearts and Coronets",
+        "year": "1949"
+      },
+      {
+        "tmdb_id": 13581,
+        "title": "Dead of Night",
+        "year": "1945"
+      },
+      {
+        "tmdb_id": 35007,
+        "title": "It Always Rains on Sunday",
+        "year": "1947"
+      },
+      {
+        "tmdb_id": 36741,
+        "title": "School for Scoundrels",
+        "year": "1960"
+      },
+      {
+        "tmdb_id": 50208,
+        "title": "The Long Memory",
+        "year": "1953"
+      },
+      {
+        "tmdb_id": 76068,
+        "title": "Pink String and Sealing Wax",
+        "year": "1945"
+      },
+      {
+        "tmdb_id": 59141,
+        "title": "To Paris with Love",
+        "year": "1955"
+      },
+      {
+        "tmdb_id": 89160,
+        "title": "Father Brown",
+        "year": "1954"
+      },
+      {
+        "tmdb_id": 126919,
+        "title": "The Scapegoat",
+        "year": "1959"
+      },
+      {
+        "tmdb_id": 211490,
+        "title": "The Spider and the Fly",
+        "year": "1949"
+      },
+      {
+        "tmdb_id": 238735,
+        "title": "His Excellency",
+        "year": "1952"
+      },
+      {
+        "tmdb_id": 1208593,
+        "title": "Bernard Shaw",
+        "year": "1957"
+      }
+    ]
   }
 ]

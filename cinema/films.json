@@ -25724,5 +25724,23 @@
     "slug": "hdtv-calibration-wizard-work-0253",
     "title": "HDTV Calibration Wizard",
     "kind": "calibration"
+  },
+  {
+    "id": "local-610a508d7242",
+    "title": "Kind Hearts and Coronets",
+    "year": "1949",
+    "directors": [
+      {
+        "id": 70864,
+        "name": "Robert Hamer"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 11898
+    },
+    "runtime": 104,
+    "original_title": "Kind Hearts and Coronets",
+    "slug": "kind-hearts-and-coronets-1949"
   }
 ]

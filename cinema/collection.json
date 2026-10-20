@@ -13175,6 +13175,34 @@
         }
       ],
       "notes": "French edition, titled La Nuit du chasseur; MGM also credited."
+    },
+    {
+      "id": "edition-0952",
+      "title": "Cross of Iron",
+      "contents": [
+        {
+          "film": "lb-1Vgw",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-studiocanal",
+      "formats": [
+        "4K UHD"
+      ]
+    },
+    {
+      "id": "edition-0953",
+      "title": "Kind Hearts and Coronets",
+      "contents": [
+        {
+          "film": "local-610a508d7242",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-studiocanal",
+      "formats": [
+        "4K UHD"
+      ]
     }
   ],
   "copies": [
@@ -17079,6 +17107,14 @@
       "id": "shelf-0951",
       "edition_id": "edition-0951",
       "location": "Favourite film shelf"
+    },
+    {
+      "id": "shelf-0952",
+      "edition_id": "edition-0952"
+    },
+    {
+      "id": "shelf-0953",
+      "edition_id": "edition-0953"
     }
   ]
 }
