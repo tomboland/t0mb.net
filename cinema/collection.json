@@ -120,6 +120,9 @@
           "role": "main",
           "film": "tmdb-movie-52695"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -130,6 +133,9 @@
           "role": "main",
           "film": "lb-4xWO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -140,6 +146,9 @@
           "role": "main",
           "film": "lb-TYk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -152,6 +161,9 @@
         {
           "film": "lb-1VtU"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -163,6 +175,9 @@
           "role": "main",
           "film": "lb-1Uyk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -173,6 +188,9 @@
           "role": "main",
           "film": "lb-1Ujk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -184,6 +202,9 @@
           "role": "main",
           "film": "lb-1Si0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -204,6 +225,9 @@
           "role": "main",
           "film": "tmdb-movie-17809"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -224,6 +248,9 @@
           "role": "main",
           "film": "tmdb-movie-11205"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -235,6 +262,9 @@
           "role": "main",
           "film": "tmdb-movie-69155"
         }
+      ],
+      "formats": [
+        "DVD"
       ]
     },
     {
@@ -245,6 +275,9 @@
           "role": "main",
           "film": "tmdb-movie-14392"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -256,6 +289,9 @@
           "role": "main",
           "film": "lb-134G"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -266,6 +302,9 @@
           "role": "main",
           "film": "tmdb-movie-17467"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -296,6 +335,9 @@
           "role": "main",
           "film": "tmdb-movie-59843"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -317,6 +359,9 @@
           "role": "main",
           "film": "tmdb-movie-19274"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -337,6 +382,9 @@
           "role": "main",
           "film": "lb-1T6a"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -370,6 +418,9 @@
           "role": "main",
           "film": "lb-1w2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -380,6 +431,9 @@
           "role": "main",
           "film": "lb-1YoI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -390,6 +444,9 @@
           "role": "main",
           "film": "lb-2bcq"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -402,6 +459,9 @@
         {
           "film": "tmdb-movie-44154"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -442,6 +502,9 @@
           "role": "main",
           "film": "tmdb-movie-9461"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -457,6 +520,9 @@
         {
           "film": "tmdb-movie-68942"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -468,6 +534,9 @@
           "role": "main",
           "film": "lb-1UwS"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -478,6 +547,9 @@
           "role": "main",
           "film": "lb-13EE"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -488,6 +560,9 @@
           "role": "main",
           "film": "lb-Pve"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -538,6 +613,9 @@
         {
           "film": "tmdb-movie-10619"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -569,7 +647,10 @@
           "film": "tmdb-movie-249397"
         }
       ],
-      "notes": "The Director's Cut."
+      "notes": "The Director's Cut.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0041",
@@ -580,7 +661,11 @@
           "film": "tmdb-movie-292431"
         }
       ],
-      "notes": "Blu-ray and Blu-ray 3D."
+      "notes": "Blu-ray and Blu-ray 3D.",
+      "formats": [
+        "Blu-ray",
+        "Blu-ray 3D"
+      ]
     },
     {
       "id": "edition-0042",
@@ -590,6 +675,9 @@
           "role": "main",
           "film": "tmdb-movie-451"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -600,6 +688,9 @@
           "role": "main",
           "film": "tmdb-movie-378"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -610,6 +701,9 @@
           "role": "main",
           "film": "lb-2aeA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -620,6 +714,9 @@
           "role": "main",
           "film": "lb-1B1c"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -631,6 +728,9 @@
           "role": "main",
           "film": "tmdb-movie-13938"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -642,6 +742,9 @@
           "role": "main",
           "film": "lb-28l0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -652,13 +755,17 @@
           "role": "main",
           "film": "tmdb-movie-11598"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
       "id": "edition-0049",
       "title": "Maîtresse",
       "formats": [
-        "DVD"
+        "DVD",
+        "Blu-ray"
       ],
       "contents": [
         {
@@ -675,6 +782,9 @@
           "role": "main",
           "film": "tmdb-movie-1643"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -685,6 +795,9 @@
           "role": "main",
           "film": "tmdb-movie-2006"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -695,6 +808,9 @@
           "role": "main",
           "film": "tmdb-movie-374052"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -706,6 +822,9 @@
           "role": "main",
           "film": "tmdb-movie-48693"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -716,6 +835,9 @@
           "role": "main",
           "film": "tmdb-movie-38"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -737,6 +859,9 @@
           "role": "main",
           "film": "tmdb-movie-42501"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -747,6 +872,9 @@
           "role": "main",
           "film": "lb-20Dq"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -757,6 +885,9 @@
           "role": "main",
           "film": "lb-34Q6"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -767,6 +898,9 @@
           "role": "main",
           "film": "lb-287C"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -777,6 +911,9 @@
           "role": "main",
           "film": "lb-1VIg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -787,6 +924,9 @@
           "role": "main",
           "film": "lb-18Im"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -799,7 +939,10 @@
           "film": "lb-2aUc"
         }
       ],
-      "notes": "French edition."
+      "notes": "French edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0063",
@@ -809,6 +952,9 @@
           "role": "main",
           "film": "tmdb-movie-21135"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -830,6 +976,9 @@
           "role": "main",
           "film": "tmdb-movie-4561"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -840,6 +989,9 @@
           "role": "main",
           "film": "tmdb-movie-3469"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -850,6 +1002,9 @@
           "role": "main",
           "film": "tmdb-movie-26648"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -888,6 +1043,9 @@
           "role": "main",
           "film": "tmdb-movie-51447"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -899,6 +1057,9 @@
           "role": "main",
           "film": "tmdb-movie-329805"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -909,6 +1070,9 @@
           "role": "main",
           "film": "tmdb-movie-553"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -919,6 +1083,9 @@
           "role": "main",
           "film": "tmdb-movie-337676"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -929,6 +1096,9 @@
           "role": "main",
           "film": "tmdb-movie-42801"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -939,6 +1109,9 @@
           "role": "main",
           "film": "lb-24ui"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -959,6 +1132,9 @@
           "role": "main",
           "film": "lb-359C"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -969,6 +1145,9 @@
           "role": "main",
           "film": "tmdb-movie-22215"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -979,6 +1158,9 @@
           "role": "main",
           "film": "lb-29sm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -990,6 +1172,9 @@
           "role": "main",
           "film": "lb-2FT0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1000,6 +1185,9 @@
           "role": "main",
           "film": "lb-2aUc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1010,6 +1198,9 @@
           "role": "main",
           "film": "lb-jkPq"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1020,6 +1211,9 @@
           "role": "main",
           "film": "tmdb-movie-13183"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1033,7 +1227,10 @@
           "film": "tmdb-tv-19544"
         }
       ],
-      "notes": "Director’s cut combining all five episodes."
+      "notes": "Director’s cut combining all five episodes.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0085",
@@ -1043,6 +1240,10 @@
           "role": "main",
           "film": "lb-1zaQ"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -1067,6 +1268,9 @@
           "role": "main",
           "film": "tmdb-movie-64847"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1078,7 +1282,10 @@
           "film": "tmdb-tv-48623"
         }
       ],
-      "notes": "Season One."
+      "notes": "Season One.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0089",
@@ -1088,6 +1295,9 @@
           "role": "main",
           "film": "tmdb-movie-58496"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1098,6 +1308,9 @@
           "role": "main",
           "film": "tmdb-movie-11194"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1108,6 +1321,9 @@
           "role": "main",
           "film": "tmdb-movie-152532"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1132,6 +1348,9 @@
           "role": "main",
           "film": "tmdb-movie-239773"
         }
+      ],
+      "formats": [
+        "DVD"
       ]
     },
     {
@@ -1156,6 +1375,9 @@
           "role": "main",
           "film": "tmdb-movie-19027"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1166,6 +1388,9 @@
           "role": "main",
           "film": "tmdb-movie-387704"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1178,7 +1403,10 @@
           "film": "tmdb-movie-40601"
         }
       ],
-      "notes": "Metallica, Slayer, Megadeth, Anthrax."
+      "notes": "Metallica, Slayer, Megadeth, Anthrax.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0098",
@@ -1188,6 +1416,9 @@
           "role": "main",
           "film": "lb-1UOs"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1199,6 +1430,9 @@
           "role": "main",
           "film": "tmdb-movie-491193"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1210,6 +1444,9 @@
           "role": "main",
           "film": "tmdb-movie-40440"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1248,6 +1485,9 @@
           "role": "main",
           "film": "tmdb-movie-136611"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1258,6 +1498,9 @@
           "role": "main",
           "film": "lb-1sAM"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1268,6 +1511,9 @@
           "role": "main",
           "film": "tmdb-movie-45698"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1278,6 +1524,9 @@
           "role": "main",
           "film": "lb-3ZqO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1302,6 +1551,9 @@
           "role": "main",
           "film": "lb-247o"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1312,6 +1564,9 @@
           "role": "main",
           "film": "tmdb-movie-36040"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1322,6 +1577,9 @@
           "role": "main",
           "film": "tmdb-movie-20766"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1355,6 +1613,9 @@
           "role": "main",
           "film": "lb-1YSe"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1375,6 +1636,9 @@
           "role": "main",
           "film": "lb-2be2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1385,6 +1649,9 @@
           "role": "main",
           "film": "lb-1Y2i"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1408,6 +1675,9 @@
           "role": "main",
           "film": "tmdb-movie-16241"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1428,6 +1698,9 @@
           "role": "main",
           "film": "lb-29Ik"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1438,6 +1711,9 @@
           "role": "main",
           "film": "tmdb-movie-3176"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1475,6 +1751,9 @@
           "role": "main",
           "film": "tmdb-movie-10671"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1485,6 +1764,9 @@
           "role": "main",
           "film": "tmdb-movie-109424"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1495,6 +1777,9 @@
           "role": "main",
           "film": "tmdb-movie-9799"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1506,6 +1791,9 @@
           "role": "main",
           "film": "tmdb-movie-359724"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1526,6 +1814,9 @@
           "role": "main",
           "film": "lb-28No"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1536,6 +1827,9 @@
           "role": "main",
           "film": "tmdb-movie-3116"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1546,6 +1840,9 @@
           "role": "main",
           "film": "lb-1VGk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1566,6 +1863,9 @@
           "role": "main",
           "film": "lb-27Xs"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1586,6 +1886,9 @@
           "role": "main",
           "film": "tmdb-movie-8967"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1596,6 +1899,9 @@
           "role": "main",
           "film": "tmdb-movie-5336"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1606,6 +1912,9 @@
           "role": "main",
           "film": "tmdb-movie-339403"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1616,6 +1925,9 @@
           "role": "main",
           "film": "tmdb-movie-14746"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1626,6 +1938,9 @@
           "role": "main",
           "film": "tmdb-movie-77987"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1636,6 +1951,9 @@
           "role": "main",
           "film": "tmdb-movie-2721"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1646,6 +1964,9 @@
           "role": "main",
           "film": "tmdb-movie-6471"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1657,6 +1978,9 @@
           "role": "main",
           "film": "lb-1Qa4"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1667,6 +1991,9 @@
           "role": "main",
           "film": "tmdb-movie-9757"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1677,6 +2004,9 @@
           "role": "main",
           "film": "lb-29cy"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1699,6 +2029,9 @@
           "role": "main",
           "film": "lb-2062"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1735,6 +2068,9 @@
           "role": "main",
           "film": "lb-29GI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1746,6 +2082,9 @@
           "role": "main",
           "film": "lb-2a4q"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1756,6 +2095,9 @@
           "role": "main",
           "film": "lb-2eBS"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1766,6 +2108,9 @@
           "role": "main",
           "film": "lb-29eO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1776,6 +2121,9 @@
           "role": "main",
           "film": "tmdb-movie-11843"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1788,6 +2136,9 @@
         {
           "film": "lb-29rS"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1800,7 +2151,10 @@
           "film": "lb-1TeI"
         }
       ],
-      "notes": "Spanish edition."
+      "notes": "Spanish edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0156",
@@ -1810,6 +2164,9 @@
           "role": "main",
           "film": "lb-iEBG"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1820,6 +2177,9 @@
           "role": "main",
           "film": "tmdb-movie-1542"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1832,6 +2192,9 @@
         {
           "film": "tmdb-movie-10157"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1855,6 +2218,9 @@
           "role": "main",
           "film": "tmdb-movie-72113"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1865,6 +2231,9 @@
           "role": "main",
           "film": "tmdb-movie-5066"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1875,6 +2244,9 @@
           "role": "main",
           "film": "tmdb-movie-32105"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1886,6 +2258,9 @@
           "role": "main",
           "film": "lb-23pm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1896,6 +2271,9 @@
           "role": "main",
           "film": "lb-29J8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1906,6 +2284,9 @@
           "role": "main",
           "film": "lb-2416"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1916,6 +2297,9 @@
           "role": "main",
           "film": "lb-1ZSE"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1927,7 +2311,10 @@
           "film": "tmdb-tv-6024"
         }
       ],
-      "notes": "The Complete Series."
+      "notes": "The Complete Series.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0168",
@@ -1938,6 +2325,9 @@
           "role": "main",
           "film": "lb-18YE"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1948,6 +2338,9 @@
           "role": "main",
           "film": "lb-29yu"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1958,6 +2351,9 @@
           "role": "main",
           "film": "lb-1UHQ"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -1968,6 +2364,9 @@
           "role": "main",
           "film": "tmdb-movie-1712"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2001,6 +2400,9 @@
           "role": "main",
           "film": "lb-1TDI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2025,6 +2427,9 @@
           "role": "main",
           "film": "lb-1Rg8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2035,6 +2440,9 @@
           "role": "main",
           "film": "tmdb-movie-47406"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2045,6 +2453,9 @@
           "role": "main",
           "film": "tmdb-movie-197"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2055,6 +2466,9 @@
           "role": "main",
           "film": "lb-27Fe"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2079,7 +2493,10 @@
           "film": "lb-24nQ"
         }
       ],
-      "notes": "Yellow Pathé box."
+      "notes": "Yellow Pathé box.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0182",
@@ -2102,6 +2519,9 @@
           "role": "main",
           "film": "lb-kp0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2126,6 +2546,9 @@
           "role": "main",
           "film": "tmdb-movie-770"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2149,6 +2572,9 @@
           "role": "main",
           "film": "lb-20Z2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2159,6 +2585,9 @@
           "role": "main",
           "film": "lb-29jk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2169,6 +2598,9 @@
           "role": "main",
           "film": "tmdb-movie-783"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2179,6 +2611,9 @@
           "role": "main",
           "film": "lb-H5C"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2203,7 +2638,10 @@
           "film": "lb-29TW"
         }
       ],
-      "notes": "Director's Cut."
+      "notes": "Director's Cut.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0193",
@@ -2227,7 +2665,10 @@
           "film": "lb-20xM"
         }
       ],
-      "notes": "50th Anniversary Edition."
+      "notes": "50th Anniversary Edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0195",
@@ -2251,7 +2692,10 @@
           "film": "lb-1YDS"
         }
       ],
-      "notes": "The Blu Edition."
+      "notes": "The Blu Edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0197",
@@ -2261,6 +2705,9 @@
           "role": "main",
           "film": "lb-2b9m"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2271,6 +2718,9 @@
           "role": "main",
           "film": "lb-28yy"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2281,6 +2731,9 @@
           "role": "main",
           "film": "lb-lfGi"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2292,6 +2745,10 @@
           "role": "main",
           "film": "lb-3DL6"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -2304,7 +2761,11 @@
           "film": "tmdb-movie-44741"
         }
       ],
-      "notes": "Spanish edition, titled Malicia."
+      "notes": "Spanish edition, titled Malicia.",
+      "formats": [
+        "Blu-ray",
+        "DVD"
+      ]
     },
     {
       "id": "edition-0202",
@@ -2354,6 +2815,9 @@
         {
           "film": "tmdb-movie-28147"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2364,6 +2828,9 @@
           "role": "main",
           "film": "lb-2QS8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2375,7 +2842,10 @@
           "film": "tmdb-movie-184314"
         }
       ],
-      "notes": "Spanish edition, titled Joven y bonita."
+      "notes": "Spanish edition, titled Joven y bonita.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0208",
@@ -2386,6 +2856,9 @@
           "role": "main",
           "film": "tmdb-movie-77086"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2399,7 +2872,10 @@
           "film": "tmdb-tv-270974"
         }
       ],
-      "notes": "BFI Flipside 050; complete six-part series."
+      "notes": "BFI Flipside 050; complete six-part series.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0210",
@@ -2497,6 +2973,9 @@
           "role": "main",
           "film": "lb-1xJa"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2507,6 +2986,9 @@
           "role": "main",
           "film": "lb-11UA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2619,6 +3101,9 @@
           "role": "main",
           "film": "tmdb-movie-29129"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2629,6 +3114,9 @@
           "role": "main",
           "film": "lb-1ncU"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2640,6 +3128,9 @@
           "role": "main",
           "film": "lb-6wK2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2650,6 +3141,9 @@
           "role": "main",
           "film": "lb-3tuu"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2661,6 +3155,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2672,6 +3169,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2683,6 +3183,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2694,6 +3197,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2705,6 +3211,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2716,6 +3225,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2727,6 +3239,9 @@
           "role": "main",
           "film": "tmdb-tv-1570"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2751,7 +3266,10 @@
           "film": "tmdb-tv-1437"
         }
       ],
-      "notes": "The Complete Series."
+      "notes": "The Complete Series.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0244",
@@ -2764,6 +3282,9 @@
           "display_title": "Manon des Sources",
           "film": "lb-24gA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2790,6 +3311,9 @@
           "role": "main",
           "film": "work-0246"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2814,7 +3338,10 @@
           "film": "tmdb-tv-67116"
         }
       ],
-      "notes": "The Complete First Season."
+      "notes": "The Complete First Season.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0249",
@@ -2825,7 +3352,10 @@
           "film": "tmdb-tv-1972"
         }
       ],
-      "notes": "Season One."
+      "notes": "Season One.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0250",
@@ -2837,7 +3367,10 @@
           "film": "tmdb-tv-11726"
         }
       ],
-      "notes": "Saison 5."
+      "notes": "Saison 5.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0251",
@@ -2906,7 +3439,10 @@
           "film": "tmdb-tv-19566"
         }
       ],
-      "notes": "Umbrella edition of the TV miniseries."
+      "notes": "Umbrella edition of the TV miniseries.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0256",
@@ -2929,6 +3465,9 @@
           "coverage": "The separately packaged Final Season; together with edition-0256 completes the series.",
           "film": "tmdb-tv-1396"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -2940,7 +3479,10 @@
           "film": "tmdb-tv-60059"
         }
       ],
-      "notes": "Season One."
+      "notes": "Season One.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0259",
@@ -2976,7 +3518,10 @@
           "film": "tmdb-tv-60948"
         }
       ],
-      "notes": "Season One, all 13 episodes."
+      "notes": "Season One, all 13 episodes.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0262",
@@ -2988,7 +3533,10 @@
           "film": "tmdb-tv-433"
         }
       ],
-      "notes": "The Complete First Season."
+      "notes": "The Complete First Season.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0263",
@@ -3000,7 +3548,10 @@
           "film": "tmdb-tv-433"
         }
       ],
-      "notes": "The Complete Second Season."
+      "notes": "The Complete Second Season.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0264",
@@ -3025,7 +3576,10 @@
           "film": "tmdb-tv-63247"
         }
       ],
-      "notes": "Season One: The Maze."
+      "notes": "Season One: The Maze.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0266",
@@ -3049,6 +3603,9 @@
           "role": "main",
           "film": "tmdb-movie-18158"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3059,6 +3616,9 @@
           "role": "main",
           "film": "tmdb-movie-830"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3070,6 +3630,9 @@
           "role": "main",
           "film": "tmdb-movie-828"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3080,6 +3643,9 @@
           "role": "main",
           "film": "tmdb-movie-489412"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3092,11 +3658,17 @@
         {
           "film": "tmdb-movie-17991"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
       "id": "edition-0272",
-      "title": "World of Tomorrow 1, 2, 3"
+      "title": "World of Tomorrow 1, 2, 3",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0273",
@@ -3106,6 +3678,9 @@
           "role": "main",
           "film": "tmdb-movie-2164"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3116,6 +3691,9 @@
           "role": "main",
           "film": "tmdb-movie-607"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3126,6 +3704,9 @@
           "role": "main",
           "film": "tmdb-movie-240832"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3136,6 +3717,9 @@
           "role": "main",
           "film": "tmdb-movie-2614"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3173,7 +3757,10 @@
           "film": "lb-2bcA"
         }
       ],
-      "notes": "30th Anniversary Collector's Edition."
+      "notes": "30th Anniversary Collector's Edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0280",
@@ -3185,7 +3772,10 @@
           "film": "lb-2bcA"
         }
       ],
-      "notes": "The Final Cut; silver steelbook."
+      "notes": "The Final Cut; silver steelbook.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0281",
@@ -3209,6 +3799,9 @@
           "role": "main",
           "film": "lb-4vru"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3245,6 +3838,9 @@
           "role": "main",
           "film": "lb-aPvy"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3255,6 +3851,9 @@
           "role": "main",
           "film": "lb-27Vm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3265,6 +3864,9 @@
           "role": "main",
           "film": "tmdb-movie-105077"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3275,6 +3877,9 @@
           "role": "main",
           "film": "tmdb-movie-257368"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3304,6 +3909,9 @@
           "role": "main",
           "film": "lb-2b9w"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3328,6 +3936,9 @@
           "role": "main",
           "film": "tmdb-movie-4917"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3348,6 +3959,9 @@
           "role": "main",
           "film": "tmdb-movie-50037"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3358,6 +3972,9 @@
           "role": "main",
           "film": "lb-26iy"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3368,6 +3985,9 @@
           "role": "main",
           "film": "tmdb-movie-87421"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3378,6 +3998,9 @@
           "role": "main",
           "film": "lb-26iS"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3388,6 +4011,9 @@
           "role": "main",
           "film": "tmdb-movie-28430"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3401,7 +4027,10 @@
           "film": "tmdb-movie-11549"
         }
       ],
-      "notes": "Kino Lorber UHD edition."
+      "notes": "Kino Lorber UHD edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0300",
@@ -3422,6 +4051,9 @@
           "role": "main",
           "film": "lb-1YP0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3432,6 +4064,9 @@
           "role": "main",
           "film": "lb-1z5w"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3480,6 +4115,9 @@
           "role": "main",
           "film": "lb-2a1m"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3551,6 +4189,9 @@
           "role": "main",
           "film": "lb-1Uas"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3609,6 +4250,9 @@
           "role": "main",
           "film": "lb-2a2Y"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3655,13 +4299,17 @@
           "role": "main",
           "film": "lb-24lK"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
       "id": "edition-0321",
       "title": "First Man",
       "formats": [
-        "4K UHD"
+        "4K UHD",
+        "Blu-ray"
       ],
       "contents": [
         {
@@ -3704,6 +4352,9 @@
           "role": "main",
           "film": "lb-1IGQ"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3727,6 +4378,9 @@
           "role": "main",
           "film": "tmdb-movie-9802"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3751,7 +4405,10 @@
           "film": "tmdb-movie-187"
         }
       ],
-      "notes": "Recut & Extended."
+      "notes": "Recut & Extended.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0329",
@@ -3762,6 +4419,9 @@
           "role": "main",
           "film": "tmdb-movie-189"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3785,7 +4445,10 @@
           "film": "local-63437efd7de7"
         }
       ],
-      "notes": "Double feature: Planet Terror and Death Proof."
+      "notes": "Double feature: Planet Terror and Death Proof.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0332",
@@ -3801,7 +4464,10 @@
           "film": "lb-28LM"
         }
       ],
-      "notes": "Italian edition; three films on two discs."
+      "notes": "Italian edition; three films on two discs.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0333",
@@ -3834,6 +4500,9 @@
           "role": "main",
           "film": "lb-1YUa"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3844,6 +4513,9 @@
           "role": "main",
           "film": "tmdb-movie-17466"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3854,6 +4526,9 @@
           "role": "main",
           "film": "tmdb-movie-10861"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3864,6 +4539,9 @@
           "role": "main",
           "film": "tmdb-movie-10222"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3874,6 +4552,9 @@
           "role": "main",
           "film": "tmdb-movie-19384"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3884,6 +4565,9 @@
           "role": "main",
           "film": "tmdb-movie-273817"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3894,6 +4578,9 @@
           "role": "main",
           "film": "tmdb-movie-5503"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3921,6 +4608,9 @@
           "role": "main",
           "film": "lb-1QuI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3933,7 +4623,10 @@
           "film": "lb-29Pq"
         }
       ],
-      "notes": "Orange steelbook."
+      "notes": "Orange steelbook.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0345",
@@ -3969,6 +4662,9 @@
           "role": "main",
           "film": "lb-8gw8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -3979,6 +4675,9 @@
           "role": "main",
           "film": "lb-2cCk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4043,6 +4742,9 @@
           "role": "main",
           "film": "tmdb-movie-5176"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4054,7 +4756,10 @@
           "film": "tmdb-movie-576"
         }
       ],
-      "notes": "The Original Director's Cut."
+      "notes": "The Original Director's Cut.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0356",
@@ -4064,6 +4769,9 @@
           "role": "main",
           "film": "tmdb-movie-37645"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4109,6 +4817,9 @@
           "role": "main",
           "film": "lb-20Pc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4119,6 +4830,9 @@
           "role": "main",
           "film": "lb-1UTs"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4129,6 +4843,9 @@
           "role": "main",
           "film": "lb-29q6"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4139,6 +4856,9 @@
           "role": "main",
           "film": "tmdb-movie-287424"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4179,6 +4899,9 @@
           "role": "main",
           "film": "lb-1YOm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4189,6 +4912,9 @@
           "role": "main",
           "film": "lb-29I0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4199,6 +4925,9 @@
           "role": "main",
           "film": "lb-28gO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4282,6 +5011,9 @@
           "role": "main",
           "film": "lb-3hBy"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4292,6 +5024,9 @@
           "role": "main",
           "film": "lb-5uz0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4340,6 +5075,9 @@
           "role": "main",
           "film": "tmdb-movie-206647"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4423,7 +5161,10 @@
           "film": "lb-1Ofw"
         }
       ],
-      "notes": "Spanish edition, titled Buscando justicia."
+      "notes": "Spanish edition, titled Buscando justicia.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0388",
@@ -4446,6 +5187,9 @@
           "role": "main",
           "film": "lb-2DjO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4456,6 +5200,9 @@
           "role": "main",
           "film": "lb-1YTm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4480,6 +5227,9 @@
           "role": "main",
           "film": "lb-1Y7i"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4500,6 +5250,9 @@
           "role": "main",
           "film": "lb-2aNg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4536,6 +5289,9 @@
           "role": "main",
           "film": "tmdb-movie-9268"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4546,6 +5302,9 @@
           "role": "main",
           "film": "tmdb-movie-9279"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4556,6 +5315,9 @@
           "role": "main",
           "film": "lb-29qK"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4566,6 +5328,9 @@
           "role": "main",
           "film": "tmdb-movie-76640"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4576,6 +5341,9 @@
           "role": "main",
           "film": "tmdb-movie-9946"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4599,6 +5367,9 @@
           "role": "main",
           "film": "lb-29dm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4609,6 +5380,9 @@
           "role": "main",
           "film": "lb-2aGY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4619,6 +5393,9 @@
           "role": "main",
           "film": "tmdb-movie-9493"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4629,6 +5406,9 @@
           "role": "main",
           "film": "lb-2abQ"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4640,7 +5420,10 @@
           "film": "lb-26dy"
         }
       ],
-      "notes": "French title Un long dimanche de fiançailles."
+      "notes": "French title Un long dimanche de fiançailles.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0408",
@@ -4651,7 +5434,10 @@
           "film": "tmdb-movie-9361"
         }
       ],
-      "notes": "Director's Definitive Cut."
+      "notes": "Director's Definitive Cut.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0409",
@@ -4674,13 +5460,17 @@
           "role": "main",
           "film": "tmdb-movie-27759"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
       "id": "edition-0411",
       "title": "Battleship Potemkin / Drifters",
       "formats": [
-        "DVD"
+        "DVD",
+        "Blu-ray"
       ],
       "contents": [
         {
@@ -4700,7 +5490,10 @@
           "film": "lb-29Vo"
         }
       ],
-      "notes": "Pet Shop Boys soundtrack edition."
+      "notes": "Pet Shop Boys soundtrack edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0413",
@@ -4713,6 +5506,10 @@
           "display_title": "Kameradschaft",
           "film": "tmdb-movie-42836"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -4725,6 +5522,9 @@
           "role": "main",
           "film": "lb-2b2g"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4736,7 +5536,10 @@
           "film": "tmdb-movie-10912"
         }
       ],
-      "notes": "Divisa/ITV edition."
+      "notes": "Divisa/ITV edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0416",
@@ -4746,6 +5549,9 @@
           "role": "main",
           "film": "tmdb-movie-543580"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4757,6 +5563,9 @@
           "role": "main",
           "film": "lb-29Ei"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4769,7 +5578,10 @@
           "film": "lb-4g46"
         }
       ],
-      "notes": "Gaumont Découverte edition."
+      "notes": "Gaumont Découverte edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0419",
@@ -4782,7 +5594,11 @@
           "film": "lb-4g46"
         }
       ],
-      "notes": "BFI edition."
+      "notes": "BFI edition.",
+      "formats": [
+        "Blu-ray",
+        "DVD"
+      ]
     },
     {
       "id": "edition-0420",
@@ -4792,6 +5608,9 @@
           "role": "main",
           "film": "tmdb-movie-21345"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4802,6 +5621,9 @@
           "role": "main",
           "film": "tmdb-movie-76758"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4832,6 +5654,9 @@
           "role": "main",
           "film": "tmdb-movie-11463"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4843,7 +5668,10 @@
           "film": "lb-1UtE"
         }
       ],
-      "notes": "Extended Japanese Cut."
+      "notes": "Extended Japanese Cut.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0426",
@@ -4866,6 +5694,9 @@
           "role": "main",
           "film": "tmdb-movie-14044"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4876,6 +5707,9 @@
           "role": "main",
           "film": "tmdb-movie-10911"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4886,6 +5720,9 @@
           "role": "main",
           "film": "tmdb-movie-5902"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4896,6 +5733,9 @@
           "role": "main",
           "film": "lb-1yb4"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4916,6 +5756,9 @@
           "role": "main",
           "film": "lb-27CO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4926,6 +5769,9 @@
           "role": "main",
           "film": "lb-1Zea"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4936,6 +5782,9 @@
           "role": "main",
           "film": "tmdb-movie-13752"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4946,6 +5795,9 @@
           "role": "main",
           "film": "lb-22kA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4970,6 +5822,9 @@
           "role": "main",
           "film": "lb-29s2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4980,6 +5835,9 @@
           "role": "main",
           "film": "lb-1Z3w"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -4990,6 +5848,9 @@
           "role": "main",
           "film": "lb-6JwC"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5013,6 +5874,9 @@
           "role": "main",
           "film": "lb-29Wm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5067,6 +5931,9 @@
           "role": "main",
           "film": "tmdb-movie-8881"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5090,6 +5957,9 @@
           "role": "main",
           "film": "lb-1IRY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5100,6 +5970,9 @@
           "role": "main",
           "film": "tmdb-movie-10652"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5110,6 +5983,9 @@
           "role": "main",
           "film": "lb-1ZTM"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5120,6 +5996,9 @@
           "role": "main",
           "film": "lb-1VSA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5130,6 +6009,9 @@
           "role": "main",
           "film": "lb-29BS"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5166,6 +6048,10 @@
         {
           "film": "tmdb-movie-26508"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5176,6 +6062,9 @@
           "role": "main",
           "film": "lb-29JC"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5199,6 +6088,9 @@
           "role": "main",
           "film": "tmdb-movie-1669"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5209,6 +6101,9 @@
           "role": "main",
           "film": "tmdb-movie-32084"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5232,6 +6127,9 @@
           "role": "main",
           "film": "tmdb-movie-12162"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5255,6 +6153,9 @@
           "role": "main",
           "film": "lb-1UdQ"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5265,6 +6166,9 @@
           "role": "main",
           "film": "lb-1YVC"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5275,6 +6179,10 @@
           "role": "main",
           "film": "tmdb-movie-9292"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5298,6 +6206,9 @@
           "role": "main",
           "film": "tmdb-movie-9326"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5334,6 +6245,9 @@
           "role": "main",
           "film": "tmdb-movie-2108"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5356,6 +6270,9 @@
           "role": "main",
           "film": "tmdb-movie-10428"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5366,6 +6283,9 @@
           "role": "main",
           "film": "lb-26EY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5381,6 +6301,9 @@
         {
           "film": "tmdb-movie-10495"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5404,6 +6327,9 @@
           "role": "main",
           "film": "lb-g2w"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5414,6 +6340,9 @@
           "role": "main",
           "film": "lb-29qU"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5424,6 +6353,9 @@
           "role": "main",
           "film": "lb-1YPY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5436,7 +6368,10 @@
           "film": "tmdb-tv-19614"
         }
       ],
-      "notes": "Complete two-part miniseries."
+      "notes": "Complete two-part miniseries.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0480",
@@ -5446,6 +6381,9 @@
           "role": "main",
           "film": "lb-29gg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5456,6 +6394,9 @@
           "role": "main",
           "film": "lb-2aOe"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5466,6 +6407,9 @@
           "role": "main",
           "film": "lb-1T1O"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5476,6 +6420,9 @@
           "role": "main",
           "film": "lb-1OeI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5486,6 +6433,9 @@
           "role": "main",
           "film": "lb-1USk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5496,6 +6446,9 @@
           "role": "main",
           "film": "lb-28DI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5506,6 +6459,9 @@
           "role": "main",
           "film": "lb-2b8e"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5575,6 +6531,9 @@
           "role": "main",
           "film": "lb-1Yxq"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5650,6 +6609,9 @@
           "role": "main",
           "film": "lb-2ai8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5673,6 +6635,9 @@
           "role": "main",
           "film": "lb-2aNA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5683,6 +6648,9 @@
           "role": "main",
           "film": "lb-1VIK"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5693,6 +6661,9 @@
           "role": "main",
           "film": "tmdb-movie-35412"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5739,6 +6710,9 @@
           "role": "main",
           "film": "tmdb-movie-15121"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5767,7 +6741,10 @@
           "film": "lb-2axs"
         }
       ],
-      "notes": "Seven-feature collection."
+      "notes": "Seven-feature collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0508",
@@ -5777,6 +6754,10 @@
           "role": "main",
           "film": "tmdb-movie-9653"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5822,6 +6803,9 @@
           "role": "main",
           "film": "tmdb-movie-19759"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5833,7 +6817,10 @@
           "film": "tmdb-movie-36877"
         }
       ],
-      "notes": "French title Le Sang d'un poète."
+      "notes": "French title Le Sang d'un poète.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0513",
@@ -5843,6 +6830,9 @@
           "role": "main",
           "film": "tmdb-movie-10339"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5853,6 +6843,9 @@
           "role": "main",
           "film": "lb-2auI"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5863,6 +6856,9 @@
           "role": "main",
           "film": "lb-2a2E"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5873,6 +6869,9 @@
           "role": "main",
           "film": "lb-28xA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5883,6 +6882,9 @@
           "role": "main",
           "film": "tmdb-movie-28162"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5893,6 +6895,10 @@
           "role": "main",
           "film": "lb-2ZC4"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5903,6 +6909,10 @@
           "role": "main",
           "film": "tmdb-movie-217268"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5934,6 +6944,10 @@
           "role": "main",
           "film": "lb-29DO"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5944,6 +6958,10 @@
           "role": "main",
           "film": "tmdb-movie-55544"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -5955,6 +6973,9 @@
           "role": "main",
           "film": "tmdb-movie-78507"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -5970,7 +6991,10 @@
           "film": "tmdb-movie-42512"
         }
       ],
-      "notes": "Eureka Masters of Cinema #46: two-part Fritz Lang silent epic."
+      "notes": "Eureka Masters of Cinema #46: two-part Fritz Lang silent epic.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0526",
@@ -5981,6 +7005,9 @@
           "role": "main",
           "film": "tmdb-movie-5998"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6039,6 +7066,9 @@
           "role": "main",
           "film": "local-f5fb06951e58"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6049,6 +7079,9 @@
           "role": "main",
           "film": "lb-948A"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6063,6 +7096,9 @@
           "display_title": "The Villain",
           "film": "tmdb-movie-105929"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6128,6 +7164,9 @@
           "role": "main",
           "film": "lb-hTha"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6149,6 +7188,9 @@
           "role": "main",
           "film": "lb-29R2"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6159,6 +7201,9 @@
           "role": "main",
           "film": "lb-248G"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6169,6 +7214,9 @@
           "role": "main",
           "film": "lb-23WU"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6200,6 +7248,9 @@
           "role": "main",
           "film": "tmdb-movie-10995"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6244,6 +7295,9 @@
           "role": "main",
           "film": "lb-1kbY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6254,6 +7308,9 @@
           "role": "main",
           "film": "tmdb-movie-315011"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6264,6 +7321,9 @@
           "role": "main",
           "film": "lb-1NTU"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6284,6 +7344,9 @@
           "role": "main",
           "film": "lb-251w"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6373,6 +7436,9 @@
           "role": "main",
           "film": "tmdb-movie-760099"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6383,6 +7449,9 @@
           "role": "main",
           "film": "lb-1HuY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6404,6 +7473,9 @@
           "role": "main",
           "film": "lb-1nSw"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6429,6 +7501,9 @@
           "role": "main",
           "film": "lb-1rPw"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6451,6 +7526,9 @@
           "role": "main",
           "film": "tmdb-movie-15390"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6471,6 +7549,9 @@
           "role": "main",
           "film": "lb-28fc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6483,7 +7564,10 @@
           "film": "tmdb-movie-1628"
         }
       ],
-      "notes": "Artificial Eye edition."
+      "notes": "Artificial Eye edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0569",
@@ -6493,6 +7577,9 @@
           "role": "main",
           "film": "lb-2aqm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6538,6 +7625,9 @@
           "role": "main",
           "film": "lb-XIg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6548,6 +7638,9 @@
           "role": "main",
           "film": "lb-HGe"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6559,6 +7652,9 @@
           "role": "main",
           "film": "tmdb-movie-49845"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6569,6 +7665,9 @@
           "role": "main",
           "film": "tmdb-movie-690"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6590,6 +7689,9 @@
           "role": "main",
           "film": "lb-F3O"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6633,6 +7735,9 @@
           "role": "main",
           "film": "lb-2tnc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6645,7 +7750,11 @@
           "film": "lb-2aSK"
         }
       ],
-      "notes": "BFI edition."
+      "notes": "BFI edition.",
+      "formats": [
+        "Blu-ray",
+        "DVD"
+      ]
     },
     {
       "id": "edition-0584",
@@ -6674,7 +7783,11 @@
           "film": "lb-29we"
         }
       ],
-      "notes": "Arrow Academy edition."
+      "notes": "Arrow Academy edition.",
+      "formats": [
+        "Blu-ray",
+        "DVD"
+      ]
     },
     {
       "id": "edition-0586",
@@ -6696,6 +7809,9 @@
           "role": "main",
           "film": "tmdb-movie-592831"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6718,6 +7834,9 @@
           "role": "main",
           "film": "lb-20Aw"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6739,6 +7858,9 @@
           "role": "main",
           "film": "lb-2aIK"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6790,6 +7912,9 @@
           "role": "main",
           "film": "lb-27LQ"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6814,6 +7939,9 @@
           "role": "main",
           "film": "tmdb-movie-1730"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6834,6 +7962,9 @@
           "role": "main",
           "film": "lb-2ahO"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6844,6 +7975,9 @@
           "role": "main",
           "film": "lb-bdhq"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6880,6 +8014,10 @@
           "role": "main",
           "film": "tmdb-movie-13321"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -6903,6 +8041,9 @@
           "role": "main",
           "film": "lb-2aKc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6913,6 +8054,9 @@
           "role": "main",
           "film": "tmdb-movie-223"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6936,6 +8080,9 @@
           "role": "main",
           "film": "lb-28II"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -6946,6 +8093,9 @@
           "role": "main",
           "film": "tmdb-movie-21631"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6957,7 +8107,10 @@
           "film": "tmdb-movie-28971"
         }
       ],
-      "notes": "Imported title Rampljus."
+      "notes": "Imported title Rampljus.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0611",
@@ -6977,6 +8130,9 @@
           "role": "main",
           "film": "tmdb-movie-901"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -6987,6 +8143,9 @@
           "role": "main",
           "film": "tmdb-movie-914"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7024,6 +8183,9 @@
           "role": "main",
           "film": "lb-29u8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7047,6 +8209,9 @@
           "role": "main",
           "film": "lb-2a1G"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7057,6 +8222,9 @@
           "role": "main",
           "film": "lb-2baO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7080,6 +8248,9 @@
           "role": "main",
           "film": "lb-2aq2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7103,6 +8274,9 @@
           "role": "main",
           "film": "lb-29Ve"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7113,6 +8287,9 @@
           "role": "main",
           "film": "tmdb-movie-180"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7123,6 +8300,9 @@
           "role": "main",
           "film": "lb-29VS"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7133,6 +8313,9 @@
           "role": "main",
           "film": "tmdb-movie-333339"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7143,6 +8326,9 @@
           "role": "main",
           "film": "lb-28Ow"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7153,6 +8339,9 @@
           "role": "main",
           "film": "tmdb-movie-17814"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7164,7 +8353,10 @@
           "film": "lb-2wRu"
         }
       ],
-      "notes": "Three-disc UHD collector’s edition."
+      "notes": "Three-disc UHD collector’s edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0630",
@@ -7174,6 +8366,9 @@
           "role": "main",
           "film": "lb-29Cc"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -7184,6 +8379,9 @@
           "role": "main",
           "film": "lb-294k"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7208,6 +8406,9 @@
           "role": "main",
           "film": "tmdb-movie-8769"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -7219,7 +8420,10 @@
           "film": "lb-1ZKq"
         }
       ],
-      "notes": "French title Prince des ténèbres."
+      "notes": "French title Prince des ténèbres.",
+      "formats": [
+        "4K UHD"
+      ]
     },
     {
       "id": "edition-0635",
@@ -7229,6 +8433,9 @@
           "role": "main",
           "film": "lb-20lm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7263,6 +8470,9 @@
           "role": "main",
           "film": "tmdb-movie-24804"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7283,6 +8493,9 @@
           "role": "main",
           "film": "tmdb-movie-146233"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7293,6 +8506,9 @@
           "role": "main",
           "film": "tmdb-movie-188166"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7304,7 +8520,10 @@
           "film": "tmdb-movie-1598"
         }
       ],
-      "notes": "German edition, titled Kap der Angst."
+      "notes": "German edition, titled Kap der Angst.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0643",
@@ -7314,6 +8533,9 @@
           "role": "main",
           "film": "lb-3C1m"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7348,6 +8570,9 @@
           "role": "main",
           "film": "tmdb-movie-4034"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7359,6 +8584,9 @@
           "role": "main",
           "film": "tmdb-movie-11670"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7369,6 +8597,10 @@
           "role": "main",
           "film": "tmdb-movie-191381"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -7414,6 +8646,9 @@
         {
           "film": "tmdb-movie-10711"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7424,6 +8659,9 @@
           "role": "main",
           "film": "lb-29bg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7447,6 +8685,9 @@
           "role": "main",
           "film": "tmdb-movie-262"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7461,7 +8702,10 @@
           "film": "lb-1TcW"
         }
       ],
-      "notes": "Lionsgate edition."
+      "notes": "Lionsgate edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0657",
@@ -7482,6 +8726,9 @@
           "role": "main",
           "film": "lb-28Ew"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7492,6 +8739,9 @@
           "role": "main",
           "film": "tmdb-movie-475"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7502,6 +8752,9 @@
           "role": "main",
           "film": "lb-20lG"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7512,6 +8765,9 @@
           "role": "main",
           "film": "lb-8i7u"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7522,6 +8778,9 @@
           "role": "main",
           "film": "lb-20wa"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7542,6 +8801,9 @@
           "role": "main",
           "film": "tmdb-movie-11322"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7552,6 +8814,9 @@
           "role": "main",
           "film": "lb-29XE"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7562,6 +8827,9 @@
           "role": "main",
           "film": "tmdb-movie-1422"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7572,6 +8840,9 @@
           "role": "main",
           "film": "tmdb-movie-4982"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7582,6 +8853,9 @@
           "role": "main",
           "film": "tmdb-movie-203"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7635,6 +8909,9 @@
           "role": "main",
           "film": "lb-2ads"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7684,6 +8961,9 @@
           "role": "main",
           "film": "lb-1uAE"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7694,6 +8974,9 @@
           "role": "main",
           "film": "lb-2bbW"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7708,6 +8991,9 @@
           "display_title": "Part 2 Public Enemy No. 1",
           "film": "lb-1Mo2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7719,7 +9005,10 @@
           "film": "lb-24E8"
         }
       ],
-      "notes": "German title Der Clan der Sizilianer."
+      "notes": "German title Der Clan der Sizilianer.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0680",
@@ -7730,6 +9019,10 @@
           "role": "main",
           "film": "lb-1ege"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -7740,6 +9033,9 @@
           "role": "main",
           "film": "lb-1TEc"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7763,6 +9059,9 @@
           "role": "main",
           "film": "lb-29i2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7865,6 +9164,9 @@
           "role": "main",
           "film": "lb-29zs"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7875,6 +9177,9 @@
           "role": "main",
           "film": "lb-2a9q"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7948,6 +9253,9 @@
           "role": "main",
           "film": "lb-780m"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -7958,6 +9266,9 @@
           "role": "main",
           "film": "lb-Nr0"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7969,6 +9280,9 @@
           "role": "main",
           "film": "lb-1sD2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -7989,6 +9303,9 @@
           "role": "main",
           "film": "tmdb-movie-16227"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8009,6 +9326,9 @@
           "role": "main",
           "film": "lb-27oC"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8036,7 +9356,10 @@
           "film": "tmdb-tv-39468"
         }
       ],
-      "notes": "Complete five-part miniseries."
+      "notes": "Complete five-part miniseries.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0708",
@@ -8047,6 +9370,10 @@
           "role": "main",
           "film": "tmdb-movie-491559"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -8058,6 +9385,10 @@
           "role": "main",
           "film": "tmdb-movie-64537"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -8153,6 +9484,9 @@
           "role": "main",
           "film": "tmdb-movie-41166"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8163,6 +9497,9 @@
           "role": "main",
           "film": "tmdb-movie-11324"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8173,6 +9510,10 @@
           "role": "main",
           "film": "tmdb-movie-28285"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -8209,6 +9550,9 @@
           "role": "main",
           "film": "tmdb-movie-55207"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8219,6 +9563,9 @@
           "role": "main",
           "film": "tmdb-movie-250225"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8229,6 +9576,9 @@
           "role": "main",
           "film": "tmdb-movie-18174"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8252,6 +9602,9 @@
           "role": "main",
           "film": "lb-29zM"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8263,6 +9616,10 @@
           "role": "main",
           "film": "tmdb-movie-27030"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -8273,6 +9630,9 @@
           "role": "main",
           "film": "tmdb-movie-27019"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8283,6 +9643,9 @@
           "role": "main",
           "film": "tmdb-movie-915935"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8307,6 +9670,9 @@
           "role": "main",
           "film": "lb-1YYm"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8339,6 +9705,9 @@
           "role": "main",
           "film": "lb-29Es"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8370,6 +9739,9 @@
           "role": "main",
           "film": "lb-2Ess"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8380,6 +9752,9 @@
           "role": "main",
           "film": "tmdb-movie-37903"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8400,6 +9775,9 @@
           "role": "main",
           "film": "tmdb-movie-1211190"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8447,6 +9825,10 @@
           "role": "main",
           "film": "tmdb-movie-45213"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -8457,6 +9839,9 @@
           "role": "main",
           "film": "lb-2AwK"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8480,6 +9865,9 @@
           "role": "main",
           "film": "lb-1NoM"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8491,6 +9879,9 @@
           "role": "main",
           "film": "lb-1iaa"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8501,6 +9892,9 @@
           "role": "main",
           "film": "tmdb-movie-1578"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8511,6 +9905,9 @@
           "role": "main",
           "film": "lb-28Uk"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8521,6 +9918,9 @@
           "role": "main",
           "film": "tmdb-movie-312221"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8542,6 +9942,9 @@
           "role": "main",
           "film": "lb-1So8"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8552,6 +9955,9 @@
           "role": "main",
           "film": "lb-23um"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8562,6 +9968,9 @@
           "role": "main",
           "film": "tmdb-movie-50030"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8598,6 +10007,9 @@
           "role": "main",
           "film": "tmdb-movie-3170"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8608,6 +10020,9 @@
           "role": "main",
           "film": "tmdb-movie-23761"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8621,7 +10036,10 @@
           "film": "lb-1ofg"
         }
       ],
-      "notes": "StudioCanal edition."
+      "notes": "StudioCanal edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0761",
@@ -8631,6 +10049,9 @@
           "role": "main",
           "film": "lb-1iGg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8642,6 +10063,9 @@
           "role": "main",
           "film": "tmdb-movie-40368"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8652,6 +10076,9 @@
           "role": "main",
           "film": "tmdb-movie-15762"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8680,6 +10107,9 @@
           "role": "main",
           "film": "lb-1En6"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8690,6 +10120,9 @@
           "role": "main",
           "film": "tmdb-movie-11347"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8737,6 +10170,9 @@
           "role": "main",
           "film": "tmdb-movie-3034"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8747,6 +10183,9 @@
           "role": "main",
           "film": "lb-29Go"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8758,6 +10197,9 @@
           "role": "main",
           "film": "lb-29Ge"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8778,6 +10220,9 @@
           "role": "main",
           "film": "lb-1WwA"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8791,7 +10236,10 @@
           "film": "tmdb-movie-138"
         }
       ],
-      "notes": "Universal steelbook."
+      "notes": "Universal steelbook.",
+      "formats": [
+        "4K UHD"
+      ]
     },
     {
       "id": "edition-0776",
@@ -8801,6 +10249,9 @@
           "role": "main",
           "film": "lb-29TM"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8850,6 +10301,9 @@
           "role": "main",
           "film": "tmdb-movie-794"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8870,6 +10324,9 @@
           "role": "main",
           "film": "lb-1Tuw"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8890,6 +10347,9 @@
           "role": "main",
           "film": "lb-9X0m"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8959,6 +10419,9 @@
           "role": "main",
           "film": "tmdb-movie-9003"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -8969,6 +10432,9 @@
           "role": "main",
           "film": "lb-1SRO"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9018,6 +10484,9 @@
           "role": "main",
           "film": "lb-3mDa"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9041,6 +10510,9 @@
           "role": "main",
           "film": "tmdb-movie-47327"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9053,7 +10525,10 @@
           "film": "tmdb-movie-103620"
         }
       ],
-      "notes": "Metrodome edition."
+      "notes": "Metrodome edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0799",
@@ -9088,6 +10563,9 @@
           "role": "main",
           "film": "tmdb-movie-45714"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9098,6 +10576,9 @@
           "role": "main",
           "film": "lb-1v1q"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9150,6 +10631,9 @@
           "role": "main",
           "film": "lb-1BES"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9160,6 +10644,9 @@
           "role": "main",
           "film": "lb-k1HY"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9170,6 +10657,10 @@
           "role": "main",
           "film": "tmdb-movie-25944"
         }
+      ],
+      "formats": [
+        "Blu-ray",
+        "DVD"
       ]
     },
     {
@@ -9180,6 +10671,9 @@
           "role": "main",
           "film": "lb-2J54"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9200,6 +10694,9 @@
           "role": "main",
           "film": "lb-24EC"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9237,7 +10734,10 @@
           "film": "tmdb-movie-1700"
         }
       ],
-      "notes": "MGM Blu-ray edition."
+      "notes": "MGM Blu-ray edition.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0816",
@@ -9274,6 +10774,9 @@
           "role": "main",
           "film": "lb-1o3E"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9284,6 +10787,9 @@
           "role": "main",
           "film": "tmdb-movie-40969"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9294,6 +10800,9 @@
           "role": "main",
           "film": "lb-12b2"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9304,6 +10813,9 @@
           "role": "main",
           "film": "lb-1BMi"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9314,6 +10826,9 @@
           "role": "main",
           "film": "lb-11Zg"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9337,6 +10852,9 @@
           "role": "main",
           "film": "tmdb-movie-24341"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
@@ -9436,7 +10954,10 @@
           "film": "tmdb-movie-110"
         }
       ],
-      "notes": "Artificial Eye three-feature trilogy."
+      "notes": "Artificial Eye three-feature trilogy.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0834",
@@ -9463,7 +10984,10 @@
           "film": "tmdb-movie-58655"
         }
       ],
-      "notes": "Six features plus a disc of seven shorts."
+      "notes": "Six features plus a disc of seven shorts.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0835",
@@ -9496,7 +11020,10 @@
           "film": "tmdb-movie-821837"
         }
       ],
-      "notes": "Six features plus a documentary bonus DVD."
+      "notes": "Six features plus a documentary bonus DVD.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0836",
@@ -9535,7 +11062,10 @@
           "film": "tmdb-movie-57695"
         }
       ],
-      "notes": "Eight films on nine discs."
+      "notes": "Eight films on nine discs.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0837",
@@ -9564,7 +11094,10 @@
           "film": "lb-1cVk"
         }
       ],
-      "notes": "Seven-film collection."
+      "notes": "Seven-film collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0838",
@@ -9590,7 +11123,10 @@
           "film": "lb-2aii"
         }
       ],
-      "notes": "Six-film collection."
+      "notes": "Six-film collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0839",
@@ -9607,7 +11143,10 @@
           "film": "tmdb-movie-1923"
         }
       ],
-      "notes": "CBS original-series box: seasons 1–2, Fire Walk with Me and The Missing Pieces; excludes the 2017 revival."
+      "notes": "CBS original-series box: seasons 1–2, Fire Walk with Me and The Missing Pieces; excludes the 2017 revival.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0840",
@@ -9749,7 +11288,10 @@
           "film": "tmdb-movie-5854"
         }
       ],
-      "notes": "UK twenty-film Definitive Collection."
+      "notes": "UK twenty-film Definitive Collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0843",
@@ -9862,7 +11404,10 @@
           "film": "tmdb-tv-63639"
         }
       ],
-      "notes": "The Complete Seasons 1, 2 & 3."
+      "notes": "The Complete Seasons 1, 2 & 3.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0845",
@@ -9955,7 +11500,10 @@
           "film": "tmdb-movie-37724"
         }
       ],
-      "notes": "23 Eon films through Skyfall."
+      "notes": "23 Eon films through Skyfall.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0847",
@@ -9975,7 +11523,10 @@
           "film": "lb-20zI"
         }
       ],
-      "notes": "Four original Alien films with alternate cuts; excludes later sequels."
+      "notes": "Four original Alien films with alternate cuts; excludes later sequels.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0848",
@@ -10087,7 +11638,10 @@
           "film": "tmdb-movie-198228"
         }
       ],
-      "notes": "20 feature films and two documentaries."
+      "notes": "20 feature films and two documentaries.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0851",
@@ -10101,7 +11655,10 @@
           "film": "tmdb-tv-4613"
         }
       ],
-      "notes": "Complete ten-part miniseries; tin packaging."
+      "notes": "Complete ten-part miniseries; tin packaging.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0852",
@@ -10115,7 +11672,10 @@
           "film": "tmdb-tv-16997"
         }
       ],
-      "notes": "Complete ten-part miniseries; tin packaging."
+      "notes": "Complete ten-part miniseries; tin packaging.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0853",
@@ -10139,7 +11699,10 @@
           "film": "tmdb-movie-47964"
         }
       ],
-      "notes": "Die Hard, Die Hard 2, Die Hard with a Vengeance, Die Hard 4.0, A Good Day to Die Hard."
+      "notes": "Die Hard, Die Hard 2, Die Hard with a Vengeance, Die Hard 4.0, A Good Day to Die Hard.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0854",
@@ -10161,7 +11724,10 @@
           "film": "tmdb-movie-2320"
         }
       ],
-      "notes": "Five-film Blu-ray collection."
+      "notes": "Five-film Blu-ray collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0855",
@@ -10183,7 +11749,10 @@
           "film": "lb-1XVm"
         }
       ],
-      "notes": "Five-film Blu-ray collection."
+      "notes": "Five-film Blu-ray collection.",
+      "formats": [
+        "Blu-ray"
+      ]
     },
     {
       "id": "edition-0856",
@@ -10658,7 +12227,10 @@
           "film": "lb-gH0O"
         }
       ],
-      "notes": "Steelbook."
+      "notes": "Steelbook.",
+      "formats": [
+        "4K UHD"
+      ]
     },
     {
       "id": "edition-0888",
@@ -10701,6 +12273,9 @@
           "role": "main",
           "film": "lb-1B8i"
         }
+      ],
+      "formats": [
+        "Blu-ray"
       ]
     },
     {
