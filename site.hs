@@ -50,6 +50,7 @@ main = do
           ++ map (flip replaceExtension "html" . toFilePath) noteSources
     preprocess $ mapM_ (prune expected) ["films", "directors", "tags", "posts"]
     match "css/*" $ route idRoute >> compile compressCssCompiler
+    match "robots.txt" $ route idRoute >> compile copyFileCompiler
     match ("images/**" .||. "js/*" .||. imagePattern) $ route idRoute >> compile copyFileCompiler
     match "templates/**" $ compile templateBodyCompiler
     match "content/home.md" $ compile pandocCompiler
@@ -93,6 +94,9 @@ main = do
         pandocCompiler >>= renderCinema "about" (V.obj [("title",V.val title),("nav_films",V.val "true")])
     match "software.md" $ do
       route $ setExtension "html"
+      compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" siteCtx >>= relativizeUrls
+    match "content/content-use.md" $ do
+      route $ constRoute "content-use/index.html"
       compile $ pandocCompiler >>= loadAndApplyTemplate "templates/default.html" siteCtx >>= relativizeUrls
 
 imagePattern :: Pattern

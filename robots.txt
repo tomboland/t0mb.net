@@ -1,0 +1,35 @@
+# Search and user-requested reading are welcome; model training is not.
+# Human-readable policy: https://t0mb.net/content-use/
+# These voluntary controls are not authentication or abuse protection.
+#
+# Documented controls checked 2026-10-20:
+# https://developers.openai.com/api/docs/bots
+# https://support.claude.com/en/articles/8896518
+# https://support.apple.com/en-us/119829
+# https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
+# https://blog.commoncrawl.org/ccbot
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# Google combines Gemini training and grounding in this control.
+# This does not block ordinary Google Search.
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl distributes a corpus that can be used for model training.
+# Opting out also excludes collection for its other downstream uses.
+User-agent: CCBot
+Disallow: /
+
+# Preserve access for search, user-directed assistants and other readers.
+# In particular: Googlebot, Bingbot, Applebot, OAI-SearchBot, ChatGPT-User,
+# Claude-SearchBot and Claude-User are not blocked.
+User-agent: *
+Disallow:
