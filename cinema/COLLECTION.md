@@ -43,6 +43,22 @@ Null/missing ratings mean unrated; false likes are not dislikes.
 
 ## Daily workflow
 
+For a single-film purchase, use the title directly:
+
+```sh
+python3 scripts/cinema.py own "Don't Look Now" --year 1973 \
+  --label StudioCanal --format "4K UHD"
+```
+
+This reuses a local film or lets you choose a TMDB result, imports missing film
+metadata/artwork, and creates the release and copy without logging a viewing.
+If the film already has editions, choose another copy or a new edition.
+See [the everyday command guide](../scripts/README.md) for `seen` (watched with
+unknown date), `log` (dated viewing) and `add` (catalogue only).
+
+The lower-level collection commands below remain available for detailed edits
+and box sets.
+
 Run from the repository root. Examples use illustrative IDs; use actual results
 from search. Collection commands run offline and never change films or viewing history.
 
@@ -50,6 +66,14 @@ from search. Collection commands run offline and never change films or viewing h
 # Search the canonical catalogue and physical editions:
 python3 scripts/cinema.py search "RoboCop"
 python3 scripts/collection.py search "RoboCop"
+
+# Search TMDB when a film is missing locally (does not save anything):
+python3 scripts/cinema.py search "Don't Look Now" --tmdb --year 1973
+# Use a TMDB ID from those results to add metadata/artwork, without a viewing:
+python3 scripts/cinema.py film --tmdb-id TMDB_MOVIE_ID --unwatched
+# Then use the printed local ID or slug to record the disc you own:
+python3 scripts/collection.py add "Don't Look Now" --film LOCAL_FILM_ID \
+  --label StudioCanal --format "4K UHD"
 
 # Add a release of an existing film (ID or slug):
 python3 scripts/collection.py add "RoboCop" --film FILM_ID \
@@ -83,6 +107,12 @@ python3 scripts/collection.py set-copy shelf-0123 --condition unknown --notes ""
 ```
 
 Ambiguous title matches stop and show choices; they never silently merge remakes.
+TMDB search needs your configured token for uncached requests (see README.md).
+It lists movie IDs, titles and years, and flags films already in your catalogue.
+Local film search ignores punctuation, so `Dont look now` also matches
+`Don't Look Now`. Add `--year` to narrow either local or TMDB film searches.
+After watching, use `cinema.py log LOCAL_FILM_ID --review` to record the viewing
+and start a review draft; owning a disc alone does not log a viewing.
 Repeat `--format` for a multi-format package. Barcodes are strings preserving
 leading zeroes, not automatic lookups. Add `--kind tv_series` (or another kind) to
 manual `cinema.py film` additions when needed. Unknown years can be omitted.

@@ -31,13 +31,13 @@ def index(items):
 def film_kind(film):
     return film.get('kind', 'tv_series' if film.get('tmdb', {}).get('type') == 'tv' else 'film')
 
-def validate(data, root=ROOT):
+def validate(data, root=ROOT, film_rows=None):
     if data.get('schema_version') != 3:
         raise ValueError('Unsupported collection schema')
     if 'works' in data:
         raise ValueError('Collection contents must reference canonical films directly')
     labels, editions, copies = [index(data[k]) for k in ('labels','editions','copies')]
-    rows = json.loads((root/'cinema/films.json').read_text())
+    rows = film_rows if film_rows is not None else json.loads((root/'cinema/films.json').read_text())
     films = {f['id']: f for f in rows}
     if len(films) != len(rows): raise ValueError('Duplicate canonical film ID')
     for f in rows:

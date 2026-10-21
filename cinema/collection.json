@@ -13203,6 +13203,20 @@
       "formats": [
         "4K UHD"
       ]
+    },
+    {
+      "id": "edition-0954",
+      "title": "Don't Look Now",
+      "contents": [
+        {
+          "film": "local-5f5d5b495220",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-studiocanal",
+      "formats": [
+        "4K UHD"
+      ]
     }
   ],
   "copies": [
@@ -17115,6 +17129,10 @@
     {
       "id": "shelf-0953",
       "edition_id": "edition-0953"
+    },
+    {
+      "id": "shelf-0954",
+      "edition_id": "edition-0954"
     }
   ]
 }

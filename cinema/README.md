@@ -8,6 +8,11 @@ inventing watched events. Keep this directory backed up with the repository.
 
 ## Physical collection and everyday tools
 
+Start with the [everyday command guide](../scripts/README.md). The main entry
+point is `cinema.py`: `add` records metadata, `own` records a physical release,
+`seen` marks watched with an unknown date, and `log` records a dated viewing.
+All four resolve titles and offer interactive TMDB selection when needed.
+
 See [the collection model and commands](COLLECTION.md) for editions, box sets,
 owned copies and links to canonical films. The website reads these sources directly.
 
@@ -55,6 +60,15 @@ Remove the field or set `featured: false` to unfeature a review. The flag belong
 to the individual review, so repeat reviews of one film can be selected separately.
 
 ## Like films
+
+Pass `--liked` when logging a viewing to mark the film as liked:
+
+```sh
+python3 scripts/cinema.py log "Don't Look Now" --year 1973 --liked --review
+```
+
+This also works with `watch`. Omitting `--liked` preserves the existing like
+status. Likes belong to the film, not the individual viewing.
 
 Set `"liked": true` or `"liked": false` on a film in `films.json`. Film pages
 and listings show ♥ for liked films and ♡ for films not marked as liked.
@@ -176,6 +190,13 @@ These remain available for manual metadata, logging an already-known film, or
 creating a review of an existing viewing without adding another diary entry.
 
 ```sh
+# Search locally, or browse TMDB results without saving anything:
+python3 scripts/cinema.py search "Don't Look Now"
+python3 scripts/cinema.py search "Don't Look Now" --tmdb --year 1973
+# Add a chosen TMDB result for an owned disc without marking it watched:
+python3 scripts/cinema.py film --tmdb-id TMDB_MOVIE_ID --unwatched
+# Then record the physical release with collection.py (see COLLECTION.md).
+
 # Without TMDB (repeat --director for co-directors):
 python3 scripts/cinema.py film --title "A film" --year 2026 --director "A director"
 

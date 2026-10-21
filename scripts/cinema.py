@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Log films and reviews locally, importing metadata and artwork when needed."""
 import argparse
+import copy
 import datetime
+import fcntl
 import importlib.util
 import json
 import os
@@ -102,10 +104,10 @@ def choose(rows, label):
     if not sys.stdin.isatty():
         raise ValueError('Multiple or inexact matches; specify a local film ID or --tmdb-id from the list above')
     try:
-        selection = int(input('Choose a film number (Ctrl-C to cancel): '))
+        selection = int(input('Choose a film number (q or Ctrl-C to cancel): '))
         if 1 <= selection <= len(rows):
             return rows[selection - 1]
-    except (ValueError, EOFError):
+    except (ValueError, EOFError, KeyboardInterrupt):
         pass
     raise ValueError('No film selected; nothing saved')
 
@@ -115,18 +117,104 @@ def resolve_film(args, films, api):
     if args.tmdb_id:
         return next((f for f in films if f.get('tmdb') == {'type': 'movie', 'id': args.tmdb_id}), None)
     direct = next((f for f in films if args.film in (f['id'], f['slug'])), None)
-    if direct:
+    if direct and not getattr(args, 'tmdb', False):
         return direct
     matches = [f for f in films if (not args.year or str(f.get('year', '')) == args.year)
                and matcher.normalized(args.film) in {matcher.normalized(f['title']), matcher.normalized(f.get('original_title') or '')}]
-    if matches:
+    if matches and not getattr(args, 'tmdb', False):
         return matches[0] if len(matches) == 1 else choose(matches, 'Matching films in your catalogue:')
     candidates = api.search(args.film, args.year)
     exact = [f for f in candidates if matcher.normalized(args.film) in
              {matcher.normalized(f['title']), matcher.normalized(f.get('original_title') or '')}]
-    selected = exact[0] if len(exact) == 1 else choose(exact or candidates, 'Matching films on TMDB:')
+    selected = exact[0] if len(exact) == 1 and not sys.stdin.isatty() else choose(exact or candidates, 'Matching films on TMDB:')
     args.tmdb_id = selected['id']
     return next((f for f in films if f.get('tmdb') == {'type': 'movie', 'id': args.tmdb_id}), None)
+
+
+def catalogue_action(args, films):
+    """Resolve a title and stage all changes before saving catalogue/ownership."""
+    if args.command == 'seen':
+        helpers.validate_rating(args.rating)
+    api = api_for(args)
+    film = resolve_film(args, films, api)
+    people = json.loads((ROOT / 'directors.json').read_text())
+    added = film is None
+    if added:
+        args.title = None
+        args.unwatched = True
+        film = new_film(args, films, people, api)
+        film.pop('watched', None)
+        films = films + [film]
+    if args.command == 'seen':
+        film['watched'] = True
+        if args.liked:
+            film['liked'] = True
+        if args.rating is not None:
+            helpers.validate_rating(args.rating)
+            film['rating'] = args.rating
+
+    def save_catalogue():
+        artwork = import_artwork(film, api) if added and film.get('tmdb') else None
+        save('films', films)
+        if added:
+            save('directors', people)
+        if artwork is not None:
+            save('artwork', artwork)
+
+    if args.command == 'own':
+        import collection as collection_cli
+        db = collection_cli.db
+        with (ROOT / '.collection.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            data = db.read(ROOT.parent)
+            db.validate(data, ROOT.parent)
+            release = copy.copy(args)
+            release.command = 'add'
+            release.title = args.edition_title or film['title']
+            release.film = [film['id']]
+            release.year = None
+            existing = [e for e in data['editions']
+                        if any(c['film'] == film['id'] for c in e.get('contents', []))]
+            if existing and not args.new_edition:
+                print('Existing editions:')
+                labels = db.index(data['labels'])
+                for n, edition in enumerate(existing, 1):
+                    label = labels.get(edition.get('label_id'), {}).get('name', 'label unknown')
+                    print(f"  {n}. {edition['title']} | {label} | {', '.join(edition.get('formats', [])) or 'format unknown'} | {edition['id']}")
+                if not sys.stdin.isatty():
+                    raise ValueError('Use --new-edition for a different release, or collection.py copy EDITION_ID for another copy.')
+                try:
+                    answer = input('Enter a number for another copy, n for a new edition, or q to cancel: ').strip().lower()
+                    if answer == 'n':
+                        release.new_edition = True
+                    elif answer.isdigit() and 1 <= int(answer) <= len(existing):
+                        release.command = 'copy'
+                        release.edition_id = existing[int(answer) - 1]['id']
+                        release.notes = ''
+                    else:
+                        raise ValueError('Cancelled; nothing saved')
+                except (EOFError, KeyboardInterrupt):
+                    raise ValueError('Cancelled; nothing saved') from None
+            result = collection_cli.apply(data, release, db.index(films))
+            db.validate(data, ROOT.parent, film_rows=films)
+            save_catalogue()
+            db.save(data, ROOT.parent)
+        print(f"Owned: {film['title']} — {result}. No viewing recorded.")
+    else:
+        save_catalogue()
+        if args.command == 'seen':
+            print(f"Marked {film['title']} as watched (date unknown). No dated viewing or ownership added.")
+        else:
+            print(f"{'Added' if added else 'Already in catalogue'}: {film['title']} [{film['slug']}]")
+
+
+def title_arguments(parser):
+    identity = parser.add_mutually_exclusive_group(required=True)
+    identity.add_argument('film', nargs='?', help='Title, local ID or slug; missing titles are looked up on TMDB')
+    identity.add_argument('--tmdb-id', type=int, help='Exact TMDB movie ID')
+    parser.add_argument('--year', help='Release year')
+    parser.add_argument('--tmdb', action='store_true', help='Search TMDB even if a local title matches')
+    parser.add_argument('--token-file', type=Path, default=token_path())
 
 
 def log_film(args, films, viewings):
@@ -146,8 +234,11 @@ def log_film(args, films, viewings):
                'rating': args.rating, 'rewatch': args.rewatch}
     draft = make_review(film, str(datetime.date.today()), viewing, text=args.review) if args.review is not None else None
     # All remote work and input validation have completed before source writes.
+    if args.liked:
+        film['liked'] = True
+    if added or args.liked:
+        save('films', films + [film] if added else films)
     if added:
-        save('films', films + [film])
         save('directors', people)
     if artwork is not None:
         save('artwork', artwork)
@@ -170,6 +261,25 @@ def log_film(args, films, viewings):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
+    for name, description in (
+        ('add', 'Add a film to the catalogue without asserting watched status or ownership'),
+        ('seen', 'Mark a film watched when the viewing date is unknown'),
+        ('own', 'Find a film and add a physical release and owned copy'),
+    ):
+        action = commands.add_parser(name, help=description)
+        title_arguments(action)
+        if name == 'seen':
+            action.add_argument('--liked', action='store_true')
+            action.add_argument('--rating', help='Optional overall film rating, 0.5–5 in half steps')
+        if name == 'own':
+            import collection as collection_cli
+            collection_cli.edition_args(action)
+            action.add_argument('--edition-title', help='Release title if different from the film title')
+            action.add_argument('--new-edition', action='store_true')
+            action.add_argument('--cut')
+            action.add_argument('--coverage')
+            action.add_argument('--location')
+            action.add_argument('--condition', choices=['unknown', 'good', 'damaged', 'faulty', 'missing_disc'], default='unknown')
     add = commands.add_parser('film', help='Add a film manually or using a TMDB movie ID')
     add.add_argument('--unwatched', action='store_true', help='Add catalogue metadata without asserting a viewing, e.g. for an owned disc')
     add.add_argument('--kind', choices=['film','tv_series','tv_film','documentary','concert','short','calibration'], default='film')
@@ -183,9 +293,11 @@ def main():
     identity.add_argument('film', nargs='?', help='Film title, local ID or slug')
     identity.add_argument('--tmdb-id', type=int, help='Exact TMDB movie ID')
     log.add_argument('--year', help='Release year to disambiguate a title')
+    log.add_argument('--tmdb', action='store_true', help='Search TMDB even if a local title matches')
     log.add_argument('--date', default=str(datetime.date.today()), help='Viewing date; defaults to today')
     log.add_argument('--rating', help='Optional rating from 0.5 to 5, in half steps')
     log.add_argument('--rewatch', action='store_true')
+    log.add_argument('--liked', action='store_true', help='Mark the film as liked; omission preserves its current like status')
     log.add_argument('--review', nargs='?', const='', metavar='TEXT',
                      help='Create a linked draft; optionally supply text for a completed review')
     log.add_argument('--token-file', type=Path, default=token_path(),
@@ -195,6 +307,7 @@ def main():
     watch.add_argument('--date', required=True)
     watch.add_argument('--rating')
     watch.add_argument('--rewatch', action='store_true')
+    watch.add_argument('--liked', action='store_true', help='Mark the film as liked; omission preserves its current like status')
     review = commands.add_parser('review', help='Create an unpublished Markdown review')
     review.add_argument('film', help='Local film ID or slug')
     review.add_argument('--title')
@@ -204,22 +317,47 @@ def main():
     tag.add_argument('film', help='Local film ID or slug')
     tag.add_argument('tags', nargs='+', help='Quote tags containing spaces')
     tag.add_argument('--remove', action='store_true', help='Remove these tags')
-    search = commands.add_parser('search', help='Find canonical film IDs by title, ID or slug (offline)')
+    search = commands.add_parser('search', help='Find local films, or search TMDB with --tmdb')
     search.add_argument('query')
+    search.add_argument('--tmdb', action='store_true', help='Search TMDB movies without adding or logging anything')
+    search.add_argument('--year', help='Release year to narrow the search')
+    search.add_argument('--token-file', type=Path, default=token_path())
     args = parser.parse_args()
     films = json.loads((ROOT / 'films.json').read_text())
     if args.command == 'search':
-        query = helpers.slug(args.query)
-        for film in films:
-            if query in helpers.slug(' '.join(str(film.get(k, '')) for k in ('title','original_title','id','slug'))):
+        if args.tmdb:
+            try:
+                rows = api_for(args).search(args.query, args.year)
+            except (ValueError, OSError, RuntimeError) as error:
+                parser.error(f'{error}\nCheck TMDB access; set TMDB_TOKEN_FILE or use --token-file PATH.')
+            for row in rows:
+                local = next((f for f in films if f.get('tmdb') == {'type': 'movie', 'id': row['id']}), None)
+                suffix = f" | already in catalogue: {local['slug']}" if local else ''
+                print(f"{row['id']} | {row['title']} | {row.get('release_date', '')[:4] or '?'}{suffix}")
+            if rows:
+                print('Add a result without recording a viewing: python3 scripts/cinema.py film --tmdb-id ID --unwatched')
+            else:
+                print('No TMDB films matched. Try another title or omit --year.')
+        else:
+            from tmdb_api import normalized
+            query = normalized(args.query)
+            matches = [film for film in films
+                       if (not args.year or str(film.get('year', '')) == args.year)
+                       and any(query in normalized(str(film.get(k) or ''))
+                               for k in ('title', 'original_title', 'id', 'slug'))]
+            for film in matches:
                 print(f"{film['id']} | {film['title']} | {film.get('year', '?')} | {film['slug']}")
+            if not matches:
+                print('No local films matched. Search TMDB with: cinema.py search "TITLE" --tmdb')
         return
     viewings = json.loads((ROOT / 'viewings.json').read_text())
-    if args.command in ('film', 'log'):
+    if args.command in ('film', 'log', 'add', 'seen', 'own'):
         try:
             if args.tmdb_id is not None and args.tmdb_id <= 0:
                 raise ValueError('--tmdb-id must be a positive movie ID')
-            if args.command == 'log':
+            if args.command in ('add', 'seen', 'own'):
+                catalogue_action(args, films)
+            elif args.command == 'log':
                 log_film(args, films, viewings)
             else:
                 if args.tmdb_id and any(f.get('tmdb') == {'type': 'movie', 'id': args.tmdb_id} for f in films):
@@ -262,6 +400,9 @@ def main():
         viewing = {'id': 'local-' + uuid.uuid4().hex[:12], 'film': film['id'], 'date': args.date,
                    'rating': args.rating, 'rewatch': args.rewatch}
         viewings.append(viewing)
+        if args.liked:
+            film['liked'] = True
+            save('films', films)
         save('viewings', viewings)
         print(viewing['id'])
     else:

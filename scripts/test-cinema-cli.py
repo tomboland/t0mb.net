@@ -64,6 +64,7 @@ class AuthoringTests(unittest.TestCase):
         (self.cinema / 'reviews').mkdir(parents=True)
         for name in ['films', 'viewings', 'directors']:
             (self.cinema / (name + '.json')).write_text('[]\n')
+        (self.cinema / 'collection.json').write_text(json.dumps(dict(schema_version=3, labels=[], editions=[], copies=[])))
         self.api = FakeAPI()
         for mock in [patch.object(cli, 'ROOT', self.cinema), patch.object(cli, 'api_for', return_value=self.api),
                      patch.object(art.urllib.request, 'urlopen', side_effect=lambda *a, **kw: io.BytesIO(b'\xff\xd8\xfffixture'))]:
@@ -96,6 +97,124 @@ class AuthoringTests(unittest.TestCase):
         for path in [images['poster']['path'], images['poster']['thumbnail'], images['backdrop']['path']]:
             self.assertTrue((self.root / path.lstrip('/')).is_file())
         self.assertIn('Logged The Human Condition', output)
+
+    def test_seen_unknown_date_is_idempotent_without_ownership(self):
+        for _ in range(2):
+            self.run_cli('seen', 'The Human Condition I: No Greater Love', '--liked', '--rating', '4')
+        film, = self.read('films')
+        self.assertTrue(film['watched'])
+        self.assertTrue(film['liked'])
+        self.assertEqual(film['rating'], '4')
+        self.assertEqual(self.read('viewings'), [])
+        self.assertEqual(self.read('collection')['copies'], [])
+
+    def test_add_does_not_assert_watched_and_seen_preserves_existing_history(self):
+        self.run_cli('add', '--tmdb-id', '31217')
+        self.assertNotIn('watched', self.read('films')[0])
+        self.run_cli('log', '--tmdb-id', '31217', '--rating', '5')
+        before = self.read('viewings')
+        self.run_cli('seen', '--tmdb-id', '31217')
+        self.assertEqual(self.read('viewings'), before)
+        self.assertEqual(len(self.read('films')), 1)
+
+    def test_own_finds_film_and_creates_edition_without_viewing(self):
+        self.run_cli('own', 'The Human Condition I: No Greater Love', '--label', 'StudioCanal', '--format', '4K UHD')
+        film, = self.read('films')
+        self.assertNotIn('watched', film)
+        collection = self.read('collection')
+        self.assertEqual(len(collection['copies']), 1)
+        self.assertEqual(collection['editions'][0]['contents'][0]['film'], film['id'])
+        self.assertEqual(collection['editions'][0]['formats'], ['4K UHD'])
+        self.assertEqual(self.read('viewings'), [])
+
+    def test_own_interactive_copy_new_edition_and_cancellation(self):
+        self.run_cli('own', '--tmdb-id', '31217', '--format', '4K UHD')
+        before = self.snapshot()
+        with patch('sys.stdin.isatty', return_value=False), self.assertRaises(SystemExit):
+            self.run_cli('own', '--tmdb-id', '31217')
+        self.assertEqual(self.snapshot(), before)
+        with patch('sys.stdin.isatty', return_value=True):
+            with patch('builtins.input', return_value='q'), self.assertRaises(SystemExit):
+                self.run_cli('own', '--tmdb-id', '31217')
+            self.assertEqual(self.snapshot(), before)
+            with patch('builtins.input', return_value='1'):
+                self.run_cli('own', '--tmdb-id', '31217')
+            with patch('builtins.input', return_value='n'):
+                self.run_cli('own', '--tmdb-id', '31217', '--format', 'Blu-ray')
+        self.assertEqual(len(self.read('collection')['copies']), 3)
+        self.assertEqual(len(self.read('collection')['editions']), 2)
+
+    def test_invalid_ownership_does_not_save_new_film(self):
+        # The lock file is infrastructure, not collection data.
+        (self.cinema / '.collection.lock').touch()
+        before = self.snapshot()
+        with self.assertRaises(SystemExit):
+            self.run_cli('own', '--tmdb-id', '31217', '--barcode', 'bad')
+        self.assertEqual(self.snapshot(), before)
+
+    def test_interactive_tmdb_selection_and_cancel(self):
+        before = self.snapshot()
+        with patch('sys.stdin.isatty', return_value=True):
+            with patch('builtins.input', return_value='q'), self.assertRaises(SystemExit):
+                self.run_cli('add', 'The Human Condition I: No Greater Love')
+            self.assertEqual(self.snapshot(), before)
+            with patch('builtins.input', return_value='1'):
+                self.run_cli('add', 'The Human Condition I: No Greater Love')
+        self.assertEqual(len(self.read('films')), 1)
+
+    def test_tmdb_search_is_read_only_and_passes_year(self):
+        before = self.snapshot()
+        output = self.run_cli('search', 'Human Condition', '--tmdb', '--year', '1959')
+        self.assertIn('31217 | The Human Condition I: No Greater Love | 1959', output)
+        self.assertIn('--unwatched', output)
+        self.assertEqual(self.api.calls, [('search', 'Human Condition', '1959')])
+        self.assertEqual(self.snapshot(), before)
+
+    def test_log_liked_marks_new_film_and_preserves_like_on_rewatch(self):
+        self.run_cli('log', '--tmdb-id', '31217', '--liked')
+        self.assertTrue(self.read('films')[0]['liked'])
+        self.assertNotIn('liked', self.read('viewings')[0])
+        self.run_cli('log', '--tmdb-id', '31217', '--rewatch')
+        self.assertTrue(self.read('films')[0]['liked'])
+        self.assertEqual(len(self.read('viewings')), 2)
+
+    def test_diary_commands_can_like_existing_film(self):
+        self.run_cli('film', '--title', 'Home movie', '--unwatched')
+        for command in ('log', 'watch'):
+            films = self.read('films')
+            films[0]['liked'] = False
+            (self.cinema / 'films.json').write_text(json.dumps(films))
+            self.run_cli(command, films[0]['slug'], '--date', '2026-10-21')
+            self.assertFalse(self.read('films')[0]['liked'])
+            self.run_cli(command, films[0]['slug'], '--date', '2026-10-21', '--liked')
+            self.assertTrue(self.read('films')[0]['liked'])
+
+    def test_failed_log_does_not_save_like(self):
+        self.run_cli('film', '--tmdb-id', '31217', '--unwatched')
+        before = self.snapshot()
+        with patch.object(cli, 'import_artwork', side_effect=RuntimeError('Artwork unavailable')), self.assertRaises(SystemExit):
+            self.run_cli('log', '--tmdb-id', '31217', '--liked')
+        self.assertEqual(self.snapshot(), before)
+
+    def test_tmdb_search_marks_existing_films_and_handles_no_results(self):
+        self.run_cli('film', '--tmdb-id', '31217', '--unwatched')
+        before = self.snapshot()
+        self.assertIn('already in catalogue:', self.run_cli('search', 'Human Condition', '--tmdb'))
+        self.api.results = []
+        self.assertIn('No TMDB films matched', self.run_cli('search', 'missing', '--tmdb'))
+        self.assertEqual(self.snapshot(), before)
+
+    def test_search_failure_does_not_change_sources(self):
+        before = self.snapshot()
+        with patch.object(self.api, 'search', side_effect=RuntimeError('TMDB HTTP 401')), self.assertRaises(SystemExit):
+            self.run_cli('search', 'missing', '--tmdb')
+        self.assertEqual(self.snapshot(), before)
+
+    def test_local_search_ignores_punctuation_and_stays_offline(self):
+        self.run_cli('film', '--title', "Don't Look Now", '--year', '1973', '--unwatched')
+        self.assertIn("Don't Look Now", self.run_cli('search', 'Dont look now', '--year', '1973'))
+        self.assertIn('No local films matched', self.run_cli('search', 'Dont look now', '--year', '2000'))
+        self.assertEqual(self.api.calls, [])
 
     def test_existing_film_logs_offline_without_overwriting_metadata(self):
         self.run_cli('log', '--tmdb-id', '31217')
