@@ -12342,5 +12342,22 @@
       "alt": "Backdrop for Antichrist",
       "source_path": "/utABPVjXBlM8NUOBecCyLLuzQSe.jpg"
     }
+  },
+  "tmdb-movie-24804": {
+    "tmdb": {
+      "type": "movie",
+      "id": 24804
+    },
+    "poster": {
+      "path": "/images/films/tmdb/w500-1e69e7d73a26a793abf9.jpg",
+      "thumbnail": "/images/films/tmdb/w185-292ad9f8f824670b692c.jpg",
+      "alt": "Poster for Black Dynamite",
+      "source_path": "/u3oWQDz0JggzzsVlsuHY7XVxp5Y.jpg"
+    },
+    "backdrop": {
+      "path": "/images/films/tmdb/w780-5f2f5af8e2dd5050d289.jpg",
+      "alt": "Backdrop for Black Dynamite",
+      "source_path": "/gpcJuvH1tRWfdGv6ysWVRN3EZXL.jpg"
+    }
   }
 }

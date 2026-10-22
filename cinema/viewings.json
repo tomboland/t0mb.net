@@ -3057,5 +3057,12 @@
     "film": "local-5f5d5b495220",
     "date": "2026-10-21",
     "rewatch": false
+  },
+  {
+    "id": "local-d118fed6b77c",
+    "film": "tmdb-movie-24804",
+    "date": "2026-10-22",
+    "rating": "5",
+    "rewatch": false
   }
 ]
