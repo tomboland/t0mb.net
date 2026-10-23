@@ -7,7 +7,6 @@ import fcntl
 import importlib.util
 import json
 import os
-import re
 import sys
 from pathlib import Path
 import uuid
@@ -83,15 +82,15 @@ def import_artwork(film, api):
     return artwork
 
 
-def make_review(film, date, viewing=None, title=None, text=None):
+def make_review(film, date, viewing=None, title=None):
     metadata = {'id': film['slug'] + '-' + date + '-' + uuid.uuid4().hex[:6],
                 'film': film['id'], 'title': title or film['title'], 'date': date,
-                'draft': not bool(text and text.strip()), 'spoilers': False}
+                'draft': True, 'spoilers': False}
     if viewing:
         metadata.update(viewing=viewing['id'], watched_date=viewing['date'], rating=viewing.get('rating'))
     path = review_path(ROOT / 'reviews', film['slug'], date)
     header = '\n'.join(f'{key}: {json.dumps(value, ensure_ascii=False)}' for key, value in metadata.items())
-    body = text.strip() if text and text.strip() else '<!-- Write here; set draft to false when ready. -->'
+    body = '<!-- Write here; set draft to false when ready. -->'
     return path, '---\n' + header + '\n---\n\n' + body + '\n'
 
 
@@ -220,8 +219,6 @@ def title_arguments(parser):
 def log_film(args, films, viewings):
     datetime.date.fromisoformat(args.date)
     helpers.validate_rating(args.rating)
-    if args.review is not None and args.review.strip() and not re.sub(r'<!--.*?-->', '', args.review, flags=re.S).strip():
-        raise ValueError('A completed review must contain text, not only an HTML comment')
     api = api_for(args)
     film = resolve_film(args, films, api)
     people = json.loads((ROOT / 'directors.json').read_text())
@@ -232,7 +229,7 @@ def log_film(args, films, viewings):
     artwork = import_artwork(film, api) if film.get('tmdb') else None
     viewing = {'id': 'local-' + uuid.uuid4().hex[:12], 'film': film['id'], 'date': args.date,
                'rating': args.rating, 'rewatch': args.rewatch}
-    draft = make_review(film, str(datetime.date.today()), viewing, text=args.review) if args.review is not None else None
+    draft = make_review(film, str(datetime.date.today()), viewing) if args.review else None
     # All remote work and input validation have completed before source writes.
     if args.liked:
         film['liked'] = True
@@ -253,8 +250,7 @@ def log_film(args, films, viewings):
     if not film.get('tmdb'):
         print('No TMDB reference on this local film; artwork was left unchanged.')
     if draft:
-        label = 'Review ready to publish' if args.review.strip() else 'Review draft'
-        print(f'{label}: {draft[0]}')
+        print(f'Review draft: {draft[0]}')
     print('Review your changes, commit, then run bash deploy.sh when ready.')
 
 
@@ -298,8 +294,7 @@ def main():
     log.add_argument('--rating', help='Optional rating from 0.5 to 5, in half steps')
     log.add_argument('--rewatch', action='store_true')
     log.add_argument('--liked', action='store_true', help='Mark the film as liked; omission preserves its current like status')
-    log.add_argument('--review', nargs='?', const='', metavar='TEXT',
-                     help='Create a linked draft; optionally supply text for a completed review')
+    log.add_argument('--review', action='store_true', help='Create a linked Markdown review draft')
     log.add_argument('--token-file', type=Path, default=token_path(),
                      help='TMDB token file; defaults to TMDB_TOKEN_FILE or ~/.config/t0mb.net/tmdb-token')
     watch = commands.add_parser('watch', help='Log a dated viewing; rating is optional')

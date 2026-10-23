@@ -229,7 +229,18 @@ class AuthoringTests(unittest.TestCase):
         self.assertEqual(len(self.read('viewings')), 2)
         self.assertTrue(self.read('viewings')[-1]['rewatch'])
 
-    def test_linked_draft_and_completed_review(self):
+    def test_review_flag_before_film_does_not_consume_identity(self):
+        self.run_cli('film', '--title', 'Tokyo Decadence', '--year', '1992', '--unwatched')
+        self.run_cli('log', '--liked', '--review', 'tokyo-decadence-1992')
+        film, = self.read('films')
+        viewing, = self.read('viewings')
+        self.assertTrue(film['liked'])
+        self.assertEqual(viewing['film'], film['id'])
+        review, = (self.cinema / 'reviews').glob('*.md')
+        self.assertIn('draft: true', review.read_text())
+        self.assertIn('viewing: "' + viewing['id'] + '"', review.read_text())
+
+    def test_repeat_viewings_have_separate_linked_drafts(self):
         self.run_cli('log', '--tmdb-id', '31217', '--date', '2020-01-01', '--rating', '5', '--review')
         first = next((self.cinema / 'reviews').glob('*.md'))
         before = first.read_text()
@@ -237,19 +248,18 @@ class AuthoringTests(unittest.TestCase):
         self.assertIn('watched_date: "2020-01-01"', before)
         self.assertIn('rating: "5"', before)
         self.assertIn('viewing: "' + self.read('viewings')[0]['id'] + '"', before)
-        self.run_cli('log', '--tmdb-id', '31217', '--review', 'A **remarkable** film.')
+        self.run_cli('log', '--tmdb-id', '31217', '--review')
         reviews = list((self.cinema / 'reviews').glob('*.md'))
         self.assertEqual(len(reviews), 2)
         self.assertEqual(first.read_text(), before)
         second = next(p for p in reviews if p != first).read_text()
-        self.assertIn('draft: false', second)
-        self.assertIn('A **remarkable** film.', second)
+        self.assertIn('draft: true', second)
         self.assertIn('viewing: "' + self.read('viewings')[1]['id'] + '"', second)
         self.assertEqual(len(self.read('films')), 1)
 
     def test_invalid_inputs_do_not_change_sources(self):
         initial = self.snapshot()
-        for options in [('--date', 'nonsense'), ('--rating', '6'), ('--rating', 'nan'), ('--review', '<!-- only a comment -->')]:
+        for options in [('--date', 'nonsense'), ('--rating', '6'), ('--rating', 'nan')]:
             with self.assertRaises(SystemExit):
                 self.run_cli('log', '--tmdb-id', '31217', *options)
             self.assertEqual(self.snapshot(), initial)
@@ -339,7 +349,10 @@ class AuthoringTests(unittest.TestCase):
         binary = next(project.glob('dist-newstyle/build/*/ghc-*/t0mb-net-*/x/site/build/site/site'), None)
         if binary is None:
             self.skipTest('Compile the Hakyll site executable to check rendering')
-        self.run_cli('log', '--tmdb-id', '31217', '--date', '2026-10-02', '--rating', '4.5', '--review', 'A **remarkable** film.')
+        self.run_cli('log', '--tmdb-id', '31217', '--date', '2026-10-02', '--rating', '4.5', '--review')
+        review = next((self.cinema / 'reviews').glob('*.md'))
+        review.write_text(review.read_text().replace('draft: true', 'draft: false').replace(
+            '<!-- Write here; set draft to false when ready. -->', 'A **remarkable** film.'))
         (self.root/'scripts').mkdir()
         for name in ('export-cinema.py','cinema_export.py'):
             shutil.copyfile(project/'scripts'/name,self.root/'scripts'/name)

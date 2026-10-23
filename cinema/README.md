@@ -134,9 +134,6 @@ python3 scripts/cinema.py log "The Human Condition I: No Greater Love"
 
 # Diary plus a linked Markdown draft (the command prints the file to edit):
 python3 scripts/cinema.py log "The Human Condition I: No Greater Love" --review
-
-# Or supply the review now; it will be published on the next build:
-python3 scripts/cinema.py log "The Human Condition I: No Greater Love" --review "Your review here."
 ```
 
 These are alternative commands. Each successful `log` invocation creates one
@@ -168,9 +165,8 @@ python3 scripts/cinema.py log --tmdb-id 31217 --date 2026-10-02 --rating 4.5 --r
 to 5 in half steps. Add `--rewatch` for a repeat viewing. Review publication dates
 default to today independently of the watched date and can be edited in Markdown.
 
-With bare `--review`, write in the generated file and set `draft: false` when
-ready. With `--review "text"`, the file contains that text and `draft: false`.
-Both forms link the review to the new viewing and copy its date and rating.
+With `--review`, write in the generated file and set `draft: false` when
+ready. The draft links to the new viewing and copies its date and rating.
 You can add post tags, spoiler notices and other front matter afterwards.
 
 Existing local metadata, artwork overrides and reviews are preserved. Available

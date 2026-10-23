@@ -47,9 +47,9 @@ for an earlier viewing and `--rewatch` for a repeat. Its `--rating` belongs to
 that viewing; `--liked` belongs to the film and omission preserves its status.
 Each successful `log` call adds a viewing, even for the same film and date.
 
-Bare `--review` creates a Markdown draft and prints its path. Edit it and set
-`draft: false` when ready. `--review "Your review text"` creates a published
-review for the next build. No editor is launched automatically.
+`--review` creates a Markdown draft and prints its path. Edit it and set
+`draft: false` when ready to publish on the next build. No editor is launched
+automatically.
 
 `add` records metadata only. Existing watched status, ownership and reviews are
 preserved. The older `film` command keeps its original default of marking a
