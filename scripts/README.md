@@ -48,6 +48,8 @@ The collection browser filters title, label, format, contents and location, and
 edits edition metadata, formats, per-film cuts, copy condition and ownership.
 A box set appears once as an edition, with its constituent films accessible.
 
+To like an existing film, open **Films**, select it, and choose **Edit film details → Liked → Yes**. Save the form and keep the current watched status. Choose **No** to remove a like; this does not record a new viewing.
+
 ## Ownership
 
 `own` imports missing film metadata and artwork and adds an edition and copy,

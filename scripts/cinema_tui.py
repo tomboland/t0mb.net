@@ -71,7 +71,7 @@ def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=Non
         if pool: pool.shutdown(wait=False, cancel_futures=True)
 
 
-def form(title, fields):
+def form(title, fields, choices=None):
     """Edit a staged mapping; nothing is persisted until Save is selected."""
     values = dict(fields)
     while True:
@@ -82,7 +82,8 @@ def form(title, fields):
                 continue
             return None
         if field == 'Save': return values
-        value = text_input(field, str(values[field]))
+        value = (select(field, ordered_options(values[field], choices[field]))
+                 if choices and field in choices else text_input(field, str(values[field])))
         if value is not None: values[field] = value
 
 
@@ -227,10 +228,11 @@ def actions(service, selection):
             own(service, selection)
         elif action == 'Edit film details':
             film = next(f for f in service.read('films') if f['id'] == selection)
-            values = form('Film details', {'rating': film.get('rating', ''), 'tags (comma separated)': ', '.join(film.get('tags', []))})
+            liked = 'Yes' if film.get('liked') is True else 'No'
+            values = form('Film details', {'Liked': liked, 'rating': film.get('rating', ''), 'tags (comma separated)': ', '.join(film.get('tags', []))}, choices={'Liked': ['Yes', 'No']})
             status = select('Watched status', ordered_options(viewing_status(film, service.read('viewings')), ['Watched', 'Unwatched', 'Unknown'])) if values is not None else None
             if status:
-                perform(lambda: service.edit_film(selection, rating=values['rating'], tags=[t.strip() for t in values['tags (comma separated)'].split(',') if t.strip()], watched=status))
+                perform(lambda: service.edit_film(selection, rating=values['rating'], tags=[t.strip() for t in values['tags (comma separated)'].split(',') if t.strip()], watched=status, liked=(values['Liked'] == 'Yes') if values['Liked'] != liked else None))
         else:
             import datetime
             from cinema_editor import edit_review

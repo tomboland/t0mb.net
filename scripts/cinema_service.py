@@ -182,10 +182,11 @@ class Catalogue:
             item['cut'] = cut
         self.mutate_collection(change)
 
-    def edit_film(self, film_id, *, rating, tags, watched):
+    def edit_film(self, film_id, *, rating, tags, watched, liked=None):
         import copy
         validate_rating(rating)
         if watched not in ('Watched','Unwatched','Unknown'): raise ValueError('Invalid watched status')
+        if liked is not None and not isinstance(liked, bool): raise ValueError('Liked must be true or false')
         before = self.snapshot()
         state = copy.deepcopy(before)
         film = self.resolve(film_id, state)
@@ -193,6 +194,7 @@ class Catalogue:
             raise ValueError('Recorded viewings establish watched status; edit those records separately.')
         film['rating'] = rating
         film['tags'] = normalise_tags(tags)
+        if liked is not None: film['liked'] = liked
         if watched == 'Unknown': film.pop('watched', None)
         else: film['watched'] = watched == 'Watched'
         self.commit(before, state)

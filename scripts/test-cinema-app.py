@@ -39,6 +39,34 @@ class ServiceTests(unittest.TestCase):
     def add(self):
         return self.service.add_owned(self.selection,formats=['4K UHD'])
 
+    def test_film_editor_can_like_and_unlike_without_other_changes(self):
+        self.add()
+        film_id = self.service.read('films')[0]['id']
+        for choice, expected in [('Yes', True), ('No', False)]:
+            before = self.service.snapshot()
+            steps = iter(['Edit film details', 'Liked', choice, 'Save', 'Unknown', 'Back'])
+            def choose(title, rows, *args, **kwargs):
+                result = next(steps)
+                self.assertIn(result, rows)
+                return result
+            with patch.object(ui, 'select', side_effect=choose), patch.object(ui, 'notify'):
+                ui.actions(self.service, film_id)
+            after = self.service.snapshot()
+            before['films'][0]['liked'] = expected
+            self.assertEqual(after, before)
+
+    def test_film_editor_preserves_unrecorded_like_and_cancelled_edits(self):
+        self.add()
+        film_id = self.service.read('films')[0]['id']
+        before = self.service.snapshot()
+        for steps in [
+            ['Edit film details', 'Save', 'Unknown', 'Back'],
+            ['Edit film details', 'Liked', 'Yes', 'Cancel', 'Discard changes', 'Back'],
+        ]:
+            with patch.object(ui, 'select', side_effect=steps), patch.object(ui, 'notify'):
+                ui.actions(self.service, film_id)
+            self.assertEqual(before, self.service.snapshot())
+
     def test_own_imports_metadata_without_viewing(self):
         self.add()
         state = self.service.snapshot()
