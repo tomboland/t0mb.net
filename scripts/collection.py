@@ -8,21 +8,8 @@ import sys
 from pathlib import Path
 import collection_data as db
 
-ALIASES={'arrow':('Arrow Films','Arrow Video'),'arrow video':('Arrow Films','Arrow Video'),'arrow academy':('Arrow Films','Arrow Academy'),'kino':('Kino Lorber','KL Studio Classics'),'kino lorber':('Kino Lorber','KL Studio Classics'),'kino lorder':('Kino Lorber','KL Studio Classics'),'criterion':('Criterion','The Criterion Collection'),'eureka':('Eureka Entertainment',None),'bfi':('BFI',None)}
+from collection_data import new_id, resolve_label
 
-def new_id(items,prefix):
-    ids={i['id'] for i in items};n=1
-    while f'{prefix}-{n:04}' in ids:n+=1
-    return f'{prefix}-{n:04}'
-
-def resolve_label(data,name,imprint=None):
-    if not name:return None,imprint
-    name,default=ALIASES.get(name.casefold(),(name,None))
-    for l in data['labels']:
-        if name.casefold() in [l['name'].casefold()]+[a.casefold() for a in l.get('aliases',[])]:return l['id'],imprint or default
-    ident='label-'+re.sub('[^a-z0-9]+','-',name.lower()).strip('-')
-    if any(l['id']==ident for l in data['labels']):raise ValueError('Conflicting label ID')
-    data['labels'].append(dict(id=ident,name=name));return ident,imprint or default
 
 def parser():
     p=argparse.ArgumentParser(description=__doc__)
@@ -42,6 +29,7 @@ def parser():
     s=sub.add_parser('edit',help='Update an edition’s release metadata');s.add_argument('edition_id');edition_args(s)
     s=sub.add_parser('copy',help='Add another owned copy of an existing edition');s.add_argument('edition_id');s.add_argument('--location');s.add_argument('--condition',choices=['unknown','good','damaged','faulty','missing_disc'],default='unknown');s.add_argument('--notes',default='')
     s=sub.add_parser('set-copy',help='Change condition/location without changing the edition');s.add_argument('copy_id');s.add_argument('--condition',choices=['unknown','good','damaged','faulty','missing_disc']);s.add_argument('--location');s.add_argument('--notes');s.add_argument('--ownership',choices=['owned','loaned','sold','disposed','lost'])
+    s=sub.add_parser('set-content',help='Update a film’s cut/version within an edition');s.add_argument('edition_id');s.add_argument('--film',required=True);s.add_argument('--cut',required=True)
     return p
 
 def edition_args(s):
@@ -50,6 +38,14 @@ def edition_args(s):
 
 def apply(data,args,films):
     editions=db.index(data['editions']);copies=db.index(data['copies'])
+    if args.command=='set-content':
+        edition=editions.get(args.edition_id)
+        if edition is None: raise ValueError('Unknown edition ID')
+        content=next((c for c in edition['contents'] if args.film in (c['film'], films[c['film']]['slug'])),None)
+        if content is None: raise ValueError('Film is not in this edition')
+        if args.cut: content['cut']=args.cut
+        else: content.pop('cut',None)
+        return args.edition_id
     if args.command=='add':
         same=[e for e in editions.values() if db.normalise(e['title'])==db.normalise(args.title)]
         if same and not args.new_edition:raise ValueError('Already present: '+', '.join(e['id'] for e in same)+'. Use copy EDITION_ID for another copy, or --new-edition for a distinct release.')
@@ -121,7 +117,8 @@ def main(argv=None):
                 text=' '.join(str(e.get(k) or '') for k in ('title','barcode','catalogue_number','imprint'))+' '+name+' '+' '.join(films[x['film']]['title'] for x in e.get('contents', []))
                 if db.normalise(args.query) in db.normalise(text):
                     count=sum(c['edition_id']==e['id'] and c.get('ownership','owned')=='owned' for c in data['copies'])
-                    print(f"{e['id']} | {e['title']} | {name} | {', '.join(e.get('formats', [])) or '?'} | {count} owned | films: {', '.join(c['film'] for c in e.get('contents', []))}")
+                    contents=', '.join(f"{c['film']} ({films[c['film']]['slug']})" for c in e.get('contents', []))
+                    print(f"{e['id']} | {e['title']} | {name} | {', '.join(e.get('formats', [])) or '?'} | {count} owned | films: {contents}")
             return
         result=apply(data,args,films);db.save(data,root);db.export(data,root);print('Saved '+result)
 

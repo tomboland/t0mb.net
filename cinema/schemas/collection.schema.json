@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "collection",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "editions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "DVD",
+                "Blu-ray",
+                "4K UHD",
+                "Blu-ray 3D",
+                "CD",
+                "VHS",
+                "LaserDisc"
+              ]
+            }
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "film": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "role": {
+                  "enum": [
+                    "main",
+                    "supplement",
+                    "unspecified"
+                  ]
+                },
+                "cut": {
+                  "type": "string"
+                },
+                "coverage": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "film"
+              ]
+            }
+          },
+          "label_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          },
+          "packaging": {
+            "type": "string"
+          },
+          "barcode": {
+            "type": "string",
+            "pattern": "^(?:[0-9]{8}|[0-9]{12,14})$"
+          },
+          "release_date": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "id",
+          "title"
+        ]
+      }
+    },
+    "copies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "edition_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ownership": {
+            "enum": [
+              "owned",
+              "loaned",
+              "sold",
+              "disposed",
+              "lost"
+            ]
+          },
+          "condition": {
+            "enum": [
+              "unknown",
+              "good",
+              "damaged",
+              "faulty",
+              "missing_disc"
+            ]
+          },
+          "location": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "edition_id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "labels",
+    "editions",
+    "copies"
+  ]
+}

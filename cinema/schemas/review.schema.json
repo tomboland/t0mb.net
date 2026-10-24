@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "review",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "film": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "draft": {
+      "type": "boolean"
+    },
+    "spoilers": {
+      "type": "boolean"
+    },
+    "viewing": {
+      "type": "string",
+      "minLength": 1
+    },
+    "watched_date": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "film",
+    "title",
+    "date"
+  ]
+}

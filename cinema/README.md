@@ -11,7 +11,7 @@ inventing watched events. Keep this directory backed up with the repository.
 Start with the [everyday command guide](../scripts/README.md). The main entry
 point is `cinema.py`: `add` records metadata, `own` records a physical release,
 `seen` marks watched with an unknown date, and `log` records a dated viewing.
-All four resolve titles and offer interactive TMDB selection when needed.
+The dedicated terminal application and commands share a service layer; see the command guide for current controls.
 
 See [the collection model and commands](COLLECTION.md) for editions, box sets,
 owned copies and links to canonical films. The website reads these sources directly.
@@ -67,7 +67,7 @@ Pass `--liked` when logging a viewing to mark the film as liked:
 python3 scripts/cinema.py log "Don't Look Now" --year 1973 --liked --review
 ```
 
-This also works with `watch`. Omitting `--liked` preserves the existing like
+This also works with `review`. Omitting `--liked` preserves the existing like
 status. Likes belong to the film, not the individual viewing.
 
 Set `"liked": true` or `"liked": false` on a film in `films.json`. Film pages
@@ -123,100 +123,19 @@ watch` also picks up cinema changes, including new film and tag pages.
 Run `python3 scripts/test-cinema.py` after compiling to check cinema rendering
 against isolated fixtures, including incremental updates and draft removal.
 
-## Log a film in one step
+## Interactive authoring
 
-The local catalogue, diary and Markdown reviews are the source of truth. No
-Letterboxd account or export is needed. From the repository root:
+The [cinema application guide](../scripts/README.md) documents local browsing,
+TMDB selection, disc entry and editor-based reviews. Run
+`python3 scripts/cinema.py` to browse, or
+`python3 scripts/cinema.py search whiplash` to find a film and choose an action.
 
-```sh
-# Diary only; viewing date defaults to today:
-python3 scripts/cinema.py log "The Human Condition I: No Greater Love"
+`python3 scripts/cinema.py review whiplash` records a viewing and opens your
+`VISUAL`/`EDITOR` with a populated draft. Saving an unchanged draft cancels;
+successful edits are validated before the viewing is saved. Reviews stay drafts
+until you publish them. The former `watch` command is now `log`; TMDB metadata
+imports use `add --tmdb-id ID`, while `film` creates manual records.
 
-# Diary plus a linked Markdown draft (the command prints the file to edit):
-python3 scripts/cinema.py log "The Human Condition I: No Greater Love" --review
-```
-
-These are alternative commands. Each successful `log` invocation creates one
-new viewing, so run just the one that matches what you want to record.
-
-The command reuses an existing film by ID, slug or exact title. Otherwise it
-searches TMDB and adds the film implicitly, including director metadata, poster,
-thumbnail and backdrop where available. Ambiguous or inexact search results ask
-you to choose; noninteractive runs stop and print IDs instead of guessing.
-Use `--year 1959` to narrow a title search, or skip search with `--tmdb-id 31217`.
-
-Configure your existing TMDB **API read access token** once in your shell:
-
-```sh
-export TMDB_TOKEN_FILE=/path/to/your/existing-tmdb-token
-```
-
-Alternatively, store the token at `~/.config/t0mb.net/tmdb-token`, or pass
-`--token-file PATH` to a command. Keep credentials outside this repository.
-Cached requests can work without a token; uncached TMDB requests need one.
-
-Optional logging flags:
-
-```sh
-python3 scripts/cinema.py log --tmdb-id 31217 --date 2026-10-02 --rating 4.5 --review
-```
-
-`--date` is the watched date; omit it for today. Ratings are optional, from 0.5
-to 5 in half steps. Add `--rewatch` for a repeat viewing. Review publication dates
-default to today independently of the watched date and can be edited in Markdown.
-
-With `--review`, write in the generated file and set `draft: false` when
-ready. The draft links to the new viewing and copies its date and rating.
-You can add post tags, spoiler notices and other front matter afterwards.
-
-Existing local metadata, artwork overrides and reviews are preserved. Available
-artwork is reused; missing imported files are downloaded. Network work completes
-before saving the diary entry, so an artwork download failure can be retried
-without creating another viewing. A film with no TMDB artwork remains text-only.
-Manually created films without a TMDB reference can still be logged, but cannot
-automatically fetch artwork; the command tells you when this applies.
-
-Nothing is committed or deployed automatically. Preview, review the source and
-image changes, commit them, then run `bash deploy.sh` as usual. Ordinary Hakyll
-builds remain offline.
-
-## Lower-level film, viewing and review commands
-
-These remain available for manual metadata, logging an already-known film, or
-creating a review of an existing viewing without adding another diary entry.
-
-```sh
-# Search locally, or browse TMDB results without saving anything:
-python3 scripts/cinema.py search "Don't Look Now"
-python3 scripts/cinema.py search "Don't Look Now" --tmdb --year 1973
-# Add a chosen TMDB result for an owned disc without marking it watched:
-python3 scripts/cinema.py film --tmdb-id TMDB_MOVIE_ID --unwatched
-# Then record the physical release with collection.py (see COLLECTION.md).
-
-# Without TMDB (repeat --director for co-directors):
-python3 scripts/cinema.py film --title "A film" --year 2026 --director "A director"
-
-# Or fetch metadata and the director filmography once, explicitly:
-python3 scripts/cinema.py film --tmdb-id 147 --token-file /private/path/tmdb-token
-
-# Use the printed film ID or its slug. The 400 Blows is already present:
-python3 scripts/cinema.py watch the-400-blows-1959 --date 2026-10-01
-python3 scripts/cinema.py review the-400-blows-1959
-```
-
-The TMDB example refuses duplicates, so use the ID of a film not already in
-the catalogue. Keep credentials outside the repository. A film's local ID
-does not depend on TMDB, so unavailable records and manual films work normally.
-
-`watch` accepts optional `--rating 4.5` and `--rewatch`. Each call creates a
-separate viewing, even on the same date. `review` accepts `--viewing VIEWING_ID`
-to link to one, copying its date and optional rating. A review need not be
-linked to a viewing. Publication date and watched date remain separate.
-
-Films marked watched without dates appear in the catalogue but not the diary.
-Diary ratings belong to individual viewings; the optional `rating` in
-`films.json` is a separate overall rating imported from Letterboxd. Neither
-is automatically substituted for the other. Empty ratings render no score.
 
 ## Photographs
 

@@ -104,3 +104,20 @@ def export(data, root=ROOT):
     atomic_text(dest/'collection.csv',stream.getvalue())
     atomic_text(dest/'collection.json',json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     return {'copies':len(copies),'editions':len(editions),'films':len({x['film'] for e in editions.values() for x in e.get('contents', [])}),'output':str(dest)}
+
+
+ALIASES={'arrow':('Arrow Films','Arrow Video'),'arrow video':('Arrow Films','Arrow Video'),'arrow academy':('Arrow Films','Arrow Academy'),'kino':('Kino Lorber','KL Studio Classics'),'kino lorber':('Kino Lorber','KL Studio Classics'),'kino lorder':('Kino Lorber','KL Studio Classics'),'criterion':('Criterion','The Criterion Collection'),'eureka':('Eureka Entertainment',None),'bfi':('BFI',None)}
+
+def new_id(items,prefix):
+    ids={i['id'] for i in items};n=1
+    while f'{prefix}-{n:04}' in ids:n+=1
+    return f'{prefix}-{n:04}'
+
+def resolve_label(data,name,imprint=None):
+    if not name:return None,imprint
+    name,default=ALIASES.get(name.casefold(),(name,None))
+    for l in data['labels']:
+        if name.casefold() in [l['name'].casefold()]+[a.casefold() for a in l.get('aliases',[])]:return l['id'],imprint or default
+    ident='label-'+re.sub('[^a-z0-9]+','-',name.lower()).strip('-')
+    if any(l['id']==ident for l in data['labels']):raise ValueError('Conflicting label ID')
+    data['labels'].append(dict(id=ident,name=name));return ident,imprint or default

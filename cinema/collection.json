@@ -12591,6 +12591,9 @@
           "role": "main",
           "film": "lb-14J6"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -12709,6 +12712,9 @@
           "role": "main",
           "film": "lb-1w7E"
         }
+      ],
+      "formats": [
+        "4K UHD"
       ]
     },
     {
@@ -12882,7 +12888,10 @@
           "film": "lb-29Xu"
         }
       ],
-      "notes": "85th Anniversary collector’s box."
+      "notes": "85th Anniversary collector’s box.",
+      "formats": [
+        "4K UHD"
+      ]
     },
     {
       "id": "edition-0932",
@@ -13217,6 +13226,122 @@
       "formats": [
         "4K UHD"
       ]
+    },
+    {
+      "id": "edition-0955",
+      "title": "Star Wars Trilogy — 4K77 / 4K80 / 4K83",
+      "contents": [
+        {
+          "film": "lb-72s",
+          "role": "main"
+        },
+        {
+          "film": "lb-27Vw",
+          "role": "main"
+        },
+        {
+          "film": "lb-27Vm",
+          "role": "main"
+        }
+      ],
+      "formats": [
+        "4K UHD"
+      ],
+      "packaging": "Box set",
+      "notes": "Unofficial physical release of fan restorations of the original theatrical versions: Star Wars — 4K77; The Empire Strikes Back — 4K80; Return of the Jedi — 4K83."
+    },
+    {
+      "id": "edition-0956",
+      "title": "Dressed to Kill",
+      "contents": [
+        {
+          "film": "local-8ea9f2a3a8a6",
+          "role": "main"
+        }
+      ],
+      "formats": [
+        "4K UHD"
+      ]
+    },
+    {
+      "id": "edition-0957",
+      "title": "The Untouchables",
+      "contents": [
+        {
+          "film": "local-7802d89d29c9",
+          "role": "main"
+        }
+      ],
+      "formats": [
+        "4K UHD"
+      ]
+    },
+    {
+      "id": "edition-0958",
+      "title": "Whiplash",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-e02ae96d4d94",
+          "role": "main"
+        }
+      ]
+    },
+    {
+      "id": "edition-0959",
+      "title": "The Conversation",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-265b38eaa7a2",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-studiocanal"
+    },
+    {
+      "id": "edition-0960",
+      "title": "The Warriors",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-08c549f1abb3",
+          "role": "main"
+        }
+      ]
+    },
+    {
+      "id": "edition-0961",
+      "title": "Dirty Harry",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "lb-299E",
+          "role": "main"
+        }
+      ]
+    },
+    {
+      "id": "edition-0962",
+      "title": "Re-Animator",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "lb-28hM",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-second-sight"
     }
   ],
   "copies": [
@@ -17133,6 +17258,38 @@
     {
       "id": "shelf-0954",
       "edition_id": "edition-0954"
+    },
+    {
+      "id": "shelf-0955",
+      "edition_id": "edition-0955"
+    },
+    {
+      "id": "shelf-0956",
+      "edition_id": "edition-0956"
+    },
+    {
+      "id": "shelf-0957",
+      "edition_id": "edition-0957"
+    },
+    {
+      "id": "shelf-0958",
+      "edition_id": "edition-0958"
+    },
+    {
+      "id": "shelf-0959",
+      "edition_id": "edition-0959"
+    },
+    {
+      "id": "shelf-0960",
+      "edition_id": "edition-0960"
+    },
+    {
+      "id": "shelf-0961",
+      "edition_id": "edition-0961"
+    },
+    {
+      "id": "shelf-0962",
+      "edition_id": "edition-0962"
     }
   ]
 }

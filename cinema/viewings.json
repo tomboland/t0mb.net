@@ -3070,5 +3070,23 @@
     "film": "tmdb-movie-15802",
     "date": "2026-10-23",
     "rewatch": false
+  },
+  {
+    "id": "local-c26967493f94",
+    "film": "lb-72s",
+    "date": "2026-10-23",
+    "rewatch": true
+  },
+  {
+    "id": "local-5d574babef51",
+    "film": "lb-1ow2",
+    "date": "2026-10-24",
+    "rewatch": true
+  },
+  {
+    "id": "local-f39658a2f400",
+    "film": "tmdb-movie-609",
+    "date": "2026-10-24",
+    "rewatch": false
   }
 ]

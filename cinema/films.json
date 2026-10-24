@@ -13883,7 +13883,8 @@
     "tags": [
       "favourite"
     ],
-    "liked": true
+    "liked": true,
+    "watched": true
   },
   {
     "id": "lb-2aIU",
@@ -25057,7 +25058,8 @@
     ],
     "overview": "The Freelings' suburban home becomes the center of paranormal activity that opens a portal to the 'other side'. With help, they must cross over to get their daughter back.",
     "metadata_source": "https://www.themoviedb.org/movie/609",
-    "runtime": 114
+    "runtime": 114,
+    "watched": true
   },
   {
     "id": "tmdb-movie-794",
@@ -25785,5 +25787,134 @@
     "runtime": 104,
     "original_title": "Antichrist",
     "slug": "antichrist-2009"
+  },
+  {
+    "id": "local-8ea9f2a3a8a6",
+    "title": "Dressed to Kill",
+    "year": "1980",
+    "directors": [
+      {
+        "id": 1150,
+        "name": "Brian De Palma"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 11033
+    },
+    "runtime": 105,
+    "original_title": "Dressed to Kill",
+    "slug": "dressed-to-kill-1980"
+  },
+  {
+    "id": "local-7802d89d29c9",
+    "title": "The Untouchables",
+    "year": "1987",
+    "directors": [
+      {
+        "id": 1150,
+        "name": "Brian De Palma"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 117
+    },
+    "runtime": 119,
+    "original_title": "The Untouchables",
+    "slug": "the-untouchables-1987"
+  },
+  {
+    "id": "local-c53e25b1708f",
+    "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+    "year": "1991",
+    "watched": false,
+    "directors": [
+      {
+        "id": 37852,
+        "name": "George Hickenlooper"
+      },
+      {
+        "id": 37850,
+        "name": "Fax Bahr"
+      },
+      {
+        "id": 37872,
+        "name": "Eleanor Coppola"
+      }
+    ],
+    "tmdb": {
+      "type": "movie",
+      "id": 4539
+    },
+    "runtime": 96,
+    "original_title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+    "slug": "hearts-of-darkness-a-filmmaker-s-apocalypse-1991"
+  },
+  {
+    "id": "local-e02ae96d4d94",
+    "slug": "whiplash-2014",
+    "title": "Whiplash",
+    "year": "2014",
+    "tmdb": {
+      "type": "movie",
+      "id": 244786
+    },
+    "original_title": "Whiplash",
+    "runtime": 107,
+    "overview": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "directors": [
+      {
+        "id": 136495,
+        "name": "Damien Chazelle"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
+  },
+  {
+    "id": "local-265b38eaa7a2",
+    "slug": "the-conversation-1974",
+    "title": "The Conversation",
+    "year": "1974",
+    "tmdb": {
+      "type": "movie",
+      "id": 592
+    },
+    "original_title": "The Conversation",
+    "runtime": 115,
+    "overview": "A paranoid, secretive surveillance expert has a crisis of conscience when he suspects that the couple he is spying on will be murdered.",
+    "directors": [
+      {
+        "id": 1776,
+        "name": "Francis Ford Coppola"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
+  },
+  {
+    "id": "local-08c549f1abb3",
+    "slug": "the-warriors-1979",
+    "title": "The Warriors",
+    "year": "1979",
+    "tmdb": {
+      "type": "movie",
+      "id": 11474
+    },
+    "original_title": "The Warriors",
+    "runtime": 94,
+    "overview": "Prominent gang leader Cyrus calls a meeting of New York's gangs to set aside their turf wars and take over the city. At the meeting, a rival leader kills Cyrus, but a Coney Island gang called the Warriors is wrongly blamed for Cyrus' death. Before you know it, the cops and every gangbanger in town is hot on the Warriors' trail.",
+    "directors": [
+      {
+        "id": 1723,
+        "name": "Walter Hill"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
   }
 ]

@@ -64,13 +64,13 @@ from search. Collection commands run offline and never change films or viewing h
 
 ```sh
 # Search the canonical catalogue and physical editions:
-python3 scripts/cinema.py search "RoboCop"
+python3 scripts/cinema.py search "RoboCop" --local
 python3 scripts/collection.py search "RoboCop"
 
 # Search TMDB when a film is missing locally (does not save anything):
-python3 scripts/cinema.py search "Don't Look Now" --tmdb --year 1973
+python3 scripts/cinema.py search "Don't Look Now" --year 1973
 # Use a TMDB ID from those results to add metadata/artwork, without a viewing:
-python3 scripts/cinema.py film --tmdb-id TMDB_MOVIE_ID --unwatched
+python3 scripts/cinema.py add --tmdb-id TMDB_MOVIE_ID
 # Then use the printed local ID or slug to record the disc you own:
 python3 scripts/collection.py add "Don't Look Now" --film LOCAL_FILM_ID \
   --label StudioCanal --format "4K UHD"
@@ -84,7 +84,7 @@ python3 scripts/collection.py add "A known title" --year 1990 --format Blu-ray
 
 # First add a genuinely new title, without logging a viewing:
 python3 scripts/cinema.py film --title "A new film" --year 2026 --unwatched
-# Or use --tmdb-id instead of manual title/year. Then use its printed ID:
+# Or use cinema.py add --tmdb-id ID. Then use its printed local ID:
 python3 scripts/collection.py add "A new film" --film PRINTED_ID --label Kino
 
 # A different release, or another copy of the same release:

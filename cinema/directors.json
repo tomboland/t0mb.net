@@ -53914,5 +53914,168 @@
         "title": "Études"
       }
     ]
+  },
+  {
+    "id": 37852,
+    "name": "George Hickenlooper",
+    "filmography": [
+      {
+        "tmdb_id": 4539,
+        "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+        "year": "1991"
+      },
+      {
+        "tmdb_id": 12271,
+        "title": "Factory Girl",
+        "year": "2006"
+      },
+      {
+        "tmdb_id": 27768,
+        "title": "Some Folks Call It a Sling Blade",
+        "year": "1994"
+      },
+      {
+        "tmdb_id": 63108,
+        "title": "The Big Brass Ring",
+        "year": "1999"
+      },
+      {
+        "tmdb_id": 61487,
+        "title": "Mayor of the Sunset Strip",
+        "year": "2003"
+      },
+      {
+        "tmdb_id": 45324,
+        "title": "Casino Jack",
+        "year": "2010"
+      },
+      {
+        "tmdb_id": 15720,
+        "title": "The Man from Elysian Fields",
+        "year": "2001"
+      },
+      {
+        "tmdb_id": 48565,
+        "title": "Grey Knight",
+        "year": "1993"
+      },
+      {
+        "tmdb_id": 52215,
+        "title": "Persons Unknown",
+        "year": "1996"
+      },
+      {
+        "tmdb_id": 151066,
+        "title": "Dogtown",
+        "year": "1997"
+      },
+      {
+        "tmdb_id": 166351,
+        "title": "Picture This",
+        "year": "1991"
+      },
+      {
+        "tmdb_id": 406295,
+        "title": "Monte Hellman - American Auteur",
+        "year": "1997"
+      },
+      {
+        "tmdb_id": 87169,
+        "title": "The Low Life",
+        "year": "1995"
+      },
+      {
+        "tmdb_id": 773111,
+        "title": "The Big Brass Ring",
+        "year": "1997"
+      },
+      {
+        "tmdb_id": 1680051,
+        "title": "Art, Acting, & the Suicide Chair: A Conversation with Dennis Hopper",
+        "year": "1988"
+      }
+    ]
+  },
+  {
+    "id": 37850,
+    "name": "Fax Bahr",
+    "filmography": [
+      {
+        "tmdb_id": 4539,
+        "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+        "year": "1991"
+      }
+    ]
+  },
+  {
+    "id": 37872,
+    "name": "Eleanor Coppola",
+    "filmography": [
+      {
+        "tmdb_id": 4539,
+        "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+        "year": "1991"
+      },
+      {
+        "tmdb_id": 375867,
+        "title": "Paris Can Wait",
+        "year": "2016"
+      },
+      {
+        "tmdb_id": 164121,
+        "title": "Coda: Thirty Years Later",
+        "year": "2007"
+      },
+      {
+        "tmdb_id": 598278,
+        "title": "The Making of The Virgin Suicides",
+        "year": "2000"
+      },
+      {
+        "tmdb_id": 680590,
+        "title": "Love Is Love Is Love",
+        "year": "2021"
+      },
+      {
+        "tmdb_id": 723125,
+        "title": "The Making of Marie Antoinette",
+        "year": "2007"
+      },
+      {
+        "tmdb_id": 1530959,
+        "title": "Peeling a Potato Is a Work of Art",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 1530966,
+        "title": "Victorian House",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 1531642,
+        "title": "Joyce Goldstein",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 1531644,
+        "title": "Refrigerator",
+        "year": "1976"
+      },
+      {
+        "tmdb_id": 1653628,
+        "title": "Francis Ford Coppola Directs 'John Grisham's the Rainmaker'",
+        "year": "2007"
+      },
+      {
+        "tmdb_id": 1653632,
+        "title": "A Visit to China’s Miao Country",
+        "year": "1996"
+      },
+      {
+        "tmdb_id": 1754364,
+        "title": "Making Marie Antoinette",
+        "year": "2026"
+      }
+    ]
   }
 ]

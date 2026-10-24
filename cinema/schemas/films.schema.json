@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "films",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "slug": {
+        "type": "string",
+        "minLength": 1
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "year": {
+        "type": [
+          "string",
+          "integer"
+        ]
+      },
+      "watched": {
+        "type": "boolean"
+      },
+      "liked": {
+        "type": "boolean"
+      },
+      "directors": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": [
+                "string",
+                "integer"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "origin_country": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "tmdb": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "movie",
+              "tv"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "type",
+          "id"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "slug",
+      "title"
+    ]
+  }
+}
