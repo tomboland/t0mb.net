@@ -95,7 +95,9 @@ def build(root, read_review):
             row['contents'].append(item)
         edition_rows.append(row)
         links['editions'][row['ref']] = 'https://t0mb.net/films/collection/editions/'+e['id']+'/'
-    public = dict(films=film_rows, viewings=viewing_rows, notes=note_rows, reviews=review_rows, editions=edition_rows, links=links)
+    from cinema_query import public_tables, SEMANTICS as QUERY_SEMANTICS, VERSION as QUERY_VERSION
+    query_tables = public_tables(root)
+    public = dict(query_tables=query_tables,query_semantics=QUERY_SEMANTICS,query_schema_version=QUERY_VERSION,films=film_rows, viewings=viewing_rows, notes=note_rows, reviews=review_rows, editions=edition_rows, links=links)
     revision = hashlib.sha256((str(SCHEMA)+GUIDE+dumps(public)).encode()).hexdigest()[:20]
     generated = datetime.now(timezone.utc).isoformat(timespec='seconds')
     counts = dict(films=len(film_rows), viewings=len(viewing_rows), reviews=len(review_rows), non_viewing_notes=len(note_rows), editions=len(edition_rows), owned_titles=len(owned))
@@ -162,6 +164,9 @@ def build(root, read_review):
              'reviews.json': dumps(dict(common,reviews=table(review_rows)))+'\n',
              'editions.json': dumps(dict(common,editions=table(edition_rows)))+'\n',
              'links.json': dumps(dict(common,links=links))+'\n'}
+    files['query.json'] = dumps(dict(query_schema_version=QUERY_VERSION,revision=revision,semantics=QUERY_SEMANTICS,
+        tables=query_tables,tables_sha256=hashlib.sha256(dumps(query_tables).encode()).hexdigest(),
+        instructions='Load these tables with code; do not paste the whole file into a model prompt. Relationships use stable IDs. This is a static file, not a query endpoint.'))+'\n'
     # Citations should not require loading the complete, verbose URL mapping.
     citation_groups = []
     for start in range(1,len(film_rows)+1,100):

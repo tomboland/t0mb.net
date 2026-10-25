@@ -57,7 +57,7 @@ main = do
 
     -- Dynamic routes and tag membership are computed before compilation.
     -- Track source edits, additions and removals for incremental builds as well.
-    let sources = "cinema/*.json" .||. "cinema/reviews/*.md" .||. "posts/*/index.md" .||. "scripts/export-cinema.py" .||. "scripts/cinema_export.py"
+    let sources = "cinema/*.json" .||. "cinema/reviews/*.md" .||. "posts/*/index.md" .||. "scripts/export-cinema.py" .||. "scripts/cinema_export.py" .||. "scripts/cinema_query.py" .||. "scripts/collection_data.py" .||. "scripts/cinema_data.py"
     match sources $ version "data" $ compile getResourceString
     dependency <- makePatternDependency KindContent $ sources .&&. hasVersion "data"
     rulesExtraDependencies [dependency] $ do

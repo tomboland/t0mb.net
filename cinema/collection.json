@@ -11164,7 +11164,10 @@
           "film": "tmdb-movie-40377"
         }
       ],
-      "notes": "Arrow sequel collection: excludes the 1960 original."
+      "notes": "Arrow sequel collection: excludes the 1960 original.",
+      "formats": [
+        "4K UHD"
+      ]
     },
     {
       "id": "edition-0841",

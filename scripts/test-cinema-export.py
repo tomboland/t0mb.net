@@ -14,7 +14,7 @@ class PublicExportTests(unittest.TestCase):
         self.write('films',self.films)
         self.write('viewings',[dict(id='v-a',film='film-a',date='2020-01-01'),dict(id='v-b',film='film-a',date='2020-01-01',rating=4)])
         self.write('entries',[dict(id='note-a',film='film-a',date='2020-01-01',note='PRIVATE NOTE PROSE')])
-        self.collection=dict(labels=[dict(id='label-a',name='Arrow')],editions=[dict(id='edition-a',title='Release A',label_id='label-a',formats=['Blu-ray'],barcode='PRIVATE BARCODE',notes='PRIVATE EDITION NOTE',contents=[dict(film='film-a',cut='Extended',coverage='Season 1',role='supplement')])],copies=[dict(id='copy-a',edition_id='edition-a',location='PRIVATE LOCATION',notes='PRIVATE COPY NOTE')])
+        self.collection=dict(schema_version=3,labels=[dict(id='label-a',name='Arrow')],editions=[dict(id='edition-a',title='Release A',label_id='label-a',formats=['Blu-ray'],barcode='1234567890123',notes='PRIVATE EDITION NOTE',contents=[dict(film='film-a',cut='Extended',coverage='Season 1',role='supplement')])],copies=[dict(id='copy-a',edition_id='edition-a',location='PRIVATE LOCATION',notes='PRIVATE COPY NOTE')])
         self.write('collection',self.collection)
         self.prose='\nExact prose — punctuation,\n\n- a list\n'
         self.review('review-a',viewing='v-b')
@@ -32,7 +32,7 @@ class PublicExportTests(unittest.TestCase):
         return [dict(zip(obj['columns'],r)) for r in obj['rows']]
     def test_allowlist_and_review_associations_are_lossless(self):
         p=self.build();all_text=''.join(p['files'].values())
-        self.assertNotIn('PRIVATE',all_text);self.assertNotIn('secret-draft',all_text)
+        self.assertNotIn('1234567890123',all_text);self.assertNotIn('PRIVATE',all_text);self.assertNotIn('secret-draft',all_text)
         reviews=self.rows(p,'reviews.json','reviews')
         self.assertEqual([r['body_markdown'] for r in reviews],[self.prose,self.prose])
         self.assertEqual(reviews[0]['viewing'],'v2');self.assertEqual(reviews[1]['note'],'n1')

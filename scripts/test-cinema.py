@@ -37,7 +37,7 @@ class CinemaTests(unittest.TestCase):
                                 {'id': 'v2', 'film': 'local-film', 'date': '2026-01-01', 'rating': '4.5', 'rewatch': True}])
         self.write('directors', [{'id': 'local-person', 'name': 'Someone', 'filmography': [{'tmdb_id': 123, 'title': 'Undated film', 'year': ''}]}])
         (self.root/'scripts').mkdir()
-        for name in ('export-cinema.py','cinema_export.py'):
+        for name in ('export-cinema.py','cinema_export.py','cinema_query.py','collection_data.py','cinema_data.py'):
             shutil.copyfile(ROOT/'scripts'/name, self.root/'scripts'/name)
         for name in ('templates', 'content'):
             shutil.copytree(ROOT / name, self.root / name)
