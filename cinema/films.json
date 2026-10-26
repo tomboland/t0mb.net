@@ -25917,5 +25917,93 @@
     "origin_country": [
       "US"
     ]
+  },
+  {
+    "id": "local-be43a54a92c8",
+    "slug": "blacula-1972",
+    "title": "Blacula",
+    "year": "1972",
+    "tmdb": {
+      "type": "movie",
+      "id": 30566
+    },
+    "original_title": "Blacula",
+    "runtime": 93,
+    "overview": "An 18th century African prince is turned into a vampire while visiting Transylvania. Two centuries later, he rises from his coffin attacking various residents of Los Angeles and meets Tina, a woman who he believes is the reincarnation of his deceased wife.",
+    "directors": [
+      {
+        "id": 106540,
+        "name": "William Crain"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
+  },
+  {
+    "id": "local-3d172ccb0799",
+    "slug": "scream-blacula-scream-1973",
+    "title": "Scream Blacula Scream",
+    "year": "1973",
+    "tmdb": {
+      "type": "movie",
+      "id": 42466
+    },
+    "original_title": "Scream Blacula Scream",
+    "runtime": 96,
+    "overview": "After an aging voodoo priestess dies, her arrogant son Willis Daniel's believes he is next in line to lead. He is outraged when Lisa, his mother's adopted apprentice is chosen as the leader. Willis seeks revenge by reviving the African prince Blacula — but soon finds that he cannot control him.",
+    "directors": [
+      {
+        "id": 101743,
+        "name": "Bob Kelljan"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
+  },
+  {
+    "id": "local-a7e1db8c9384",
+    "slug": "godzilla-minus-one-2023",
+    "title": "Godzilla Minus One",
+    "year": "2023",
+    "tmdb": {
+      "type": "movie",
+      "id": 940721
+    },
+    "original_title": "ゴジラ-1.0",
+    "runtime": 125,
+    "overview": "In postwar Japan, Godzilla brings new devastation to an already scorched landscape. With no military intervention or government help in sight, the survivors must join together in the face of despair and fight back against an unrelenting horror.",
+    "directors": [
+      {
+        "id": 43652,
+        "name": "Takashi Yamazaki"
+      }
+    ],
+    "origin_country": [
+      "JP"
+    ]
+  },
+  {
+    "id": "local-ef1c4290a277",
+    "slug": "super-fly-1972",
+    "title": "Super Fly",
+    "year": "1972",
+    "tmdb": {
+      "type": "movie",
+      "id": 21968
+    },
+    "original_title": "Super Fly",
+    "runtime": 91,
+    "overview": "Priest, a New York City drug kingpin, devises a scheme to get out of the business and retire with a big payday, but his plans are complicated when a street dealer rats him out to the police.",
+    "directors": [
+      {
+        "id": 88148,
+        "name": "Gordon Parks Jr."
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
   }
 ]

@@ -13345,6 +13345,55 @@
         }
       ],
       "label_id": "label-second-sight"
+    },
+    {
+      "id": "edition-0963",
+      "title": "Blacula: The Complete Collection",
+      "contents": [
+        {
+          "film": "local-be43a54a92c8",
+          "role": "main"
+        },
+        {
+          "film": "local-3d172ccb0799",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-eureka-entertainment",
+      "imprint": "Eureka Classics",
+      "formats": [
+        "Blu-ray"
+      ]
+    },
+    {
+      "id": "edition-0964",
+      "title": "Godzilla Minus One",
+      "contents": [
+        {
+          "film": "local-a7e1db8c9384",
+          "role": "main"
+        }
+      ],
+      "formats": [
+        "4K UHD"
+      ]
+    },
+    {
+      "id": "edition-0965",
+      "title": "Super Fly (HMV Exclusive) – The Premium Collection",
+      "contents": [
+        {
+          "film": "local-ef1c4290a277",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-warner-bros",
+      "imprint": "The Premium Collection",
+      "formats": [
+        "Blu-ray"
+      ],
+      "barcode": "5051892228299",
+      "release_date": "2020-09-28"
     }
   ],
   "copies": [
@@ -17293,6 +17342,18 @@
     {
       "id": "shelf-0962",
       "edition_id": "edition-0962"
+    },
+    {
+      "id": "shelf-0963",
+      "edition_id": "edition-0963"
+    },
+    {
+      "id": "shelf-0964",
+      "edition_id": "edition-0964"
+    },
+    {
+      "id": "shelf-0965",
+      "edition_id": "edition-0965"
     }
   ]
 }

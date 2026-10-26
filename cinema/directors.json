@@ -54077,5 +54077,228 @@
         "year": "2026"
       }
     ]
+  },
+  {
+    "id": 106540,
+    "name": "William Crain",
+    "filmography": [
+      {
+        "tmdb_id": 30566,
+        "title": "Blacula",
+        "year": "1972"
+      },
+      {
+        "tmdb_id": 32322,
+        "title": "Dr. Black, Mr. Hyde",
+        "year": "1979"
+      }
+    ]
+  },
+  {
+    "id": 101743,
+    "name": "Bob Kelljan",
+    "filmography": [
+      {
+        "tmdb_id": 28733,
+        "title": "Count Yorga, Vampire",
+        "year": "1970"
+      },
+      {
+        "tmdb_id": 28855,
+        "title": "The Return of Count Yorga",
+        "year": "1971"
+      },
+      {
+        "tmdb_id": 42466,
+        "title": "Scream Blacula Scream",
+        "year": "1973"
+      },
+      {
+        "tmdb_id": 66765,
+        "title": "Act of Vengeance",
+        "year": "1974"
+      },
+      {
+        "tmdb_id": 843116,
+        "title": "A Cry for Justice",
+        "year": "1979"
+      },
+      {
+        "tmdb_id": 233844,
+        "title": "Black Oak Conspiracy",
+        "year": "1977"
+      },
+      {
+        "tmdb_id": 1160877,
+        "title": "Dog and Cat",
+        "year": "1977"
+      },
+      {
+        "tmdb_id": 799275,
+        "title": "Beach Patrol",
+        "year": "1979"
+      },
+      {
+        "tmdb_id": 1459843,
+        "title": "The Intruder",
+        "year": "1972"
+      }
+    ]
+  },
+  {
+    "id": 43652,
+    "name": "Takashi Yamazaki",
+    "filmography": [
+      {
+        "tmdb_id": 5493,
+        "title": "Returner",
+        "year": "2002"
+      },
+      {
+        "tmdb_id": 940721,
+        "title": "Godzilla Minus One",
+        "year": "2023"
+      },
+      {
+        "tmdb_id": 13430,
+        "title": "Always - Sunset on Third Street",
+        "year": "2005"
+      },
+      {
+        "tmdb_id": 41177,
+        "title": "Always: Sunset on Third Street 2",
+        "year": "2007"
+      },
+      {
+        "tmdb_id": 61984,
+        "title": "Space Battleship Yamato",
+        "year": "2010"
+      },
+      {
+        "tmdb_id": 68526,
+        "title": "Juvenile",
+        "year": "2000"
+      },
+      {
+        "tmdb_id": 961418,
+        "title": "Ghost Book",
+        "year": "2022"
+      },
+      {
+        "tmdb_id": 74493,
+        "title": "Ballad",
+        "year": "2009"
+      },
+      {
+        "tmdb_id": 121239,
+        "title": "Always: Sunset on Third Street '64",
+        "year": "2012"
+      },
+      {
+        "tmdb_id": 248087,
+        "title": "The Eternal Zero",
+        "year": "2013"
+      },
+      {
+        "tmdb_id": 265712,
+        "title": "Stand by Me Doraemon",
+        "year": "2014"
+      },
+      {
+        "tmdb_id": 282069,
+        "title": "Parasyte: Part 1",
+        "year": "2014"
+      },
+      {
+        "tmdb_id": 282070,
+        "title": "Parasyte: Part 2",
+        "year": "2015"
+      },
+      {
+        "tmdb_id": 180272,
+        "title": "Friends: Naki on Monster Island",
+        "year": "2011"
+      },
+      {
+        "tmdb_id": 1255542,
+        "title": "Foodlosslla",
+        "year": "2024"
+      },
+      {
+        "tmdb_id": 426080,
+        "title": "Fueled: The Man They Called \"Pirate\"",
+        "year": "2016"
+      },
+      {
+        "tmdb_id": 492136,
+        "title": "Destiny: The Tale of Kamakura",
+        "year": "2017"
+      },
+      {
+        "tmdb_id": 605389,
+        "title": "The Great War of Archimedes",
+        "year": "2019"
+      },
+      {
+        "tmdb_id": 614587,
+        "title": "Lupin III: The First",
+        "year": "2019"
+      },
+      {
+        "tmdb_id": 592867,
+        "title": "Dragon Quest: Your Story",
+        "year": "2019"
+      },
+      {
+        "tmdb_id": 728754,
+        "title": "Stand by Me Doraemon 2",
+        "year": "2020"
+      },
+      {
+        "tmdb_id": 482849,
+        "title": "Tales of the Bizarre 25th Anniversary Autumn Special: Film Directors Collection",
+        "year": "2015"
+      },
+      {
+        "tmdb_id": 1381071,
+        "title": "Godzilla Minus Zero",
+        "year": "2026"
+      },
+      {
+        "tmdb_id": 1388496,
+        "title": "Grandgear",
+        "year": "2028"
+      },
+      {
+        "tmdb_id": 1727720,
+        "title": "Nue"
+      }
+    ]
+  },
+  {
+    "id": 88148,
+    "name": "Gordon Parks Jr.",
+    "filmography": [
+      {
+        "tmdb_id": 21968,
+        "title": "Super Fly",
+        "year": "1972"
+      },
+      {
+        "tmdb_id": 63340,
+        "title": "Three the Hard Way",
+        "year": "1974"
+      },
+      {
+        "tmdb_id": 201283,
+        "title": "Aaron Loves Angela",
+        "year": "1975"
+      },
+      {
+        "tmdb_id": 95966,
+        "title": "Thomasine & Bushrod",
+        "year": "1974"
+      }
+    ]
   }
 ]
