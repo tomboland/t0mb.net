@@ -15643,7 +15643,9 @@
     ],
     "overview": "Yang Hui-zhen, a mysterious princess on the run from corrupt government officials, is joined in her endeavors by skilled Buddhist monks and an unambitious painter named Gu Sheng-zhai.",
     "metadata_source": "https://www.themoviedb.org/movie/44154",
-    "runtime": 180
+    "runtime": 180,
+    "liked": true,
+    "watched": true
   },
   {
     "id": "tmdb-movie-9461",
