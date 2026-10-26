@@ -6,7 +6,6 @@ date: "2026-04-09"
 watched_date: "2026-04-08"
 rating: null
 letterboxd_url: "https://boxd.it/dTCU23"
-draft: false
 viewing: "lb-dTCU23"
 ---
 

@@ -6,7 +6,6 @@ date: "2026-09-18"
 watched_date: "2026-09-17"
 rating: null
 letterboxd_url: "https://boxd.it/gmTtiT"
-draft: false
 viewing: "lb-gmTtiT"
 ---
 

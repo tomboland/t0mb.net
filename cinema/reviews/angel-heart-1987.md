@@ -3,7 +3,6 @@ id: "angel-heart-1987-2026-10-13-b60c65"
 film: "local-7e95b7773d85"
 title: "Angel Heart"
 date: "2026-10-13"
-draft: false
 spoilers: false
 viewing: "local-1bc876402c48"
 watched_date: "2026-10-12"

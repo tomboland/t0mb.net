@@ -6,7 +6,6 @@ date: "2026-05-15"
 watched_date: "2026-05-14"
 rating: null
 letterboxd_url: "https://boxd.it/emASI9"
-draft: false
 viewing: "lb-emASI9"
 ---
 

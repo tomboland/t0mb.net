@@ -34,7 +34,7 @@ class QueryTests(unittest.TestCase):
     def write(self,name,value): (self.root/'cinema'/f'{name}.json').write_text(json.dumps(value))
 
     def review(self,rid,fid,body,**extra):
-        m=dict(id=rid,film=fid,title=rid,date='2022-01-01',draft=False);m.update(extra)
+        m=dict(id=rid,film=fid,title=rid,date='2022-01-01');m.update(extra)
         (self.root/'cinema/reviews'/f'{rid}.md').write_text('---\n'+'\n'.join(k+': '+json.dumps(v) for k,v in m.items())+'\n---\n'+body)
 
     def test_public_snapshot_round_trip_and_integrity(self):

@@ -6,7 +6,6 @@ date: "2026-02-22"
 watched_date: "2026-02-21"
 rating: "5"
 letterboxd_url: "https://boxd.it/dfbAcN"
-draft: false
 viewing: "lb-dfbAcN"
 ---
 

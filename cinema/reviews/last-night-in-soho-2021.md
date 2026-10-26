@@ -6,7 +6,6 @@ date: "2026-05-28"
 watched_date: "2026-05-27"
 rating: null
 letterboxd_url: "https://boxd.it/exgEtt"
-draft: false
 viewing: "lb-exgEtt"
 ---
 

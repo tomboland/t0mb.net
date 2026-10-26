@@ -65,7 +65,7 @@ def source_files(root):
 
 
 def fingerprint(root):
-    digest = hashlib.sha256(VERSION.encode())
+    digest = hashlib.sha256((VERSION + ':reviews-published-by-default').encode())
     for path in source_files(root):
         digest.update(str(path.relative_to(root)).encode()+b'\0'+path.read_bytes()+b'\0')
     return digest.hexdigest()[:20]
@@ -89,7 +89,7 @@ def build_index(root, destination, revision):
     spec.loader.exec_module(reader)
     reader.ROOT = root
     reviews = [reader.read_review(p) for p in sorted((root/'cinema/reviews').glob('*.md'))]
-    published = [r for r in reviews if r['metadata'].get('draft') is False]
+    published = [r for r in reviews if r['metadata'].get('draft') is not True]
     watched = {v['film'] for v in viewings}
     destination.parent.mkdir(parents=True,exist_ok=True)
     fd, name = tempfile.mkstemp(prefix='.cinema-query-',suffix='.sqlite',dir=destination.parent)
@@ -179,7 +179,7 @@ class QueryCatalogue:
             statuses = dict(db.execute('SELECT watched,count(*) FROM films GROUP BY watched'))
             coverage = dict(db.execute('SELECT count(*) films_with_runtime, (SELECT count(DISTINCT film_id) FROM film_directors) films_with_directors FROM films WHERE runtime IS NOT NULL').fetchone())
             excluded=db.execute("SELECT value FROM metadata WHERE key='excluded_reviews'").fetchone()[0]
-            coverage['excluded_draft_or_unspecified_reviews'] = int(excluded) if excluded != 'unknown' else 'unknown in public snapshot'
+            coverage['excluded_draft_reviews'] = int(excluded) if excluded != 'unknown' else 'unknown in public snapshot'
             return dict(revision=revision,source=self.source_description(),counts=counts,viewing_status=statuses,coverage=coverage,semantics=SEMANTICS)
 
     @staticmethod

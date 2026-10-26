@@ -6,7 +6,6 @@ date: "2026-08-09"
 watched_date: "2026-08-08"
 rating: null
 letterboxd_url: "https://boxd.it/fINnax"
-draft: false
 viewing: "lb-fINnax"
 ---
 

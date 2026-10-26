@@ -6,7 +6,6 @@ date: "2026-07-27"
 watched_date: "2026-07-26"
 rating: "5"
 letterboxd_url: "https://boxd.it/fsgNiH"
-draft: false
 featured: true
 viewing: "lb-fsgNiH"
 ---

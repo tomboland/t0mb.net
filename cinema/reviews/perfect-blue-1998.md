@@ -3,7 +3,6 @@ id: "perfect-blue-1998-2026-10-10-1a18ce"
 film: "local-f5fb06951e58"
 title: "Perfect Blue"
 date: "2026-10-10"
-draft: false
 spoilers: false
 viewing: "local-98afb0ae54ec"
 watched_date: "2026-10-10"

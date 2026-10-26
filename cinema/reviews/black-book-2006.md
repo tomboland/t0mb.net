@@ -6,7 +6,6 @@ date: "2026-05-24"
 watched_date: "2026-05-23"
 rating: null
 letterboxd_url: "https://boxd.it/etMhv5"
-draft: false
 viewing: "lb-etMhv5"
 ---
 

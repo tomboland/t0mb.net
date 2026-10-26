@@ -6,7 +6,6 @@ date: "2025-12-21"
 watched_date: "2025-12-20"
 rating: "5"
 letterboxd_url: "https://boxd.it/c8GH0l"
-draft: false
 viewing: "lb-c8GH0l"
 ---
 

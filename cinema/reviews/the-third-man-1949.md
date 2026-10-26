@@ -6,7 +6,6 @@ date: "2026-02-17"
 watched_date: "2026-02-16"
 rating: "5"
 letterboxd_url: "https://boxd.it/dalkCF"
-draft: false
 featured: true
 viewing: "lb-dalkCF"
 ---

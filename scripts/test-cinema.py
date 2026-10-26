@@ -121,6 +121,8 @@ class CinemaTests(unittest.TestCase):
 
     def test_multiple_reviews_and_draft_removal(self):
         self.review('first'); self.review('second'); self.review('secret', True)
+        source = self.data / 'reviews/first.md'
+        source.write_text(source.read_text().replace('draft: false\n', ''))
         pages = self.build()
         text = '\n'.join(pages.values())
         self.assertNotIn('secret', text)

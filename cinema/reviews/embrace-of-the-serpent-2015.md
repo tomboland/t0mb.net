@@ -6,7 +6,6 @@ date: "2025-12-29"
 watched_date: "2025-12-28"
 rating: null
 letterboxd_url: "https://boxd.it/cicNOV"
-draft: false
 viewing: "lb-cicNOV"
 ---
 

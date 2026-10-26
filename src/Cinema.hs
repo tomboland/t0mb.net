@@ -120,7 +120,7 @@ stripComments s | "<!--" `isPrefixOf` s = skip (drop 4 s)
   where skip [] = []; skip x | "-->" `isPrefixOf` x = stripComments (drop 3 x); skip (_:xs) = skip xs
 stripComments (x:xs) = x:stripComments xs
 published :: Value -> Bool
-published r = get "draft" r == Bool False
+published r = get "draft" r /= Bool True
 validateImage :: Value -> IO ()
 validateImage img = when (truth $ get "path" img) $ do
   let p = str "path" img

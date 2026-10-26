@@ -210,7 +210,7 @@ class Catalogue:
         viewing = sparse(dict(id='local-'+uuid.uuid4().hex[:12],film=film['id'],date=date,rating=rating,rewatch=rewatch))
         today = str(datetime.date.today())
         meta = dict(id=film['slug']+'-'+today+'-'+uuid.uuid4().hex[:6],film=film['id'],title=film['title'],date=today,
-                    draft=True,spoilers=False,viewing=viewing['id'],watched_date=date)
+                    spoilers=False,viewing=viewing['id'],watched_date=date)
         if rating: meta['rating'] = rating
         content = '---\n'+'\n'.join(f'{k}: {json.dumps(v,ensure_ascii=False)}' for k,v in meta.items())+'\n---\n\n<!-- Write your review here. -->\n'
         edited = editor(content) if editor else None

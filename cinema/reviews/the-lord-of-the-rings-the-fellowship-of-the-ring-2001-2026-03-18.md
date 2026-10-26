@@ -6,7 +6,6 @@ date: "2026-03-18"
 watched_date: "2026-03-17"
 rating: null
 letterboxd_url: "https://boxd.it/dzalKt"
-draft: false
 viewing: "lb-dzalKt"
 ---
 

@@ -6,7 +6,6 @@ date: "2026-04-17"
 watched_date: "2026-04-16"
 rating: null
 letterboxd_url: "https://boxd.it/e06mTV"
-draft: false
 viewing: "lb-e06mTV"
 ---
 

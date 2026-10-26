@@ -66,9 +66,9 @@ class PublicExportTests(unittest.TestCase):
         p.write_text(p.read_text().replace('draft: false','draft: false\ndraft: true'))
         with self.assertRaises(ValueError):self.build()
 
-    def test_unpublished_or_unspecified_review_is_not_public(self):
+    def test_only_explicit_drafts_are_excluded(self):
         self.review('review-a',draft=True)
         p=self.root/'cinema/reviews/review-b.md';p.write_text(p.read_text().replace('draft: false\n',''))
-        self.assertEqual(json.loads(self.build()['files']['manifest.json'])['counts']['reviews'],0)
+        self.assertEqual(json.loads(self.build()['files']['manifest.json'])['counts']['reviews'],1)
 
 if __name__=='__main__':unittest.main()

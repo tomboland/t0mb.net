@@ -3,7 +3,6 @@ id: "carrie-1976-2026-10-17-c13945"
 film: "lb-20ZQ"
 title: "Carrie"
 date: "2026-10-17"
-draft: false
 spoilers: false
 viewing: "local-411a5a48e213"
 watched_date: "2026-10-17"

@@ -6,7 +6,6 @@ date: "2026-01-28"
 watched_date: "2026-01-27"
 rating: null
 letterboxd_url: "https://boxd.it/cRAKnZ"
-draft: false
 viewing: "lb-cRAKnZ"
 ---
 

@@ -6,7 +6,6 @@ date: "2026-07-31"
 watched_date: "2026-07-30"
 rating: "5"
 letterboxd_url: "https://boxd.it/fxcjxp"
-draft: false
 featured: true
 viewing: "lb-fxcjxp"
 ---

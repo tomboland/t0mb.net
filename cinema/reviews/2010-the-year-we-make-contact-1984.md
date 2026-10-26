@@ -6,7 +6,6 @@ date: "2025-12-23"
 watched_date: "2025-12-22"
 rating: null
 letterboxd_url: "https://boxd.it/caSMLD"
-draft: false
 viewing: "lb-caSMLD"
 ---
 

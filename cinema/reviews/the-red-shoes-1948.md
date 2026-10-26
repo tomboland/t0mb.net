@@ -6,7 +6,6 @@ date: "2026-03-29"
 watched_date: "2026-03-28"
 rating: null
 letterboxd_url: "https://boxd.it/dIRStH"
-draft: false
 viewing: "lb-dIRStH"
 ---
 

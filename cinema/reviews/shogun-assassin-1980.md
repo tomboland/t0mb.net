@@ -6,7 +6,6 @@ date: "2026-05-13"
 watched_date: "2026-05-12"
 rating: null
 letterboxd_url: "https://boxd.it/el39mx"
-draft: false
 viewing: "lb-el39mx"
 ---
 

@@ -6,7 +6,6 @@ date: "2026-01-01"
 watched_date: "2025-12-31"
 rating: "5"
 letterboxd_url: "https://boxd.it/clMTMP"
-draft: false
 viewing: "lb-clMTMP"
 ---
 

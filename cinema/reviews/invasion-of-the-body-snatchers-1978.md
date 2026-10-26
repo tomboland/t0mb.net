@@ -6,7 +6,6 @@ date: "2026-09-26"
 watched_date: "2026-09-25"
 rating: "5"
 letterboxd_url: "https://boxd.it/guhDh3"
-draft: false
 featured: true
 viewing: "lb-guhDh3"
 ---

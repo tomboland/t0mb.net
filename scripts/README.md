@@ -77,7 +77,8 @@ An unchanged/empty review or a failed editor cancels the operation. Invalid
 metadata offers to reopen the editor. Temporary drafts are retained under `/tmp`
 for recovery, including if a later artwork download or save fails. Keep identity
 and viewing fields unchanged in the template; use the viewing form to set them.
-Reviews remain unpublished drafts. Publish later by setting `draft: false`.
+Reviews are published by default on the next site build. Add `draft: true` to
+withhold one; remove it when ready to publish (`draft: false` also works).
 
 `--date YYYY-MM-DD` defaults to today; `--rating` is optional (0.5–5, half steps),
 `--rewatch` records a repeat, and `--liked` marks the film liked. Each successful

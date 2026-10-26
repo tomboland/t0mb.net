@@ -6,7 +6,6 @@ date: "2026-05-12"
 watched_date: "2026-05-11"
 rating: null
 letterboxd_url: "https://boxd.it/ekkV5J"
-draft: false
 viewing: "lb-ekkV5J"
 ---
 

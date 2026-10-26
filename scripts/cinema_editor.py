@@ -24,8 +24,6 @@ def validate_review(content, original):
     for key in ('id', 'film', 'viewing', 'watched_date', 'rating', 'date'):
         if str(before.get(key)) != str(after.get(key)):
             raise ValueError(f'Keep {key} unchanged; edit viewing details in the viewing form.')
-    if after.get('draft') is not True:
-        raise ValueError('Keep draft: true. Publish separately after reviewing the result.')
     if not isinstance(after.get('title'), str) or not after['title'].strip():
         raise ValueError('A review title is required.')
     if not isinstance(after.get('spoilers'), bool):

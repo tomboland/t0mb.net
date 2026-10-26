@@ -6,7 +6,6 @@ date: "2026-01-25"
 watched_date: "2026-01-24"
 rating: null
 letterboxd_url: "https://boxd.it/cNIaCJ"
-draft: false
 viewing: "lb-cNIaCJ"
 ---
 

@@ -40,8 +40,8 @@ def build(root, read_review):
     notes = sorted(read('entries', []), key=lambda n: (n.get('date', ''), n['id']))
     collection = read('collection', {})
     reviews = [read_review(p) for p in sorted((source/'reviews').glob('*.md'))]
-    # Match the website: publication must be explicit, never infer it from omission.
-    reviews = sorted([r for r in reviews if r['metadata'].get('draft') is False],
+    # Match the website: only explicit drafts are withheld from publication.
+    reviews = sorted([r for r in reviews if r['metadata'].get('draft') is not True],
                      key=lambda r: (r['metadata'].get('date', ''), r['metadata']['id']))
     refs = {f['id']: i+1 for i, f in enumerate(films)}
     viewing_refs = {v['id']: 'v'+str(i+1) for i, v in enumerate(viewings)}

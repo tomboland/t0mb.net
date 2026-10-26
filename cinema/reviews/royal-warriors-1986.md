@@ -6,7 +6,6 @@ date: "2026-05-05"
 watched_date: "2026-05-04"
 rating: "5"
 letterboxd_url: "https://boxd.it/eeS08Z"
-draft: false
 viewing: "lb-eeS08Z"
 ---
 

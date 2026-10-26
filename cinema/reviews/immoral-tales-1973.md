@@ -6,7 +6,6 @@ date: "2026-03-17"
 watched_date: "2026-03-16"
 rating: null
 letterboxd_url: "https://boxd.it/dyknoF"
-draft: false
 viewing: "lb-dyknoF"
 ---
 

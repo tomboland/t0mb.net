@@ -6,7 +6,6 @@ date: "2026-09-23"
 watched_date: "2026-09-22"
 rating: null
 letterboxd_url: "https://boxd.it/grDFen"
-draft: false
 viewing: "lb-grDFen"
 ---
 

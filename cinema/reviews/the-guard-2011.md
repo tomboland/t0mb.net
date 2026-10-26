@@ -6,7 +6,6 @@ date: "2026-01-08"
 watched_date: "2026-01-07"
 rating: null
 letterboxd_url: "https://boxd.it/cvyMd1"
-draft: false
 viewing: "lb-cvyMd1"
 ---
 

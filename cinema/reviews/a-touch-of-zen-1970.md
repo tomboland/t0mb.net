@@ -3,7 +3,6 @@ id: "a-touch-of-zen-1970-2026-10-26-aece0b"
 film: "tmdb-movie-44154"
 title: "A Touch of Zen"
 date: "2026-10-26"
-draft: false
 spoilers: false
 viewing: "local-90347e9c513b"
 watched_date: "2026-10-26"

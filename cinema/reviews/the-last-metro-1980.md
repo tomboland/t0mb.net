@@ -6,7 +6,6 @@ date: "2026-01-12"
 watched_date: "2026-01-11"
 rating: null
 letterboxd_url: "https://boxd.it/cAAZel"
-draft: false
 viewing: "lb-cAAZel"
 ---
 

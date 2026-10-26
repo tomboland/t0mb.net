@@ -6,7 +6,6 @@ date: "2026-02-03"
 watched_date: "2026-02-02"
 rating: null
 letterboxd_url: "https://boxd.it/cXIGnr"
-draft: false
 featured: true
 viewing: "lb-cXIGnr"
 ---

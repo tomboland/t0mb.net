@@ -241,7 +241,7 @@ def actions(service, selection):
                 try:
                     if values['rewatch (yes/no)'].lower() not in ('yes','no'): raise ValueError('Rewatch must be yes or no.')
                     path = service.log_review(selection, date=values['date'], rating=values['rating'], rewatch=values['rewatch (yes/no)'].lower() == 'yes', editor=edit_review)
-                    notify(f'Saved draft: {path}' if path else 'Cancelled; no viewing saved.')
+                    notify(f'Saved review: {path}' if path else 'Cancelled; no viewing saved.')
                 except (ValueError, OSError, RuntimeError) as error:
                     notify(str(error))
 

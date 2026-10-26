@@ -232,13 +232,20 @@ class ServiceTests(unittest.TestCase):
         self.assertTrue(result.exists())
         self.assertIn(state['viewings'][0]['id'],result.read_text())
         self.assertTrue(state['films'][0]['watched'])
-        self.assertIn('draft: true',result.read_text())
+        self.assertNotIn('draft:',result.read_text())
 
     def test_invalid_review_identity_saves_nothing(self):
         before = self.service.snapshot()
         with self.assertRaises(ValueError):
-            self.service.log_review(self.selection,date='2026-10-23',editor=lambda text:text.replace('draft: true','draft: false'))
+            self.service.log_review(self.selection,date='2026-10-23',editor=lambda text:text.replace('watched_date: "2026-10-23"','watched_date: "2026-10-22"'))
         self.assertEqual(before,self.service.snapshot())
+
+    def test_review_can_explicitly_be_draft_or_published(self):
+        for flag in ('true', 'false'):
+            with self.subTest(draft=flag):
+                result = self.service.log_review(self.selection,date='2026-10-23',
+                    editor=lambda text:text.replace('spoilers: false',f'draft: {flag}\nspoilers: false')+'My review.\n')
+                self.assertIn(f'draft: {flag}',result.read_text())
 
     def test_stale_snapshot_rejected(self):
         before = self.service.snapshot()
@@ -309,6 +316,13 @@ class EditorTests(unittest.TestCase):
         original = self.template()
         with self.assertRaises(ValueError): validate_review(original.replace('film-a','film-b'),original)
         with self.assertRaises(ValueError): validate_review(original.replace('spoilers: false','spoilers: maybe'),original)
+        with self.assertRaises(ValueError): validate_review(original.replace('draft: true','draft: maybe'),original)
+
+    def test_editor_accepts_removing_or_disabling_draft(self):
+        original = self.template()
+        for replacement in ('', 'draft: false\n'):
+            with self.subTest(replacement=replacement):
+                validate_review(original.replace('draft: true\n',replacement),original)
 
 
 class SelectorTests(unittest.TestCase):

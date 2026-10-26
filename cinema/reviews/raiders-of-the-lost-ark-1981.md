@@ -6,7 +6,6 @@ date: "2026-06-17"
 watched_date: "2026-06-16"
 rating: "5"
 letterboxd_url: "https://boxd.it/eOVPbl"
-draft: false
 viewing: "lb-eOVPbl"
 ---
 

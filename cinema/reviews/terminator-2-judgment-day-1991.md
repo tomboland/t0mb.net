@@ -6,7 +6,6 @@ date: "2026-09-09"
 watched_date: "2026-09-08"
 rating: "5"
 letterboxd_url: "https://boxd.it/gfrsS3"
-draft: false
 viewing: "lb-gfrsS3"
 ---
 

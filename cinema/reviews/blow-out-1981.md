@@ -3,7 +3,6 @@ id: "blow-out-1981-2026-10-18-0debcb"
 film: "local-b7a3f31c5130"
 title: "Blow Out"
 date: "2026-10-18"
-draft: false
 spoilers: false
 viewing: "local-96770de0ca0e"
 watched_date: "2026-10-18"

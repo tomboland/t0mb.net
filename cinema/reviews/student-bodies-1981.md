@@ -6,7 +6,6 @@ date: "2026-01-09"
 watched_date: "2026-01-08"
 rating: null
 letterboxd_url: "https://boxd.it/cwFwcf"
-draft: false
 viewing: "lb-cwFwcf"
 ---
 

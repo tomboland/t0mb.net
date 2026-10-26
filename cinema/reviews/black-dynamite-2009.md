@@ -3,7 +3,6 @@ id: "black-dynamite-2009-2026-10-22-6cd40b"
 film: "tmdb-movie-24804"
 title: "Black Dynamite"
 date: "2026-10-22"
-draft: false
 spoilers: false
 viewing: "local-d118fed6b77c"
 watched_date: "2026-10-22"

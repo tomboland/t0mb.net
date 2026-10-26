@@ -6,7 +6,6 @@ date: "2026-05-18"
 watched_date: "2026-05-17"
 rating: "5"
 letterboxd_url: "https://boxd.it/ep2RHN"
-draft: false
 viewing: "lb-ep2RHN"
 ---
 

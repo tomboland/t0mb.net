@@ -6,7 +6,6 @@ date: "2026-02-17"
 watched_date: "2026-02-16"
 rating: null
 letterboxd_url: "https://boxd.it/daWix3"
-draft: false
 featured: true
 viewing: "lb-daWix3"
 ---

@@ -6,7 +6,6 @@ date: "2026-08-10"
 watched_date: "2026-08-09"
 rating: "5"
 letterboxd_url: "https://boxd.it/fK29BD"
-draft: false
 viewing: "lb-fK29BD"
 ---
 

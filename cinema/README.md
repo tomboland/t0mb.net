@@ -36,7 +36,9 @@ The small `collection-redirects.json` map preserves old URLs only.
 ## Write the first review
 
 Edit `reviews/the-400-blows-1959.md`. Write below the second `---`, set `date` to
-your publication date, and change `draft: true` to `draft: false` when ready.
+your publication date, and remove `draft: true` when ready.
+Reviews are published by default; only `draft: true` withholds a review.
+Explicit `draft: false` is also supported but unnecessary.
 Drafts are absent from public pages, lists and generated source files.
 Ratings, a viewing date, images and spoiler notices are all optional.
 
@@ -132,8 +134,9 @@ TMDB selection, disc entry and editor-based reviews. Run
 
 `python3 scripts/cinema.py review whiplash` records a viewing and opens your
 `VISUAL`/`EDITOR` with a populated draft. Saving an unchanged draft cancels;
-successful edits are validated before the viewing is saved. Reviews stay drafts
-until you publish them. The former `watch` command is now `log`; TMDB metadata
+successful edits are validated before the viewing is saved. Reviews are published
+on the next site build unless you add `draft: true`. The former `watch` command
+is now `log`; TMDB metadata
 imports use `add --tmdb-id ID`, while `film` creates manual records.
 
 

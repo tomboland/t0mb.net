@@ -6,7 +6,6 @@ date: "2026-07-04"
 watched_date: "2026-07-03"
 rating: "5"
 letterboxd_url: "https://boxd.it/f3QiTf"
-draft: false
 viewing: "lb-f3QiTf"
 ---
 

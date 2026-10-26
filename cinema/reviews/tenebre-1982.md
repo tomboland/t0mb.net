@@ -3,7 +3,6 @@ id: "tenebre-1982-2026-10-08-58bdc1"
 film: "local-bae224caa3fa"
 title: "Tenebre"
 date: "2026-10-08"
-draft: false
 spoilers: false
 viewing: "local-ef007d4e6c4e"
 watched_date: "2026-10-08"

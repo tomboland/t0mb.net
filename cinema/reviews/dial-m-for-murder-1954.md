@@ -6,7 +6,6 @@ date: "2026-01-16"
 watched_date: "2026-01-16"
 rating: null
 letterboxd_url: "https://boxd.it/cENDSZ"
-draft: false
 viewing: "lb-cENDSZ"
 ---
 
