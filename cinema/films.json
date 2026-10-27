@@ -26007,5 +26007,93 @@
     "origin_country": [
       "US"
     ]
+  },
+  {
+    "id": "local-e58a2a88d96e",
+    "slug": "hit-man-2024",
+    "title": "Hit Man",
+    "year": "2024",
+    "tmdb": {
+      "type": "movie",
+      "id": 974635
+    },
+    "original_title": "Hit Man",
+    "runtime": 116,
+    "overview": "A mild-mannered professor moonlighting as a fake hit man in police stings ignites a chain reaction of trouble when he falls for a potential client.",
+    "directors": [
+      {
+        "id": 564,
+        "name": "Richard Linklater"
+      }
+    ],
+    "origin_country": [
+      "US"
+    ]
+  },
+  {
+    "id": "local-b44735d8b830",
+    "slug": "paris-texas-1984",
+    "title": "Paris, Texas",
+    "year": "1984",
+    "tmdb": {
+      "type": "movie",
+      "id": 655
+    },
+    "original_title": "Paris, Texas",
+    "runtime": 145,
+    "overview": "A man wanders out of the desert not knowing who he is. His brother finds him, and helps to pull his memory back of the life he led before he walked out on his family and disappeared four years earlier.",
+    "directors": [
+      {
+        "id": 2303,
+        "name": "Wim Wenders"
+      }
+    ],
+    "origin_country": [
+      "DE"
+    ]
+  },
+  {
+    "id": "local-fa67c0d703f5",
+    "slug": "phenomena-1985",
+    "title": "Phenomena",
+    "year": "1985",
+    "tmdb": {
+      "type": "movie",
+      "id": 29161
+    },
+    "original_title": "Phenomena",
+    "runtime": 115,
+    "overview": "A young girl, with an amazing ability to communicate with insects, is transferred to an exclusive Swiss boarding school, where her unusual capability might help solve a string of murders.",
+    "directors": [
+      {
+        "id": 4955,
+        "name": "Dario Argento"
+      }
+    ],
+    "origin_country": [
+      "IT"
+    ]
+  },
+  {
+    "id": "local-4a6592422f95",
+    "slug": "videodrome-1983",
+    "title": "Videodrome",
+    "year": "1983",
+    "tmdb": {
+      "type": "movie",
+      "id": 837
+    },
+    "original_title": "Videodrome",
+    "runtime": 88,
+    "overview": "As the president of a trashy TV channel, Max Renn is desperate for new programming to attract viewers. When he happens upon \"Videodrome,\" a TV show dedicated to gratuitous torture and punishment, Max sees a potential hit and broadcasts the show on his channel. However, after his girlfriend auditions for the show and never returns, Max investigates the truth behind Videodrome and discovers that the graphic violence may not be as fake as he thought.",
+    "directors": [
+      {
+        "id": 224,
+        "name": "David Cronenberg"
+      }
+    ],
+    "origin_country": [
+      "CA"
+    ]
   }
 ]

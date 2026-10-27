@@ -25,6 +25,53 @@ options. Titles resolve to existing local identities where possible; TMDB
 results use arrow-key selection. Unattended writes require an explicit local
 ID/slug or `--tmdb-id`. Search defaults to TMDB, without a `--tmdb` flag.
 
+## Tab completion (Nushell and Carapace)
+
+Use `cinema` as the shell command. It launches this repository's `cinema.py`
+through a user-level symlink, so it works from any directory. Install from the
+repository root in Nushell, with Carapace already configured:
+
+```nu
+mkdir ~/.local/bin ~/.config/carapace/specs
+^ln -s ($env.PWD | path join scripts cinema) ~/.local/bin/cinema
+python3 scripts/cinema.py completions carapace | save --force ~/.config/carapace/specs/cinema.yaml
+```
+
+Ensure `~/.local/bin` is on PATH. Open a new shell, then try these (press Tab at `<Tab>`):
+
+```text
+cinema <Tab>                         commands with descriptions
+cinema own --<Tab>                   all ownership options with descriptions
+cinema review <Tab>                  local film slugs with titles and years
+cinema own robocop-1987 --format <Tab>
+cinema log robocop-1987 --rating <Tab>
+cinema tag the-400-blows-1959 <Tab>
+cinema tag --remove the-400-blows-1959 <Tab>
+```
+
+Formats, entry kinds, half-star ratings, years, today/yesterday, local TMDB IDs,
+directors, labels, edition titles, cuts, packaging, locations, and tags have
+value suggestions. `--token-file` completes files; `--root` completes directories.
+Film arguments insert slugs; search queries insert titles. Carapace quotes
+spaces for the target shell. Free text remains valid, including new tags,
+remote titles, older viewing dates, notes, and barcodes. For tag removal, put
+`--remove` before the tag being completed to suggest only that film's tags.
+
+Catalogue suggestions refresh on every Tab, read only local files, and never
+contact TMDB or load a token. `--root PATH` selects another repository, before
+or after the subcommand. Command and flag definitions come from the argument
+parser; regenerate the spec after changing the CLI or moving this checkout.
+
+This is a [native Carapace spec](https://carapace-sh.github.io/carapace-bin/spec.html),
+with descriptions and dynamic values passed directly to Nushell. The same spec
+works with Carapace's Bash, Zsh, Fish, and other shell integrations; use the
+[appropriate shell setup](https://carapace-sh.github.io/carapace-bin/setup.html).
+The `cinema` name avoids Carapace 1.7.3's exclusion of dotted spec filenames.
+Use this launcher for completion rather than `python3 scripts/cinema.py`.
+
+Run `python3 scripts/test-cinema-completion.py` to check actual Carapace output
+and the launcher with an isolated configuration and temporary catalogue.
+
 ## Terminal controls
 
 Select a film and choose **Open on TMDB** to open its linked entry in your browser.
@@ -44,6 +91,12 @@ whether to discard the edits. Optional edition fields can be skipped with Save.
 The film browser offers owned/not-owned, watched/unwatched/unknown, and owned
 without a recorded viewing filters. Unknown viewing status stays distinct from
 explicitly unwatched. Text filtering also searches director and displayed format.
+When adding or editing an edition, label, cut/version, packaging and location
+fields show existing values. Type to filter, use the arrow keys and Enter to
+choose, or select “Use new value” to introduce a name. Clear the filter with
+Ctrl-U to see all values and the “Clear value” option; Esc cancels the field edit.
+Changes remain staged until you select Save in the form.
+
 The collection browser filters title, label, format, contents and location, and
 edits edition metadata, formats, per-film cuts, copy condition and ownership.
 A box set appears once as an edition, with its constituent films accessible.
@@ -98,8 +151,9 @@ backups and avoid concurrent authoring with older utilities.
 
 Use `python3 scripts/test-cinema-app.py` and `python3 scripts/test-cinema-cli.py`
 for offline service, terminal interaction and command tests. TMDB credentials
-are read from `~/.config/t0mb.net/tmdb-token`, `TMDB_TOKEN_FILE`, or
-`--token-file PATH`. Local browsing needs no network or token.
+are read from `--token-file PATH` or `TMDB_TOKEN_FILE` when set. Otherwise,
+the application checks `~/.config/t0mb.net/tmdb-token`, then
+`~/tmdb_api-read-access-token`. Local browsing needs no network or token.
 
 ## Supporting tools
 

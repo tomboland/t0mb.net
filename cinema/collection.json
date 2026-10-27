@@ -13394,6 +13394,76 @@
       ],
       "barcode": "5051892228299",
       "release_date": "2020-09-28"
+    },
+    {
+      "id": "edition-0966",
+      "title": "Hit Man",
+      "formats": [
+        "DVD"
+      ],
+      "contents": [
+        {
+          "film": "local-e58a2a88d96e",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-warner-bros"
+    },
+    {
+      "id": "edition-0967",
+      "title": "Paris, Texas",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-b44735d8b830",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-curzon"
+    },
+    {
+      "id": "edition-0968",
+      "title": "Phenomena",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-fa67c0d703f5",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-arrow-films"
+    },
+    {
+      "id": "edition-0969",
+      "title": "Videodrome",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "local-4a6592422f95",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-arrow-films"
+    },
+    {
+      "id": "edition-0970",
+      "title": "Lifeforce",
+      "formats": [
+        "4K UHD"
+      ],
+      "contents": [
+        {
+          "film": "lb-1SGw",
+          "role": "main"
+        }
+      ],
+      "label_id": "label-arrow-films"
     }
   ],
   "copies": [
@@ -17354,6 +17424,27 @@
     {
       "id": "shelf-0965",
       "edition_id": "edition-0965"
+    },
+    {
+      "id": "shelf-0966",
+      "edition_id": "edition-0966",
+      "location": "Archive Collection"
+    },
+    {
+      "id": "shelf-0967",
+      "edition_id": "edition-0967"
+    },
+    {
+      "id": "shelf-0968",
+      "edition_id": "edition-0968"
+    },
+    {
+      "id": "shelf-0969",
+      "edition_id": "edition-0969"
+    },
+    {
+      "id": "shelf-0970",
+      "edition_id": "edition-0970"
     }
   ]
 }

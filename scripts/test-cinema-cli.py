@@ -2,6 +2,7 @@
 import contextlib
 import io
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
@@ -81,6 +82,21 @@ class CommandTests(unittest.TestCase):
 
     def test_invalid_tmdb_id(self):
         with self.assertRaises(SystemExit): self.run_cli('own','--tmdb-id','-1','--format','DVD')
+
+    def test_token_discovery_and_override_precedence(self):
+        with patch.dict(os.environ, {}, clear=True), patch.object(Path, 'home', return_value=self.root):
+            legacy = self.root / 'tmdb_api-read-access-token'
+            legacy.touch()
+            self.assertEqual(app.default_token_file(), legacy)
+            self.assertEqual(app.parser().parse_args(['search', 'film']).token_file, legacy)
+            standard = self.root / '.config/t0mb.net/tmdb-token'
+            standard.parent.mkdir(parents=True)
+            standard.touch()
+            self.assertEqual(app.default_token_file(), standard)
+            with patch.dict(os.environ, {'TMDB_TOKEN_FILE': str(self.root / 'override')}):
+                self.assertEqual(app.default_token_file(), self.root / 'override')
+                args = app.parser().parse_args(['search', 'film', '--token-file', str(legacy)])
+                self.assertEqual(args.token_file, legacy)
 
 
 if __name__ == '__main__': unittest.main()

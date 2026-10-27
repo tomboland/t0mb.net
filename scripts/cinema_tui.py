@@ -10,12 +10,13 @@ def interactive():
     return sys.stdin.isatty() and sys.stdout.isatty()
 
 
-def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=None):
+def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=None, allow_new=False):
     """Filterable arrow-key picker. Return the original selected object or None."""
     if not interactive():
         raise ValueError('Interactive selection needs a terminal; supply an explicit ID instead.')
     pool = ThreadPoolExecutor(max_workers=4) if enrich else None
     futures = {id(row): pool.submit(enrich, row.copy()) for row in rows} if pool else {}
+    new_entry, clear_entry = object(), object()
     extras = {}
     state = state if state is not None else {}
     def screen(win):
@@ -31,6 +32,11 @@ def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=Non
                         extras[key] = {'detail_error': 'Details unavailable'}
                     del futures[key]
             matches = [r for r in rows if query.casefold() in label(dict(r, **extras.get(id(r), {})) if isinstance(r, dict) else r).casefold()]
+            if allow_new:
+                if query.strip() and not any(query.strip().casefold() == str(r).casefold() for r in rows):
+                    matches.append(new_entry)
+                elif not query:
+                    matches.append(clear_entry)
             position = min(position, max(0, len(matches)-1))
             win.erase()
             height, width = win.getmaxyx()
@@ -46,7 +52,9 @@ def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=Non
             start = max(0, position-visible+1)
             for i, row in enumerate(matches[start:start+visible], start):
                 value = dict(row, **extras.get(id(row), {})) if isinstance(row, dict) else row
-                line(3+i-start, ('› ' if i == position else '  ') + label(value), curses.A_REVERSE if i == position else 0)
+                caption = ('Use new value: ' + query.strip() if row is new_entry else
+                           'Clear value' if row is clear_entry else label(value))
+                line(3+i-start, ('› ' if i == position else '  ') + caption, curses.A_REVERSE if i == position else 0)
             if not matches: line(3, 'No matching entries. Clear the filter or press Esc.')
             if matches:
                 row = matches[position]
@@ -59,7 +67,9 @@ def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=Non
                 continue
             state.update(query=query, position=position)
             if key == '\x1b': return None
-            if key in ('\n', '\r', curses.KEY_ENTER) and matches: return matches[position]
+            if key in ('\n', '\r', curses.KEY_ENTER) and matches:
+                selected = matches[position]
+                return query.strip() if selected is new_entry else '' if selected is clear_entry else selected
             if key == curses.KEY_UP: position = max(0, position-1)
             elif key == curses.KEY_DOWN: position = min(len(matches)-1, position+1)
             elif key in (curses.KEY_BACKSPACE, '\b', '\x7f'): query, position = query[:-1], 0
@@ -71,7 +81,7 @@ def select(title, rows, label=str, detail=lambda row: '', enrich=None, state=Non
         if pool: pool.shutdown(wait=False, cancel_futures=True)
 
 
-def form(title, fields, choices=None):
+def form(title, fields, choices=None, suggestions=None):
     """Edit a staged mapping; nothing is persisted until Save is selected."""
     values = dict(fields)
     while True:
@@ -82,9 +92,24 @@ def form(title, fields, choices=None):
                 continue
             return None
         if field == 'Save': return values
-        value = (select(field, ordered_options(values[field], choices[field]))
-                 if choices and field in choices else text_input(field, str(values[field])))
+        if suggestions and field in suggestions:
+            options = sorted(set(suggestions[field]) | ({values[field]} if values[field] else set()), key=str.casefold)
+            value = select(field + ' · choose an existing value or type a new one', options,
+                           state={'position': options.index(values[field]) if values[field] in options else 0}, allow_new=True)
+        else:
+            value = (select(field, ordered_options(values[field], choices[field]))
+                     if choices and field in choices else text_input(field, str(values[field])))
         if value is not None: values[field] = value
+
+
+def metadata_suggestions(data):
+    """Keep distinct spellings visible so near-duplicates can be spotted."""
+    return {
+        'label': [label['name'] for label in data['labels']],
+        'packaging': [e['packaging'] for e in data['editions'] if e.get('packaging')],
+        'cut': [c['cut'] for e in data['editions'] for c in e.get('contents', []) if c.get('cut')],
+        'location': [c['location'] for c in data['copies'] if c.get('location')],
+    }
 
 
 def text_input(title, initial=''):
@@ -179,12 +204,12 @@ def own(service, selection):
                         lambda e: e if isinstance(e, str) else 'Another copy: '+e['title']+' | '+', '.join(e.get('formats', [])))
         if choice is None: return
         if isinstance(choice, dict):
-            values = form('New copy', {'location': ''})
+            values = form('New copy', {'location': ''}, suggestions=metadata_suggestions(service.read('collection')))
             if values is not None: perform(lambda: service.add_copy(choice['id'], **values))
             return
     fmt = select('Disc format', sorted(db.FORMATS))
     if fmt is None: return
-    values = form('Edition details · optional fields', {'title': '', 'label': '', 'cut': '', 'notes': '', 'location': '', 'packaging': '', 'barcode': ''})
+    values = form('Edition details · optional fields', {'title': '', 'label': '', 'cut': '', 'notes': '', 'location': '', 'packaging': '', 'barcode': ''}, suggestions=metadata_suggestions(service.read('collection')))
     if values is not None: perform(lambda: service.add_owned(selection, formats=[fmt], **values))
 
 
@@ -309,7 +334,7 @@ def edit_collection_entry(service, edition_id):
         if action in (None, 'Back'): return
         if action == 'Edit edition':
             fields = {k: edition.get(k, '') for k in ('title', 'notes', 'packaging', 'barcode', 'catalogue_number', 'country', 'release_date')}
-            values = form(edition['title'], fields)
+            values = form(edition['title'], fields, suggestions=metadata_suggestions(data))
             if values is not None: perform(lambda: service.edit_edition(edition['id'], values))
         elif action == 'Edit format':
             formats = list(edition.get('formats', []))
@@ -323,18 +348,18 @@ def edit_collection_entry(service, edition_id):
                 if fmt in formats: formats.remove(fmt)
                 else: formats.append(fmt)
         elif action == 'Edit label':
-            values = form('Label', {'label': labels.get(edition.get('label_id'), {}).get('name', '')})
+            values = form('Label', {'label': labels.get(edition.get('label_id'), {}).get('name', '')}, suggestions=metadata_suggestions(data))
             if values is not None: perform(lambda: service.edit_edition(edition['id'], values))
         elif action == 'Edit cut/version':
             constituent = select('Choose film', edition.get('contents', []), lambda c: film_index[c['film']]['title']+' | '+c.get('cut', ''))
             if constituent:
-                values = form('Cut/version', {'cut': constituent.get('cut', '')})
+                values = form('Cut/version', {'cut': constituent.get('cut', '')}, suggestions=metadata_suggestions(data))
                 if values is not None: perform(lambda: service.edit_cut(edition['id'], constituent['film'], values['cut']))
         elif action == 'Edit owned copy':
             copies = [c for c in data['copies'] if c['edition_id'] == edition['id']]
             owned = select('Copies', copies, lambda c: f"{c['id']} | {c.get('location', '')} | {c.get('condition', 'unknown')} | {c.get('ownership', 'owned')}")
             if owned:
-                values = form('Copy details', {k: owned.get(k, '') for k in ('location','notes')})
+                values = form('Copy details', {k: owned.get(k, '') for k in ('location','notes')}, suggestions=metadata_suggestions(data))
                 condition = select('Condition', ordered_options(owned.get('condition','unknown'), ['unknown','good','damaged','faulty','missing_disc'])) if values is not None else None
                 state = select('Ownership', ordered_options(owned.get('ownership','owned'), ['owned','loaned','sold','disposed','lost'])) if condition else None
                 if state: perform(lambda: service.edit_copy(owned['id'], dict(values, condition=condition, ownership=state)))

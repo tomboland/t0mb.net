@@ -326,6 +326,46 @@ class EditorTests(unittest.TestCase):
 
 
 class SelectorTests(unittest.TestCase):
+    def test_metadata_picker_filters_reuses_creates_clears_and_cancels(self):
+        class Screen:
+            def __init__(self, keys):
+                self.keys = iter(keys)
+                self.lines = []
+            def timeout(self, delay): pass
+            def erase(self): self.lines = []
+            def getmaxyx(self): return (24, 100)
+            def addnstr(self, y, x, text, *args): self.lines.append(text)
+            def refresh(self): pass
+            def get_wch(self): return next(self.keys)
+
+        cases = [
+            (list('ARROW') + ['\n'], 'Arrow Films'),
+            (list('Arrow') + [curses.KEY_DOWN, '\n'], 'Arrow Video'),
+            (list('New Label') + ['\n'], 'New Label'),
+            ([curses.KEY_DOWN] * 3 + ['\n'], ''),
+            (list('Arrow') + ['\x15', '\n'], 'Arrow Films'),
+            (['\x1b'], None),
+        ]
+        for keys, expected in cases:
+            with self.subTest(expected=expected):
+                screen = Screen(keys)
+                with patch.object(ui, 'interactive', return_value=True), patch.object(curses, 'curs_set'), patch.object(curses, 'wrapper', side_effect=lambda fn: fn(screen)):
+                    result = ui.select('Label', ['Arrow Films', 'Arrow Video', 'BFI'], allow_new=True)
+                self.assertEqual(result, expected)
+                if expected == 'Arrow Films' and '\x15' not in keys:
+                    self.assertTrue(any('Arrow Video' in line for line in screen.lines))
+                    self.assertFalse(any('BFI' in line for line in screen.lines))
+
+    def test_suggested_form_stages_values_and_cancel_keeps_original(self):
+        fields = {'label': 'Arrow Films'}
+        for ending, expected in [(['Save'], {'label': 'Arrow Video'}),
+                                 (['Cancel', 'Discard changes'], None)]:
+            with patch.object(ui, 'select', side_effect=['label', 'Arrow Video', *ending]) as picker:
+                result = ui.form('Edition', fields, suggestions={'label': ['Arrow Films', 'Arrow Video']})
+            self.assertEqual(result, expected)
+            self.assertEqual(fields, {'label': 'Arrow Films'})
+            self.assertTrue(picker.call_args_list[1].kwargs['allow_new'])
+
     def test_text_input_waits_after_selector_and_can_cancel(self):
         class Screen:
             delay = -1
