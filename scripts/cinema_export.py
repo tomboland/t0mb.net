@@ -164,6 +164,24 @@ def build(root, read_review):
              'reviews.json': dumps(dict(common,reviews=table(review_rows)))+'\n',
              'editions.json': dumps(dict(common,editions=table(edition_rows)))+'\n',
              'links.json': dumps(dict(common,links=links))+'\n'}
+    context = [header('COMPLETE FILM COLLECTION AND VIEWING HISTORY'),
+               'Use this file as evidence about my collection, viewing history and tastes. '
+               'Consider full reviews alongside ratings, likes, tags and repeat viewings. '
+               'Distinguish explicit preferences from your inferences, and owned films from watched films. '
+               'Check the watched records before recommending films; label intentional rewatch suggestions. '
+               'All film, viewing, review and edition references below resolve within this file. '
+               'No other files are needed. This is a snapshot of the sources at generation time. '
+               'Draft reviews, private notes and private copy details are excluded; images are not bundled.',
+               '\nRECORD COUNTS: '+dumps(counts),
+               '\nTASTE AND VIEWING HISTORY', *taste[1:],
+               '\nFULL PUBLISHED REVIEWS', *review_text[2:],
+               '\nOWNED EDITIONS', *edition_text[2:],
+               '\nWEBPAGE LINKS: reference | URL']
+    for section, mapping in links.items():
+        context.append(section.upper())
+        context.extend(f'{ref} | {url}' for ref, url in mapping.items())
+    context.append(f'\nEND COMPLETE FILM CONTEXT: revision {revision}; counts {dumps(counts)}.\n')
+    files['film-context.txt'] = '\n'.join(context)
     files['query.json'] = dumps(dict(query_schema_version=QUERY_VERSION,revision=revision,semantics=QUERY_SEMANTICS,
         tables=query_tables,tables_sha256=hashlib.sha256(dumps(query_tables).encode()).hexdigest(),
         instructions='Load these tables with code; do not paste the whole file into a model prompt. Relationships use stable IDs. This is a static file, not a query endpoint.'))+'\n'
@@ -194,7 +212,7 @@ def build(root, read_review):
             parts[section+'.txt'].append(name)
     manifest = dict(schema_version=SCHEMA,revision=revision,generated_at=generated,counts=counts,
                     freshness='Snapshot of the latest deployed site, not unpublished local edits. Re-fetch the index/manifest; never mix revisions.',
-                    recommended=['taste.txt','reviews.txt'],optional=['editions.txt','links-index.json'],fallback_parts=parts,
+                    recommended=['taste.txt','reviews.txt'],optional=['editions.txt','links-index.json'],single_file='film-context.txt',fallback_parts=parts,
                     files={name:dict(url=BASE+name,bytes=len(text.encode()),sha256=hashlib.sha256(text.encode()).hexdigest()) for name,text in files.items()})
     files['manifest.json'] = json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'
     return dict(files=files,view=dict(revision=revision,generatedAt=generated,filmCount=len(film_rows),viewingCount=len(viewing_rows),reviewCount=len(review_rows),editionCount=len(edition_rows)))

@@ -201,6 +201,7 @@ exported or uploaded manually. The film navigation includes a Data link.
 
 | File | Contents |
 |---|---|
+| `film-context.txt` | Single ChatGPT attachment: complete catalogue, viewings, published reviews, owned editions, interpretation guidance and webpage links |
 | `taste.txt` | All catalogue titles, directors, ratings, likes, tags, viewing status, ownership and dated viewings |
 | `reviews.txt` | Full published review Markdown, with explicit film/viewing/non-viewing-note associations |
 | `editions.txt` | Optional owned release titles, labels, imprints, formats, cuts and coverage |
@@ -237,10 +238,13 @@ python3 scripts/export-cinema.py --public
 ```
 
 This writes ignored `generated/cinema-public/` files. It does not deploy anything.
+Attach `generated/cinema-public/film-context.txt` to ChatGPT for a self-contained
+account of the catalogue and collection, including unwatched titles. The same file
+is published at `/films/data/film-context.txt` on the next normal build/deploy.
 Rendering lives in the shared `scripts/cinema_export.py` module. The Hakyll build
 calls the existing export CLI and publishes its output with the normal pages.
 
-## Export viewing history for an LLM
+## Watched-only local export
 
 Run `python3 scripts/export-cinema.py` to create
 `generated/cinema-export/film-context.txt` and `film-context.json`. Attach the

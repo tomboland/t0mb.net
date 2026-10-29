@@ -48,6 +48,22 @@ class PublicExportTests(unittest.TestCase):
         self.assertEqual(self.build()['view']['revision'],first)
         self.films[0]['liked']=True;self.write('films',self.films)
         self.assertNotEqual(self.build()['view']['revision'],first)
+    def test_single_attachment_is_complete_and_self_contained(self):
+        p=self.build();context=p['files']['film-context.txt']
+        self.assertIn('2 | B (?) |  | NW',context)
+        self.assertIn('v1 | 1 | 2020-01-01',context)
+        self.assertIn('v2 | 1 | 2020-01-01 | rating=4',context)
+        self.assertEqual(context.count(self.prose),2)
+        self.assertIn('viewing=v2',context)
+        self.assertIn('note=n1',context)
+        self.assertIn('n1 | 1 | 2020-01-01',context)
+        self.assertIn('coverage=Season 1',context)
+        self.assertIn('https://t0mb.net/films/a/reviews/review-a/',context)
+        self.assertNotIn('Fetch taste.txt',context)
+        self.assertEqual(context.count(cinema_export.GUIDE),1)
+        self.assertIn('END COMPLETE FILM CONTEXT: revision '+p['view']['revision'],context)
+        manifest=json.loads(p['files']['manifest.json'])
+        self.assertEqual(manifest['single_file'],'film-context.txt')
     def test_manifest_checksums_and_parts_cover_every_review(self):
         p=self.build();manifest=json.loads(p['files']['manifest.json'])
         for name,meta in manifest['files'].items():
